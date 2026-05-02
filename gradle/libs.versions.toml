@@ -1,18 +1,18 @@
 [versions]
 jdk = "25"
-kotlin = "2.3.10"
-ktlint-gradle = "14.0.1"
-pinterest-ktlint = "1.6.0"
-junit = "6.0.2"
-assertJ = "3.27.7"
-kotlinx-serialization = "1.9.0"
-ktor = "3.3.3"
+kotlin = "2.3.21"
+ktlint-gradle = "14.2.0"
+pinterest-ktlint = "1.8.0"
+junit = "6.0.3"
+assertj = "3.27.7"
+kotlinx-serialization = "1.11.0"
+ktor = "3.4.3"
 
 [libraries]
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit" }
-assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertJ" }
+assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj" }
 
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
