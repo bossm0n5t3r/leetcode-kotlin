@@ -26,7 +26,10 @@ class ParsingABooleanExpression {
                             }
                         stack.push(if (newExpression) 't' else 'f')
                     }
-                    else -> stack.push(c)
+
+                    else -> {
+                        stack.push(c)
+                    }
                 }
             }
             return stack.pop() == 't'

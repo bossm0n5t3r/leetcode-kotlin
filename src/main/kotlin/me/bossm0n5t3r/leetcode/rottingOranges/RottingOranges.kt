@@ -14,7 +14,10 @@ class RottingOranges {
             for (r in 0 until m) {
                 for (c in 0 until n) {
                     when (grid[r][c]) {
-                        1 -> freshOrangesCount++
+                        1 -> {
+                            freshOrangesCount++
+                        }
+
                         2 -> {
                             rottenOranges.add(r to c)
                             visited[r][c] = true

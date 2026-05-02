@@ -12,7 +12,11 @@ class CrawlerLogFolder {
                             depth--
                         }
                     }
-                    "./" -> Unit
+
+                    "./" -> {
+                        Unit
+                    }
+
                     else -> {
                         depth++
                         curPath = log.dropLast(1)

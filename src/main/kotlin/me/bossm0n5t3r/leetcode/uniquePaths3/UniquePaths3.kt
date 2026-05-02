@@ -18,12 +18,15 @@ class UniquePaths3 {
                         0 -> {
                             emptySquares.add(point)
                         }
+
                         1 -> {
                             start = point
                         }
+
                         2 -> {
                             end = point
                         }
+
                         -1 -> {
                             obstacles.add(point)
                         }

@@ -15,6 +15,7 @@ class DecodeString {
                     in numbers -> {
                         stack.append(c)
                     }
+
                     '[' -> {
                         val tmp = StringBuilder()
                         tmp.append(c)
@@ -37,6 +38,7 @@ class DecodeString {
                         stack.clear()
                         idx--
                     }
+
                     else -> {
                         result.append(c)
                     }
@@ -52,11 +54,15 @@ class DecodeString {
                 var numOfRepeats = 0
                 for (c in s) {
                     when (c) {
-                        in numbers -> numOfRepeats = numOfRepeats * 10 + (c - '0')
+                        in numbers -> {
+                            numOfRepeats = numOfRepeats * 10 + (c - '0')
+                        }
+
                         '[' -> {
                             repeatStack += (numOfRepeats to length)
                             numOfRepeats = 0
                         }
+
                         ']' -> {
                             val (repeats, startIdx) = repeatStack.removeLast()
                             if (repeats > 1) {
@@ -64,7 +70,10 @@ class DecodeString {
                                 repeat(repeats - 1) { append(substring) }
                             }
                         }
-                        else -> append(c)
+
+                        else -> {
+                            append(c)
+                        }
                     }
                 }
             }

@@ -13,7 +13,10 @@ class ClearDigits {
                             stack.pop()
                         }
                     }
-                    c.isLetter() -> stack.push(c)
+
+                    c.isLetter() -> {
+                        stack.push(c)
+                    }
                 }
             }
             return stack.joinToString("")

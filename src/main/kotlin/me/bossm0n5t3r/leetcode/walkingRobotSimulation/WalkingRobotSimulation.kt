@@ -42,8 +42,14 @@ class WalkingRobotSimulation {
 
             fun move(command: Int) {
                 when (command) {
-                    -2 -> curDirection = this.curDirection.turnLeft()
-                    -1 -> curDirection = this.curDirection.turnRight()
+                    -2 -> {
+                        curDirection = this.curDirection.turnLeft()
+                    }
+
+                    -1 -> {
+                        curDirection = this.curDirection.turnRight()
+                    }
+
                     else -> {
                         var count = command
                         when (curDirection) {
@@ -51,14 +57,17 @@ class WalkingRobotSimulation {
                                 y++
                                 count--
                             }
+
                             Direction.EAST -> while (count > 0 && obstaclesSet.contains((this.x + 1) to this.y).not()) {
                                 x++
                                 count--
                             }
+
                             Direction.SOUTH -> while (count > 0 && obstaclesSet.contains(this.x to (this.y - 1)).not()) {
                                 y--
                                 count--
                             }
+
                             Direction.WEST -> while (count > 0 && obstaclesSet.contains((this.x - 1) to this.y).not()) {
                                 x--
                                 count--

@@ -28,6 +28,7 @@ class MinimumFlipsToMakeAOrBEqualToC {
                         if (charA == '1') count++
                         if (charB == '1') count++
                     }
+
                     '1' -> {
                         if (charA == '0' && charB == '0') count++
                     }

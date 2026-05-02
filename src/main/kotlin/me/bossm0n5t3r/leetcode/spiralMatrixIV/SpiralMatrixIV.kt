@@ -31,16 +31,19 @@ class SpiralMatrixIV {
                             direction = Direction.EAST
                             c++
                         }
+
                         Direction.EAST -> {
                             c--
                             direction = Direction.SOUTH
                             r++
                         }
+
                         Direction.SOUTH -> {
                             r--
                             direction = Direction.WEST
                             c--
                         }
+
                         Direction.WEST -> {
                             c++
                             direction = Direction.NORTH

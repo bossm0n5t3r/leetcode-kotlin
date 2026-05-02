@@ -57,9 +57,11 @@ class StringToInteger {
                 this < BigInteger.valueOf(Int.MIN_VALUE.toLong()) -> {
                     Int.MIN_VALUE
                 }
+
                 this > BigInteger.valueOf(Int.MAX_VALUE.toLong()) -> {
                     Int.MAX_VALUE
                 }
+
                 else -> {
                     this.toInt()
                 }

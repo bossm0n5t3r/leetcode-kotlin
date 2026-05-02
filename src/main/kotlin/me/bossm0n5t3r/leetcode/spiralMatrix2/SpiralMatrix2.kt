@@ -39,6 +39,7 @@ class SpiralMatrix2 {
                             this.direction = Direction.UP
                         }
                     }
+
                     Direction.RIGHT -> {
                         if (this.c + 1 < n && matrix[this.r][this.c + 1] == 0) {
                             this.c++
@@ -47,6 +48,7 @@ class SpiralMatrix2 {
                             this.direction = Direction.DOWN
                         }
                     }
+
                     Direction.DOWN -> {
                         if (this.r + 1 < n && matrix[this.r + 1][this.c] == 0) {
                             this.r++
@@ -55,6 +57,7 @@ class SpiralMatrix2 {
                             this.direction = Direction.LEFT
                         }
                     }
+
                     Direction.UP -> {
                         if (this.r - 1 >= 0 && matrix[this.r - 1][this.c] == 0) {
                             this.r--

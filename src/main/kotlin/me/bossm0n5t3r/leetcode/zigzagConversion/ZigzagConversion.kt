@@ -30,6 +30,7 @@ class ZigzagConversion {
                             }
                         }
                     }
+
                     Direction.UP -> {
                         if (idx > 0) {
                             idx--

@@ -38,7 +38,9 @@ class GuessNumberHigherOrLower {
                         start = mid + 1
                     }
 
-                    else -> error("Unknown result")
+                    else -> {
+                        error("Unknown result")
+                    }
                 }
                 mid = (start + end) / 2
                 response = guess(mid.toInt())

@@ -13,6 +13,7 @@ class RemovingStarsFromAString {
                             result.pop()
                         }
                     }
+
                     else -> {
                         result.push(c)
                     }
@@ -31,6 +32,7 @@ class RemovingStarsFromAString {
                             lastIdx--
                         }
                     }
+
                     else -> {
                         result[lastIdx++] = c
                     }

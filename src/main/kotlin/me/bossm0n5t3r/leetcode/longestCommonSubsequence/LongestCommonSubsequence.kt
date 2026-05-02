@@ -11,12 +11,16 @@ class LongestCommonSubsequence {
                 for (c in 1..text2.length) {
                     dp[r][c] =
                         when {
-                            text1[r - 1] == text2[c - 1] -> dp[r - 1][c - 1] + 1
-                            else ->
+                            text1[r - 1] == text2[c - 1] -> {
+                                dp[r - 1][c - 1] + 1
+                            }
+
+                            else -> {
                                 maxOf(
                                     dp[r - 1][c],
                                     dp[r][c - 1],
                                 )
+                            }
                         }
                 }
             }

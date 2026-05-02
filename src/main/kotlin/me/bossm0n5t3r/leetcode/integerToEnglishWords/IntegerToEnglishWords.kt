@@ -18,7 +18,10 @@ class IntegerToEnglishWords {
             if (num == TWO_DIGITS_ZEROS || num == THREE_DIGITS_ZEROS) return emptyList()
 
             return when (val number = num.toInt()) {
-                in 0..20 -> listOf(numberToWord[number] ?: error("Not found number: $num"))
+                in 0..20 -> {
+                    listOf(numberToWord[number] ?: error("Not found number: $num"))
+                }
+
                 in 21 until 100 -> {
                     val (first, second) = (number / 10) * 10 to number % 10
 

@@ -13,15 +13,18 @@ class BaseballGame {
                         val newScore = record.takeLast(2).sum()
                         record.add(newScore)
                     }
+
                     "D" -> {
                         // Record a new score that is double the previous score
                         val newScore = record.last() * 2
                         record.add(newScore)
                     }
+
                     "C" -> {
                         // Invalidate the previous score, removing it from the record
                         record.removeLast()
                     }
+
                     else -> {}
                 }
             }

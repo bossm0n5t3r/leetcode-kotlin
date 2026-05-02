@@ -27,12 +27,16 @@ class FractionAdditionAndSubtraction {
         ) {
             operator fun plus(other: Fraction): Fraction =
                 when {
-                    this.denominator == other.denominator -> Fraction(this.numerator + other.numerator, this.denominator)
-                    else ->
+                    this.denominator == other.denominator -> {
+                        Fraction(this.numerator + other.numerator, this.denominator)
+                    }
+
+                    else -> {
                         Fraction(
                             this.numerator * other.denominator + other.numerator * this.denominator,
                             this.denominator * other.denominator,
                         )
+                    }
                 }.makeIrreducible()
 
             override fun toString(): String = "$numerator/$denominator"

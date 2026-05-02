@@ -14,6 +14,7 @@ class ProductOfArrayExceptSelf {
                     }
                     result
                 }
+
                 1 -> {
                     val result = IntArray(nums.size)
                     for (i in nums.indices) {
@@ -24,6 +25,7 @@ class ProductOfArrayExceptSelf {
                     }
                     result
                 }
+
                 else -> {
                     IntArray(nums.size)
                 }
@@ -41,6 +43,7 @@ class ProductOfArrayExceptSelf {
                             return Pair(numOfZeroes, 0)
                         }
                     }
+
                     else -> {
                         productOfArrayExceptZeroes *= num
                     }

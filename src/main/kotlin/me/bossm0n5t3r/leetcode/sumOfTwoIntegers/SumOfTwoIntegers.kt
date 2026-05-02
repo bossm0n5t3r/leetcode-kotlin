@@ -36,6 +36,7 @@ class SumOfTwoIntegers {
                             addition--
                         }
                     }
+
                     charA != charB -> {
                         resultBinaryString =
                             if (addition == 0) {
@@ -44,6 +45,7 @@ class SumOfTwoIntegers {
                                 "0$resultBinaryString"
                             }
                     }
+
                     charA == '1' && charB == '1' -> {
                         if (addition == 0) {
                             resultBinaryString = "0$resultBinaryString"

@@ -61,12 +61,17 @@ class MinimumOperationsToWriteTheLetterYOnAGrid {
                     when {
                         // The diagonal starting at the top-left cell and ending at the center cell of the grid.
                         r == c && r < mid -> onY[cur]++
+
                         // The diagonal starting at the top-right cell and ending at the center cell of the grid.
                         r == n - 1 - c && r < mid -> onY[cur]++
+
                         // The vertical line starting at the center cell and ending at the bottom border of the grid.
                         r >= mid && c == mid -> onY[cur]++
+
                         r < mid && (r < c && c < n - 1 - r) -> upperY[cur]++
+
                         c < mid -> leftY[cur]++
+
                         else -> rightY[cur]++
                     }
                 }

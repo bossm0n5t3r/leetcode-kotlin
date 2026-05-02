@@ -13,7 +13,7 @@ class TrionicArrayI {
                 val isIncreasing = nums[i] > nums[i - 1]
 
                 when (phase) {
-                    0, 1 ->
+                    0, 1 -> {
                         phase =
                             if (isIncreasing) {
                                 1
@@ -22,8 +22,15 @@ class TrionicArrayI {
                             } else {
                                 return false
                             }
-                    2 -> if (isIncreasing) phase = 3 else continue
-                    3 -> if (!isIncreasing) return false
+                    }
+
+                    2 -> {
+                        if (isIncreasing) phase = 3 else continue
+                    }
+
+                    3 -> {
+                        if (!isIncreasing) return false
+                    }
                 }
             }
 

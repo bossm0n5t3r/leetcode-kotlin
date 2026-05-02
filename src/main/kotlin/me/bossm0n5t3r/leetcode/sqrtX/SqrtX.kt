@@ -24,9 +24,11 @@ class SqrtX {
                     mid > remainder -> {
                         right = mid - 1
                     }
+
                     mid < remainder -> {
                         left = mid + 1
                     }
+
                     else -> {
                         return mid
                     }

@@ -17,7 +17,11 @@ class LongestPalindromeByConcatenatingTwoLetterWords {
                                 longestPalindromeString = word
                             }
                         }
-                        count % 2 == 0 -> result += (word.length * count)
+
+                        count % 2 == 0 -> {
+                            result += (word.length * count)
+                        }
+
                         else -> {
                             result += (word.length * (count - 1))
                             if (word.length > longestPalindromeString.length) {

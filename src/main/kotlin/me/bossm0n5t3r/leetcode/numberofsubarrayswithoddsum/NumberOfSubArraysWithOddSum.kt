@@ -20,6 +20,7 @@ class NumberOfSubArraysWithOddSum {
                         dpZero[i] = (1 + dpZero[i + 1]) % mod
                         dpOne[i] = dpOne[i + 1]
                     }
+
                     1 -> {
                         dpOne[i] = (1 + dpZero[i + 1]) % mod
                         dpZero[i] = dpOne[i + 1]

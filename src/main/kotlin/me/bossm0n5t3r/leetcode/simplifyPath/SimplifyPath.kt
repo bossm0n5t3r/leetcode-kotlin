@@ -14,7 +14,11 @@ class SimplifyPath {
                     ".." -> {
                         resultIndex = (resultIndex - 1).coerceAtLeast(0)
                     }
-                    "." -> continue
+
+                    "." -> {
+                        continue
+                    }
+
                     else -> {
                         result[resultIndex++] = cur
                     }

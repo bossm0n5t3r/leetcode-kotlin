@@ -10,6 +10,7 @@ class GreatestEnglishLetterInUpperAndLowerCase {
                     in 'A'..'Z' -> {
                         upperCaseArray[c - 'A'] = true
                     }
+
                     in 'a'..'z' -> {
                         lowerCaseArray[c - 'a'] = true
                     }

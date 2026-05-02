@@ -14,6 +14,7 @@ class MakeStringASubsequenceUsingCyclicIncrements {
                         str1Index++
                         str2Index++
                     }
+
                     else -> {
                         val beforeChar = if (str2[str2Index] == 'a') 'z' else str2[str2Index] - 1
                         if (str1[str1Index] == beforeChar) {

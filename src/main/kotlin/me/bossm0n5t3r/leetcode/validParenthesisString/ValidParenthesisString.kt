@@ -10,10 +10,12 @@ class ValidParenthesisString {
                         leftMin++
                         leftMax++
                     }
+
                     ')' -> {
                         leftMin--
                         leftMax--
                     }
+
                     '*' -> {
                         leftMin--
                         leftMax++

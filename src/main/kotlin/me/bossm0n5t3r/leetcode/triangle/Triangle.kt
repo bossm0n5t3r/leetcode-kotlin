@@ -27,9 +27,11 @@ class Triangle {
                         i -> {
                             cache[j - 1]
                         }
+
                         0 -> {
                             cache[j]
                         }
+
                         else -> {
                             min(cache[j - 1], cache[j])
                         }

@@ -49,6 +49,7 @@ class LongestZigzagPathInABinaryTree {
                             )
                         }
                     }
+
                     Direction.LEFT -> {
                         if (curLeft != null) {
                             stack.push(
@@ -69,6 +70,7 @@ class LongestZigzagPathInABinaryTree {
                             )
                         }
                     }
+
                     Direction.RIGHT -> {
                         if (curLeft != null) {
                             stack.push(

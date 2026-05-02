@@ -18,10 +18,12 @@ class MergeTwo2dArraysBySummingValues {
                         nums1Index++
                         nums2Index++
                     }
+
                     curNum1Id > curNum2Id -> {
                         result += nums2[nums2Index]
                         nums2Index++
                     }
+
                     else -> {
                         result += nums1[nums1Index]
                         nums1Index++

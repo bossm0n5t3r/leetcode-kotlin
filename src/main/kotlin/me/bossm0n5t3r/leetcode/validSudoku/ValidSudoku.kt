@@ -17,6 +17,7 @@ class ValidSudoku {
                         '.' -> {
                             0
                         }
+
                         else -> {
                             e - '0'
                         }
