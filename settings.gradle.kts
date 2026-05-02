@@ -1,1 +1,1 @@
-rootProject.name = "LeetCode"
+rootProject.name = "leetcode-kotlin"
