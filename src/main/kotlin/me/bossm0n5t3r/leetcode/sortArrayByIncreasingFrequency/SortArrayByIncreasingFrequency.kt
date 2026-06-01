@@ -6,7 +6,9 @@ class SortArrayByIncreasingFrequency {
             nums
                 .groupBy { it }
                 .values
-                .sortedWith(compareBy<List<Int>> { it.size }.then(compareByDescending { it.first() }))
+                .sortedWith(
+                    compareBy<List<Int>> { it.size }.then(compareByDescending { it.first() })
+                )
                 .flatten()
                 .toIntArray()
     }

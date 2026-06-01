@@ -15,7 +15,10 @@ internal class LetterCombinationsOfAPhoneNumberTest {
     fun letterCombinations() {
         val tests =
             listOf(
-                LetterCombinationsOfAPhoneNumberTestData("23", listOf("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf")),
+                LetterCombinationsOfAPhoneNumberTestData(
+                    "23",
+                    listOf("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"),
+                ),
                 LetterCombinationsOfAPhoneNumberTestData("", emptyList()),
                 LetterCombinationsOfAPhoneNumberTestData("2", listOf("a", "b", "c")),
             )

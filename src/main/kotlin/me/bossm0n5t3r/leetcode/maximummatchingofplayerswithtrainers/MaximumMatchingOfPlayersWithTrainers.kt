@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.maximummatchingofplayerswithtrainers
 
 class MaximumMatchingOfPlayersWithTrainers {
     class Solution {
-        fun matchPlayersAndTrainers(
-            players: IntArray,
-            trainers: IntArray,
-        ): Int {
+        fun matchPlayersAndTrainers(players: IntArray, trainers: IntArray): Int {
             players.sortDescending()
             trainers.sortDescending()
 

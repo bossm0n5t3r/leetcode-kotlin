@@ -39,21 +39,9 @@ internal class CombinationSum2Test {
                 Example(
                     intArrayOf(10, 1, 2, 7, 6, 1, 5),
                     8,
-                    listOf(
-                        listOf(1, 1, 6),
-                        listOf(1, 2, 5),
-                        listOf(1, 7),
-                        listOf(2, 6),
-                    ),
+                    listOf(listOf(1, 1, 6), listOf(1, 2, 5), listOf(1, 7), listOf(2, 6)),
                 ),
-                Example(
-                    intArrayOf(2, 5, 2, 1, 2),
-                    5,
-                    listOf(
-                        listOf(1, 2, 2),
-                        listOf(5),
-                    ),
-                ),
+                Example(intArrayOf(2, 5, 2, 1, 2), 5, listOf(listOf(1, 2, 2), listOf(5))),
             )
         tests.forEach { test ->
             assertThat(sut.combinationSum2(test.candidates, test.target))

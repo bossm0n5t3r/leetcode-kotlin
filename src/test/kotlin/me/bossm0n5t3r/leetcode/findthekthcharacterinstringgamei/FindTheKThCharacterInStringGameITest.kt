@@ -6,24 +6,14 @@ import org.junit.jupiter.api.Test
 class FindTheKThCharacterInStringGameITest {
     private val sut = FindTheKThCharacterInStringGameI.Solution()
 
-    private data class TestData(
-        val k: Int,
-        val result: Char,
-    )
+    private data class TestData(val k: Int, val result: Char)
 
     @Test
     fun test() {
-        val testDataList =
-            listOf(
-                TestData(5, 'b'),
-                TestData(10, 'c'),
-            )
+        val testDataList = listOf(TestData(5, 'b'), TestData(10, 'c'))
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.kthCharacter(testData.k),
-            )
+            assertEquals(testData.result, sut.kthCharacter(testData.k))
         }
     }
 }

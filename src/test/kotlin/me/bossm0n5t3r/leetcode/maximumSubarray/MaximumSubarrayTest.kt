@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class MaximumSubarrayTest {
     private val maximumSubarray = MaximumSubarray.Solution()
 
-    data class MaximumSubarrayTestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    data class MaximumSubarrayTestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -37,8 +34,6 @@ class MaximumSubarrayTest {
                 MaximumSubarrayTestData(intArrayOf(1), 1),
                 MaximumSubarrayTestData(intArrayOf(5, 4, -1, 7, 8), 23),
             )
-        tests.forEach { test ->
-            assertEquals(maximumSubarray.maxSubArray(test.nums), test.result)
-        }
+        tests.forEach { test -> assertEquals(maximumSubarray.maxSubArray(test.nums), test.result) }
     }
 }

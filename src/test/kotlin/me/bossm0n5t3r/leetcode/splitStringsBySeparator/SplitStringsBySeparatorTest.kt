@@ -26,10 +26,7 @@ class SplitStringsBySeparatorTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.splitWordsBySeparator(test.words, test.separator),
-            )
+            assertEquals(test.result, sut.splitWordsBySeparator(test.words, test.separator))
         }
     }
 }

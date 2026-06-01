@@ -18,7 +18,10 @@ class PathWithMaximumProbability {
                 graph.computeIfAbsent(v) { mutableListOf() }.add(u to succProb[i])
             }
             val dist = DoubleArray(n) { 0.0 }.apply { this[startNode] = 1.0 }
-            val pq = PriorityQueue<Pair<Double, Int>>(compareBy { -it.first }).apply { this.offer(1.0 to startNode) }
+            val pq =
+                PriorityQueue<Pair<Double, Int>>(compareBy { -it.first }).apply {
+                    this.offer(1.0 to startNode)
+                }
             while (pq.isNotEmpty()) {
                 val (prob, node) = pq.poll()
                 if (node == endNode) return prob

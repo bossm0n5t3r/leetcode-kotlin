@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class ValidAnagramTest {
     private val validAnagram = ValidAnagram.Solution()
 
-    data class ValidAnagramTestData(
-        val s: String,
-        val t: String,
-        val result: Boolean,
-    )
+    data class ValidAnagramTestData(val s: String, val t: String, val result: Boolean)
 
     @Test
     fun isAnagram() {
@@ -19,8 +15,6 @@ class ValidAnagramTest {
                 ValidAnagramTestData("anagram", "nagaram", true),
                 ValidAnagramTestData("rat", "car", false),
             )
-        tests.forEach { test ->
-            assertEquals(validAnagram.isAnagram(test.s, test.t), test.result)
-        }
+        tests.forEach { test -> assertEquals(validAnagram.isAnagram(test.s, test.t), test.result) }
     }
 }

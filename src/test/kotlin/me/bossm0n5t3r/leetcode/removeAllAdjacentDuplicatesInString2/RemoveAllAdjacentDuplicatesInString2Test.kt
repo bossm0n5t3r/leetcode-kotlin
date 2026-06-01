@@ -4,7 +4,8 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 internal class RemoveAllAdjacentDuplicatesInString2Test {
-    private val removeAllAdjacentDuplicatesInString2 = RemoveAllAdjacentDuplicatesInString2.Solution()
+    private val removeAllAdjacentDuplicatesInString2 =
+        RemoveAllAdjacentDuplicatesInString2.Solution()
 
     private data class RemoveAllAdjacentDuplicatesInString2TestData(
         val s: String,
@@ -16,21 +17,9 @@ internal class RemoveAllAdjacentDuplicatesInString2Test {
     fun removeDuplicates() {
         val tests =
             listOf(
-                RemoveAllAdjacentDuplicatesInString2TestData(
-                    "abcd",
-                    2,
-                    "abcd",
-                ),
-                RemoveAllAdjacentDuplicatesInString2TestData(
-                    "deeedbbcccbdaa",
-                    3,
-                    "aa",
-                ),
-                RemoveAllAdjacentDuplicatesInString2TestData(
-                    "pbbcggttciiippooaais",
-                    2,
-                    "ps",
-                ),
+                RemoveAllAdjacentDuplicatesInString2TestData("abcd", 2, "abcd"),
+                RemoveAllAdjacentDuplicatesInString2TestData("deeedbbcccbdaa", 3, "aa"),
+                RemoveAllAdjacentDuplicatesInString2TestData("pbbcggttciiippooaais", 2, "ps"),
                 RemoveAllAdjacentDuplicatesInString2TestData(
                     "iiiixxxxxiiccccczzffffflllllllllfffffllyyyyyuuuuuz",
                     5,

@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class CountAndSayTest {
     private val countAndSay = CountAndSay.Solution()
 
-    data class CountAndSayTestData(
-        val n: Int,
-        val result: String,
-    )
+    data class CountAndSayTestData(val n: Int, val result: String)
 
     @Test
     fun countAndSay() {
@@ -19,8 +16,6 @@ class CountAndSayTest {
                 CountAndSayTestData(4, "1211"),
                 CountAndSayTestData(5, "111221"),
             )
-        tests.forEach { test ->
-            assertEquals(countAndSay.countAndSay(test.n), test.result)
-        }
+        tests.forEach { test -> assertEquals(countAndSay.countAndSay(test.n), test.result) }
     }
 }

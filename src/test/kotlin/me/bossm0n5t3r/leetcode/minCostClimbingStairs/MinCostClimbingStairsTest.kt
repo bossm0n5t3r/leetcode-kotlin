@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class MinCostClimbingStairsTest {
     private val sut = MinCostClimbingStairs.Solution()
 
-    private data class TestData(
-        val cost: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val cost: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,21 +31,10 @@ class MinCostClimbingStairsTest {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    cost = "[10,15,20]".toIntArray(),
-                    result = 15,
-                ),
-                TestData(
-                    cost = "[1,100,1,1,1,100,1,1,100,1]".toIntArray(),
-                    result = 6,
-                ),
+                TestData(cost = "[10,15,20]".toIntArray(), result = 15),
+                TestData(cost = "[1,100,1,1,1,100,1,1,100,1]".toIntArray(), result = 6),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.minCostClimbingStairs(test.cost),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.minCostClimbingStairs(test.cost), test.result) }
     }
 }

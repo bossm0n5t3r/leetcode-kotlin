@@ -2,11 +2,7 @@ package me.bossm0n5t3r.leetcode.minimumNumberOfDaysToMakeMBouquets
 
 class MinimumNumberOfDaysToMakeMBouquets {
     class Solution {
-        fun minDays(
-            bloomDay: IntArray,
-            m: Int,
-            k: Int,
-        ): Int {
+        fun minDays(bloomDay: IntArray, m: Int, k: Int): Int {
             if (m * k > bloomDay.size) return -1
             var left = 1
             var right = requireNotNull(bloomDay.maxOrNull())
@@ -21,12 +17,7 @@ class MinimumNumberOfDaysToMakeMBouquets {
             return if (canMake(bloomDay, m, k, left)) left else -1
         }
 
-        private fun canMake(
-            bloomDayArray: IntArray,
-            m: Int,
-            k: Int,
-            days: Int,
-        ): Boolean {
+        private fun canMake(bloomDayArray: IntArray, m: Int, k: Int, days: Int): Boolean {
             var bouquets = 0
             var flowers = 0
             for (bloomDay in bloomDayArray) {

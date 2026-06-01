@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.minimumCommonValue
 
 class MinimumCommonValue {
     class Solution {
-        fun getCommon(
-            nums1: IntArray,
-            nums2: IntArray,
-        ): Int {
+        fun getCommon(nums1: IntArray, nums2: IntArray): Int {
             var num1Idx = 0
             var num2Idx = 0
 

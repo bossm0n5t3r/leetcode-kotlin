@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.longestCommonSubsequence
 
 class LongestCommonSubsequence {
     class Solution {
-        fun longestCommonSubsequence(
-            text1: String,
-            text2: String,
-        ): Int {
+        fun longestCommonSubsequence(text1: String, text2: String): Int {
             val dp = Array(text1.length + 1) { IntArray(text2.length + 1) }
             for (r in 1..text1.length) {
                 for (c in 1..text2.length) {
@@ -16,10 +13,7 @@ class LongestCommonSubsequence {
                             }
 
                             else -> {
-                                maxOf(
-                                    dp[r - 1][c],
-                                    dp[r][c - 1],
-                                )
+                                maxOf(dp[r - 1][c], dp[r][c - 1])
                             }
                         }
                 }

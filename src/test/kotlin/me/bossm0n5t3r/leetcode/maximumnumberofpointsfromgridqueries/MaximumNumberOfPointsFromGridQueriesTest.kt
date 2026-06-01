@@ -43,7 +43,11 @@ class MaximumNumberOfPointsFromGridQueriesTest {
                     "[5,6,2]".toIntArray(),
                     "[5,8,1]".toIntArray(),
                 ),
-                TestData("[[5,2,1],[1,1,2]]".toArrayOfIntArray(), "[3]".toIntArray(), "[0]".toIntArray()),
+                TestData(
+                    "[[5,2,1],[1,1,2]]".toArrayOfIntArray(),
+                    "[3]".toIntArray(),
+                    "[0]".toIntArray(),
+                ),
             )
 
         for (testData in testDataList) {

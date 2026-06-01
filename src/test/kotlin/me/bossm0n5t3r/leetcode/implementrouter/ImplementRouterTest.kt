@@ -13,9 +13,7 @@ class ImplementRouterTest {
         assertEquals(false, router.addPacket(1, 4, 90))
         assertEquals(true, router.addPacket(3, 5, 95))
         assertEquals(true, router.addPacket(4, 5, 105))
-        assertTrue {
-            intArrayOf(2, 5, 90).contentEquals(router.forwardPacket())
-        }
+        assertTrue { intArrayOf(2, 5, 90).contentEquals(router.forwardPacket()) }
         assertEquals(true, router.addPacket(5, 2, 110))
         assertEquals(1, router.getCount(5, 100, 110))
     }
@@ -24,12 +22,8 @@ class ImplementRouterTest {
     fun test1() {
         val router = ImplementRouter.Router(2)
         assertEquals(true, router.addPacket(7, 4, 90))
-        assertTrue {
-            intArrayOf(7, 4, 90).contentEquals(router.forwardPacket())
-        }
-        assertTrue {
-            intArrayOf().contentEquals(router.forwardPacket())
-        }
+        assertTrue { intArrayOf(7, 4, 90).contentEquals(router.forwardPacket()) }
+        assertTrue { intArrayOf().contentEquals(router.forwardPacket()) }
     }
 
     @Test

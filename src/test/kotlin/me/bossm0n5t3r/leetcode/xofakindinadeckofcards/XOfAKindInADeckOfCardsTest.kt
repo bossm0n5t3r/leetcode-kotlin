@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class XOfAKindInADeckOfCardsTest {
     private val sut = XOfAKindInADeckOfCards.Solution()
 
-    private data class TestData(
-        val deck: IntArray,
-        val result: Boolean,
-    ) {
+    private data class TestData(val deck: IntArray, val result: Boolean) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,10 +35,7 @@ class XOfAKindInADeckOfCardsTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.hasGroupsSizeX(testData.deck),
-            )
+            assertEquals(testData.result, sut.hasGroupsSizeX(testData.deck))
         }
     }
 }

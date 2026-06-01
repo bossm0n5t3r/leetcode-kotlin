@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.combinationSum3
 
 class CombinationSum3 {
     class Solution {
-        fun combinationSum3(
-            k: Int,
-            n: Int,
-        ): List<List<Int>> {
+        fun combinationSum3(k: Int, n: Int): List<List<Int>> {
             val result = mutableListOf<MutableList<Int>>()
             backtrack(result, mutableListOf(), k, n, 1)
             return result

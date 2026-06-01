@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class MaximizeHappinessOfSelectedChildrenTest {
     private val sut = MaximizeHappinessOfSelectedChildren.Solution()
 
-    private data class TestData(
-        val happiness: IntArray,
-        val k: Int,
-        val result: Long,
-    ) {
+    private data class TestData(val happiness: IntArray, val k: Int, val result: Long) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -42,10 +38,7 @@ class MaximizeHappinessOfSelectedChildrenTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.maximumHappinessSum(test.happiness, test.k),
-            )
+            assertEquals(test.result, sut.maximumHappinessSum(test.happiness, test.k))
         }
     }
 }

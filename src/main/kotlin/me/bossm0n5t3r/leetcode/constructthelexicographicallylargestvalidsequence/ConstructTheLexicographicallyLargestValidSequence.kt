@@ -10,12 +10,7 @@ class ConstructTheLexicographicallyLargestValidSequence {
             val isNumberUsed = BooleanArray(targetNumber + 1)
 
             // Start recursive backtracking to construct the sequence
-            findLexicographicallyLargestSequence(
-                0,
-                resultSequence,
-                isNumberUsed,
-                targetNumber,
-            )
+            findLexicographicallyLargestSequence(0, resultSequence, isNumberUsed, targetNumber)
 
             return resultSequence
         }
@@ -34,7 +29,12 @@ class ConstructTheLexicographicallyLargestValidSequence {
 
             // If the current position is already filled, move to the next index
             if (resultSequence[currentIndex] != 0) {
-                return findLexicographicallyLargestSequence(currentIndex + 1, resultSequence, isNumberUsed, targetNumber)
+                return findLexicographicallyLargestSequence(
+                    currentIndex + 1,
+                    resultSequence,
+                    isNumberUsed,
+                    targetNumber,
+                )
             }
 
             // Attempt to place numbers from targetNumber to 1 for a
@@ -47,13 +47,30 @@ class ConstructTheLexicographicallyLargestValidSequence {
 
                 // If placing number 1, move to the next index directly
                 if (numberToPlace == 1) {
-                    if (findLexicographicallyLargestSequence(currentIndex + 1, resultSequence, isNumberUsed, targetNumber)) {
+                    if (
+                        findLexicographicallyLargestSequence(
+                            currentIndex + 1,
+                            resultSequence,
+                            isNumberUsed,
+                            targetNumber,
+                        )
+                    ) {
                         return true
                     }
-                } else if (currentIndex + numberToPlace < resultSequence.size && resultSequence[currentIndex + numberToPlace] == 0) {
+                } else if (
+                    currentIndex + numberToPlace < resultSequence.size &&
+                        resultSequence[currentIndex + numberToPlace] == 0
+                ) {
                     resultSequence[currentIndex + numberToPlace] = numberToPlace
 
-                    if (findLexicographicallyLargestSequence(currentIndex + 1, resultSequence, isNumberUsed, targetNumber)) {
+                    if (
+                        findLexicographicallyLargestSequence(
+                            currentIndex + 1,
+                            resultSequence,
+                            isNumberUsed,
+                            targetNumber,
+                        )
+                    ) {
                         return true
                     }
 

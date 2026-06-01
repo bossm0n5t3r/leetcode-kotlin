@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 internal class ContainerWithMostWaterTest {
     private val containerWithMostWater = ContainerWithMostWater.Solution()
 
-    private data class ContainerWithMostWaterTestData(
-        val height: IntArray,
-        val result: Int,
-    ) {
+    private data class ContainerWithMostWaterTestData(val height: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -31,18 +28,9 @@ internal class ContainerWithMostWaterTest {
     fun maxArea() {
         val tests =
             listOf(
-                ContainerWithMostWaterTestData(
-                    intArrayOf(1, 8, 6, 2, 5, 4, 8, 3, 7),
-                    49,
-                ),
-                ContainerWithMostWaterTestData(
-                    intArrayOf(1, 1),
-                    1,
-                ),
-                ContainerWithMostWaterTestData(
-                    intArrayOf(1, 2, 1),
-                    2,
-                ),
+                ContainerWithMostWaterTestData(intArrayOf(1, 8, 6, 2, 5, 4, 8, 3, 7), 49),
+                ContainerWithMostWaterTestData(intArrayOf(1, 1), 1),
+                ContainerWithMostWaterTestData(intArrayOf(1, 2, 1), 2),
             )
         tests.forEach { test ->
             println(containerWithMostWater.maxArea(test.height))

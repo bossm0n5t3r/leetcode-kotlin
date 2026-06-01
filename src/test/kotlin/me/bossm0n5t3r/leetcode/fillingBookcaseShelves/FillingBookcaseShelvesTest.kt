@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class FillingBookcaseShelvesTest {
     private val sut = FillingBookcaseShelves.Solution()
 
-    private data class TestData(
-        val books: Array<IntArray>,
-        val shelfWidth: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val books: Array<IntArray>, val shelfWidth: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -42,10 +38,7 @@ class FillingBookcaseShelvesTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.minHeightShelves(test.books, test.shelfWidth),
-            )
+            assertEquals(test.result, sut.minHeightShelves(test.books, test.shelfWidth))
         }
     }
 }

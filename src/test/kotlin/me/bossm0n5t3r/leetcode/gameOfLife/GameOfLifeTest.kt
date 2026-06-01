@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class GameOfLifeTest {
     private val gameOfLife = GameOfLife.Solution()
 
-    data class GameOfLifeTestData(
-        val board: Array<IntArray>,
-        val result: Array<IntArray>,
-    ) {
+    data class GameOfLifeTestData(val board: Array<IntArray>, val result: Array<IntArray>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,8 +31,18 @@ class GameOfLifeTest {
         val tests =
             listOf(
                 GameOfLifeTestData(
-                    arrayOf(intArrayOf(0, 1, 0), intArrayOf(0, 0, 1), intArrayOf(1, 1, 1), intArrayOf(0, 0, 0)),
-                    arrayOf(intArrayOf(0, 0, 0), intArrayOf(1, 0, 1), intArrayOf(0, 1, 1), intArrayOf(0, 1, 0)),
+                    arrayOf(
+                        intArrayOf(0, 1, 0),
+                        intArrayOf(0, 0, 1),
+                        intArrayOf(1, 1, 1),
+                        intArrayOf(0, 0, 0),
+                    ),
+                    arrayOf(
+                        intArrayOf(0, 0, 0),
+                        intArrayOf(1, 0, 1),
+                        intArrayOf(0, 1, 1),
+                        intArrayOf(0, 1, 0),
+                    ),
                 ),
                 GameOfLifeTestData(
                     arrayOf(intArrayOf(1, 1), intArrayOf(1, 0)),

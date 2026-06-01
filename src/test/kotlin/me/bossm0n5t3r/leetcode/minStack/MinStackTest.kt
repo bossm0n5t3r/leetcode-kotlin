@@ -18,8 +18,26 @@ class MinStackTest {
                 MinStackTestData(
                     input =
                         Pair(
-                            listOf("MinStack", "push", "push", "push", "getMin", "pop", "top", "getMin"),
-                            listOf(listOf(), listOf(-2), listOf(0), listOf(-3), listOf(), listOf(), listOf(), listOf()),
+                            listOf(
+                                "MinStack",
+                                "push",
+                                "push",
+                                "push",
+                                "getMin",
+                                "pop",
+                                "top",
+                                "getMin",
+                            ),
+                            listOf(
+                                listOf(),
+                                listOf(-2),
+                                listOf(0),
+                                listOf(-3),
+                                listOf(),
+                                listOf(),
+                                listOf(),
+                                listOf(),
+                            ),
                         ),
                     output = listOf(null, null, null, null, -3, null, 0, -2),
                 ),

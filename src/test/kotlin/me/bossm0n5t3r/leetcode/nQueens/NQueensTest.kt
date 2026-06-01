@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 internal class NQueensTest {
     private val nQueens = NQueens.Solution()
 
-    private data class NQueensTestData(
-        val n: Int,
-        val result: List<List<String>>,
-    )
+    private data class NQueensTestData(val n: Int, val result: List<List<String>>)
 
     @Test
     fun solveNQueens() {
@@ -22,21 +19,13 @@ internal class NQueensTest {
                         listOf("..Q.", "Q...", "...Q", ".Q.."),
                     ),
                 ),
-                NQueensTestData(
-                    1,
-                    listOf(
-                        listOf("Q"),
-                    ),
-                ),
+                NQueensTestData(1, listOf(listOf("Q"))),
             )
         tests.forEach { test ->
-            nQueens
-                .solveNQueens(test.n)
-                .also {
-                    println(it)
-                    assertThat(it)
-                        .containsExactlyInAnyOrderElementsOf(test.result)
-                }
+            nQueens.solveNQueens(test.n).also {
+                println(it)
+                assertThat(it).containsExactlyInAnyOrderElementsOf(test.result)
+            }
         }
         println(nQueens.solveNQueens(8))
     }

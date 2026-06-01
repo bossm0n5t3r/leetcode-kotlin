@@ -1,8 +1,8 @@
 package me.bossm0n5t3r.leetcode.symmetricTree
 
-import me.bossm0n5t3r.leetcode.utils.TreeNode
 import java.util.LinkedList
 import java.util.Queue
+import me.bossm0n5t3r.leetcode.utils.TreeNode
 
 class SymmetricTree {
     class Solution {

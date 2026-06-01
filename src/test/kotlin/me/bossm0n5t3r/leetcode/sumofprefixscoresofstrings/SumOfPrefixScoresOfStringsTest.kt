@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class SumOfPrefixScoresOfStringsTest {
     private val sut = SumOfPrefixScoresOfStrings.Solution()
 
-    private data class TestData(
-        val words: Array<String>,
-        val result: IntArray,
-    ) {
+    private data class TestData(val words: Array<String>, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,10 +35,7 @@ class SumOfPrefixScoresOfStringsTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result.toList(),
-                sut.sumPrefixScores(testData.words).toList(),
-            )
+            assertEquals(testData.result.toList(), sut.sumPrefixScores(testData.words).toList())
         }
     }
 }

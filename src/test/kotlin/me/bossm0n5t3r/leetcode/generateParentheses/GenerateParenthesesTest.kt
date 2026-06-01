@@ -7,16 +7,16 @@ import org.junit.jupiter.api.Test
 class GenerateParenthesesTest {
     private val generateParentheses = GenerateParentheses.Solution()
 
-    data class GenerateParenthesesTestData(
-        val n: Int,
-        val result: List<String>,
-    )
+    data class GenerateParenthesesTestData(val n: Int, val result: List<String>)
 
     @Test
     fun generateParenthesis() {
         val tests =
             listOf(
-                GenerateParenthesesTestData(3, listOf("((()))", "(()())", "(())()", "()(())", "()()()")),
+                GenerateParenthesesTestData(
+                    3,
+                    listOf("((()))", "(()())", "(())()", "()(())", "()()()"),
+                ),
                 GenerateParenthesesTestData(1, listOf("()")),
             )
         tests.forEach { test ->

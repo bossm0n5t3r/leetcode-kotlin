@@ -4,10 +4,7 @@ import kotlin.math.min
 
 class CoinChange {
     class Solution {
-        fun coinChange(
-            coins: IntArray,
-            amount: Int,
-        ): Int {
+        fun coinChange(coins: IntArray, amount: Int): Int {
             if (amount == 0) return 0
             val max = amount + 1
             val dp = IntArray(amount + 1) { max }

@@ -11,10 +11,7 @@ class NAryTreePostorderTraversal {
             return result.filterNotNull()
         }
 
-        private fun traversal(
-            children: List<Node?>?,
-            result: MutableList<Int?>,
-        ) {
+        private fun traversal(children: List<Node?>?, result: MutableList<Int?>) {
             if (children == null) return
             for (child in children) {
                 traversal(child?.children, result)

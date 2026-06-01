@@ -43,8 +43,20 @@ class CountUnguardedCellsInTheGridTest {
     fun test() {
         val testDataList =
             listOf(
-                TestData(4, 6, "[[0,0],[1,1],[2,3]]".toArrayOfIntArray(), "[[0,1],[2,2],[1,4]]".toArrayOfIntArray(), 7),
-                TestData(3, 3, "[[1,1]]".toArrayOfIntArray(), "[[0,1],[1,0],[2,1],[1,2]]".toArrayOfIntArray(), 4),
+                TestData(
+                    4,
+                    6,
+                    "[[0,0],[1,1],[2,3]]".toArrayOfIntArray(),
+                    "[[0,1],[2,2],[1,4]]".toArrayOfIntArray(),
+                    7,
+                ),
+                TestData(
+                    3,
+                    3,
+                    "[[1,1]]".toArrayOfIntArray(),
+                    "[[0,1],[1,0],[2,1],[1,2]]".toArrayOfIntArray(),
+                    4,
+                ),
             )
 
         for (testData in testDataList) {

@@ -5,13 +5,10 @@ import java.util.Queue
 
 class OpenTheLock {
     class Solution {
-        private data class Lock(
-            val first: Int,
-            val second: Int,
-            val third: Int,
-            val fourth: Int,
-        ) {
-            constructor(str: String) : this(
+        private data class Lock(val first: Int, val second: Int, val third: Int, val fourth: Int) {
+            constructor(
+                str: String
+            ) : this(
                 str[0].toString().toInt(),
                 str[1].toString().toInt(),
                 str[2].toString().toInt(),
@@ -35,12 +32,10 @@ class OpenTheLock {
             fun isEqualTo(target: String) = this.toString() == target
         }
 
-        fun openLock(
-            deadends: Array<String>,
-            target: String,
-        ): Int {
+        fun openLock(deadends: Array<String>, target: String): Int {
             val deadEndSet = deadends.toSet()
-            val queue: Queue<Pair<Lock, Int>> = LinkedList<Pair<Lock, Int>>().apply { this.offer(Lock("0000") to 0) }
+            val queue: Queue<Pair<Lock, Int>> =
+                LinkedList<Pair<Lock, Int>>().apply { this.offer(Lock("0000") to 0) }
             val visited = mutableSetOf<String>()
             while (queue.isNotEmpty()) {
                 val (cur, count) = queue.poll()
@@ -53,7 +48,9 @@ class OpenTheLock {
                 visited.add(cur.toString())
                 for (next in cur.nextLocks()) {
                     val nextString = next.toString()
-                    if (visited.contains(nextString).not() && deadEndSet.contains(nextString).not()) {
+                    if (
+                        visited.contains(nextString).not() && deadEndSet.contains(nextString).not()
+                    ) {
                         visited.add(nextString)
                         queue.offer(next to count + 1)
                     }

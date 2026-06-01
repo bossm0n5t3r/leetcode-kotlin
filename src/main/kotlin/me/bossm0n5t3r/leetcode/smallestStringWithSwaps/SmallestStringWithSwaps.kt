@@ -4,10 +4,7 @@ import java.util.PriorityQueue
 
 class SmallestStringWithSwaps {
     class Solution {
-        fun smallestStringWithSwaps(
-            s: String,
-            pairs: List<List<Int>>,
-        ): String {
+        fun smallestStringWithSwaps(s: String, pairs: List<List<Int>>): String {
             val node = IntArray(s.length) { it }
             pairs.forEach { (x, y) -> union(node, x, y) }
             val map = mutableMapOf<Int, PriorityQueue<Char>>()
@@ -25,10 +22,7 @@ class SmallestStringWithSwaps {
             return String(result)
         }
 
-        private fun find(
-            node: IntArray,
-            x: Int,
-        ): Int =
+        private fun find(node: IntArray, x: Int): Int =
             if (node[x] == x) {
                 x
             } else {
@@ -36,11 +30,7 @@ class SmallestStringWithSwaps {
                 node[x]
             }
 
-        private fun union(
-            node: IntArray,
-            x: Int,
-            y: Int,
-        ) {
+        private fun union(node: IntArray, x: Int, y: Int) {
             val xRoot = find(node, x)
             val yRoot = find(node, y)
             if (xRoot == yRoot) return

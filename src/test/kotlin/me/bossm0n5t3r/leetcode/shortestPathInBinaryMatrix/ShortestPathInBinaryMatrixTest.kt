@@ -33,45 +33,25 @@ internal class ShortestPathInBinaryMatrixTest {
     fun shortestPathBinaryMatrix() {
         val tests =
             listOf(
+                ShortestPathInBinaryMatrixTestData(arrayOf(intArrayOf(0, 1), intArrayOf(1, 0)), 2),
                 ShortestPathInBinaryMatrixTestData(
-                    arrayOf(
-                        intArrayOf(0, 1),
-                        intArrayOf(1, 0),
-                    ),
-                    2,
-                ),
-                ShortestPathInBinaryMatrixTestData(
-                    arrayOf(
-                        intArrayOf(0, 0, 0),
-                        intArrayOf(1, 1, 0),
-                        intArrayOf(1, 1, 0),
-                    ),
+                    arrayOf(intArrayOf(0, 0, 0), intArrayOf(1, 1, 0), intArrayOf(1, 1, 0)),
                     4,
                 ),
                 ShortestPathInBinaryMatrixTestData(
-                    arrayOf(
-                        intArrayOf(1, 0, 0),
-                        intArrayOf(1, 1, 0),
-                        intArrayOf(1, 1, 0),
-                    ),
+                    arrayOf(intArrayOf(1, 0, 0), intArrayOf(1, 1, 0), intArrayOf(1, 1, 0)),
                     -1,
                 ),
                 ShortestPathInBinaryMatrixTestData(
-                    arrayOf(
-                        intArrayOf(0, 0, 0),
-                        intArrayOf(1, 0, 0),
-                        intArrayOf(1, 1, 0),
-                    ),
+                    arrayOf(intArrayOf(0, 0, 0), intArrayOf(1, 0, 0), intArrayOf(1, 1, 0)),
                     3,
                 ),
             )
         tests.forEach { test ->
-            shortestPathInBinaryMatrix
-                .shortestPathBinaryMatrix(test.grid)
-                .also {
-                    println(it)
-                    assertEquals(it, test.result)
-                }
+            shortestPathInBinaryMatrix.shortestPathBinaryMatrix(test.grid).also {
+                println(it)
+                assertEquals(it, test.result)
+            }
         }
     }
 }

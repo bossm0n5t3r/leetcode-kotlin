@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class LongestZigzagPathInABinaryTreeTest {
     private val sut = LongestZigzagPathInABinaryTree.Solution()
 
-    private data class TestData(
-        val root: TreeNode?,
-        val result: Int,
-    )
+    private data class TestData(val root: TreeNode?, val result: Int)
 
     @Test
     fun test() {
@@ -20,25 +17,20 @@ class LongestZigzagPathInABinaryTreeTest {
                 TestData(
                     root =
                         TreeNodeUtil.generateTreeNodeOrNull(
-                            listOf(1, null, 1, 1, 1, null, null, 1, 1, null, 1, null, null, null, 1),
+                            listOf(1, null, 1, 1, 1, null, null, 1, 1, null, 1, null, null, null, 1)
                         ),
                     result = 3,
                 ),
                 TestData(
-                    root = TreeNodeUtil.generateTreeNodeOrNull(listOf(1, 1, 1, null, 1, null, null, 1, 1, null, 1)),
+                    root =
+                        TreeNodeUtil.generateTreeNodeOrNull(
+                            listOf(1, 1, 1, null, 1, null, null, 1, 1, null, 1)
+                        ),
                     result = 4,
                 ),
-                TestData(
-                    root = TreeNodeUtil.generateTreeNodeOrNull(listOf(1)),
-                    result = 0,
-                ),
+                TestData(root = TreeNodeUtil.generateTreeNodeOrNull(listOf(1)), result = 0),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.longestZigZag(test.root),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.longestZigZag(test.root), test.result) }
     }
 }

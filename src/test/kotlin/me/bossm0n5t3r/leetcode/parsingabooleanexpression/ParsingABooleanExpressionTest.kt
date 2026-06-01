@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class ParsingABooleanExpressionTest {
     private val sut = ParsingABooleanExpression.Solution()
 
-    private data class TestData(
-        val expression: String,
-        val result: Boolean,
-    )
+    private data class TestData(val expression: String, val result: Boolean)
 
     @Test
     fun test() {
@@ -21,10 +18,7 @@ class ParsingABooleanExpressionTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.parseBoolExpr(testData.expression),
-            )
+            assertEquals(testData.result, sut.parseBoolExpr(testData.expression))
         }
     }
 }

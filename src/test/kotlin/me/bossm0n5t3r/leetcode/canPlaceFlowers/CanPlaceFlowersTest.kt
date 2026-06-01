@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class CanPlaceFlowersTest {
     private val sut = CanPlaceFlowers.Solution()
 
-    private data class TestData(
-        val flowerbed: IntArray,
-        val n: Int,
-        val result: Boolean,
-    ) {
+    private data class TestData(val flowerbed: IntArray, val n: Int, val result: Boolean) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,23 +30,12 @@ class CanPlaceFlowersTest {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    intArrayOf(1, 0, 0, 0, 1),
-                    1,
-                    true,
-                ),
-                TestData(
-                    intArrayOf(1, 0, 0, 0, 1),
-                    2,
-                    false,
-                ),
+                TestData(intArrayOf(1, 0, 0, 0, 1), 1, true),
+                TestData(intArrayOf(1, 0, 0, 0, 1), 2, false),
             )
 
         tests.forEach { test ->
-            assertEquals(
-                sut.canPlaceFlowers(test.flowerbed, test.n),
-                test.result,
-            )
+            assertEquals(sut.canPlaceFlowers(test.flowerbed, test.n), test.result)
         }
     }
 }

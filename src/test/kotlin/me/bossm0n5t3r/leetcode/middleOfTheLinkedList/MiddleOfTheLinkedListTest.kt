@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class MiddleOfTheLinkedListTest {
     private val sut = MiddleOfTheLinkedList.Solution()
 
-    private data class TestData(
-        val head: ListNode?,
-        val result: ListNode?,
-    )
+    private data class TestData(val head: ListNode?, val result: ListNode?)
 
     @Test
     fun test() {

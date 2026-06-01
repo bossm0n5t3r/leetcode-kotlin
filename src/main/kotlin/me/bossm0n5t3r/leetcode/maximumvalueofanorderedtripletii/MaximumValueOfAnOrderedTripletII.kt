@@ -6,9 +6,11 @@ class MaximumValueOfAnOrderedTripletII {
             val prefixMax = LongArray(nums.size)
             val suffixMax = LongArray(nums.size)
             for (i in nums.indices) {
-                prefixMax[i] = if (i == 0) nums[i].toLong() else maxOf(prefixMax[i - 1], nums[i].toLong())
+                prefixMax[i] =
+                    if (i == 0) nums[i].toLong() else maxOf(prefixMax[i - 1], nums[i].toLong())
                 suffixMax[nums.size - 1 - i] =
-                    if (i == 0) nums[nums.size - 1].toLong() else maxOf(suffixMax[nums.size - i], nums[nums.size - 1 - i].toLong())
+                    if (i == 0) nums[nums.size - 1].toLong()
+                    else maxOf(suffixMax[nums.size - i], nums[nums.size - 1 - i].toLong())
             }
             var result = 0L
             for (j in 1 until nums.size - 1) {

@@ -6,39 +6,18 @@ import org.junit.jupiter.api.Test
 internal class LongestPalindromicSubstringTest {
     private val longestPalindromicSubstring = LongestPalindromicSubstring.Solution()
 
-    private data class LongestPalindromicSubstringTestData(
-        val s: String,
-        val result: String,
-    )
+    private data class LongestPalindromicSubstringTestData(val s: String, val result: String)
 
     @Test
     fun longestPalindrome() {
         val tests =
             listOf(
-                LongestPalindromicSubstringTestData(
-                    "babad",
-                    "bab",
-                ),
-                LongestPalindromicSubstringTestData(
-                    "cbbd",
-                    "bb",
-                ),
-                LongestPalindromicSubstringTestData(
-                    "a",
-                    "a",
-                ),
-                LongestPalindromicSubstringTestData(
-                    "ac",
-                    "a",
-                ),
-                LongestPalindromicSubstringTestData(
-                    "ccc",
-                    "ccc",
-                ),
-                LongestPalindromicSubstringTestData(
-                    "aaaa",
-                    "aaaa",
-                ),
+                LongestPalindromicSubstringTestData("babad", "bab"),
+                LongestPalindromicSubstringTestData("cbbd", "bb"),
+                LongestPalindromicSubstringTestData("a", "a"),
+                LongestPalindromicSubstringTestData("ac", "a"),
+                LongestPalindromicSubstringTestData("ccc", "ccc"),
+                LongestPalindromicSubstringTestData("aaaa", "aaaa"),
             )
         tests.forEach { test ->
             println(longestPalindromicSubstring.longestPalindrome(test.s))

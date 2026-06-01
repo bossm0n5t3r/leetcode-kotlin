@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.reorderRoutesToMakeAllPathsLeadToTheCityZero
 
 class ReorderRoutesToMakeAllPathsLeadToTheCityZero {
     class Solution {
-        fun minReorder(
-            n: Int,
-            connections: Array<IntArray>,
-        ): Int {
+        fun minReorder(n: Int, connections: Array<IntArray>): Int {
             val edges = Array<MutableList<Pair<Int, Boolean>>>(n) { mutableListOf() }
             for ((from, to) in connections) {
                 edges[from].add(to to true)

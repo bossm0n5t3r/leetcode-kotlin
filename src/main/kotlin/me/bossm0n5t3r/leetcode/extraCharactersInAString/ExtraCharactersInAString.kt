@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.extraCharactersInAString
 
 class ExtraCharactersInAString {
     class Solution {
-        fun minExtraChar(
-            s: String,
-            dictionary: Array<String>,
-        ): Int {
+        fun minExtraChar(s: String, dictionary: Array<String>): Int {
             val set = dictionary.toSet()
             val dp = IntArray(s.length + 1) { s.length + 1 }
             dp[0] = 0

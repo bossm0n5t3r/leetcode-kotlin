@@ -39,25 +39,14 @@ internal class FourSumTest {
                 FourSumTestData(
                     intArrayOf(1, 0, -1, 0, -2, 2),
                     0,
-                    listOf(
-                        listOf(-2, -1, 1, 2),
-                        listOf(-2, 0, 0, 2),
-                        listOf(-1, 0, 0, 1),
-                    ),
+                    listOf(listOf(-2, -1, 1, 2), listOf(-2, 0, 0, 2), listOf(-1, 0, 0, 1)),
                 ),
-                FourSumTestData(
-                    intArrayOf(2, 2, 2, 2, 2),
-                    8,
-                    listOf(
-                        listOf(2, 2, 2, 2),
-                    ),
-                ),
+                FourSumTestData(intArrayOf(2, 2, 2, 2, 2), 8, listOf(listOf(2, 2, 2, 2))),
             )
         tests.forEach { test ->
             val result = fourSum.fourSum(test.nums, test.target)
             println(result)
-            assertThat(result)
-                .containsExactlyInAnyOrderElementsOf(test.result)
+            assertThat(result).containsExactlyInAnyOrderElementsOf(test.result)
         }
     }
 }

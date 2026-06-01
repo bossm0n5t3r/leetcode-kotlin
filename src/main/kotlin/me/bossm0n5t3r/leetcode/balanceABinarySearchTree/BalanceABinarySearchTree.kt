@@ -11,21 +11,14 @@ class BalanceABinarySearchTree {
             return generateBalanceBST(0, result.size - 1, result)
         }
 
-        private fun getAllNodesFromRootInOrderTraversal(
-            root: TreeNode?,
-            result: MutableList<Int>,
-        ) {
+        private fun getAllNodesFromRootInOrderTraversal(root: TreeNode?, result: MutableList<Int>) {
             if (root == null) return
             getAllNodesFromRootInOrderTraversal(root.left, result)
             result.add(root.`val`)
             getAllNodesFromRootInOrderTraversal(root.right, result)
         }
 
-        private fun generateBalanceBST(
-            start: Int,
-            end: Int,
-            allNodeList: List<Int>,
-        ): TreeNode? {
+        private fun generateBalanceBST(start: Int, end: Int, allNodeList: List<Int>): TreeNode? {
             if (start > end) return null
             if (start == end) return TreeNode(allNodeList[start])
             val mid = (start + end) / 2

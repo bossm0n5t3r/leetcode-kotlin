@@ -41,11 +41,7 @@ class EvaluateDivisionTest {
         val tests =
             listOf(
                 TestData(
-                    equations =
-                        listOf(
-                            listOf("a", "b"),
-                            listOf("b", "c"),
-                        ),
+                    equations = listOf(listOf("a", "b"), listOf("b", "c")),
                     values = doubleArrayOf(2.0, 3.0),
                     queries =
                         listOf(
@@ -58,12 +54,7 @@ class EvaluateDivisionTest {
                     result = doubleArrayOf(6.00000, 0.50000, -1.00000, 1.00000, -1.00000),
                 ),
                 TestData(
-                    equations =
-                        listOf(
-                            listOf("a", "b"),
-                            listOf("b", "c"),
-                            listOf("bc", "cd"),
-                        ),
+                    equations = listOf(listOf("a", "b"), listOf("b", "c"), listOf("bc", "cd")),
                     values = doubleArrayOf(1.5, 2.5, 5.0),
                     queries =
                         listOf(
@@ -75,10 +66,7 @@ class EvaluateDivisionTest {
                     result = doubleArrayOf(3.75000, 0.40000, 5.00000, 0.20000),
                 ),
                 TestData(
-                    equations =
-                        listOf(
-                            listOf("a", "b"),
-                        ),
+                    equations = listOf(listOf("a", "b")),
                     values = doubleArrayOf(0.5),
                     queries =
                         listOf(
@@ -90,18 +78,9 @@ class EvaluateDivisionTest {
                     result = doubleArrayOf(0.50000, 2.00000, -1.00000, -1.00000),
                 ),
                 TestData(
-                    equations =
-                        listOf(
-                            listOf("a", "e"),
-                            listOf("b", "e"),
-                        ),
+                    equations = listOf(listOf("a", "e"), listOf("b", "e")),
                     values = doubleArrayOf(4.0, 3.0),
-                    queries =
-                        listOf(
-                            listOf("a", "b"),
-                            listOf("e", "e"),
-                            listOf("x", "x"),
-                        ),
+                    queries = listOf(listOf("a", "b"), listOf("e", "e"), listOf("x", "x")),
                     result = doubleArrayOf(1.3333333333333333, 1.00000, -1.00000),
                 ),
             )

@@ -6,20 +6,11 @@ import org.junit.jupiter.api.Test
 class LongestHappyStringTest {
     private val sut = LongestHappyString.Solution()
 
-    private data class TestData(
-        val a: Int,
-        val b: Int,
-        val c: Int,
-        val result: String,
-    )
+    private data class TestData(val a: Int, val b: Int, val c: Int, val result: String)
 
     @Test
     fun test() {
-        val testDataList =
-            listOf(
-                TestData(1, 1, 7, "ccaccbcc"),
-                TestData(7, 1, 0, "aabaa"),
-            )
+        val testDataList = listOf(TestData(1, 1, 7, "ccaccbcc"), TestData(7, 1, 0, "aabaa"))
 
         for (testData in testDataList) {
             assertEquals(

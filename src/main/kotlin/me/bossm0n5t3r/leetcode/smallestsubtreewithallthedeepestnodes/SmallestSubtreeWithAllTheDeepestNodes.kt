@@ -16,10 +16,7 @@ class SmallestSubtreeWithAllTheDeepestNodes {
             }
         }
 
-        private fun deepestLeaves(
-            root: TreeNode?,
-            curLevel: Int,
-        ): Pair<Int, TreeNode?> {
+        private fun deepestLeaves(root: TreeNode?, curLevel: Int): Pair<Int, TreeNode?> {
             if (root?.left == null && root?.right == null) return curLevel to root
             val (leftSideLevel, leftSideNode) = deepestLeaves(root.left, curLevel + 1)
             val (rightSideLevel, rightSideNode) = deepestLeaves(root.right, curLevel + 1)

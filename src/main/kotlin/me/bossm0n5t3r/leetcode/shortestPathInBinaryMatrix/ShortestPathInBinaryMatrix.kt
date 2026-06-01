@@ -21,7 +21,12 @@ class ShortestPathInBinaryMatrix {
                 (0 until 8).forEach {
                     val nr = curR + dr[it]
                     val nc = curC + dc[it]
-                    if (indices.contains(nr) && indices.contains(nc) && !visited[nr][nc] && grid[nr][nc] == 0) {
+                    if (
+                        indices.contains(nr) &&
+                            indices.contains(nc) &&
+                            !visited[nr][nc] &&
+                            grid[nr][nc] == 0
+                    ) {
                         visited[nr][nc] = true
                         queue.add(Point(nr, nc) to (curDist + 1))
                     }
@@ -30,9 +35,6 @@ class ShortestPathInBinaryMatrix {
             return -1
         }
 
-        private data class Point(
-            val r: Int,
-            val c: Int,
-        )
+        private data class Point(val r: Int, val c: Int)
     }
 }

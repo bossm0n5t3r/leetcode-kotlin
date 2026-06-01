@@ -7,11 +7,7 @@ class MatrixUtil {
         return trimmedRaw
             .substring(2, length - 2)
             .split("],[")
-            .map {
-                it
-                    .split(",")
-                    .map { str -> str.toInt() }
-                    .toIntArray()
-            }.toTypedArray()
+            .map { it.split(",").map { str -> str.toInt() }.toIntArray() }
+            .toTypedArray()
     }
 }

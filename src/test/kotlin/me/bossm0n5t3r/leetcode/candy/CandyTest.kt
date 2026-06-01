@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class CandyTest {
     private val sut = Candy.Solution()
 
-    private data class TestData(
-        val ratings: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val ratings: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -33,16 +30,10 @@ class CandyTest {
     @Test
     fun test() {
         val testDataList =
-            listOf(
-                TestData("[1,0,2]".toIntArray(), 5),
-                TestData("[1,2,2]".toIntArray(), 4),
-            )
+            listOf(TestData("[1,0,2]".toIntArray(), 5), TestData("[1,2,2]".toIntArray(), 4))
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.candy(testData.ratings),
-            )
+            assertEquals(testData.result, sut.candy(testData.ratings))
         }
     }
 }

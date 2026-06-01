@@ -4,10 +4,7 @@ import me.bossm0n5t3r.leetcode.utils.TreeNode
 
 class NumberOfGoodLeafNodesPairs {
     class Solution {
-        fun countPairs(
-            root: TreeNode?,
-            distance: Int,
-        ): Int {
+        fun countPairs(root: TreeNode?, distance: Int): Int {
             var count = 0
 
             fun dfs(node: TreeNode?): List<Int> {

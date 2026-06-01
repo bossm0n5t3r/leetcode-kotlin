@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class TransformedArrayTest {
     private val sut = TransformedArray.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: IntArray,
-    ) {
+    private data class TestData(val nums: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

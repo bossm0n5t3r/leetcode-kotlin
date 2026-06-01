@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class DifferentWaysToAddParenthesesTest {
     private val sut = DifferentWaysToAddParentheses.Solution()
 
-    private data class TestData(
-        val expression: String,
-        val result: List<Int>,
-    )
+    private data class TestData(val expression: String, val result: List<Int>)
 
     @Test
     fun test() {

@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class HIndexTest {
     private val sut = HIndex.Solution()
 
-    private data class TestData(
-        val citations: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val citations: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -33,16 +30,10 @@ class HIndexTest {
     @Test
     fun test() {
         val testDataList =
-            listOf(
-                TestData("[3,0,6,1,5]".toIntArray(), 3),
-                TestData("[1,3,1]".toIntArray(), 1),
-            )
+            listOf(TestData("[3,0,6,1,5]".toIntArray(), 3), TestData("[1,3,1]".toIntArray(), 1))
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.hIndex(testData.citations),
-            )
+            assertEquals(testData.result, sut.hIndex(testData.citations))
         }
     }
 }

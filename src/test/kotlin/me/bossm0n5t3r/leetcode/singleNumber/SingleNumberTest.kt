@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class SingleNumberTest {
     private val singleNumber = SingleNumber.Solution()
 
-    data class SingleNumberTestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    data class SingleNumberTestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -37,8 +34,6 @@ class SingleNumberTest {
                 SingleNumberTestData(intArrayOf(4, 1, 2, 1, 2), 4),
                 SingleNumberTestData(intArrayOf(1), 1),
             )
-        tests.forEach { test ->
-            assertTrue(singleNumber.singleNumber(test.nums) == test.result)
-        }
+        tests.forEach { test -> assertTrue(singleNumber.singleNumber(test.nums) == test.result) }
     }
 }

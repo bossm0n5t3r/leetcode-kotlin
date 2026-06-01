@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.partitionarrayaccordingtogivenpivot
 
 class PartitionArrayAccordingToGivenPivot {
     class Solution {
-        fun pivotArray(
-            nums: IntArray,
-            pivot: Int,
-        ): IntArray {
+        fun pivotArray(nums: IntArray, pivot: Int): IntArray {
             var (less, equal) = 0 to 0
             for (num in nums) {
                 when {

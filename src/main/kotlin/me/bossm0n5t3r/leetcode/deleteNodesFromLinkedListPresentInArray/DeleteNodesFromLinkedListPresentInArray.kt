@@ -4,10 +4,7 @@ import me.bossm0n5t3r.leetcode.utils.ListNode
 
 class DeleteNodesFromLinkedListPresentInArray {
     class Solution {
-        fun modifiedList(
-            nums: IntArray,
-            head: ListNode?,
-        ): ListNode? {
+        fun modifiedList(nums: IntArray, head: ListNode?): ListNode? {
             val numberSet = nums.toSet()
             var head = head
             while (head != null && numberSet.contains(head.`val`)) {

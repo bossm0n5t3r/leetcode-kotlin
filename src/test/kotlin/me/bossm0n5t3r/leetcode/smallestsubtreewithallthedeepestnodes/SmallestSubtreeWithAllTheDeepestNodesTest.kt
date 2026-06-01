@@ -8,17 +8,16 @@ import org.junit.jupiter.api.Test
 class SmallestSubtreeWithAllTheDeepestNodesTest {
     private val sut = SmallestSubtreeWithAllTheDeepestNodes.Solution()
 
-    private data class TestData(
-        val root: TreeNode?,
-        val result: TreeNode?,
-    )
+    private data class TestData(val root: TreeNode?, val result: TreeNode?)
 
     @Test
     fun test() {
         val testDataList =
             listOf(
                 TestData(
-                    TreeNodeUtil.generateTreeNodeOrNull(listOf(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4)),
+                    TreeNodeUtil.generateTreeNodeOrNull(
+                        listOf(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4)
+                    ),
                     TreeNodeUtil.generateTreeNodeOrNull(listOf(2, 7, 4)),
                 ),
                 TestData(
@@ -33,10 +32,7 @@ class SmallestSubtreeWithAllTheDeepestNodesTest {
 
         for (testData in testDataList) {
             assertTrue {
-                TreeNodeUtil.isEqual(
-                    testData.result,
-                    sut.subtreeWithAllDeepest(testData.root),
-                )
+                TreeNodeUtil.isEqual(testData.result, sut.subtreeWithAllDeepest(testData.root))
             }
         }
     }

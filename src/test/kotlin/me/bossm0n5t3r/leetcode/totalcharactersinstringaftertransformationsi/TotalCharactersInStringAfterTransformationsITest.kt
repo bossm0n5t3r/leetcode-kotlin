@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class TotalCharactersInStringAfterTransformationsITest {
     private val sut = TotalCharactersInStringAfterTransformationsI.Solution()
 
-    private data class TestData(
-        val s: String,
-        val t: Int,
-        val result: Int,
-    )
+    private data class TestData(val s: String, val t: Int, val result: Int)
 
     @Test
     fun test() {
@@ -22,10 +18,7 @@ class TotalCharactersInStringAfterTransformationsITest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.lengthAfterTransformations(testData.s, testData.t),
-            )
+            assertEquals(testData.result, sut.lengthAfterTransformations(testData.s, testData.t))
         }
     }
 }

@@ -4,11 +4,7 @@ import java.util.PriorityQueue
 
 class FurthestBuildingYouCanReach {
     class Solution {
-        fun furthestBuilding(
-            heights: IntArray,
-            bricks: Int,
-            ladders: Int,
-        ): Int {
+        fun furthestBuilding(heights: IntArray, bricks: Int, ladders: Int): Int {
             val pq = PriorityQueue<Int>()
             var bricksLeft = bricks
             for (i in 0 until heights.size - 1) {

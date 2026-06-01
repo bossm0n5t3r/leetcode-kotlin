@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class CountEqualAndDivisiblePairsInAnArrayTest {
     private val sut = CountEqualAndDivisiblePairsInAnArray.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val k: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val k: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -42,10 +38,7 @@ class CountEqualAndDivisiblePairsInAnArrayTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.countPairs(testData.nums, testData.k),
-            )
+            assertEquals(testData.result, sut.countPairs(testData.nums, testData.k))
         }
     }
 }

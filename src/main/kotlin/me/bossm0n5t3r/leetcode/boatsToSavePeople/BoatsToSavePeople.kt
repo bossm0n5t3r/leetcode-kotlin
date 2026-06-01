@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.boatsToSavePeople
 
 class BoatsToSavePeople {
     class Solution {
-        fun numRescueBoats(
-            people: IntArray,
-            limit: Int,
-        ): Int {
+        fun numRescueBoats(people: IntArray, limit: Int): Int {
             val sortedPeople = people.sorted()
 
             var boats = 0

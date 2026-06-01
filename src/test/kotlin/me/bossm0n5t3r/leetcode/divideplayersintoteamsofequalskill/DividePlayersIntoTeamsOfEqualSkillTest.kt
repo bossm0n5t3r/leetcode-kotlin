@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class DividePlayersIntoTeamsOfEqualSkillTest {
     private val sut = DividePlayersIntoTeamsOfEqualSkill.Solution()
 
-    private data class TestData(
-        val skill: IntArray,
-        val result: Long,
-    ) {
+    private data class TestData(val skill: IntArray, val result: Long) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,10 +36,7 @@ class DividePlayersIntoTeamsOfEqualSkillTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.dividePlayers(testData.skill),
-            )
+            assertEquals(testData.result, sut.dividePlayers(testData.skill))
         }
     }
 }

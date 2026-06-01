@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class PermutationsTest {
     private val permutations = Permutations.Solution()
 
-    data class PermutationsTestData(
-        val nums: IntArray,
-        val result: List<List<Int>>,
-    ) {
+    data class PermutationsTestData(val nums: IntArray, val result: List<List<Int>>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

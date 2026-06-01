@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.mergetwo2darraysbysummingvalues
 
 class MergeTwo2dArraysBySummingValues {
     class Solution {
-        fun mergeArrays(
-            nums1: Array<IntArray>,
-            nums2: Array<IntArray>,
-        ): Array<IntArray> {
+        fun mergeArrays(nums1: Array<IntArray>, nums2: Array<IntArray>): Array<IntArray> {
             val result = mutableListOf<IntArray>()
             var nums1Index = 0
             var nums2Index = 0

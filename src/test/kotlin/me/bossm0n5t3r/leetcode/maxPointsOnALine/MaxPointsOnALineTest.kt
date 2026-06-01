@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class MaxPointsOnALineTest {
     private val sut = MaxPointsOnALine.Solution()
 
-    private data class TestData(
-        val points: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val points: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,12 +31,7 @@ class MaxPointsOnALineTest {
         val tests =
             listOf(
                 TestData(
-                    points =
-                        arrayOf(
-                            intArrayOf(1, 1),
-                            intArrayOf(2, 2),
-                            intArrayOf(3, 3),
-                        ),
+                    points = arrayOf(intArrayOf(1, 1), intArrayOf(2, 2), intArrayOf(3, 3)),
                     result = 3,
                 ),
                 TestData(
@@ -56,11 +48,6 @@ class MaxPointsOnALineTest {
                 ),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.maxPoints(test.points),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.maxPoints(test.points)) }
     }
 }

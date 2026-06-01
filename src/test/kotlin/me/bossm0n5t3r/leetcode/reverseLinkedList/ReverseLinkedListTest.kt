@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class ReverseLinkedListTest {
     private val reverseLinkedList = ReverseLinkedList.Solution()
 
-    data class ReverseLinkedListTestData(
-        val head: ListNode?,
-        val result: List<Int>?,
-    )
+    data class ReverseLinkedListTestData(val head: ListNode?, val result: List<Int>?)
 
     @Test
     fun reverseList() {
@@ -25,13 +22,13 @@ class ReverseLinkedListTest {
                     head = ListNodeUtil.generateListNode(1, 2),
                     result = listOf(2, 1),
                 ),
-                ReverseLinkedListTestData(
-                    head = ListNodeUtil.generateListNode(),
-                    result = listOf(),
-                ),
+                ReverseLinkedListTestData(head = ListNodeUtil.generateListNode(), result = listOf()),
             )
         tests.forEach { test ->
-            assertEquals(ListNodeUtil.listNodeToList(reverseLinkedList.reverseList(test.head)), test.result)
+            assertEquals(
+                ListNodeUtil.listNodeToList(reverseLinkedList.reverseList(test.head)),
+                test.result,
+            )
         }
     }
 }

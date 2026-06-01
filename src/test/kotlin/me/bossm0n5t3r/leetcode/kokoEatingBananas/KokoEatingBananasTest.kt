@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class KokoEatingBananasTest {
     private val sut = KokoEatingBananas.Solution()
 
-    private data class TestData(
-        val piles: IntArray,
-        val h: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val piles: IntArray, val h: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -37,26 +33,10 @@ class KokoEatingBananasTest {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    piles = "[3,6,7,11]".toIntArray(),
-                    h = 8,
-                    result = 4,
-                ),
-                TestData(
-                    piles = "[30,11,23,4,20]".toIntArray(),
-                    h = 5,
-                    result = 30,
-                ),
-                TestData(
-                    piles = "[30,11,23,4,20]".toIntArray(),
-                    h = 6,
-                    result = 23,
-                ),
-                TestData(
-                    piles = "[3,6,7,11]".toIntArray(),
-                    h = 18,
-                    result = 2,
-                ),
+                TestData(piles = "[3,6,7,11]".toIntArray(), h = 8, result = 4),
+                TestData(piles = "[30,11,23,4,20]".toIntArray(), h = 5, result = 30),
+                TestData(piles = "[30,11,23,4,20]".toIntArray(), h = 6, result = 23),
+                TestData(piles = "[3,6,7,11]".toIntArray(), h = 18, result = 2),
                 TestData(
                     piles = "[805306368,805306368,805306368]".toIntArray(),
                     h = 1000000000,
@@ -64,11 +44,6 @@ class KokoEatingBananasTest {
                 ),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.minEatingSpeed(test.piles, test.h),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.minEatingSpeed(test.piles, test.h), test.result) }
     }
 }

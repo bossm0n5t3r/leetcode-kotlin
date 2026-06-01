@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.removeAllAdjacentDuplicatesInString2
 
 class RemoveAllAdjacentDuplicatesInString2 {
     class Solution {
-        fun removeDuplicates(
-            s: String,
-            k: Int,
-        ): String {
+        fun removeDuplicates(s: String, k: Int): String {
             val n = s.length
             val count = IntArray(n)
             val stack = s.toCharArray()

@@ -4,10 +4,7 @@ import java.util.PriorityQueue
 
 class ProcessTasksUsingServers {
     class Solution {
-        fun assignTasks(
-            servers: IntArray,
-            tasks: IntArray,
-        ): IntArray {
+        fun assignTasks(servers: IntArray, tasks: IntArray): IntArray {
             val freeServers =
                 PriorityQueue<Server> { a, b ->
                     if (a.weight != b.weight) {
@@ -49,10 +46,6 @@ class ProcessTasksUsingServers {
             return result
         }
 
-        private data class Server(
-            val index: Int,
-            val weight: Int,
-            var task: Int = 0,
-        )
+        private data class Server(val index: Int, val weight: Int, var task: Int = 0)
     }
 }

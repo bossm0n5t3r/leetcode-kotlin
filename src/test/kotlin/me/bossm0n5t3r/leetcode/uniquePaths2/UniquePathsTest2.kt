@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class UniquePathsTest2 {
     private val uniquePaths2 = UniquePaths2.Solution()
 
-    data class UniquePaths2TestData(
-        val obstacleGrid: Array<IntArray>,
-        val result: Int,
-    ) {
+    data class UniquePaths2TestData(val obstacleGrid: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -35,43 +32,20 @@ class UniquePathsTest2 {
             listOf(
                 UniquePaths2TestData(
                     obstacleGrid =
-                        arrayOf(
-                            intArrayOf(0, 0, 0),
-                            intArrayOf(0, 1, 0),
-                            intArrayOf(0, 0, 0),
-                        ),
+                        arrayOf(intArrayOf(0, 0, 0), intArrayOf(0, 1, 0), intArrayOf(0, 0, 0)),
                     result = 2,
                 ),
                 UniquePaths2TestData(
-                    obstacleGrid =
-                        arrayOf(
-                            intArrayOf(0, 1),
-                            intArrayOf(0, 0),
-                        ),
+                    obstacleGrid = arrayOf(intArrayOf(0, 1), intArrayOf(0, 0)),
                     result = 1,
                 ),
+                UniquePaths2TestData(obstacleGrid = arrayOf(intArrayOf(1, 0)), result = 0),
                 UniquePaths2TestData(
-                    obstacleGrid =
-                        arrayOf(
-                            intArrayOf(1, 0),
-                        ),
+                    obstacleGrid = arrayOf(intArrayOf(1), intArrayOf(0)),
                     result = 0,
                 ),
                 UniquePaths2TestData(
-                    obstacleGrid =
-                        arrayOf(
-                            intArrayOf(1),
-                            intArrayOf(0),
-                        ),
-                    result = 0,
-                ),
-                UniquePaths2TestData(
-                    obstacleGrid =
-                        arrayOf(
-                            intArrayOf(0, 0),
-                            intArrayOf(1, 1),
-                            intArrayOf(0, 0),
-                        ),
+                    obstacleGrid = arrayOf(intArrayOf(0, 0), intArrayOf(1, 1), intArrayOf(0, 0)),
                     result = 0,
                 ),
             )

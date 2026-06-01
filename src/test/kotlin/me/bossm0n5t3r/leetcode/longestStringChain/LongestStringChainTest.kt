@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 internal class LongestStringChainTest {
     private val longestStringChain = LongestStringChain.Solution()
 
-    private data class LongestStringChainTestData(
-        val words: Array<String>,
-        val result: Int,
-    ) {
+    private data class LongestStringChainTestData(val words: Array<String>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -33,18 +30,9 @@ internal class LongestStringChainTest {
     fun longestStrChain() {
         val tests =
             listOf(
-                LongestStringChainTestData(
-                    arrayOf("a", "b", "ba", "bca", "bda", "bdca"),
-                    4,
-                ),
-                LongestStringChainTestData(
-                    arrayOf("xbc", "pcxbcf", "xb", "cxbc", "pcxbc"),
-                    5,
-                ),
-                LongestStringChainTestData(
-                    arrayOf("bdca", "bda", "ca", "dca", "a"),
-                    4,
-                ),
+                LongestStringChainTestData(arrayOf("a", "b", "ba", "bca", "bda", "bdca"), 4),
+                LongestStringChainTestData(arrayOf("xbc", "pcxbcf", "xb", "cxbc", "pcxbc"), 5),
+                LongestStringChainTestData(arrayOf("bdca", "bda", "ca", "dca", "a"), 4),
                 LongestStringChainTestData(
                     arrayOf(
                         "ksqvsyq",
@@ -71,12 +59,10 @@ internal class LongestStringChainTest {
                 ),
             )
         tests.forEach { test ->
-            longestStringChain
-                .longestStrChain(test.words)
-                .also {
-                    println(it)
-                    assertEquals(it, test.result)
-                }
+            longestStringChain.longestStrChain(test.words).also {
+                println(it)
+                assertEquals(it, test.result)
+            }
         }
     }
 }

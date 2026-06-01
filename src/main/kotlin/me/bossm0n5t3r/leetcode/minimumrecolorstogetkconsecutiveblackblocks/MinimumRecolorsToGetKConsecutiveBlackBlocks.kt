@@ -5,10 +5,7 @@ import java.util.Queue
 
 class MinimumRecolorsToGetKConsecutiveBlackBlocks {
     class Solution {
-        fun minimumRecolors(
-            blocks: String,
-            k: Int,
-        ): Int {
+        fun minimumRecolors(blocks: String, k: Int): Int {
             val queue: Queue<Char> = LinkedList()
             var numWhites = 0
             repeat(k) {

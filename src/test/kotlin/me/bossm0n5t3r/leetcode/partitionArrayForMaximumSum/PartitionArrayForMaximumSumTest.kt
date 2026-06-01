@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class PartitionArrayForMaximumSumTest {
     private val sut = PartitionArrayForMaximumSum.Solution()
 
-    private data class TestData(
-        val arr: IntArray,
-        val k: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val arr: IntArray, val k: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -42,10 +38,7 @@ class PartitionArrayForMaximumSumTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.maxSumAfterPartitioning(test.arr, test.k),
-            )
+            assertEquals(test.result, sut.maxSumAfterPartitioning(test.arr, test.k))
         }
     }
 }

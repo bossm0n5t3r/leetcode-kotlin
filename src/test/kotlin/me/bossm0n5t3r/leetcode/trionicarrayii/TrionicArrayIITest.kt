@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class TrionicArrayIITest {
     private val sut = TrionicArrayII.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Long,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Long) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,10 +37,7 @@ class TrionicArrayIITest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.maxSumTrionic(testData.nums),
-            )
+            assertEquals(testData.result, sut.maxSumTrionic(testData.nums))
         }
     }
 }

@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.checkifastringcontainsallbinarycodesofsizek
 
 class CheckIfAStringContainsAllBinaryCodesOfSizeK {
     class Solution {
-        fun hasAllCodes(
-            s: String,
-            k: Int,
-        ): Boolean {
+        fun hasAllCodes(s: String, k: Int): Boolean {
             val totalNeeded = 1 shl k
             val seen = BooleanArray(totalNeeded)
             var count = 0

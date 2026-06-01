@@ -4,11 +4,15 @@ class MinimumTimeDifference {
     class Solution {
         fun findMinDifference(timePoints: List<String>): Int {
             val sortedTimePoints =
-                timePoints.map { it.toHHMM() }.sortedWith(
-                    compareBy<Pair<Int, Int>> { it.first }.then(compareBy { it.second }),
-                )
+                timePoints
+                    .map { it.toHHMM() }
+                    .sortedWith(
+                        compareBy<Pair<Int, Int>> { it.first }.then(compareBy { it.second })
+                    )
             val additionalTimePoints = sortedTimePoints.first() + "24:00".toHHMM()
-            return (sortedTimePoints + additionalTimePoints).windowed(2).minOf { it.last() - it.first() }
+            return (sortedTimePoints + additionalTimePoints).windowed(2).minOf {
+                it.last() - it.first()
+            }
         }
 
         private fun String.toHHMM(): Pair<Int, Int> {

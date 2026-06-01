@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class MinimumNumberOfArrowsToBurstBalloonsTest {
     private val sut = MinimumNumberOfArrowsToBurstBalloons.Solution()
 
-    private data class TestData(
-        val points: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val points: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,11 +36,6 @@ class MinimumNumberOfArrowsToBurstBalloonsTest {
                 TestData("[[1,2],[2,3],[3,4],[4,5]]".toArrayOfIntArray(), 2),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.findMinArrowShots(test.points),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.findMinArrowShots(test.points)) }
     }
 }

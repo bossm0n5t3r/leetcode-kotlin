@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class ApplyOperationsToAnArrayTest {
     private val sut = ApplyOperationsToAnArray.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: IntArray,
-    ) {
+    private data class TestData(val nums: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,9 +36,7 @@ class ApplyOperationsToAnArrayTest {
             )
 
         for (testData in testDataList) {
-            assertTrue {
-                testData.result.contentEquals(sut.applyOperations(testData.nums))
-            }
+            assertTrue { testData.result.contentEquals(sut.applyOperations(testData.nums)) }
         }
     }
 }

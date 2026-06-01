@@ -8,11 +8,7 @@ import org.junit.jupiter.api.Test
 class ShortestDistanceAfterRoadAdditionQueriesITest {
     private val sut = ShortestDistanceAfterRoadAdditionQueriesI.Solution()
 
-    private data class TestData(
-        val n: Int,
-        val queries: Array<IntArray>,
-        val result: IntArray,
-    ) {
+    private data class TestData(val n: Int, val queries: Array<IntArray>, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -43,7 +39,10 @@ class ShortestDistanceAfterRoadAdditionQueriesITest {
             )
 
         for (testData in testDataList) {
-            assertArrayEquals(testData.result, sut.shortestDistanceAfterQueries(testData.n, testData.queries))
+            assertArrayEquals(
+                testData.result,
+                sut.shortestDistanceAfterQueries(testData.n, testData.queries),
+            )
         }
     }
 }

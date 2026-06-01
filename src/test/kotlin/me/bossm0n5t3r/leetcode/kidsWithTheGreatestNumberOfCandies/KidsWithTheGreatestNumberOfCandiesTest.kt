@@ -34,27 +34,12 @@ class KidsWithTheGreatestNumberOfCandiesTest {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    intArrayOf(2, 3, 5, 1, 3),
-                    3,
-                    listOf(true, true, true, false, true),
-                ),
-                TestData(
-                    intArrayOf(4, 2, 1, 1, 2),
-                    1,
-                    listOf(true, false, false, false, false),
-                ),
-                TestData(
-                    intArrayOf(12, 1, 12),
-                    10,
-                    listOf(true, false, true),
-                ),
+                TestData(intArrayOf(2, 3, 5, 1, 3), 3, listOf(true, true, true, false, true)),
+                TestData(intArrayOf(4, 2, 1, 1, 2), 1, listOf(true, false, false, false, false)),
+                TestData(intArrayOf(12, 1, 12), 10, listOf(true, false, true)),
             )
         tests.forEach { test ->
-            assertEquals(
-                sut.kidsWithCandies(test.candies, test.extraCandies),
-                test.result,
-            )
+            assertEquals(sut.kidsWithCandies(test.candies, test.extraCandies), test.result)
         }
     }
 }

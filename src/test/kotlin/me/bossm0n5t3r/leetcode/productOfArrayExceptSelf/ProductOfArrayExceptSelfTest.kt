@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class ProductOfArrayExceptSelfTest {
     private val productOfArrayExceptSelf = ProductOfArrayExceptSelf.Solution()
 
-    private data class ProductOfArrayExceptSelfTestData(
-        val nums: IntArray,
-        val result: IntArray,
-    ) {
+    private data class ProductOfArrayExceptSelfTestData(val nums: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -32,7 +29,10 @@ class ProductOfArrayExceptSelfTest {
         val tests =
             listOf(
                 ProductOfArrayExceptSelfTestData(intArrayOf(1, 2, 3, 4), intArrayOf(24, 12, 8, 6)),
-                ProductOfArrayExceptSelfTestData(intArrayOf(-1, 1, 0, -3, 3), intArrayOf(0, 0, 9, 0, 0)),
+                ProductOfArrayExceptSelfTestData(
+                    intArrayOf(-1, 1, 0, -3, 3),
+                    intArrayOf(0, 0, 9, 0, 0),
+                ),
             )
         tests.forEach { test ->
             assertThat(test.result)

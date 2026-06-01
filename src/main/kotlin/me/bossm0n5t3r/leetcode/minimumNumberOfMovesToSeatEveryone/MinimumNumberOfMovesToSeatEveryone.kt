@@ -4,9 +4,7 @@ import kotlin.math.abs
 
 class MinimumNumberOfMovesToSeatEveryone {
     class Solution {
-        fun minMovesToSeat(
-            seats: IntArray,
-            students: IntArray,
-        ): Int = seats.sorted().zip(students.sorted()).sumOf { abs(it.first - it.second) }
+        fun minMovesToSeat(seats: IntArray, students: IntArray): Int =
+            seats.sorted().zip(students.sorted()).sumOf { abs(it.first - it.second) }
     }
 }

@@ -48,7 +48,12 @@ class SpiralMatrixIVTest {
                     ListNodeUtil.generateListNode(3, 0, 2, 6, 8, 1, 7, 9, 4, 2, 5, 5, 0),
                     "[[3,0,2,6,8],[5,0,-1,-1,1],[5,2,4,9,7]]".toArrayOfIntArray(),
                 ),
-                TestData(1, 4, ListNodeUtil.generateListNode(0, 1, 2), "[[0,1,2,-1]]".toArrayOfIntArray()),
+                TestData(
+                    1,
+                    4,
+                    ListNodeUtil.generateListNode(0, 1, 2),
+                    "[[0,1,2,-1]]".toArrayOfIntArray(),
+                ),
             )
 
         tests.forEach { test ->

@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class DeleteCharactersToMakeFancyStringTest {
     private val sut = DeleteCharactersToMakeFancyString.Solution()
 
-    private data class TestData(
-        val s: String,
-        val result: String,
-    )
+    private data class TestData(val s: String, val result: String)
 
     @Test
     fun test() {
@@ -21,10 +18,7 @@ class DeleteCharactersToMakeFancyStringTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.makeFancyString(testData.s),
-            )
+            assertEquals(testData.result, sut.makeFancyString(testData.s))
         }
     }
 }

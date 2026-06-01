@@ -1,7 +1,7 @@
 package me.bossm0n5t3r.leetcode.longestZigzagPathInABinaryTree
 
-import me.bossm0n5t3r.leetcode.utils.TreeNode
 import java.util.Stack
+import me.bossm0n5t3r.leetcode.utils.TreeNode
 
 class LongestZigzagPathInABinaryTree {
     class Solution {
@@ -11,10 +11,7 @@ class LongestZigzagPathInABinaryTree {
             RIGHT,
         }
 
-        private data class ZigZagCount(
-            val dir: Direction,
-            val count: Int = 0,
-        )
+        private data class ZigZagCount(val dir: Direction, val count: Int = 0)
 
         fun longestZigZag(root: TreeNode?): Int {
             if (root == null) return -1
@@ -31,34 +28,16 @@ class LongestZigzagPathInABinaryTree {
                 when (zigZagCount.dir) {
                     Direction.ROOT -> {
                         if (curLeft != null) {
-                            stack.push(
-                                curLeft to
-                                    ZigZagCount(
-                                        dir = Direction.LEFT,
-                                        count = 1,
-                                    ),
-                            )
+                            stack.push(curLeft to ZigZagCount(dir = Direction.LEFT, count = 1))
                         }
                         if (curRight != null) {
-                            stack.push(
-                                curRight to
-                                    ZigZagCount(
-                                        dir = Direction.RIGHT,
-                                        count = 1,
-                                    ),
-                            )
+                            stack.push(curRight to ZigZagCount(dir = Direction.RIGHT, count = 1))
                         }
                     }
 
                     Direction.LEFT -> {
                         if (curLeft != null) {
-                            stack.push(
-                                curLeft to
-                                    ZigZagCount(
-                                        dir = Direction.LEFT,
-                                        count = 1,
-                                    ),
-                            )
+                            stack.push(curLeft to ZigZagCount(dir = Direction.LEFT, count = 1))
                         }
                         if (curRight != null) {
                             stack.push(
@@ -66,7 +45,7 @@ class LongestZigzagPathInABinaryTree {
                                     ZigZagCount(
                                         dir = Direction.RIGHT,
                                         count = zigZagCount.count + 1,
-                                    ),
+                                    )
                             )
                         }
                     }
@@ -75,20 +54,11 @@ class LongestZigzagPathInABinaryTree {
                         if (curLeft != null) {
                             stack.push(
                                 curLeft to
-                                    ZigZagCount(
-                                        dir = Direction.LEFT,
-                                        count = zigZagCount.count + 1,
-                                    ),
+                                    ZigZagCount(dir = Direction.LEFT, count = zigZagCount.count + 1)
                             )
                         }
                         if (curRight != null) {
-                            stack.push(
-                                curRight to
-                                    ZigZagCount(
-                                        dir = Direction.RIGHT,
-                                        count = 1,
-                                    ),
-                            )
+                            stack.push(curRight to ZigZagCount(dir = Direction.RIGHT, count = 1))
                         }
                     }
                 }

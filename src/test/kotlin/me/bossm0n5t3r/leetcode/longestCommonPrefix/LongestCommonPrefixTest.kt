@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class LongestCommonPrefixTest {
     private val longestCommonPrefix = LongestCommonPrefix.Solution()
 
-    data class LongestCommonPrefixTestData(
-        val strs: Array<String>,
-        val result: String,
-    ) {
+    data class LongestCommonPrefixTestData(val strs: Array<String>, val result: String) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

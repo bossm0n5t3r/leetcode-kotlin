@@ -53,8 +53,7 @@ internal class FindFirstAndLastPositionOfElementInSortedArrayTest {
                 ),
             )
         tests.forEach { test ->
-            assertThat(sut.searchRange(test.nums, test.target))
-                .isEqualTo(test.result)
+            assertThat(sut.searchRange(test.nums, test.target)).isEqualTo(test.result)
         }
     }
 }

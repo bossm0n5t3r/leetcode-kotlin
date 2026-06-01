@@ -43,7 +43,9 @@ class SearchSuggestionsSystemTest {
                     result =
                         """
                         [["mobile","moneypot","monitor"],["mobile","moneypot","monitor"],["mouse","mousepad"],["mouse","mousepad"],["mouse","mousepad"]]
-                        """.trimIndent().toListOfStringList(),
+                        """
+                            .trimIndent()
+                            .toListOfStringList(),
                 ),
                 TestData(
                     products = arrayOf("havana"),
@@ -51,7 +53,9 @@ class SearchSuggestionsSystemTest {
                     result =
                         """
                         [["havana"],["havana"],["havana"],["havana"],["havana"],["havana"]]
-                        """.trimIndent().toListOfStringList(),
+                        """
+                            .trimIndent()
+                            .toListOfStringList(),
                 ),
             )
 

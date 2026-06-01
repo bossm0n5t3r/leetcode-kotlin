@@ -5,10 +5,7 @@ import java.util.Queue
 
 class TextJustification {
     class Solution {
-        fun fullJustify(
-            words: Array<String>,
-            maxWidth: Int,
-        ): List<String> {
+        fun fullJustify(words: Array<String>, maxWidth: Int): List<String> {
             val result = mutableListOf<String>()
             val wordQueue = LinkedList<String>().apply { this.addAll(words) } as Queue<String>
             var tmpWordList = mutableListOf<String>()

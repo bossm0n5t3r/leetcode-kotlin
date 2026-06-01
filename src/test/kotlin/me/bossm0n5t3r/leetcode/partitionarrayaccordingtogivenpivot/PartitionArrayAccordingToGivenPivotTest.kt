@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class PartitionArrayAccordingToGivenPivotTest {
     private val sut = PartitionArrayAccordingToGivenPivot.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val pivot: Int,
-        val result: IntArray,
-    ) {
+    private data class TestData(val nums: IntArray, val pivot: Int, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -37,7 +33,11 @@ class PartitionArrayAccordingToGivenPivotTest {
     fun test() {
         val testDataList =
             listOf(
-                TestData("[9,12,5,10,14,3,10]".toIntArray(), 10, "[9,5,3,10,10,12,14]".toIntArray()),
+                TestData(
+                    "[9,12,5,10,14,3,10]".toIntArray(),
+                    10,
+                    "[9,5,3,10,10,12,14]".toIntArray(),
+                ),
                 TestData("[-3,4,3,2]".toIntArray(), 2, "[-3,2,4,3]".toIntArray()),
             )
 

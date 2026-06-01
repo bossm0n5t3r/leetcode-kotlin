@@ -4,10 +4,7 @@ import me.bossm0n5t3r.leetcode.utils.TreeNode
 
 class SearchInABinarySearchTree {
     class Solution {
-        fun searchBST(
-            root: TreeNode?,
-            `val`: Int,
-        ): TreeNode? {
+        fun searchBST(root: TreeNode?, `val`: Int): TreeNode? {
             var tmp = root
             while (tmp != null && tmp.`val` != `val`) {
                 tmp =

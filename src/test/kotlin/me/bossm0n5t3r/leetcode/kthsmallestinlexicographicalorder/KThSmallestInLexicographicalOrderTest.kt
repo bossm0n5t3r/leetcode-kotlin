@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class KThSmallestInLexicographicalOrderTest {
     private val sut = KThSmallestInLexicographicalOrder.Solution()
 
-    private data class TestData(
-        val n: Int,
-        val k: Int,
-        val result: Int,
-    )
+    private data class TestData(val n: Int, val k: Int, val result: Int)
 
     @Test
     fun test() {
@@ -24,10 +20,7 @@ class KThSmallestInLexicographicalOrderTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.findKthNumber(testData.n, testData.k),
-            )
+            assertEquals(testData.result, sut.findKthNumber(testData.n, testData.k))
         }
     }
 }

@@ -14,9 +14,7 @@ class GameOfLife {
                 }
             }
             (0 until m).forEach { r ->
-                (0 until n).forEach { c ->
-                    board[r][c] = board[r][c] ushr 1
-                }
+                (0 until n).forEach { c -> board[r][c] = board[r][c] ushr 1 }
             }
         }
 
@@ -40,10 +38,7 @@ class GameOfLife {
             return liveCells
         }
 
-        data class Cell(
-            val r: Int,
-            val c: Int,
-        ) {
+        data class Cell(val r: Int, val c: Int) {
             fun neighborCells(): List<Cell> {
                 val dr = intArrayOf(-1, -1, -1, 0, 0, 1, 1, 1)
                 val dc = intArrayOf(-1, 0, 1, -1, 1, -1, 0, 1)
@@ -58,9 +53,7 @@ class GameOfLife {
             val n = board.first().size
             val currentState = hashSetOf<Cell>()
             (0 until m).forEach { r ->
-                (0 until n).forEach { c ->
-                    if (board[r][c] == 1) currentState.add(Cell(r, c))
-                }
+                (0 until n).forEach { c -> if (board[r][c] == 1) currentState.add(Cell(r, c)) }
             }
 
             val nextState = getNextState(currentState)
@@ -89,7 +82,10 @@ class GameOfLife {
             }
 
             cellToLiveNeighborCellCount.forEach { (cell, liveNeighborCellCount) ->
-                if (liveNeighborCellCount == 3 || (liveNeighborCellCount == 2 && currentState.contains(cell))) {
+                if (
+                    liveNeighborCellCount == 3 ||
+                        (liveNeighborCellCount == 2 && currentState.contains(cell))
+                ) {
                     nextState.add(cell)
                 }
             }

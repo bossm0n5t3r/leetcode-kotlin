@@ -4,12 +4,7 @@ import java.util.Stack
 
 class FindIfPathExistsInGraph {
     class Solution {
-        fun validPath(
-            n: Int,
-            edges: Array<IntArray>,
-            source: Int,
-            destination: Int,
-        ): Boolean {
+        fun validPath(n: Int, edges: Array<IntArray>, source: Int, destination: Int): Boolean {
             val graph = mutableMapOf<Int, MutableSet<Int>>()
             for ((from, to) in edges) {
                 graph[from] = graph.getOrDefault(from, mutableSetOf()).apply { add(to) }

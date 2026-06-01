@@ -4,11 +4,9 @@ import java.util.PriorityQueue
 
 class MaximalScoreAfterApplyingKOperations {
     class Solution {
-        fun maxKelements(
-            nums: IntArray,
-            k: Int,
-        ): Long {
-            val pq = PriorityQueue<Int>(compareByDescending { it }).also { it.addAll(nums.toList()) }
+        fun maxKelements(nums: IntArray, k: Int): Long {
+            val pq =
+                PriorityQueue<Int>(compareByDescending { it }).also { it.addAll(nums.toList()) }
             var result = 0L
             var countK = k
             while (countK-- > 0) {
@@ -20,9 +18,6 @@ class MaximalScoreAfterApplyingKOperations {
         }
 
         private fun ceil(num: Double): Int =
-            num
-                .takeIf { it == it.toInt().toDouble() || it < 0 }
-                ?.toInt()
-                ?: (num + 1).toInt()
+            num.takeIf { it == it.toInt().toDouble() || it < 0 }?.toInt() ?: (num + 1).toInt()
     }
 }

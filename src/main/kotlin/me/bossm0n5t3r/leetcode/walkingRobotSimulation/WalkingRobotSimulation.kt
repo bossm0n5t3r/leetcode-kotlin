@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.walkingRobotSimulation
 
 class WalkingRobotSimulation {
     class Solution {
-        fun robotSim(
-            commands: IntArray,
-            obstacles: Array<IntArray>,
-        ): Int {
+        fun robotSim(commands: IntArray, obstacles: Array<IntArray>): Int {
             val robot = Robot(obstacles)
             for (command in commands) {
                 robot.move(command)
@@ -13,9 +10,7 @@ class WalkingRobotSimulation {
             return robot.furthestDistance
         }
 
-        class Robot(
-            obstacles: Array<IntArray>,
-        ) {
+        class Robot(obstacles: Array<IntArray>) {
             private var x: Int = 0
             private var y: Int = 0
             private var curDirection: Direction = Direction.NORTH
@@ -26,8 +21,7 @@ class WalkingRobotSimulation {
                 NORTH,
                 EAST,
                 SOUTH,
-                WEST,
-                ;
+                WEST;
 
                 fun turnRight(): Direction {
                     val totalSize = Direction.entries.size
@@ -53,27 +47,40 @@ class WalkingRobotSimulation {
                     else -> {
                         var count = command
                         when (curDirection) {
-                            Direction.NORTH -> while (count > 0 && obstaclesSet.contains(this.x to (this.y + 1)).not()) {
-                                y++
-                                count--
-                            }
+                            Direction.NORTH ->
+                                while (
+                                    count > 0 && obstaclesSet.contains(this.x to (this.y + 1)).not()
+                                ) {
+                                    y++
+                                    count--
+                                }
 
-                            Direction.EAST -> while (count > 0 && obstaclesSet.contains((this.x + 1) to this.y).not()) {
-                                x++
-                                count--
-                            }
+                            Direction.EAST ->
+                                while (
+                                    count > 0 && obstaclesSet.contains((this.x + 1) to this.y).not()
+                                ) {
+                                    x++
+                                    count--
+                                }
 
-                            Direction.SOUTH -> while (count > 0 && obstaclesSet.contains(this.x to (this.y - 1)).not()) {
-                                y--
-                                count--
-                            }
+                            Direction.SOUTH ->
+                                while (
+                                    count > 0 && obstaclesSet.contains(this.x to (this.y - 1)).not()
+                                ) {
+                                    y--
+                                    count--
+                                }
 
-                            Direction.WEST -> while (count > 0 && obstaclesSet.contains((this.x - 1) to this.y).not()) {
-                                x--
-                                count--
-                            }
+                            Direction.WEST ->
+                                while (
+                                    count > 0 && obstaclesSet.contains((this.x - 1) to this.y).not()
+                                ) {
+                                    x--
+                                    count--
+                                }
                         }
-                        furthestDistance = maxOf(furthestDistance, this.x * this.x + this.y * this.y)
+                        furthestDistance =
+                            maxOf(furthestDistance, this.x * this.x + this.y * this.y)
                     }
                 }
             }

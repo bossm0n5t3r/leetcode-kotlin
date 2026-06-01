@@ -1,15 +1,12 @@
 package me.bossm0n5t3r.leetcode.kthlargestsuminabinarytree
 
-import me.bossm0n5t3r.leetcode.utils.TreeNode
 import java.util.LinkedList
 import java.util.Queue
+import me.bossm0n5t3r.leetcode.utils.TreeNode
 
 class KthLargestSumInABinaryTree {
     class Solution {
-        fun kthLargestLevelSum(
-            root: TreeNode?,
-            k: Int,
-        ): Long {
+        fun kthLargestLevelSum(root: TreeNode?, k: Int): Long {
             if (root == null) return -1
             val levelSumList = mutableListOf<Long>()
             val queue = LinkedList<TreeNode>() as Queue<TreeNode>

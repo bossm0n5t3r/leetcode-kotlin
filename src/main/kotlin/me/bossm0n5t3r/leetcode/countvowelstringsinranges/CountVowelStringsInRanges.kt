@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.countvowelstringsinranges
 
 class CountVowelStringsInRanges {
     class Solution {
-        fun vowelStrings(
-            words: Array<String>,
-            queries: Array<IntArray>,
-        ): IntArray {
+        fun vowelStrings(words: Array<String>, queries: Array<IntArray>): IntArray {
             val vowelLetters = setOf('a', 'e', 'i', 'o', 'u')
             return words
                 .map { it.first() in vowelLetters && it.last() in vowelLetters }
@@ -15,7 +12,8 @@ class CountVowelStringsInRanges {
                         .map {
                             val (l, r) = it
                             prefixSum[r + 1] - prefixSum[l]
-                        }.toIntArray()
+                        }
+                        .toIntArray()
                 }
         }
     }

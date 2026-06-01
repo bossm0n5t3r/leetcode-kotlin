@@ -30,14 +30,20 @@ class NumberOfIslands {
         ) {
             val dr = intArrayOf(0, 0, 1, -1)
             val dc = intArrayOf(1, -1, 0, 0)
-            val queue: Queue<Pair<Int, Int>> = LinkedList<Pair<Int, Int>>().apply { this.offer(curR to curC) }
+            val queue: Queue<Pair<Int, Int>> =
+                LinkedList<Pair<Int, Int>>().apply { this.offer(curR to curC) }
             while (queue.isNotEmpty()) {
                 val (r, c) = queue.poll()
                 visited[r][c] = true
                 for (i in 0 until 4) {
                     val nr = r + dr[i]
                     val nc = c + dc[i]
-                    if (nr in 0 until m && nc in 0 until n && grid[nr][nc] == '1' && visited[nr][nc].not()) {
+                    if (
+                        nr in 0 until m &&
+                            nc in 0 until n &&
+                            grid[nr][nc] == '1' &&
+                            visited[nr][nc].not()
+                    ) {
                         visited[nr][nc] = true
                         queue.offer(nr to nc)
                     }

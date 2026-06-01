@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class SearchInsertPositionTest {
     private val sut = SearchInsertPosition.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val target: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val target: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -36,28 +32,13 @@ class SearchInsertPositionTest {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    nums = intArrayOf(1, 3, 5, 6),
-                    target = 5,
-                    result = 2,
-                ),
-                TestData(
-                    nums = intArrayOf(1, 3, 5, 6),
-                    target = 2,
-                    result = 1,
-                ),
-                TestData(
-                    nums = intArrayOf(1, 3, 5, 6),
-                    target = 7,
-                    result = 4,
-                ),
+                TestData(nums = intArrayOf(1, 3, 5, 6), target = 5, result = 2),
+                TestData(nums = intArrayOf(1, 3, 5, 6), target = 2, result = 1),
+                TestData(nums = intArrayOf(1, 3, 5, 6), target = 7, result = 4),
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.searchInsert(test.nums, test.target),
-            )
+            assertEquals(test.result, sut.searchInsert(test.nums, test.target))
         }
     }
 }

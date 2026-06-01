@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class NumberOfStepsToReduceANumberInBinaryRepresentationToOneTest {
     private val sut = NumberOfStepsToReduceANumberInBinaryRepresentationToOne.Solution()
 
-    private data class TestData(
-        val s: String,
-        val result: Int,
-    )
+    private data class TestData(val s: String, val result: Int)
 
     @Test
     fun test() {
@@ -22,11 +19,6 @@ class NumberOfStepsToReduceANumberInBinaryRepresentationToOneTest {
                 TestData("1111110011101010110011100100101110010100101110111010111110110010", 89),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.numSteps(test.s),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.numSteps(test.s)) }
     }
 }

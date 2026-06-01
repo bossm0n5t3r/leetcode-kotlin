@@ -4,11 +4,7 @@ import kotlin.math.abs
 
 class GetEqualSubstringsWithinBudget {
     class Solution {
-        fun equalSubstring(
-            s: String,
-            t: String,
-            maxCost: Int,
-        ): Int {
+        fun equalSubstring(s: String, t: String, maxCost: Int): Int {
             var start = 0
             var currentCost = 0
             var result = 0

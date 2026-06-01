@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class KthLargestElementInAnArrayTest {
     private val sut = KthLargestElementInAnArray.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val k: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val k: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -36,23 +32,10 @@ class KthLargestElementInAnArrayTest {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    nums = intArrayOf(3, 2, 1, 5, 6, 4),
-                    k = 2,
-                    result = 5,
-                ),
-                TestData(
-                    nums = intArrayOf(3, 2, 3, 1, 2, 4, 5, 5, 6),
-                    k = 4,
-                    result = 4,
-                ),
+                TestData(nums = intArrayOf(3, 2, 1, 5, 6, 4), k = 2, result = 5),
+                TestData(nums = intArrayOf(3, 2, 3, 1, 2, 4, 5, 5, 6), k = 4, result = 4),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.findKthLargest(test.nums, test.k),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.findKthLargest(test.nums, test.k), test.result) }
     }
 }

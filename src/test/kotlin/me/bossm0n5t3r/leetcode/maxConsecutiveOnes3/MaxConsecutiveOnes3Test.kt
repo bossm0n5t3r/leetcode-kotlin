@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class MaxConsecutiveOnes3Test {
     private val sut = MaxConsecutiveOnes3.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val k: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val k: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,11 +30,7 @@ class MaxConsecutiveOnes3Test {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    nums = intArrayOf(1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0),
-                    k = 2,
-                    result = 6,
-                ),
+                TestData(nums = intArrayOf(1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0), k = 2, result = 6),
                 TestData(
                     nums = intArrayOf(0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1),
                     k = 3,
@@ -46,11 +38,6 @@ class MaxConsecutiveOnes3Test {
                 ),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.longestOnes(test.nums, test.k),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.longestOnes(test.nums, test.k), test.result) }
     }
 }

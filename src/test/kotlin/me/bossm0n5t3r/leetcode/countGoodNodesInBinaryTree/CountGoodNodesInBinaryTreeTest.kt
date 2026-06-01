@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class CountGoodNodesInBinaryTreeTest {
     private val sut = CountGoodNodesInBinaryTree.Solution()
 
-    private data class TestData(
-        val root: TreeNode?,
-        val result: Int,
-    )
+    private data class TestData(val root: TreeNode?, val result: Int)
 
     @Test
     fun test() {
@@ -25,17 +22,9 @@ class CountGoodNodesInBinaryTreeTest {
                     root = TreeNodeUtil.generateTreeNodeOrNull(listOf(3, 3, null, 4, 2)),
                     result = 3,
                 ),
-                TestData(
-                    root = TreeNodeUtil.generateTreeNodeOrNull(listOf(1)),
-                    result = 1,
-                ),
+                TestData(root = TreeNodeUtil.generateTreeNodeOrNull(listOf(1)), result = 1),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.goodNodes(test.root),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.goodNodes(test.root), test.result) }
     }
 }

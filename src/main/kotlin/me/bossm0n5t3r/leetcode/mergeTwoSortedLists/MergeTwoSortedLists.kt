@@ -4,10 +4,7 @@ import me.bossm0n5t3r.leetcode.utils.ListNode
 
 class MergeTwoSortedLists {
     class Solution {
-        fun mergeTwoLists(
-            l1: ListNode?,
-            l2: ListNode?,
-        ): ListNode? {
+        fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
             if (l1 == null && l2 == null) return null
             if (l1 != null && l2 == null) return l1
             if (l1 == null && l2 != null) return l2
@@ -46,10 +43,7 @@ class MergeTwoSortedLists {
             return result
         }
 
-        fun mergeTwoListsRecursive(
-            l1: ListNode?,
-            l2: ListNode?,
-        ): ListNode? {
+        fun mergeTwoListsRecursive(l1: ListNode?, l2: ListNode?): ListNode? {
             if (l1 == null && l2 == null) return null
             if (l1 == null) return l2
             if (l2 == null) return l1

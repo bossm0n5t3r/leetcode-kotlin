@@ -15,8 +15,14 @@ class DesignAStackWithIncrementOperationTest {
         stk.push(4) // stack still [1, 2, 3], Do not add another elements as size is 4
         stk.increment(5, 100) // stack becomes [101, 102, 103]
         stk.increment(2, 100) // stack becomes [201, 202, 103]
-        assertEquals(103, stk.pop()) // return 103 --> Return top of the stack 103, stack becomes [201, 202]
-        assertEquals(202, stk.pop()) // return 202 --> Return top of the stack 202, stack becomes [201]
+        assertEquals(
+            103,
+            stk.pop(),
+        ) // return 103 --> Return top of the stack 103, stack becomes [201, 202]
+        assertEquals(
+            202,
+            stk.pop(),
+        ) // return 202 --> Return top of the stack 202, stack becomes [201]
         assertEquals(201, stk.pop()) // return 201 --> Return top of the stack 201, stack becomes []
         assertEquals(-1, stk.pop()) // return -1 --> Stack is empty return -1.
     }

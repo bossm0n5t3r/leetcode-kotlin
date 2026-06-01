@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class RearrangeArrayToMaximizePrefixScoreTest {
     private val sut = RearrangeArrayToMaximizePrefixScore.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,11 +35,6 @@ class RearrangeArrayToMaximizePrefixScoreTest {
                 TestData("[-2,-3,0]".toIntArray(), 0),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.maxScore(test.nums),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.maxScore(test.nums)) }
     }
 }

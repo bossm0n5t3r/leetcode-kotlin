@@ -8,30 +8,18 @@ import org.junit.jupiter.api.Test
 class SumOfRootToLeafBinaryNumbersTest {
     private val sut = SumOfRootToLeafBinaryNumbers.Solution()
 
-    private data class TestData(
-        val root: TreeNode?,
-        val result: Int,
-    )
+    private data class TestData(val root: TreeNode?, val result: Int)
 
     @Test
     fun test() {
         val testDataList =
             listOf(
-                TestData(
-                    TreeNodeUtil.generateTreeNodeOrNull(listOf(1, 0, 1, 0, 1, 0, 1)),
-                    22,
-                ),
-                TestData(
-                    TreeNodeUtil.generateTreeNodeOrNull(listOf(0)),
-                    0,
-                ),
+                TestData(TreeNodeUtil.generateTreeNodeOrNull(listOf(1, 0, 1, 0, 1, 0, 1)), 22),
+                TestData(TreeNodeUtil.generateTreeNodeOrNull(listOf(0)), 0),
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.sumRootToLeaf(testData.root),
-            )
+            assertEquals(testData.result, sut.sumRootToLeaf(testData.root))
         }
     }
 }

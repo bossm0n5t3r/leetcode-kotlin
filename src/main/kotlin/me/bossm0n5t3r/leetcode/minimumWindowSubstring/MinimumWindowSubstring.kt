@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.minimumWindowSubstring
 
 class MinimumWindowSubstring {
     class Solution {
-        fun minWindow(
-            s: String,
-            t: String,
-        ): String {
+        fun minWindow(s: String, t: String): String {
             val map = IntArray(128)
             for (c in t) {
                 map[c.code]++

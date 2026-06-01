@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class ShortestPathInAGridWithObstaclesEliminationTest {
     private val sut = ShortestPathInAGridWithObstaclesElimination.Solution()
 
-    private data class TestData(
-        val grid: Array<IntArray>,
-        val k: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val grid: Array<IntArray>, val k: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,14 +35,15 @@ class ShortestPathInAGridWithObstaclesEliminationTest {
             listOf(
                 TestData("[[0,0,0],[1,1,0],[0,0,0],[0,1,1],[0,0,0]]".toArrayOfIntArray(), 1, 6),
                 TestData("[[0,1,1],[1,1,1],[1,0,0]]".toArrayOfIntArray(), 1, -1),
-                TestData("[[0,1,0,0,0,1,0,0],[0,1,0,1,0,1,0,1],[0,0,0,1,0,0,1,0]]".toArrayOfIntArray(), 1, 13),
+                TestData(
+                    "[[0,1,0,0,0,1,0,0],[0,1,0,1,0,1,0,1],[0,0,0,1,0,0,1,0]]".toArrayOfIntArray(),
+                    1,
+                    13,
+                ),
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.shortestPath(testData.grid, testData.k),
-            )
+            assertEquals(testData.result, sut.shortestPath(testData.grid, testData.k))
         }
     }
 }

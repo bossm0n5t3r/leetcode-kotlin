@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class ValidParenthesisStringTest {
     private val sut = ValidParenthesisString.Solution()
 
-    private data class TestData(
-        val s: String,
-        val result: Boolean,
-    )
+    private data class TestData(val s: String, val result: Boolean)
 
     @Test
     fun test() {
@@ -33,11 +30,6 @@ class ValidParenthesisStringTest {
                 ),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.checkValidString(test.s),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.checkValidString(test.s)) }
     }
 }

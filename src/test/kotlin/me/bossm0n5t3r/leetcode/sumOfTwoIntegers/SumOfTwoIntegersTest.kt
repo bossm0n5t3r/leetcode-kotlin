@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class SumOfTwoIntegersTest {
     private val sumOfTwoIntegers = SumOfTwoIntegers.Solution()
 
-    data class SumOfTwoIntegersTestData(
-        val a: Int,
-        val b: Int,
-        val result: Int,
-    )
+    data class SumOfTwoIntegersTestData(val a: Int, val b: Int, val result: Int)
 
     @Test
     fun getSumTest() {

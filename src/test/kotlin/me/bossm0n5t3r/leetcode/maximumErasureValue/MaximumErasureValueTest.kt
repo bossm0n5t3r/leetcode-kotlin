@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 internal class MaximumErasureValueTest {
     private val maximumErasureValue = MaximumErasureValue.Solution()
 
-    private data class MaximumErasureValueTestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    private data class MaximumErasureValueTestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -33,29 +30,19 @@ internal class MaximumErasureValueTest {
     fun maximumUniqueSubarray() {
         val tests =
             listOf(
-                MaximumErasureValueTestData(
-                    intArrayOf(4, 2, 4, 5, 6),
-                    17,
-                ),
-                MaximumErasureValueTestData(
-                    intArrayOf(5, 2, 1, 2, 5, 2, 1, 2, 5),
-                    8,
-                ),
+                MaximumErasureValueTestData(intArrayOf(4, 2, 4, 5, 6), 17),
+                MaximumErasureValueTestData(intArrayOf(5, 2, 1, 2, 5, 2, 1, 2, 5), 8),
             )
         tests.forEach { test ->
-            maximumErasureValue
-                .maximumUniqueSubarray(test.nums)
-                .also {
-                    println(it)
-                    assertEquals(it, test.result)
-                }
+            maximumErasureValue.maximumUniqueSubarray(test.nums).also {
+                println(it)
+                assertEquals(it, test.result)
+            }
 
-            maximumErasureValue
-                .maximumUniqueSubarrayAnotherWay(test.nums)
-                .also {
-                    println(it)
-                    assertEquals(it, test.result)
-                }
+            maximumErasureValue.maximumUniqueSubarrayAnotherWay(test.nums).also {
+                println(it)
+                assertEquals(it, test.result)
+            }
         }
     }
 }

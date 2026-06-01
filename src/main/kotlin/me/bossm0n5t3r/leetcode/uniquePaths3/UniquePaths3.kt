@@ -64,7 +64,11 @@ class UniquePaths3 {
                     val nr = r + dr[i]
                     val nc = c + dc[i]
                     val next = "$nr$nc"
-                    if ((0 until m).contains(nr) && (0 until n).contains(nc) && willVisited.contains(next)) {
+                    if (
+                        (0 until m).contains(nr) &&
+                            (0 until n).contains(nc) &&
+                            willVisited.contains(next)
+                    ) {
                         val nextWillVisited = willVisited.toMutableSet()
                         nextWillVisited.remove(next)
                         queue.add(next to nextWillVisited)
@@ -118,8 +122,6 @@ class UniquePaths3 {
             grid[r][c] = 0
         }
 
-        private data class IntWrapper(
-            var value: Int = 0,
-        )
+        private data class IntWrapper(var value: Int = 0)
     }
 }

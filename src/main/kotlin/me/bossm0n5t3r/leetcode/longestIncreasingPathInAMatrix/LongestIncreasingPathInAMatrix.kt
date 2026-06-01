@@ -34,7 +34,11 @@ class LongestIncreasingPathInAMatrix {
             (0 until 4).forEach { i ->
                 val nr = r + dr[i]
                 val nc = c + dc[i]
-                if ((0 until m).contains(nr) && (0 until n).contains(nc) && matrix[r][c] < matrix[nr][nc]) {
+                if (
+                    (0 until m).contains(nr) &&
+                        (0 until n).contains(nc) &&
+                        matrix[r][c] < matrix[nr][nc]
+                ) {
                     val len = 1 + dfs(matrix, m, n, nr, nc, cache)
                     max = max(max, len)
                 }

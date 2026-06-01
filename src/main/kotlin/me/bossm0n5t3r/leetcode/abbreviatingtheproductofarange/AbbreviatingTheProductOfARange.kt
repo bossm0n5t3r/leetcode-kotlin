@@ -4,15 +4,13 @@ import java.math.BigInteger
 
 class AbbreviatingTheProductOfARange {
     class Solution {
-        fun abbreviateProduct(
-            left: Int,
-            right: Int,
-        ): String {
+        fun abbreviateProduct(left: Int, right: Int): String {
             var number = BigInteger.ONE
             for (i in left..right) {
                 number = number.times(i.toBigInteger())
             }
-            val (numberWithoutTrailingZeros, trailingZerosCount) = number.toString().splitWithTailingZeros()
+            val (numberWithoutTrailingZeros, trailingZerosCount) =
+                number.toString().splitWithTailingZeros()
             return numberWithoutTrailingZeros.summarized() + trailingZerosCount.denoted()
         }
 

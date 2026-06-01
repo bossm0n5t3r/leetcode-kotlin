@@ -2,9 +2,7 @@ package me.bossm0n5t3r.leetcode.compareVersionNumbers
 
 class CompareVersionNumbers {
     class Solution {
-        data class VersionManager(
-            private val versions: List<Int>,
-        ) : Comparable<VersionManager> {
+        data class VersionManager(private val versions: List<Int>) : Comparable<VersionManager> {
             constructor(versionString: String) : this(versionString.split(".").map { it.toInt() })
 
             override fun compareTo(other: VersionManager): Int {
@@ -20,9 +18,7 @@ class CompareVersionNumbers {
             }
         }
 
-        fun compareVersion(
-            version1: String,
-            version2: String,
-        ): Int = VersionManager(version1).compareTo(VersionManager(version2))
+        fun compareVersion(version1: String, version2: String): Int =
+            VersionManager(version1).compareTo(VersionManager(version2))
     }
 }

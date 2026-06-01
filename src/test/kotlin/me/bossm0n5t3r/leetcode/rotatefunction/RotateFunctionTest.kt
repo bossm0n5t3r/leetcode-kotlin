@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class RotateFunctionTest {
     private val sut = RotateFunction.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -32,16 +29,10 @@ class RotateFunctionTest {
     @Test
     fun test() {
         val testDataList =
-            listOf(
-                TestData(intArrayOf(4, 3, 2, 6), 26),
-                TestData(intArrayOf(100), 0),
-            )
+            listOf(TestData(intArrayOf(4, 3, 2, 6), 26), TestData(intArrayOf(100), 0))
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.maxRotateFunction(testData.nums),
-            )
+            assertEquals(testData.result, sut.maxRotateFunction(testData.nums))
         }
     }
 }

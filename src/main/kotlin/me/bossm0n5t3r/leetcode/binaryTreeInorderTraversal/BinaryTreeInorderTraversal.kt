@@ -1,7 +1,7 @@
 package me.bossm0n5t3r.leetcode.binaryTreeInorderTraversal
 
-import me.bossm0n5t3r.leetcode.utils.TreeNode
 import java.util.Stack
+import me.bossm0n5t3r.leetcode.utils.TreeNode
 
 class BinaryTreeInorderTraversal {
     class Solution {
@@ -10,10 +10,7 @@ class BinaryTreeInorderTraversal {
             return inorder(root, result)
         }
 
-        private fun inorder(
-            root: TreeNode?,
-            result: MutableList<Int>,
-        ): List<Int> {
+        private fun inorder(root: TreeNode?, result: MutableList<Int>): List<Int> {
             if (root != null) {
                 inorder(root.left, result)
                 result.add(root.`val`)

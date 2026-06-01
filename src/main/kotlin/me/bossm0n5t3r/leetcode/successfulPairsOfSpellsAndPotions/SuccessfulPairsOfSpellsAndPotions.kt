@@ -2,11 +2,7 @@ package me.bossm0n5t3r.leetcode.successfulPairsOfSpellsAndPotions
 
 class SuccessfulPairsOfSpellsAndPotions {
     class Solution {
-        fun successfulPairs(
-            spells: IntArray,
-            potions: IntArray,
-            success: Long,
-        ): IntArray {
+        fun successfulPairs(spells: IntArray, potions: IntArray, success: Long): IntArray {
             val potionsSize = potions.size
             val sortedPotions = potions.sorted()
             val result = IntArray(spells.size) { 0 }
@@ -16,11 +12,7 @@ class SuccessfulPairsOfSpellsAndPotions {
             return result
         }
 
-        private fun binarySearch(
-            sortedPotions: List<Int>,
-            spell: Int,
-            success: Long,
-        ): Int {
+        private fun binarySearch(sortedPotions: List<Int>, spell: Int, success: Long): Int {
             val target = if (success % spell == 0L) success / spell else success / spell + 1
             var left = 0
             var right = sortedPotions.size

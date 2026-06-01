@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.longestbinarysubsequencelessthanorequaltok
 
 class LongestBinarySubsequenceLessThanOrEqualToK {
     class Solution {
-        fun longestSubsequence(
-            s: String,
-            k: Int,
-        ): Int {
+        fun longestSubsequence(s: String, k: Int): Int {
             var resultString = ""
             var index = s.lastIndex
             while (index > -1) {

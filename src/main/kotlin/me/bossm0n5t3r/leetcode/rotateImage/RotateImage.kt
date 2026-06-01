@@ -7,17 +7,11 @@ class RotateImage {
             val n = matrix.size
             val depth = n / 2
             (1..depth).forEach { r ->
-                (r - 1 until n - r).forEach { c ->
-                    rotateAt(Pair(r - 1, c), matrix, n)
-                }
+                (r - 1 until n - r).forEach { c -> rotateAt(Pair(r - 1, c), matrix, n) }
             }
         }
 
-        private fun rotateAt(
-            start: Pair<Int, Int>,
-            matrix: Array<IntArray>,
-            n: Int,
-        ) {
+        private fun rotateAt(start: Pair<Int, Int>, matrix: Array<IntArray>, n: Int) {
             var beforeValue = matrix[start.first][start.second]
             var cur = start
             do {

@@ -5,7 +5,10 @@ import java.util.PriorityQueue
 class LexicographicallyMinimumStringAfterRemovingStars {
     class Solution {
         fun clearStars(s: String): String {
-            val priorityQueue = PriorityQueue(compareBy<Pair<Char, Int>> { it.first }.thenByDescending { it.second })
+            val priorityQueue =
+                PriorityQueue(
+                    compareBy<Pair<Char, Int>> { it.first }.thenByDescending { it.second }
+                )
             for ((index, c) in s.withIndex()) {
                 if (c != '*') {
                     priorityQueue.offer(c to index)
@@ -14,10 +17,7 @@ class LexicographicallyMinimumStringAfterRemovingStars {
                 priorityQueue.poll()
             }
 
-            return priorityQueue
-                .sortedBy { it.second }
-                .map { it.first }
-                .joinToString("")
+            return priorityQueue.sortedBy { it.second }.map { it.first }.joinToString("")
         }
     }
 }

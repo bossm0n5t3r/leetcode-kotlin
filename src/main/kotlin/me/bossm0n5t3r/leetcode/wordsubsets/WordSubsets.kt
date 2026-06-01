@@ -2,12 +2,13 @@ package me.bossm0n5t3r.leetcode.wordsubsets
 
 class WordSubsets {
     class Solution {
-        fun wordSubsets(
-            words1: Array<String>,
-            words2: Array<String>,
-        ): List<String> {
+        fun wordSubsets(words1: Array<String>, words2: Array<String>): List<String> {
             val word2CountMap =
-                words2.toSet().fold(mutableMapOf<Char, Int>()) { acc: MutableMap<Char, Int>, s: String -> acc + s.countMap() }
+                words2.toSet().fold(mutableMapOf<Char, Int>()) {
+                    acc: MutableMap<Char, Int>,
+                    s: String ->
+                    acc + s.countMap()
+                }
             return words1.filter { it.countMap() in word2CountMap }
         }
 
@@ -23,7 +24,9 @@ class WordSubsets {
             return true
         }
 
-        private operator fun MutableMap<Char, Int>.plus(other: Map<Char, Int>): MutableMap<Char, Int> {
+        private operator fun MutableMap<Char, Int>.plus(
+            other: Map<Char, Int>
+        ): MutableMap<Char, Int> {
             for ((key, value) in other) {
                 this[key] = maxOf(this.getOrDefault(key, 0), value)
             }

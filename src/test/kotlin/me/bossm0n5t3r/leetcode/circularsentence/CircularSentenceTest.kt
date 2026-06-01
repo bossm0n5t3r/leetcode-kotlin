@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class CircularSentenceTest {
     private val sut = CircularSentence.Solution()
 
-    private data class TestData(
-        val sentence: String,
-        val result: Boolean,
-    )
+    private data class TestData(val sentence: String, val result: Boolean)
 
     @Test
     fun test() {
@@ -21,10 +18,7 @@ class CircularSentenceTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.isCircularSentence(testData.sentence),
-            )
+            assertEquals(testData.result, sut.isCircularSentence(testData.sentence))
         }
     }
 }

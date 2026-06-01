@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class MinimumWindowSubstringTest {
     private val sut = MinimumWindowSubstring.Solution()
 
-    private data class TestData(
-        val s: String,
-        val t: String,
-        val result: String,
-    )
+    private data class TestData(val s: String, val t: String, val result: String)
 
     @Test
     fun test() {
@@ -21,11 +17,6 @@ class MinimumWindowSubstringTest {
                 TestData("a", "aa", ""),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.minWindow(test.s, test.t),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.minWindow(test.s, test.t)) }
     }
 }

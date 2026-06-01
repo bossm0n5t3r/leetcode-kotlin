@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.maximumAverageSubarrayI
 
 class MaximumAverageSubarrayI {
     class Solution {
-        fun findMaxAverage(
-            nums: IntArray,
-            k: Int,
-        ): Double {
+        fun findMaxAverage(nums: IntArray, k: Int): Double {
             var tmp = 0.0
             for (i in 0 until k) {
                 tmp += nums[i]

@@ -4,10 +4,7 @@ import me.bossm0n5t3r.leetcode.utils.ListNode
 
 class AddTwoNumbers {
     class Solution {
-        fun addTwoNumbers(
-            l1: ListNode?,
-            l2: ListNode?,
-        ): ListNode? {
+        fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
             if (l1 == null && l2 == null) return null
             val l1Val = l1?.`val` ?: 0
             val l2Val = l2?.`val` ?: 0

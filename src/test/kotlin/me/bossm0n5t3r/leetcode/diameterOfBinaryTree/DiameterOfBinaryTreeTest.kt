@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class DiameterOfBinaryTreeTest {
     private val sut = DiameterOfBinaryTree.Solution()
 
-    private data class TestData(
-        val root: TreeNode?,
-        val result: Int,
-    )
+    private data class TestData(val root: TreeNode?, val result: Int)
 
     @Test
     fun test() {
@@ -21,11 +18,6 @@ class DiameterOfBinaryTreeTest {
                 TestData(TreeNodeUtil.generateTreeNodeOrNull(listOf(1, 2)), 1),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.diameterOfBinaryTree(test.root),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.diameterOfBinaryTree(test.root)) }
     }
 }

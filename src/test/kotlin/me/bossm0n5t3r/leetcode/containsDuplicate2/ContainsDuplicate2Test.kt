@@ -36,49 +36,19 @@ internal class ContainsDuplicate2Test {
     fun containsNearbyDuplicate() {
         val tests =
             listOf(
-                ContainsDuplicate2TestData(
-                    intArrayOf(1, 2, 3, 1),
-                    3,
-                    true,
-                ),
-                ContainsDuplicate2TestData(
-                    intArrayOf(1, 0, 1, 1),
-                    1,
-                    true,
-                ),
-                ContainsDuplicate2TestData(
-                    intArrayOf(1, 2, 3, 1, 2, 3),
-                    2,
-                    false,
-                ),
-                ContainsDuplicate2TestData(
-                    intArrayOf(1),
-                    0,
-                    false,
-                ),
-                ContainsDuplicate2TestData(
-                    intArrayOf(1),
-                    1,
-                    false,
-                ),
-                ContainsDuplicate2TestData(
-                    intArrayOf(0, 1, 2, 3, 2, 5),
-                    3,
-                    true,
-                ),
-                ContainsDuplicate2TestData(
-                    intArrayOf(1, 2, 2, 3),
-                    3,
-                    true,
-                ),
+                ContainsDuplicate2TestData(intArrayOf(1, 2, 3, 1), 3, true),
+                ContainsDuplicate2TestData(intArrayOf(1, 0, 1, 1), 1, true),
+                ContainsDuplicate2TestData(intArrayOf(1, 2, 3, 1, 2, 3), 2, false),
+                ContainsDuplicate2TestData(intArrayOf(1), 0, false),
+                ContainsDuplicate2TestData(intArrayOf(1), 1, false),
+                ContainsDuplicate2TestData(intArrayOf(0, 1, 2, 3, 2, 5), 3, true),
+                ContainsDuplicate2TestData(intArrayOf(1, 2, 2, 3), 3, true),
             )
         tests.forEach { test ->
-            containsDuplicate2
-                .containsNearbyDuplicate(test.nums, test.k)
-                .also {
-                    println(it)
-                    assertEquals(it, test.result)
-                }
+            containsDuplicate2.containsNearbyDuplicate(test.nums, test.k).also {
+                println(it)
+                assertEquals(it, test.result)
+            }
         }
     }
 }

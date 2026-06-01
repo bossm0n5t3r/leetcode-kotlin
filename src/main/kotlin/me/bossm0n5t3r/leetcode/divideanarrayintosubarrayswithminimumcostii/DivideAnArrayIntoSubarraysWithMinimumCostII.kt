@@ -4,9 +4,7 @@ import java.util.TreeMap
 
 class DivideAnArrayIntoSubarraysWithMinimumCostII {
     class Solution {
-        private class SlidingWindowKSmallest(
-            private val k: Int,
-        ) {
+        private class SlidingWindowKSmallest(private val k: Int) {
             var currentSum = 0L
             private var lowerSize = 0
             private var upperSize = 0
@@ -54,36 +52,22 @@ class DivideAnArrayIntoSubarraysWithMinimumCostII {
                 }
             }
 
-            private fun addToMap(
-                map: TreeMap<Int, Int>,
-                key: Int,
-            ) {
+            private fun addToMap(map: TreeMap<Int, Int>, key: Int) {
                 map[key] = map.getOrDefault(key, 0) + 1
             }
 
-            private fun removeFromMap(
-                map: TreeMap<Int, Int>,
-                key: Int,
-            ) {
+            private fun removeFromMap(map: TreeMap<Int, Int>, key: Int) {
                 val count = map[key] ?: return
                 if (count == 1) map.remove(key) else map[key] = count - 1
             }
 
-            private fun moveElement(
-                from: TreeMap<Int, Int>,
-                to: TreeMap<Int, Int>,
-                key: Int,
-            ) {
+            private fun moveElement(from: TreeMap<Int, Int>, to: TreeMap<Int, Int>, key: Int) {
                 removeFromMap(from, key)
                 addToMap(to, key)
             }
         }
 
-        fun minimumCost(
-            nums: IntArray,
-            k: Int,
-            dist: Int,
-        ): Long {
+        fun minimumCost(nums: IntArray, k: Int, dist: Int): Long {
             val n = nums.size
             val window = SlidingWindowKSmallest(k - 2)
 

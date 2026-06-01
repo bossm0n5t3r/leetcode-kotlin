@@ -6,25 +6,14 @@ import org.junit.jupiter.api.Test
 class FindTheOriginalTypedStringITest {
     private val sut = FindTheOriginalTypedStringI.Solution()
 
-    private data class TestData(
-        val word: String,
-        val result: Int,
-    )
+    private data class TestData(val word: String, val result: Int)
 
     @Test
     fun test() {
-        val testDataList =
-            listOf(
-                TestData("abbcccc", 5),
-                TestData("abcd", 1),
-                TestData("aaaa", 4),
-            )
+        val testDataList = listOf(TestData("abbcccc", 5), TestData("abcd", 1), TestData("aaaa", 4))
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.possibleStringCount(testData.word),
-            )
+            assertEquals(testData.result, sut.possibleStringCount(testData.word))
         }
     }
 }

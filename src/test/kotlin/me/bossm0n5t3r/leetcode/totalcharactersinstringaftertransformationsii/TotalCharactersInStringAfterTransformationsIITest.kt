@@ -6,12 +6,7 @@ import org.junit.jupiter.api.Test
 class TotalCharactersInStringAfterTransformationsIITest {
     private val sut = TotalCharactersInStringAfterTransformationsII.Solution()
 
-    private data class TestData(
-        val s: String,
-        val t: Int,
-        val nums: List<Int>,
-        val result: Int,
-    )
+    private data class TestData(val s: String, val t: Int, val nums: List<Int>, val result: Int)
 
     @Test
     fun test() {
@@ -20,13 +15,67 @@ class TotalCharactersInStringAfterTransformationsIITest {
                 TestData(
                     "abcyy",
                     2,
-                    listOf(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2),
+                    listOf(
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        2,
+                    ),
                     7,
                 ),
                 TestData(
                     "azbk",
                     1,
-                    listOf(2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
+                    listOf(
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                    ),
                     8,
                 ),
             )

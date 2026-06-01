@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.countNumberOfNiceSubarrays
 
 class CountNumberOfNiceSubarrays {
     class Solution {
-        fun numberOfSubarrays(
-            nums: IntArray,
-            k: Int,
-        ): Int {
+        fun numberOfSubarrays(nums: IntArray, k: Int): Int {
             val n = nums.size
             val cnt = IntArray(n + 1)
             cnt[0] = 1

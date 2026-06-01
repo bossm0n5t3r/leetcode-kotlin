@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class LexicographicalNumbersTest {
     private val sut = LexicographicalNumbers.Solution()
 
-    private data class TestData(
-        val n: Int,
-        val result: List<Int>,
-    )
+    private data class TestData(val n: Int, val result: List<Int>)
 
     @Test
     fun test() {
@@ -20,10 +17,7 @@ class LexicographicalNumbersTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.lexicalOrder(testData.n),
-            )
+            assertEquals(testData.result, sut.lexicalOrder(testData.n))
         }
     }
 }

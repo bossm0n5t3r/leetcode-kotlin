@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class IslandPerimeterTest {
     private val sut = IslandPerimeter.Solution()
 
-    private data class TestData(
-        val grid: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val grid: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,11 +36,6 @@ class IslandPerimeterTest {
                 TestData("[[1,0]]".toArrayOfIntArray(), 4),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.islandPerimeter(test.grid),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.islandPerimeter(test.grid)) }
     }
 }

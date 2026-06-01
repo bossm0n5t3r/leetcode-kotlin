@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class DoubleANumberRepresentedAsALinkedListTest {
     private val sut = DoubleANumberRepresentedAsALinkedList.Solution()
 
-    private data class TestData(
-        val head: ListNode?,
-        val result: ListNode?,
-    )
+    private data class TestData(val head: ListNode?, val result: ListNode?)
 
     @Test
     fun test() {
@@ -28,9 +25,7 @@ class DoubleANumberRepresentedAsALinkedListTest {
             )
 
         tests.forEach { test ->
-            assertTrue {
-                ListNodeUtil.isEqual(test.result, sut.doubleIt(test.head))
-            }
+            assertTrue { ListNodeUtil.isEqual(test.result, sut.doubleIt(test.head)) }
         }
     }
 }

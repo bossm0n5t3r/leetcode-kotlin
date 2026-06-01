@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.findsubsequenceoflengthkwiththelargestsum
 
 class FindSubsequenceOfLengthKWithTheLargestSum {
     class Solution {
-        fun maxSubsequence(
-            nums: IntArray,
-            k: Int,
-        ): IntArray {
+        fun maxSubsequence(nums: IntArray, k: Int): IntArray {
             val sortedDescendingNums = nums.sortedDescending()
             val numberToCount = mutableMapOf<Int, Int>()
             repeat(k) {

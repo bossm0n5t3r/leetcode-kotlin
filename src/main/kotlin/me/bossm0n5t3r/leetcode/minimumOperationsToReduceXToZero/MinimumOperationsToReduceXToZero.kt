@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.minimumOperationsToReduceXToZero
 
 class MinimumOperationsToReduceXToZero {
     class Solution {
-        fun minOperations(
-            nums: IntArray,
-            x: Int,
-        ): Int {
+        fun minOperations(nums: IntArray, x: Int): Int {
             if (nums.first() > x && nums.last() > x) return -1
             val totalSum = nums.sum()
             if (totalSum < x) return -1
@@ -21,10 +18,7 @@ class MinimumOperationsToReduceXToZero {
             return if (result == 0) -1 else nums.size - result
         }
 
-        fun minOperationsUsingMap(
-            nums: IntArray,
-            x: Int,
-        ): Int {
+        fun minOperationsUsingMap(nums: IntArray, x: Int): Int {
             if (nums.first() > x && nums.last() > x) return -1
             val totalSum = nums.sum()
             if (totalSum < x) return -1

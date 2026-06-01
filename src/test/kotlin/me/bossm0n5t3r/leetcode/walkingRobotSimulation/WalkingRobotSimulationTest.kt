@@ -43,10 +43,7 @@ class WalkingRobotSimulationTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.robotSim(test.commands, test.obstacles),
-            )
+            assertEquals(test.result, sut.robotSim(test.commands, test.obstacles))
         }
     }
 }

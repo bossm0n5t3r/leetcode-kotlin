@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class SingleNumberIIITest {
     private val sut = SingleNumberIII.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: IntArray,
-    ) {
+    private data class TestData(val nums: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,9 +37,7 @@ class SingleNumberIIITest {
             )
 
         tests.forEach { test ->
-            assertTrue {
-                test.result.contentEquals(sut.singleNumber(test.nums))
-            }
+            assertTrue { test.result.contentEquals(sut.singleNumber(test.nums)) }
         }
     }
 }

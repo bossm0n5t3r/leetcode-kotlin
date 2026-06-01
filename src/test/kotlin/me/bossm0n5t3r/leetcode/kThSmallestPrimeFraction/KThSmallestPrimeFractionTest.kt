@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class KThSmallestPrimeFractionTest {
     private val sut = KThSmallestPrimeFraction.Solution()
 
-    private data class TestData(
-        val arr: IntArray,
-        val k: Int,
-        val result: IntArray,
-    ) {
+    private data class TestData(val arr: IntArray, val k: Int, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -41,9 +37,7 @@ class KThSmallestPrimeFractionTest {
             )
 
         tests.forEach { test ->
-            assertTrue {
-                test.result.contentEquals(sut.kthSmallestPrimeFraction(test.arr, test.k))
-            }
+            assertTrue { test.result.contentEquals(sut.kthSmallestPrimeFraction(test.arr, test.k)) }
         }
     }
 }

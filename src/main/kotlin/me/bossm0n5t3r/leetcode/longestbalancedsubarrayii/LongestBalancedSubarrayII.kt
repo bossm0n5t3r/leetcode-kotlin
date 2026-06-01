@@ -6,9 +6,7 @@ import kotlin.math.min
 class LongestBalancedSubarrayII {
     class Solution {
         // Segment Tree over an array of size n
-        class SegmentTree(
-            private var n: Int,
-        ) {
+        class SegmentTree(private var n: Int) {
             var size: Int = 4 * n
             var sum: IntArray = IntArray(size)
             var mn: IntArray = IntArray(size)
@@ -25,13 +23,8 @@ class LongestBalancedSubarrayII {
                 mx[node] = max(mx[l], sum[l] + mx[r])
             }
 
-            /**
-             * Update value by index idx in an original array
-             */
-            fun update(
-                idx: Int,
-                `val`: Int,
-            ) {
+            /** Update value by index idx in an original array */
+            fun update(idx: Int, `val`: Int) {
                 var node = 1
                 var l = 0
                 var r = n - 1
@@ -59,9 +52,7 @@ class LongestBalancedSubarrayII {
                 }
             }
 
-            /**
-             * Find the rightmost index r with the prefix sum (r) = target
-             */
+            /** Find the rightmost index r with the prefix sum (r) = target */
             fun findRightmostPrefix(target: Int): Int {
                 var node = 1
                 var l = 0

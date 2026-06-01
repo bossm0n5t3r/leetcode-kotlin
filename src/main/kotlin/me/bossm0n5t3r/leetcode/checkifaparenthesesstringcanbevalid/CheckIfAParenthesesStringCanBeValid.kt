@@ -2,16 +2,10 @@ package me.bossm0n5t3r.leetcode.checkifaparenthesesstringcanbevalid
 
 class CheckIfAParenthesesStringCanBeValid {
     class Solution {
-        fun canBeValid(
-            s: String,
-            locked: String,
-        ): Boolean = s.length % 2 == 0 && validate(s, locked, '(') && validate(s, locked, ')')
+        fun canBeValid(s: String, locked: String): Boolean =
+            s.length % 2 == 0 && validate(s, locked, '(') && validate(s, locked, ')')
 
-        private fun validate(
-            s: String,
-            locked: String,
-            op: Char,
-        ): Boolean {
+        private fun validate(s: String, locked: String, op: Char): Boolean {
             var balance = 0
             var wild = 0
             val length = s.length

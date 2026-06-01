@@ -9,11 +9,7 @@ class GenerateParentheses {
             return result
         }
 
-        private fun generateAllParentheses(
-            result: MutableList<String>,
-            arr: CharArray,
-            pos: Int,
-        ) {
+        private fun generateAllParentheses(result: MutableList<String>, arr: CharArray, pos: Int) {
             if (pos == arr.size) {
                 val parenthesis = arr.joinToString("")
                 if (isValidParenthesis(parenthesis)) {

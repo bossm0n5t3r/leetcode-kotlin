@@ -8,39 +8,24 @@ import org.junit.jupiter.api.Test
 class PathSum3Test {
     private val sut = PathSum3.Solution()
 
-    private data class TestData(
-        val root: TreeNode?,
-        val targetSum: Int,
-        val result: Int,
-    )
+    private data class TestData(val root: TreeNode?, val targetSum: Int, val result: Int)
 
     @Test
     fun test() {
         val tests =
             listOf(
                 TestData(
-                    root = TreeNodeUtil.generateTreeNodeOrNull(listOf(10, 5, -3, 3, 2, null, 11, 3, -2, null, 1)),
+                    root =
+                        TreeNodeUtil.generateTreeNodeOrNull(
+                            listOf(10, 5, -3, 3, 2, null, 11, 3, -2, null, 1)
+                        ),
                     targetSum = 8,
                     result = 3,
                 ),
                 TestData(
                     root =
                         TreeNodeUtil.generateTreeNodeOrNull(
-                            listOf(
-                                5,
-                                4,
-                                8,
-                                11,
-                                null,
-                                13,
-                                4,
-                                7,
-                                2,
-                                null,
-                                null,
-                                5,
-                                1,
-                            ),
+                            listOf(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1)
                         ),
                     targetSum = 22,
                     result = 3,
@@ -64,18 +49,13 @@ class PathSum3Test {
                                 1000000000,
                                 null,
                                 1000000000,
-                            ),
+                            )
                         ),
                     targetSum = 0,
                     result = 0,
                 ),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.pathSum(test.root, test.targetSum),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.pathSum(test.root, test.targetSum), test.result) }
     }
 }

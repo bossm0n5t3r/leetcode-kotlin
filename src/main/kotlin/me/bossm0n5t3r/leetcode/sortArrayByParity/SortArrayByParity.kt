@@ -2,7 +2,8 @@ package me.bossm0n5t3r.leetcode.sortArrayByParity
 
 class SortArrayByParity {
     class Solution {
-        fun sortArrayByParity(nums: IntArray): IntArray = (nums.filter { it % 2 == 0 } + nums.filterNot { it % 2 == 0 }).toIntArray()
+        fun sortArrayByParity(nums: IntArray): IntArray =
+            (nums.filter { it % 2 == 0 } + nums.filterNot { it % 2 == 0 }).toIntArray()
 
         fun sortArrayByParityWithSwap(nums: IntArray): IntArray {
             var i = 0

@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class EvaluateReversePolishNotationTest {
     private val sut = EvaluateReversePolishNotation.Solution()
 
-    private data class TestData(
-        val tokens: Array<String>,
-        val result: Int,
-    ) {
+    private data class TestData(val tokens: Array<String>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -35,14 +32,12 @@ class EvaluateReversePolishNotationTest {
             listOf(
                 TestData(arrayOf("2", "1", "+", "3", "*"), 9),
                 TestData(arrayOf("4", "13", "5", "/", "+"), 6),
-                TestData(arrayOf("10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"), 22),
+                TestData(
+                    arrayOf("10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"),
+                    22,
+                ),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.evalRPN(test.tokens),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.evalRPN(test.tokens)) }
     }
 }

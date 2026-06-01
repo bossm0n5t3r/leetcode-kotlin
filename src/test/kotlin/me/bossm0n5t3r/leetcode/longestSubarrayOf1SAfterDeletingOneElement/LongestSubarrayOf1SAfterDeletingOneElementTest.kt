@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class LongestSubarrayOf1SAfterDeletingOneElementTest {
     private val sut = LongestSubarrayOf1SAfterDeletingOneElement.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -31,25 +28,11 @@ class LongestSubarrayOf1SAfterDeletingOneElementTest {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    nums = intArrayOf(1, 1, 0, 1),
-                    result = 3,
-                ),
-                TestData(
-                    nums = intArrayOf(0, 1, 1, 1, 0, 1, 1, 0, 1),
-                    result = 5,
-                ),
-                TestData(
-                    nums = intArrayOf(1, 1, 1),
-                    result = 2,
-                ),
+                TestData(nums = intArrayOf(1, 1, 0, 1), result = 3),
+                TestData(nums = intArrayOf(0, 1, 1, 1, 0, 1, 1, 0, 1), result = 5),
+                TestData(nums = intArrayOf(1, 1, 1), result = 2),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.longestSubarray(test.nums),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.longestSubarray(test.nums), test.result) }
     }
 }

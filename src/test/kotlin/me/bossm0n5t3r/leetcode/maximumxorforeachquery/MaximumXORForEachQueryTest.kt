@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class MaximumXORForEachQueryTest {
     private val sut = MaximumXORForEachQuery.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val maximumBit: Int,
-        val result: IntArray,
-    ) {
+    private data class TestData(val nums: IntArray, val maximumBit: Int, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

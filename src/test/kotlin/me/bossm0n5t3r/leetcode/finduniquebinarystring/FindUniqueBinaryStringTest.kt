@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class FindUniqueBinaryStringTest {
     private val sut = FindUniqueBinaryString.Solution()
 
-    private data class TestData(
-        val nums: Array<String>,
-        val result: String,
-    ) {
+    private data class TestData(val nums: Array<String>, val result: String) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,10 +37,7 @@ class FindUniqueBinaryStringTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.findDifferentBinaryString(testData.nums),
-            )
+            assertEquals(testData.result, sut.findDifferentBinaryString(testData.nums))
         }
     }
 }

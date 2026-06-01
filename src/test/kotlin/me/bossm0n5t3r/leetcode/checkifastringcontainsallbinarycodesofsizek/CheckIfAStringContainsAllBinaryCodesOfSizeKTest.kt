@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class CheckIfAStringContainsAllBinaryCodesOfSizeKTest {
     private val sut = CheckIfAStringContainsAllBinaryCodesOfSizeK.Solution()
 
-    private data class TestData(
-        val s: String,
-        val k: Int,
-        val result: Boolean,
-    )
+    private data class TestData(val s: String, val k: Int, val result: Boolean)
 
     @Test
     fun test() {
@@ -22,10 +18,7 @@ class CheckIfAStringContainsAllBinaryCodesOfSizeKTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.hasAllCodes(testData.s, testData.k),
-            )
+            assertEquals(testData.result, sut.hasAllCodes(testData.s, testData.k))
         }
     }
 }

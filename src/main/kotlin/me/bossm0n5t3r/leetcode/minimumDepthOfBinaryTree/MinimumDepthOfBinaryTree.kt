@@ -1,7 +1,7 @@
 package me.bossm0n5t3r.leetcode.minimumDepthOfBinaryTree
 
-import me.bossm0n5t3r.leetcode.utils.TreeNode
 import java.util.LinkedList
+import me.bossm0n5t3r.leetcode.utils.TreeNode
 
 class MinimumDepthOfBinaryTree {
     class Solution {

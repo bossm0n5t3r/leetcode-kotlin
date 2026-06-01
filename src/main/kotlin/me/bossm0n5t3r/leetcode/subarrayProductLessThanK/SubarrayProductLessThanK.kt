@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.subarrayProductLessThanK
 
 class SubarrayProductLessThanK {
     class Solution {
-        fun numSubarrayProductLessThanK(
-            nums: IntArray,
-            k: Int,
-        ): Int {
+        fun numSubarrayProductLessThanK(nums: IntArray, k: Int): Int {
             if (k <= 1) return 0
             var start = 0
             var product = 1.0

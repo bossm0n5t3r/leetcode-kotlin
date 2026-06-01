@@ -61,10 +61,7 @@ internal class SearchA2DMatrix2Test {
                     result = false,
                 ),
                 SearchA2DMatrix2TestData(
-                    matrix =
-                        arrayOf(
-                            intArrayOf(-1, 3),
-                        ),
+                    matrix = arrayOf(intArrayOf(-1, 3)),
                     target = 3,
                     result = true,
                 ),

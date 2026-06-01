@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class CountingWordsWithAGivenPrefixTest {
     private val sut = CountingWordsWithAGivenPrefix.Solution()
 
-    private data class TestData(
-        val words: Array<String>,
-        val pref: String,
-        val result: Int,
-    ) {
+    private data class TestData(val words: Array<String>, val pref: String, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -37,15 +33,20 @@ class CountingWordsWithAGivenPrefixTest {
     fun test() {
         val testDataList =
             listOf(
-                TestData("[\"pay\",\"attention\",\"practice\",\"attend\"]".toArrayOfString(), "at", 2),
-                TestData("[\"leetcode\",\"win\",\"loops\",\"success\"]".toArrayOfString(), "code", 0),
+                TestData(
+                    "[\"pay\",\"attention\",\"practice\",\"attend\"]".toArrayOfString(),
+                    "at",
+                    2,
+                ),
+                TestData(
+                    "[\"leetcode\",\"win\",\"loops\",\"success\"]".toArrayOfString(),
+                    "code",
+                    0,
+                ),
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.prefixCount(testData.words, testData.pref),
-            )
+            assertEquals(testData.result, sut.prefixCount(testData.words, testData.pref))
         }
     }
 }

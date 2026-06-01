@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class SumOfAllSubsetXorTotalsTest {
     private val sut = SumOfAllSubsetXorTotals.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,11 +35,6 @@ class SumOfAllSubsetXorTotalsTest {
                 TestData(intArrayOf(3, 4, 5, 6, 7, 8), 480),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.subsetXORSum(test.nums),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.subsetXORSum(test.nums)) }
     }
 }

@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class MaximumDistanceInArraysTest {
     private val sut = MaximumDistanceInArrays.Solution()
 
-    private data class TestData(
-        val arrays: List<List<Int>>,
-        val result: Int,
-    )
+    private data class TestData(val arrays: List<List<Int>>, val result: Int)
 
     @Test
     fun test() {
@@ -21,10 +18,7 @@ class MaximumDistanceInArraysTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.maxDistance(testData.arrays),
-            )
+            assertEquals(testData.result, sut.maxDistance(testData.arrays))
         }
     }
 }

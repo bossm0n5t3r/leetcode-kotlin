@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class MinimumIncrementToMakeArrayUniqueTest {
     private val sut = MinimumIncrementToMakeArrayUnique.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -33,16 +30,8 @@ class MinimumIncrementToMakeArrayUniqueTest {
     @Test
     fun test() {
         val tests =
-            listOf(
-                TestData("[1,2,2]".toIntArray(), 1),
-                TestData("[3,2,1,2,1,7]".toIntArray(), 6),
-            )
+            listOf(TestData("[1,2,2]".toIntArray(), 1), TestData("[3,2,1,2,1,7]".toIntArray(), 6))
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.minIncrementForUnique(test.nums),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.minIncrementForUnique(test.nums)) }
     }
 }

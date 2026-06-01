@@ -39,15 +39,17 @@ class GrumpyBookstoreOwnerTest {
     fun test() {
         val tests =
             listOf(
-                TestData(intArrayOf(1, 0, 1, 2, 1, 1, 7, 5), intArrayOf(0, 1, 0, 1, 0, 1, 0, 1), 3, 16),
+                TestData(
+                    intArrayOf(1, 0, 1, 2, 1, 1, 7, 5),
+                    intArrayOf(0, 1, 0, 1, 0, 1, 0, 1),
+                    3,
+                    16,
+                ),
                 TestData(intArrayOf(1), intArrayOf(0), 1, 1),
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.maxSatisfied(test.customers, test.grumpy, test.minutes),
-            )
+            assertEquals(test.result, sut.maxSatisfied(test.customers, test.grumpy, test.minutes))
         }
     }
 }

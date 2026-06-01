@@ -10,11 +10,7 @@ import org.junit.jupiter.api.Test
 class LinkedListInBinaryTreeTest {
     private val sut = LinkedListInBinaryTree.Solution()
 
-    private data class TestData(
-        val head: ListNode?,
-        val root: TreeNode?,
-        val result: Boolean,
-    )
+    private data class TestData(val head: ListNode?, val root: TreeNode?, val result: Boolean)
 
     @Test
     fun test() {
@@ -41,7 +37,7 @@ class LinkedListInBinaryTreeTest {
                             null,
                             1,
                             3,
-                        ),
+                        )
                     ),
                     true,
                 ),
@@ -66,7 +62,7 @@ class LinkedListInBinaryTreeTest {
                             null,
                             1,
                             3,
-                        ),
+                        )
                     ),
                     true,
                 ),
@@ -91,17 +87,12 @@ class LinkedListInBinaryTreeTest {
                             null,
                             1,
                             3,
-                        ),
+                        )
                     ),
                     false,
                 ),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.isSubPath(test.head, test.root),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.isSubPath(test.head, test.root)) }
     }
 }

@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class FindCommonCharactersTest {
     private val sut = FindCommonCharacters.Solution()
 
-    private data class TestData(
-        val words: Array<String>,
-        val result: List<String>,
-    ) {
+    private data class TestData(val words: Array<String>, val result: List<String>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,15 +31,13 @@ class FindCommonCharactersTest {
     fun test() {
         val tests =
             listOf(
-                TestData("[\"bella\",\"label\",\"roller\"]".toArrayOfString(), listOf("e", "l", "l")),
+                TestData(
+                    "[\"bella\",\"label\",\"roller\"]".toArrayOfString(),
+                    listOf("e", "l", "l"),
+                ),
                 TestData("[\"cool\",\"lock\",\"cook\"]".toArrayOfString(), listOf("c", "o")),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.commonChars(test.words),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.commonChars(test.words)) }
     }
 }

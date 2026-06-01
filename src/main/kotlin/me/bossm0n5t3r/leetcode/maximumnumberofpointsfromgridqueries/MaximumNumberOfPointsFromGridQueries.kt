@@ -4,12 +4,10 @@ import java.util.PriorityQueue
 
 class MaximumNumberOfPointsFromGridQueries {
     class Solution {
-        fun maxPoints(
-            grid: Array<IntArray>,
-            queries: IntArray,
-        ): IntArray {
+        fun maxPoints(grid: Array<IntArray>, queries: IntArray): IntArray {
             val (m, n) = grid.size to grid.first().size
-            val sortedQueries = queries.mapIndexed { index, query -> query to index }.sortedBy { it.first }
+            val sortedQueries =
+                queries.mapIndexed { index, query -> query to index }.sortedBy { it.first }
             val result = IntArray(queries.size)
             val visited = Array(m) { BooleanArray(n) }
             val direction = intArrayOf(0, 0, 1, -1).zip(intArrayOf(1, -1, 0, 0))

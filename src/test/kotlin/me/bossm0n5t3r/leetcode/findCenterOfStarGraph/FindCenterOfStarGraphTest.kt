@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class FindCenterOfStarGraphTest {
     private val sut = FindCenterOfStarGraph.Solution()
 
-    private data class TestData(
-        val edges: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val edges: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,11 +35,6 @@ class FindCenterOfStarGraphTest {
                 TestData("[[1,2],[5,1],[1,3],[1,4]]".toArrayOfIntArray(), 1),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.findCenter(test.edges),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.findCenter(test.edges)) }
     }
 }

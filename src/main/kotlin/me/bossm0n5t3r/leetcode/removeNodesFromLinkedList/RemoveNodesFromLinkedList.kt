@@ -1,7 +1,7 @@
 package me.bossm0n5t3r.leetcode.removeNodesFromLinkedList
 
-import me.bossm0n5t3r.leetcode.utils.ListNode
 import java.util.Stack
+import me.bossm0n5t3r.leetcode.utils.ListNode
 
 class RemoveNodesFromLinkedList {
     class Solution {

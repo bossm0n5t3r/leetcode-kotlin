@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class CheckIfEveryRowAndColumnContainsAllNumbersTest {
     private val sut = CheckIfEveryRowAndColumnContainsAllNumbers.Solution()
 
-    private data class TestData(
-        val matrix: Array<IntArray>,
-        val result: Boolean,
-    ) {
+    private data class TestData(val matrix: Array<IntArray>, val result: Boolean) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,11 +35,6 @@ class CheckIfEveryRowAndColumnContainsAllNumbersTest {
                 TestData("[[1,1,1],[1,2,3],[1,2,3]]".toArrayOfIntArray(), false),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.checkValid(test.matrix),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.checkValid(test.matrix)) }
     }
 }

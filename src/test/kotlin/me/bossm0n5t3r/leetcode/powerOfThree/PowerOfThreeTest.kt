@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class PowerOfThreeTest {
     private val powerOfThree = PowerOfThree.Solution()
 
-    data class PowerOfThreeTestData(
-        val n: Int,
-        val result: Boolean,
-    )
+    data class PowerOfThreeTestData(val n: Int, val result: Boolean)
 
     @Test
     fun isPowerOfThree() {

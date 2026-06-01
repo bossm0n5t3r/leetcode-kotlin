@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.divideTwoIntegers
 
 class DivideTwoIntegers {
     class Solution {
-        fun divide(
-            dividend: Int,
-            divisor: Int,
-        ): Int {
+        fun divide(dividend: Int, divisor: Int): Int {
             if (dividend == 1 shl 31 && divisor == -1) return Int.MAX_VALUE
             var result = 0
             var tmpDividend = abs(dividend)

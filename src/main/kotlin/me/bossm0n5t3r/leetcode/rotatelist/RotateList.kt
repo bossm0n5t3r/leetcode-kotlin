@@ -4,10 +4,7 @@ import me.bossm0n5t3r.leetcode.utils.ListNode
 
 class RotateList {
     class Solution {
-        fun rotateRight(
-            head: ListNode?,
-            k: Int,
-        ): ListNode? {
+        fun rotateRight(head: ListNode?, k: Int): ListNode? {
             if (head == null || head.next == null || k == 0) {
                 return head
             }

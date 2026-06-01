@@ -25,10 +25,7 @@ class ReplaceWordsTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.replaceWords(test.dictionary, test.sentence),
-            )
+            assertEquals(test.result, sut.replaceWords(test.dictionary, test.sentence))
         }
     }
 }

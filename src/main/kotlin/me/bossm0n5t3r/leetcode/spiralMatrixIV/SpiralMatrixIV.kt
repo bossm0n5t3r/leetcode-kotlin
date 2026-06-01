@@ -4,11 +4,7 @@ import me.bossm0n5t3r.leetcode.utils.ListNode
 
 class SpiralMatrixIV {
     class Solution {
-        fun spiralMatrix(
-            m: Int,
-            n: Int,
-            head: ListNode?,
-        ): Array<IntArray> {
+        fun spiralMatrix(m: Int, n: Int, head: ListNode?): Array<IntArray> {
             val result = Array(m) { IntArray(n) { -1 } }
             val visited = Array(m) { BooleanArray(n) { false } }
             var tmp = head

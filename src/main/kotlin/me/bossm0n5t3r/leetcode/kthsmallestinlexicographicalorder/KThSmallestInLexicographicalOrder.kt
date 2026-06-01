@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.kthsmallestinlexicographicalorder
 
 class KThSmallestInLexicographicalOrder {
     class Solution {
-        fun findKthNumber(
-            n: Int,
-            k: Int,
-        ): Int {
+        fun findKthNumber(n: Int, k: Int): Int {
             var cur = 1L
             var countK = (k - 1).toLong()
             while (countK > 0) {
@@ -21,11 +18,7 @@ class KThSmallestInLexicographicalOrder {
             return cur.toInt()
         }
 
-        private fun calculateSteps(
-            n: Int,
-            prefix1: Long,
-            prefix2: Long,
-        ): Int {
+        private fun calculateSteps(n: Int, prefix1: Long, prefix2: Long): Int {
             var steps = 0
             var tmpPrefix1 = prefix1
             var tmpPrefix2 = prefix2

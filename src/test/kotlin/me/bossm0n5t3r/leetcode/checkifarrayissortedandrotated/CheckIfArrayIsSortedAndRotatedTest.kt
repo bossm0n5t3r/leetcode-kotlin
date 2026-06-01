@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class CheckIfArrayIsSortedAndRotatedTest {
     private val sut = CheckIfArrayIsSortedAndRotated.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Boolean,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Boolean) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,10 +37,7 @@ class CheckIfArrayIsSortedAndRotatedTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.check(testData.nums),
-            )
+            assertEquals(testData.result, sut.check(testData.nums))
         }
     }
 }

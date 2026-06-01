@@ -9,16 +9,9 @@ class NQueens {
             return result.result.map { it.toList() }
         }
 
-        private data class Result(
-            val result: MutableSet<List<String>> = mutableSetOf(),
-        )
+        private data class Result(val result: MutableSet<List<String>> = mutableSetOf())
 
-        private fun dfs(
-            n: Int,
-            board: Array<CharArray>,
-            row: Int,
-            result: Result,
-        ) {
+        private fun dfs(n: Int, board: Array<CharArray>, row: Int, result: Result) {
             if (row == n) {
                 result.result.add(board.map { it.joinToString("") })
                 return
@@ -32,12 +25,7 @@ class NQueens {
             }
         }
 
-        private fun isSafe(
-            n: Int,
-            board: Array<CharArray>,
-            row: Int,
-            col: Int,
-        ): Boolean {
+        private fun isSafe(n: Int, board: Array<CharArray>, row: Int, col: Int): Boolean {
             (0 until n).forEach { i ->
                 if (board[i][col] == 'Q') return false
                 if (row >= i && col >= i && board[row - i][col - i] == 'Q') return false

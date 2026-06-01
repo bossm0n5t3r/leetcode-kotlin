@@ -9,10 +9,7 @@ import org.junit.jupiter.api.Test
 class BinaryTreeInorderTraversalTest {
     private val binaryTreeInorderTraversal = BinaryTreeInorderTraversal.Solution()
 
-    data class BinaryTreeInorderTraversalTestData(
-        val root: TreeNode?,
-        val result: List<Int>,
-    )
+    data class BinaryTreeInorderTraversalTestData(val root: TreeNode?, val result: List<Int>)
 
     @Test
     fun inorderTraversal() {
@@ -22,12 +19,19 @@ class BinaryTreeInorderTraversalTest {
                     TreeNodeUtil.generateTreeNodeOrNull(listOf(1, null, 2, 3)),
                     listOf(1, 3, 2),
                 ),
-                BinaryTreeInorderTraversalTestData(TreeNodeUtil.generateTreeNodeOrNull(listOf()), listOf()),
-                BinaryTreeInorderTraversalTestData(TreeNodeUtil.generateTreeNodeOrNull(listOf(1)), listOf(1)),
+                BinaryTreeInorderTraversalTestData(
+                    TreeNodeUtil.generateTreeNodeOrNull(listOf()),
+                    listOf(),
+                ),
+                BinaryTreeInorderTraversalTestData(
+                    TreeNodeUtil.generateTreeNodeOrNull(listOf(1)),
+                    listOf(1),
+                ),
             )
         tests.forEach { test ->
             // RecursiveApproach
-            val resultRecursiveApproach = binaryTreeInorderTraversal.inorderTraversalRecursiveApproach(test.root)
+            val resultRecursiveApproach =
+                binaryTreeInorderTraversal.inorderTraversalRecursiveApproach(test.root)
             assertTrue(resultRecursiveApproach.containsAll(test.result))
             assertEquals(resultRecursiveApproach.size, test.result.size)
 
@@ -38,7 +42,8 @@ class BinaryTreeInorderTraversalTest {
             assertEquals(resultIteratingMethodUsingStack.size, test.result.size)
 
             // Morris Traversal
-            val resultMorrisTraversal = binaryTreeInorderTraversal.inorderTraversalMorrisTraversal(test.root)
+            val resultMorrisTraversal =
+                binaryTreeInorderTraversal.inorderTraversalMorrisTraversal(test.root)
             assertTrue(resultMorrisTraversal.containsAll(test.result))
             assertEquals(resultMorrisTraversal.size, test.result.size)
         }

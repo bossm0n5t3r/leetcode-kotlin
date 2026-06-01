@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.findthenumberofdistinctcolorsamongtheballs
 
 class FindTheNumberOfDistinctColorsAmongTheBalls {
     class Solution {
-        fun queryResults(
-            limit: Int,
-            queries: Array<IntArray>,
-        ): IntArray {
+        fun queryResults(limit: Int, queries: Array<IntArray>): IntArray {
             val ballToColor = mutableMapOf<Int, Int>()
             val colorsToBallCount = mutableMapOf<Int, Int>()
             val result = IntArray(queries.size) { 0 }

@@ -16,10 +16,7 @@ class AsteroidCollision {
             return stack.toIntArray()
         }
 
-        private fun collision(
-            stack: Stack<Int>,
-            asteroid: Int,
-        ) {
+        private fun collision(stack: Stack<Int>, asteroid: Int) {
             if (stack.isNotEmpty() && stack.peek() > 0 && asteroid < 0) {
                 val peek = stack.peek()
                 if (peek + asteroid <= 0) {

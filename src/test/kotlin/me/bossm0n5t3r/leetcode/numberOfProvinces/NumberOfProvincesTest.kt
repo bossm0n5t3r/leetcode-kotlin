@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class NumberOfProvincesTest {
     private val sut = NumberOfProvinces.Solution()
 
-    private data class TestData(
-        val isConnected: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val isConnected: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -35,20 +32,12 @@ class NumberOfProvincesTest {
             listOf(
                 TestData(
                     isConnected =
-                        arrayOf(
-                            intArrayOf(1, 1, 0),
-                            intArrayOf(1, 1, 0),
-                            intArrayOf(0, 0, 1),
-                        ),
+                        arrayOf(intArrayOf(1, 1, 0), intArrayOf(1, 1, 0), intArrayOf(0, 0, 1)),
                     result = 2,
                 ),
                 TestData(
                     isConnected =
-                        arrayOf(
-                            intArrayOf(1, 0, 0),
-                            intArrayOf(0, 1, 0),
-                            intArrayOf(0, 0, 1),
-                        ),
+                        arrayOf(intArrayOf(1, 0, 0), intArrayOf(0, 1, 0), intArrayOf(0, 0, 1)),
                     result = 3,
                 ),
                 TestData(
@@ -63,11 +52,6 @@ class NumberOfProvincesTest {
                 ),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.findCircleNum(test.isConnected),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.findCircleNum(test.isConnected), test.result) }
     }
 }

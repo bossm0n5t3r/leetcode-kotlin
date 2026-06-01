@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.findkthbitinnthbinarystring
 
 class FindKthBitInNthBinaryString {
     class Solution {
-        fun findKthBit(
-            n: Int,
-            k: Int,
-        ): Char {
+        fun findKthBit(n: Int, k: Int): Char {
             var invertCount = 0
             var len = (1 shl n) - 1
 

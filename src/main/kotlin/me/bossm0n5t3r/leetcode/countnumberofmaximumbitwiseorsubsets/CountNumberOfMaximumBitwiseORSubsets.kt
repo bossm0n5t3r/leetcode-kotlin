@@ -9,13 +9,7 @@ class CountNumberOfMaximumBitwiseORSubsets {
             return result.first()
         }
 
-        private fun dfs(
-            nums: IntArray,
-            maxOr: Int,
-            index: Int,
-            acc: Int,
-            result: IntArray,
-        ) {
+        private fun dfs(nums: IntArray, maxOr: Int, index: Int, acc: Int, result: IntArray) {
             if (index == nums.size) {
                 if (acc == maxOr) {
                     result[0]++

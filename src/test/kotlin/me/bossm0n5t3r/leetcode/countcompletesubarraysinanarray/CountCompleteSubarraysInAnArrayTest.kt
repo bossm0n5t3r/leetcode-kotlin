@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class CountCompleteSubarraysInAnArrayTest {
     private val sut = CountCompleteSubarraysInAnArray.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -33,16 +30,10 @@ class CountCompleteSubarraysInAnArrayTest {
     @Test
     fun test() {
         val testDataList =
-            listOf(
-                TestData("[1,3,1,2,2]".toIntArray(), 4),
-                TestData("[5,5,5,5]".toIntArray(), 10),
-            )
+            listOf(TestData("[1,3,1,2,2]".toIntArray(), 4), TestData("[5,5,5,5]".toIntArray(), 10))
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.countCompleteSubarrays(testData.nums),
-            )
+            assertEquals(testData.result, sut.countCompleteSubarrays(testData.nums))
         }
     }
 }

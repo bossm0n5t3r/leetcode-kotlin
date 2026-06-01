@@ -26,11 +26,10 @@ class ValidSudoku {
             }
 
         private fun checkSquare(board: List<List<Int>>): Boolean {
-            splitIntoSmallSquareList(board)
-                .forEach { smallSquare ->
-                    val filteredSmallSquare = smallSquare.filter { it != 0 }
-                    if (filteredSmallSquare.size != filteredSmallSquare.toSet().size) return false
-                }
+            splitIntoSmallSquareList(board).forEach { smallSquare ->
+                val filteredSmallSquare = smallSquare.filter { it != 0 }
+                if (filteredSmallSquare.size != filteredSmallSquare.toSet().size) return false
+            }
             return true
         }
 
@@ -51,11 +50,9 @@ class ValidSudoku {
             var resultIdx = 0
             targetIdx.forEach { col ->
                 targetIdx.forEach { row ->
-                    board
-                        .subList(col, col + 3)
-                        .forEach { targetRow ->
-                            result[resultIdx].addAll(targetRow.subList(row, row + 3))
-                        }
+                    board.subList(col, col + 3).forEach { targetRow ->
+                        result[resultIdx].addAll(targetRow.subList(row, row + 3))
+                    }
                     resultIdx++
                 }
             }
@@ -70,7 +67,8 @@ class ValidSudoku {
             return true
         }
 
-        private fun checkVertical(board: List<List<Int>>): Boolean = checkHorizontal(transpose(board))
+        private fun checkVertical(board: List<List<Int>>): Boolean =
+            checkHorizontal(transpose(board))
 
         private fun transpose(board: List<List<Int>>): List<List<Int>> {
             val result =
@@ -85,11 +83,7 @@ class ValidSudoku {
                     mutableListOf(),
                     mutableListOf(),
                 )
-            board.forEach { row ->
-                row.forEachIndexed { cIdx, e ->
-                    result[cIdx].add(e)
-                }
-            }
+            board.forEach { row -> row.forEachIndexed { cIdx, e -> result[cIdx].add(e) } }
             return result
         }
 
@@ -100,7 +94,11 @@ class ValidSudoku {
                 sudokuIndex.forEach { c ->
                     if (board[r][c] != '.') {
                         val element = "(${board[r][c]})"
-                        if (!seen.add("$r$element") || !seen.add("$element$c") || !seen.add("${r / 3}$element${c / 3}")) {
+                        if (
+                            !seen.add("$r$element") ||
+                                !seen.add("$element$c") ||
+                                !seen.add("${r / 3}$element${c / 3}")
+                        ) {
                             return false
                         }
                     }

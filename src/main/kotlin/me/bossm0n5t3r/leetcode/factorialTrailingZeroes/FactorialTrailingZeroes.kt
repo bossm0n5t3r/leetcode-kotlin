@@ -12,10 +12,7 @@ class FactorialTrailingZeroes {
             return if (numOfFactor2 <= numOfFactor5) numOfFactor2 else numOfFactor5
         }
 
-        private fun getMultiplesOfMUnderN(
-            n: Int,
-            m: Int,
-        ): List<Int> {
+        private fun getMultiplesOfMUnderN(n: Int, m: Int): List<Int> {
             if (n < m) return emptyList()
             val result = mutableListOf<Int>()
             var cur = m

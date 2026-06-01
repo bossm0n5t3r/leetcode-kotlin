@@ -40,8 +40,18 @@ class MostProfitAssigningWorkTest {
     fun test() {
         val tests =
             listOf(
-                TestData("[2,4,6,8,10]".toIntArray(), "[10,20,30,40,50]".toIntArray(), "[4,5,6,7]".toIntArray(), 100),
-                TestData("[85,47,57]".toIntArray(), "[24,66,99]".toIntArray(), "[40,25,25]".toIntArray(), 0),
+                TestData(
+                    "[2,4,6,8,10]".toIntArray(),
+                    "[10,20,30,40,50]".toIntArray(),
+                    "[4,5,6,7]".toIntArray(),
+                    100,
+                ),
+                TestData(
+                    "[85,47,57]".toIntArray(),
+                    "[24,66,99]".toIntArray(),
+                    "[40,25,25]".toIntArray(),
+                    0,
+                ),
             )
 
         tests.forEach { test ->

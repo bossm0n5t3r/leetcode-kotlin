@@ -2,10 +2,8 @@ package me.bossm0n5t3r.leetcode.countdayswithoutmeetings
 
 class CountDaysWithoutMeetings {
     class Solution {
-        fun countDays(
-            days: Int,
-            meetings: Array<IntArray>,
-        ): Int = days - meetings.toSortedMeetings().sumOf { it.second - it.first + 1 }
+        fun countDays(days: Int, meetings: Array<IntArray>): Int =
+            days - meetings.toSortedMeetings().sumOf { it.second - it.first + 1 }
 
         private fun Array<IntArray>.toSortedMeetings(): List<Pair<Int, Int>> {
             val meetingMap = mutableMapOf<Int, Int>()

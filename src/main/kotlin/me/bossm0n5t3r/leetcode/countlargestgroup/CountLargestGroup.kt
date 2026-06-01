@@ -9,7 +9,8 @@ class CountLargestGroup {
                 .let {
                     val maxCount = it.maxOf { (_, value) -> value }
                     it.filter { (_, value) -> value == maxCount }
-                }.count()
+                }
+                .count()
 
         private fun Int.toDigitsSum(): Int = this.toString().sumOf { it.digitToInt() }
     }

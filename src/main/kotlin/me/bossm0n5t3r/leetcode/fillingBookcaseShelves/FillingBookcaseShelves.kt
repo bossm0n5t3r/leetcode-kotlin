@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.fillingBookcaseShelves
 
 class FillingBookcaseShelves {
     class Solution {
-        fun minHeightShelves(
-            books: Array<IntArray>,
-            shelfWidth: Int,
-        ): Int {
+        fun minHeightShelves(books: Array<IntArray>, shelfWidth: Int): Int {
             val dp = IntArray(books.size + 1)
             for ((index, book) in books.withIndex()) {
                 var (width, height) = book

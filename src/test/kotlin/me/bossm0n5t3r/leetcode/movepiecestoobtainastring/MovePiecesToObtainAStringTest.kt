@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class MovePiecesToObtainAStringTest {
     private val sut = MovePiecesToObtainAString.Solution()
 
-    private data class TestData(
-        val start: String,
-        val target: String,
-        val result: Boolean,
-    )
+    private data class TestData(val start: String, val target: String, val result: Boolean)
 
     @Test
     fun test() {
@@ -22,10 +18,7 @@ class MovePiecesToObtainAStringTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.canChange(testData.start, testData.target),
-            )
+            assertEquals(testData.result, sut.canChange(testData.start, testData.target))
         }
     }
 }

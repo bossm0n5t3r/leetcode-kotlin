@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class InsertGreatestCommonDivisorsInLinkedListTest {
     private val sut = InsertGreatestCommonDivisorsInLinkedList.Solution()
 
-    private data class TestData(
-        val head: ListNode?,
-        val result: ListNode?,
-    )
+    private data class TestData(val head: ListNode?, val result: ListNode?)
 
     @Test
     fun test() {

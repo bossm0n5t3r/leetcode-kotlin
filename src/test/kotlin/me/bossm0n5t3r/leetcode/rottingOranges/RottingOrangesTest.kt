@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class RottingOrangesTest {
     private val sut = RottingOranges.Solution()
 
-    private data class TestData(
-        val grid: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val grid: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,29 +31,12 @@ class RottingOrangesTest {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    grid = "[[2,1,1],[1,1,0],[0,1,1]]".toArrayOfIntArray(),
-                    result = 4,
-                ),
-                TestData(
-                    grid = "[[2,1,1],[0,1,1],[1,0,1]]".toArrayOfIntArray(),
-                    result = -1,
-                ),
-                TestData(
-                    grid = "[[0,2]]".toArrayOfIntArray(),
-                    result = 0,
-                ),
-                TestData(
-                    grid = "[[0]]".toArrayOfIntArray(),
-                    result = 0,
-                ),
+                TestData(grid = "[[2,1,1],[1,1,0],[0,1,1]]".toArrayOfIntArray(), result = 4),
+                TestData(grid = "[[2,1,1],[0,1,1],[1,0,1]]".toArrayOfIntArray(), result = -1),
+                TestData(grid = "[[0,2]]".toArrayOfIntArray(), result = 0),
+                TestData(grid = "[[0]]".toArrayOfIntArray(), result = 0),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.orangesRotting(test.grid),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.orangesRotting(test.grid), test.result) }
     }
 }

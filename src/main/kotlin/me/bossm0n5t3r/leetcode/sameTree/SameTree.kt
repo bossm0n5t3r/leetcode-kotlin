@@ -1,14 +1,11 @@
 package me.bossm0n5t3r.leetcode.sameTree
 
-import me.bossm0n5t3r.leetcode.utils.TreeNode
 import java.util.LinkedList
+import me.bossm0n5t3r.leetcode.utils.TreeNode
 
 class SameTree {
     class Solution {
-        fun isSameTree(
-            p: TreeNode?,
-            q: TreeNode?,
-        ): Boolean {
+        fun isSameTree(p: TreeNode?, q: TreeNode?): Boolean {
             if (p == null && q == null) return true
             if (p == null || q == null) return false
             val pTreeNodeQueue = LinkedList<TreeNode>().apply { this.add(p) }

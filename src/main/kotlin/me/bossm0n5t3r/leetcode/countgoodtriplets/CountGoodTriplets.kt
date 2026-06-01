@@ -2,12 +2,7 @@ package me.bossm0n5t3r.leetcode.countgoodtriplets
 
 class CountGoodTriplets {
     class Solution {
-        fun countGoodTriplets(
-            arr: IntArray,
-            a: Int,
-            b: Int,
-            c: Int,
-        ): Int {
+        fun countGoodTriplets(arr: IntArray, a: Int, b: Int, c: Int): Int {
             var count = 0
             val n = arr.size
             for (i in 0 until n - 2) {
@@ -26,9 +21,6 @@ class CountGoodTriplets {
             return count
         }
 
-        private fun abs(
-            a: Int,
-            b: Int,
-        ): Int = if (a >= b) a - b else b - a
+        private fun abs(a: Int, b: Int): Int = if (a >= b) a - b else b - a
     }
 }

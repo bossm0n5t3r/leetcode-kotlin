@@ -9,11 +9,7 @@ import org.junit.jupiter.api.Test
 class SplitLinkedListInPartsTest {
     private val sut = SplitLinkedListInParts.Solution()
 
-    private data class TestData(
-        val head: ListNode?,
-        val k: Int,
-        val result: Array<ListNode?>,
-    ) {
+    private data class TestData(val head: ListNode?, val k: Int, val result: Array<ListNode?>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -42,13 +38,7 @@ class SplitLinkedListInPartsTest {
                 TestData(
                     ListNodeUtil.generateListNode(1, 2, 3),
                     5,
-                    arrayOf(
-                        ListNode(1),
-                        ListNode(2),
-                        ListNode(3),
-                        null,
-                        null,
-                    ),
+                    arrayOf(ListNode(1), ListNode(2), ListNode(3), null, null),
                 ),
                 TestData(
                     ListNodeUtil.generateListNode(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
@@ -65,9 +55,7 @@ class SplitLinkedListInPartsTest {
             val result = sut.splitListToParts(test.head, test.k)
             assertThat(result).hasSize(test.result.size)
             for ((expected, actual) in test.result.zip(result)) {
-                assertTrue {
-                    ListNodeUtil.isEqual(expected, actual)
-                }
+                assertTrue { ListNodeUtil.isEqual(expected, actual) }
             }
         }
     }

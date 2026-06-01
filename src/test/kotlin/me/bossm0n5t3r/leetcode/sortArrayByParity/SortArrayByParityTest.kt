@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 internal class SortArrayByParityTest {
     private val sortArrayByParity = SortArrayByParity.Solution()
 
-    private data class SortArrayByParityTestData(
-        val nums: IntArray,
-        val result: IntArray,
-    ) {
+    private data class SortArrayByParityTestData(val nums: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -33,14 +30,8 @@ internal class SortArrayByParityTest {
     fun sortArrayByParity() {
         val tests =
             listOf(
-                SortArrayByParityTestData(
-                    intArrayOf(3, 1, 2, 4),
-                    intArrayOf(2, 4, 3, 1),
-                ),
-                SortArrayByParityTestData(
-                    intArrayOf(0),
-                    intArrayOf(0),
-                ),
+                SortArrayByParityTestData(intArrayOf(3, 1, 2, 4), intArrayOf(2, 4, 3, 1)),
+                SortArrayByParityTestData(intArrayOf(0), intArrayOf(0)),
             )
         tests.forEach { test ->
             val result = sortArrayByParity.sortArrayByParity(test.nums)

@@ -25,11 +25,7 @@ class LongestPalindromicSubstring {
             return result
         }
 
-        private fun extendPalindrome(
-            s: String,
-            start: Int,
-            end: Int,
-        ): Pair<Int, Int> {
+        private fun extendPalindrome(s: String, start: Int, end: Int): Pair<Int, Int> {
             var copyStart = start
             var copyEnd = end
             while (copyStart >= 1 && copyEnd + 1 < s.length && s[copyStart - 1] == s[copyEnd + 1]) {

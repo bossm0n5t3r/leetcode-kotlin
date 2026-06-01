@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class ConstructTheLexicographicallyLargestValidSequenceTest {
     private val sut = ConstructTheLexicographicallyLargestValidSequence.Solution()
 
-    private data class TestData(
-        val n: Int,
-        val result: IntArray,
-    ) {
+    private data class TestData(val n: Int, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -41,9 +38,7 @@ class ConstructTheLexicographicallyLargestValidSequenceTest {
             )
 
         for (testData in testDataList) {
-            assertTrue {
-                sut.constructDistancedSequence(testData.n).contentEquals(testData.result)
-            }
+            assertTrue { sut.constructDistancedSequence(testData.n).contentEquals(testData.result) }
         }
     }
 }

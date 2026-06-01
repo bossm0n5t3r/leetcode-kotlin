@@ -15,10 +15,7 @@ class SpecialPositionsInABinaryMatrix {
             return answer
         }
 
-        private fun Array<IntArray>.isSpecial(
-            curR: Int,
-            curC: Int,
-        ): Boolean {
+        private fun Array<IntArray>.isSpecial(curR: Int, curC: Int): Boolean {
             val (m, n) = this.size to this.first().size
             for (r in 0 until m) {
                 if (r != curR && this[r][curC] == 1) return false

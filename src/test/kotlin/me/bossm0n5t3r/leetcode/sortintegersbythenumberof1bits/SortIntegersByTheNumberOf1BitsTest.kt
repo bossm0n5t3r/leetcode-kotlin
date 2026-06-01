@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class SortIntegersByTheNumberOf1BitsTest {
     private val sut = SortIntegersByTheNumberOf1Bits.Solution()
 
-    private data class TestData(
-        val arr: IntArray,
-        val result: IntArray,
-    ) {
+    private data class TestData(val arr: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -42,9 +39,7 @@ class SortIntegersByTheNumberOf1BitsTest {
             )
 
         for (testData in testDataList) {
-            assertTrue {
-                testData.result.contentEquals(sut.sortByBits(testData.arr))
-            }
+            assertTrue { testData.result.contentEquals(sut.sortByBits(testData.arr)) }
         }
     }
 }

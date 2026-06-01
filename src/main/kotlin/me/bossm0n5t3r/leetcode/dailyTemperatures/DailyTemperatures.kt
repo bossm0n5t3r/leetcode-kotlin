@@ -9,12 +9,14 @@ class DailyTemperatures {
             // Initialize a deque to store indices of temperatures.
             val deque: Deque<Int> = ArrayDeque()
 
-            // Initialize a result vector to store the days until a warmer temperature is encountered.
+            // Initialize a result vector to store the days until a warmer temperature is
+            // encountered.
             val result = IntArray(temperatures.size)
 
             // Iterate through the temperatures in reverse order.
             for (i in temperatures.lastIndex downTo 0) {
-                // If the deque is empty, push the current index and set the result for that index to 0.
+                // If the deque is empty, push the current index and set the result for that index
+                // to 0.
                 if (deque.isEmpty()) {
                     deque.offerFirst(i)
                     result[i] = 0
@@ -23,14 +25,16 @@ class DailyTemperatures {
 
                 // If the deque is not empty,
                 // pop indices from the front of the deque
-                // while the current temperature is greater than or equal to the temperature at the front.
+                // while the current temperature is greater than or equal to the temperature at the
+                // front.
                 while (deque.isNotEmpty() && temperatures[deque.peekFirst()] <= temperatures[i]) {
                     deque.pollFirst()
                 }
 
                 result[i] =
                     if (deque.isEmpty()) {
-                        // If the deque is empty after the above step, set the result for the current index to 0.
+                        // If the deque is empty after the above step, set the result for the
+                        // current index to 0.
                         0
                     } else {
                         // If the deque is not empty,

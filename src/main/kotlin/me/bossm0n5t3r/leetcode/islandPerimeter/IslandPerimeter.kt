@@ -15,17 +15,12 @@ class IslandPerimeter {
             return -1
         }
 
-        private fun bfs(
-            grid: Array<IntArray>,
-            m: Int,
-            n: Int,
-            curR: Int,
-            curC: Int,
-        ): Int {
+        private fun bfs(grid: Array<IntArray>, m: Int, n: Int, curR: Int, curC: Int): Int {
             val dr = intArrayOf(0, 0, 1, -1)
             val dc = intArrayOf(1, -1, 0, 0)
             val visited = Array(m) { BooleanArray(n) { false } }
-            val queue: Queue<Pair<Int, Int>> = LinkedList<Pair<Int, Int>>().apply { this.offer(curR to curC) }
+            val queue: Queue<Pair<Int, Int>> =
+                LinkedList<Pair<Int, Int>>().apply { this.offer(curR to curC) }
             var count = 0
             while (queue.isNotEmpty()) {
                 val (r, c) = queue.poll()

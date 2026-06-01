@@ -38,22 +38,23 @@ class CountSubIslandsTest {
         val tests =
             listOf(
                 TestData(
-                    "[[1,1,1,0,0],[0,1,1,1,1],[0,0,0,0,0],[1,0,0,0,0],[1,1,0,1,1]]".toArrayOfIntArray(),
-                    "[[1,1,1,0,0],[0,0,1,1,1],[0,1,0,0,0],[1,0,1,1,0],[0,1,0,1,0]]".toArrayOfIntArray(),
+                    "[[1,1,1,0,0],[0,1,1,1,1],[0,0,0,0,0],[1,0,0,0,0],[1,1,0,1,1]]"
+                        .toArrayOfIntArray(),
+                    "[[1,1,1,0,0],[0,0,1,1,1],[0,1,0,0,0],[1,0,1,1,0],[0,1,0,1,0]]"
+                        .toArrayOfIntArray(),
                     3,
                 ),
                 TestData(
-                    "[[1,0,1,0,1],[1,1,1,1,1],[0,0,0,0,0],[1,1,1,1,1],[1,0,1,0,1]]".toArrayOfIntArray(),
-                    "[[0,0,0,0,0],[1,1,1,1,1],[0,1,0,1,0],[0,1,0,1,0],[1,0,0,0,1]]".toArrayOfIntArray(),
+                    "[[1,0,1,0,1],[1,1,1,1,1],[0,0,0,0,0],[1,1,1,1,1],[1,0,1,0,1]]"
+                        .toArrayOfIntArray(),
+                    "[[0,0,0,0,0],[1,1,1,1,1],[0,1,0,1,0],[0,1,0,1,0],[1,0,0,0,1]]"
+                        .toArrayOfIntArray(),
                     2,
                 ),
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.countSubIslands(test.grid1, test.grid2),
-            )
+            assertEquals(test.result, sut.countSubIslands(test.grid1, test.grid2))
         }
     }
 }

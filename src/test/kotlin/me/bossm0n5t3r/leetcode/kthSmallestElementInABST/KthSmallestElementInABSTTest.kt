@@ -8,11 +8,7 @@ import org.junit.jupiter.api.Test
 class KthSmallestElementInABSTTest {
     private val kthSmallestElementInABST = KthSmallestElementInABST.Solution()
 
-    data class KthSmallestElementInABSTTestData(
-        val root: TreeNode?,
-        val k: Int,
-        val result: Int,
-    )
+    data class KthSmallestElementInABSTTestData(val root: TreeNode?, val k: Int, val result: Int)
 
     @Test
     fun kthSmallest() {

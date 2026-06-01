@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class CountNumberOfTeamsTest {
     private val sut = CountNumberOfTeams.Solution()
 
-    private data class TestData(
-        val rating: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val rating: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,11 +35,6 @@ class CountNumberOfTeamsTest {
                 TestData(intArrayOf(1, 2, 3, 4), 4),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.numTeams(test.rating),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.numTeams(test.rating)) }
     }
 }

@@ -50,9 +50,7 @@ class XorQueriesOfASubarrayTest {
             )
 
         tests.forEach { test ->
-            assertTrue {
-                sut.xorQueries(test.arr, test.queries).contentEquals(test.result)
-            }
+            assertTrue { sut.xorQueries(test.arr, test.queries).contentEquals(test.result) }
         }
     }
 }

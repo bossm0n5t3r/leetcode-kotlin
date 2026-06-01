@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class FreedomTrailTest {
     private val sut = FreedomTrail.Solution()
 
-    private data class TestData(
-        val ring: String,
-        val key: String,
-        val result: Int,
-    )
+    private data class TestData(val ring: String, val key: String, val result: Int)
 
     @Test
     fun test() {
@@ -23,10 +19,7 @@ class FreedomTrailTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.findRotateSteps(test.ring, test.key),
-            )
+            assertEquals(test.result, sut.findRotateSteps(test.ring, test.key))
         }
     }
 }

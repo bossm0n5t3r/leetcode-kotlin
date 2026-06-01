@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class FindFirstPalindromicStringInTheArrayTest {
     private val sut = FindFirstPalindromicStringInTheArray.Solution()
 
-    private data class TestData(
-        val words: Array<String>,
-        val result: String,
-    ) {
+    private data class TestData(val words: Array<String>, val result: String) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,11 +36,6 @@ class FindFirstPalindromicStringInTheArrayTest {
                 TestData("[\"def\",\"ghi\"]".toArrayOfString(), ""),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.firstPalindrome(test.words),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.firstPalindrome(test.words)) }
     }
 }

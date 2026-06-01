@@ -37,11 +37,7 @@ internal class Shift2DGridTest {
         val tests =
             listOf(
                 Shift2DGridTestData(
-                    arrayOf(
-                        intArrayOf(1, 2, 3),
-                        intArrayOf(4, 5, 6),
-                        intArrayOf(7, 8, 9),
-                    ),
+                    arrayOf(intArrayOf(1, 2, 3), intArrayOf(4, 5, 6), intArrayOf(7, 8, 9)),
                     1,
                     listOf(listOf(9, 1, 2), listOf(3, 4, 5), listOf(6, 7, 8)),
                 ),
@@ -53,14 +49,15 @@ internal class Shift2DGridTest {
                         intArrayOf(12, 0, 21, 13),
                     ),
                     4,
-                    listOf(listOf(12, 0, 21, 13), listOf(3, 8, 1, 9), listOf(19, 7, 2, 5), listOf(4, 6, 11, 10)),
+                    listOf(
+                        listOf(12, 0, 21, 13),
+                        listOf(3, 8, 1, 9),
+                        listOf(19, 7, 2, 5),
+                        listOf(4, 6, 11, 10),
+                    ),
                 ),
                 Shift2DGridTestData(
-                    arrayOf(
-                        intArrayOf(1, 2, 3),
-                        intArrayOf(4, 5, 6),
-                        intArrayOf(7, 8, 9),
-                    ),
+                    arrayOf(intArrayOf(1, 2, 3), intArrayOf(4, 5, 6), intArrayOf(7, 8, 9)),
                     9,
                     listOf(listOf(1, 2, 3), listOf(4, 5, 6), listOf(7, 8, 9)),
                 ),

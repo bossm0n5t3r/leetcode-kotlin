@@ -45,7 +45,9 @@ class DivideAStringIntoGroupsOfSizeKTest {
 
         for (testData in testDataList) {
             assertTrue {
-                testData.result.contentDeepEquals(sut.divideString(testData.s, testData.k, testData.fill))
+                testData.result.contentDeepEquals(
+                    sut.divideString(testData.s, testData.k, testData.fill)
+                )
             }
         }
     }

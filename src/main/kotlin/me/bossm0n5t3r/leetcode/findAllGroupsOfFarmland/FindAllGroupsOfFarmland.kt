@@ -31,22 +31,26 @@ class FindAllGroupsOfFarmland {
             val dc = intArrayOf(1, -1, 0, 0)
             var leftUpper = Int.MAX_VALUE to Int.MAX_VALUE
             var rightDown = Int.MIN_VALUE to Int.MIN_VALUE
-            val queue: Queue<Pair<Int, Int>> = LinkedList<Pair<Int, Int>>().apply { this.offer(curR to curC) }
+            val queue: Queue<Pair<Int, Int>> =
+                LinkedList<Pair<Int, Int>>().apply { this.offer(curR to curC) }
             while (queue.isNotEmpty()) {
                 val (r, c) = queue.poll()
 
-                leftUpper = (r to c)
-                    .takeIf { leftUpper.first > r || leftUpper.second > c }
-                    ?: leftUpper
-                rightDown = (r to c)
-                    .takeIf { rightDown.first < r || rightDown.second < c }
-                    ?: rightDown
+                leftUpper =
+                    (r to c).takeIf { leftUpper.first > r || leftUpper.second > c } ?: leftUpper
+                rightDown =
+                    (r to c).takeIf { rightDown.first < r || rightDown.second < c } ?: rightDown
 
                 visited[r][c] = true
                 for (i in 0 until 4) {
                     val nr = r + dr[i]
                     val nc = c + dc[i]
-                    if (nr in 0 until m && nc in 0 until n && land[nr][nc] == 1 && visited[nr][nc].not()) {
+                    if (
+                        nr in 0 until m &&
+                            nc in 0 until n &&
+                            land[nr][nc] == 1 &&
+                            visited[nr][nc].not()
+                    ) {
                         visited[nr][nc] = true
                         queue.add(nr to nc)
                     }

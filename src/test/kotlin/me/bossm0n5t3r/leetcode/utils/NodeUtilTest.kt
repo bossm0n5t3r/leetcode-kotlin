@@ -18,14 +18,8 @@ class NodeUtilTest {
         //    │ │
         //    5 6
         val values = listOf(1, null, 3, 2, 4, null, 5, 6)
-        val result =
-            assertDoesNotThrow {
-                NodeUtil.generateNodeOrNull(*values.toTypedArray())
-            }
-        assertEquals(
-            values,
-            result?.toList(),
-        )
+        val result = assertDoesNotThrow { NodeUtil.generateNodeOrNull(*values.toTypedArray()) }
+        assertEquals(values, result?.toList())
     }
 
     @Test
@@ -40,13 +34,7 @@ class NodeUtilTest {
         //        │ │
         //        5 6
         val values = listOf(1, null, 3, 2, 4, null, null, 5, 6)
-        val result =
-            assertDoesNotThrow {
-                NodeUtil.generateNodeOrNull(*values.toTypedArray())
-            }
-        assertEquals(
-            values,
-            result?.toList(),
-        )
+        val result = assertDoesNotThrow { NodeUtil.generateNodeOrNull(*values.toTypedArray()) }
+        assertEquals(values, result?.toList())
     }
 }

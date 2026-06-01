@@ -4,10 +4,7 @@ import java.util.PriorityQueue
 
 class SmallestNumberInInfiniteSet {
     class SmallestInfiniteSet {
-        private val pq =
-            PriorityQueue<Int> { e1, e2 ->
-                e1 - e2
-            }
+        private val pq = PriorityQueue<Int> { e1, e2 -> e1 - e2 }
         private val elementsOfPriorityQueue = mutableSetOf<Int>()
 
         private var fillQueueIndex = 1

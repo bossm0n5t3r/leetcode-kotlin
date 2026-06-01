@@ -4,11 +4,7 @@ import java.util.PriorityQueue
 
 class LongestHappyString {
     class Solution {
-        fun longestDiverseString(
-            a: Int,
-            b: Int,
-            c: Int,
-        ): String {
+        fun longestDiverseString(a: Int, b: Int, c: Int): String {
             val pq = PriorityQueue { x: IntArray, y: IntArray -> y[0] - x[0] }
             if (a > 0) pq.offer(intArrayOf(a, 'a'.code))
             if (b > 0) pq.offer(intArrayOf(b, 'b'.code))
@@ -19,7 +15,11 @@ class LongestHappyString {
             while (pq.isNotEmpty()) {
                 val first = pq.poll()
 
-                if (result.length >= 2 && result[result.length - 1].code == first[1] && result[result.length - 2].code == first[1]) {
+                if (
+                    result.length >= 2 &&
+                        result[result.length - 1].code == first[1] &&
+                        result[result.length - 2].code == first[1]
+                ) {
                     if (pq.isEmpty()) break
 
                     val second = pq.poll()

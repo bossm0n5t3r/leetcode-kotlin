@@ -44,10 +44,7 @@ class MaximumSubsequenceScoreTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.maxScore(test.nums1, test.nums2, test.k),
-            )
+            assertEquals(test.result, sut.maxScore(test.nums1, test.nums2, test.k))
         }
     }
 }

@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.shortestsubarraywithsumatleastk
 
 class ShortestSubarrayWithSumAtLeastK {
     class Solution {
-        fun shortestSubarray(
-            nums: IntArray,
-            k: Int,
-        ): Int {
+        fun shortestSubarray(nums: IntArray, k: Int): Int {
             val n = nums.size
             val sum = nums.runningFold(0L) { num, acc -> acc + num }
 

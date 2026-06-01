@@ -33,33 +33,15 @@ class StringCompressionTest {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    "aabbccc".toCharArray(),
-                    "a2b2c3".toCharArray(),
-                    6,
-                ),
-                TestData(
-                    "a".toCharArray(),
-                    "a".toCharArray(),
-                    1,
-                ),
-                TestData(
-                    "abbbbbbbbbbbb".toCharArray(),
-                    "ab12".toCharArray(),
-                    4,
-                ),
+                TestData("aabbccc".toCharArray(), "a2b2c3".toCharArray(), 6),
+                TestData("a".toCharArray(), "a".toCharArray(), 1),
+                TestData("abbbbbbbbbbbb".toCharArray(), "ab12".toCharArray(), 4),
             )
 
         tests.forEach { test ->
-            assertEquals(
-                sut.compress(test.chars),
-                test.result,
-            )
-            assertThat(
-                test.chars.take(test.modifiedChars.size).toCharArray(),
-            ).containsExactly(
-                *test.modifiedChars,
-            )
+            assertEquals(sut.compress(test.chars), test.result)
+            assertThat(test.chars.take(test.modifiedChars.size).toCharArray())
+                .containsExactly(*test.modifiedChars)
         }
     }
 }

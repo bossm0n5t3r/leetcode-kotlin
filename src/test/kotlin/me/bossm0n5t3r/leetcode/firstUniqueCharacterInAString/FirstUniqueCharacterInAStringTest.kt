@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class FirstUniqueCharacterInAStringTest {
     private val firstUniqueCharacterInAString = FirstUniqueCharacterInAString.Solution()
 
-    data class FirstUniqueCharacterInAStringTestData(
-        val s: String,
-        val result: Int,
-    )
+    data class FirstUniqueCharacterInAStringTestData(val s: String, val result: Int)
 
     @Test
     fun firstUniqChar() {

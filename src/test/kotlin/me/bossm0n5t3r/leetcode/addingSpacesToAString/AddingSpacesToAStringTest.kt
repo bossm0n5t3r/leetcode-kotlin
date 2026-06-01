@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class AddingSpacesToAStringTest {
     private val sut = AddingSpacesToAString.Solution()
 
-    private data class TestData(
-        val s: String,
-        val spaces: IntArray,
-        val result: String,
-    ) {
+    private data class TestData(val s: String, val spaces: IntArray, val result: String) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -37,16 +33,15 @@ class AddingSpacesToAStringTest {
     fun test() {
         val tests =
             listOf(
-                TestData("LeetcodeHelpsMeLearn", "[8,13,15]".toIntArray(), "Leetcode Helps Me Learn"),
+                TestData(
+                    "LeetcodeHelpsMeLearn",
+                    "[8,13,15]".toIntArray(),
+                    "Leetcode Helps Me Learn",
+                ),
                 TestData("icodeinpython", "[1,5,7,9]".toIntArray(), "i code in py thon"),
                 TestData("spacing", "[0,1,2,3,4,5,6]".toIntArray(), " s p a c i n g"),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.addSpaces(test.s, test.spaces),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.addSpaces(test.s, test.spaces)) }
     }
 }

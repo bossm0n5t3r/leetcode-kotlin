@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class OneThreeTwoPatternTest {
     private val sut = OneThreeTwoPattern.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Boolean,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Boolean) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -43,11 +40,6 @@ class OneThreeTwoPatternTest {
                 TestData("[1,3,2,4,5,6,7,8,9,10]".toIntArray(), true),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.find132pattern(test.nums),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.find132pattern(test.nums)) }
     }
 }

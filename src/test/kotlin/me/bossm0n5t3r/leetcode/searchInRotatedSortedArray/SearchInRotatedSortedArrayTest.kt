@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 internal class SearchInRotatedSortedArrayTest {
     private val sut = SearchInRotatedSortedArray.Solution()
 
-    private data class Example(
-        val nums: IntArray,
-        val target: Int,
-        val result: Int,
-    ) {
+    private data class Example(val nums: IntArray, val target: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -36,24 +32,10 @@ internal class SearchInRotatedSortedArrayTest {
     fun search() {
         val tests =
             listOf(
-                Example(
-                    intArrayOf(4, 5, 6, 7, 0, 1, 2),
-                    0,
-                    4,
-                ),
-                Example(
-                    intArrayOf(4, 5, 6, 7, 0, 1, 2),
-                    3,
-                    -1,
-                ),
-                Example(
-                    intArrayOf(1),
-                    0,
-                    -1,
-                ),
+                Example(intArrayOf(4, 5, 6, 7, 0, 1, 2), 0, 4),
+                Example(intArrayOf(4, 5, 6, 7, 0, 1, 2), 3, -1),
+                Example(intArrayOf(1), 0, -1),
             )
-        tests.forEach { test ->
-            assertEquals(sut.search(test.nums, test.target), test.result)
-        }
+        tests.forEach { test -> assertEquals(sut.search(test.nums, test.target), test.result) }
     }
 }

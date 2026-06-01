@@ -45,10 +45,7 @@ class EvaluateDivision {
             }
             if (edges.containsKey(from).not()) return -1.0
             if (from == to) return 1.0
-            val stack =
-                Stack<Pair<String, Double>>().apply {
-                    this.push(from to 1.0)
-                }
+            val stack = Stack<Pair<String, Double>>().apply { this.push(from to 1.0) }
             val visited = mutableSetOf(from)
             while (stack.isNotEmpty()) {
                 val (cur, accumulatedResult) = stack.pop()

@@ -8,8 +8,7 @@ internal class EncodeAndDecodeTinyURLTest {
     private val encodeAndDecodeTinyURL = EncodeAndDecodeTinyURL.Codec()
     private val longUrl = "https://leetcode.com/problems/design-tinyurl"
 
-    @AfterEach
-    fun cleanUp() = encodeAndDecodeTinyURL.cleanUp()
+    @AfterEach fun cleanUp() = encodeAndDecodeTinyURL.cleanUp()
 
     @Test
     fun `encode - longUrl 을 shortUrl 로 리턴`() {

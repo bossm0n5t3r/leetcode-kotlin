@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class FizzBuzzTest {
     private val fizzBuzz = FizzBuzz.Solution()
 
-    data class FizzBuzzTestData(
-        val n: Int,
-        val result: List<String>,
-    )
+    data class FizzBuzzTestData(val n: Int, val result: List<String>)
 
     @Test
     fun fizzBuzz() {
@@ -38,8 +35,6 @@ class FizzBuzzTest {
                     ),
                 ),
             )
-        tests.forEach { test ->
-            assertEquals(fizzBuzz.fizzBuzz(test.n), test.result)
-        }
+        tests.forEach { test -> assertEquals(fizzBuzz.fizzBuzz(test.n), test.result) }
     }
 }

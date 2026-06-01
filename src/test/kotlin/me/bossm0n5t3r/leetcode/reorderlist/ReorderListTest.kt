@@ -7,17 +7,20 @@ import org.junit.jupiter.api.Test
 class ReorderListTest {
     private val sut = ReorderList.Solution()
 
-    private data class TestData(
-        val head: ListNode?,
-        val result: ListNode?,
-    )
+    private data class TestData(val head: ListNode?, val result: ListNode?)
 
     @Test
     fun test() {
         val testDataList =
             listOf(
-                TestData(ListNodeUtil.generateListNode(1, 2, 3, 4), ListNodeUtil.generateListNode(1, 4, 2, 3)),
-                TestData(ListNodeUtil.generateListNode(1, 2, 3, 4, 5), ListNodeUtil.generateListNode(1, 5, 2, 4, 3)),
+                TestData(
+                    ListNodeUtil.generateListNode(1, 2, 3, 4),
+                    ListNodeUtil.generateListNode(1, 4, 2, 3),
+                ),
+                TestData(
+                    ListNodeUtil.generateListNode(1, 2, 3, 4, 5),
+                    ListNodeUtil.generateListNode(1, 5, 2, 4, 3),
+                ),
             )
 
         for (testData in testDataList) {

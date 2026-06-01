@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.minimumSizeSubarraySum
 
 class MinimumSizeSubarraySum {
     class Solution {
-        fun minSubArrayLen(
-            target: Int,
-            nums: IntArray,
-        ): Int {
+        fun minSubArrayLen(target: Int, nums: IntArray): Int {
             if (nums.size == 1) return if (nums[0] >= target) 1 else 0
 
             var result = Int.MAX_VALUE
@@ -16,11 +13,7 @@ class MinimumSizeSubarraySum {
                     tmp += nums[windowEnd]
                 }
                 while (tmp >= target) {
-                    result =
-                        minOf(
-                            result,
-                            windowEnd - windowStart + 1,
-                        )
+                    result = minOf(result, windowEnd - windowStart + 1)
                     tmp -= nums[windowStart++]
                 }
             }

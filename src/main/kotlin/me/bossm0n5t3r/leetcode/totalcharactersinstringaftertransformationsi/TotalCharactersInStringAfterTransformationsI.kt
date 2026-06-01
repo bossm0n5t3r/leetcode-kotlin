@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.totalcharactersinstringaftertransformationsi
 
 class TotalCharactersInStringAfterTransformationsI {
     class Solution {
-        fun lengthAfterTransformations(
-            s: String,
-            t: Int,
-        ): Int {
+        fun lengthAfterTransformations(s: String, t: Int): Int {
             val modulo = 1_000_000_007
             val countArray = LongArray(26)
             for (c in s) {

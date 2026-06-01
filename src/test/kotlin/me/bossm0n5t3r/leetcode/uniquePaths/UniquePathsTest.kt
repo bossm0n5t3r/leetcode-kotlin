@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class UniquePathsTest {
     private val uniquePaths = UniquePaths.Solution()
 
-    data class UniquePathsTestData(
-        val m: Int,
-        val n: Int,
-        val result: Int,
-    )
+    data class UniquePathsTestData(val m: Int, val n: Int, val result: Int)
 
     @Test
     fun uniquePaths() {

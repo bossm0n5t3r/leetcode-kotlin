@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.zigzagConversion
 
 class ZigzagConversion {
     class Solution {
-        fun convert(
-            s: String,
-            numRows: Int,
-        ): String {
+        fun convert(s: String, numRows: Int): String {
             val result = Array(numRows) { mutableListOf<Char>() }
             val index = Index(numRows)
             s.forEach { c ->
@@ -49,10 +46,7 @@ class ZigzagConversion {
             UP,
         }
 
-        fun convertAt20250110(
-            s: String,
-            numRows: Int,
-        ): String {
+        fun convertAt20250110(s: String, numRows: Int): String {
             if (numRows == 1) return s
             val result = StringBuilder()
             for (i in numRows.generateIndices(s.length)) {

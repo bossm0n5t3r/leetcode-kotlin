@@ -45,10 +45,7 @@ class TotalCostToHireKWorkersTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.totalCost(test.costs, test.k, test.candidates),
-            )
+            assertEquals(test.result, sut.totalCost(test.costs, test.k, test.candidates))
         }
     }
 }

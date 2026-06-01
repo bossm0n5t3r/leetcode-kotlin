@@ -4,9 +4,7 @@ import java.util.LinkedList
 import java.util.Queue
 import java.util.Stack
 
-class Node(
-    var `val`: Int,
-) {
+class Node(var `val`: Int) {
     var subNodeStore = mutableListOf<Node?>()
 
     var children: MutableList<Node?> = subNodeStore
@@ -31,7 +29,8 @@ class Node(
 
     override fun hashCode(): Int = `val`
 
-    override fun toString(): String = "Node(`val`: ${this.`val`}, store: ${this.subNodeStore.map { it?.`val` }})"
+    override fun toString(): String =
+        "Node(`val`: ${this.`val`}, store: ${this.subNodeStore.map { it?.`val` }})"
 }
 
 object NodeUtil {
@@ -46,7 +45,9 @@ object NodeUtil {
                     candidates.add(Node(requireNotNull(queue.poll())))
                 }
                 candidatesStack.push(candidates)
-                require(queue.poll() == null) { "queue: $queue, candidates: $candidates, candidatesStack: $candidatesStack" }
+                require(queue.poll() == null) {
+                    "queue: $queue, candidates: $candidates, candidatesStack: $candidatesStack"
+                }
                 continue
             }
             val candidates = candidatesStack.peek()
@@ -61,13 +62,18 @@ object NodeUtil {
                     nextCandidates.add(subNode)
                 }
                 if (index < candidates.size) {
-                    require(queue.poll() == null) { "queue: $queue, candidates: $candidates, candidatesStack: $candidatesStack" }
+                    require(queue.poll() == null) {
+                        "queue: $queue, candidates: $candidates, candidatesStack: $candidatesStack"
+                    }
                 }
             }
             candidatesStack.push(nextCandidates)
-            require(queue.poll() == null) { "queue: $queue, candidates: $candidates, candidatesStack: $candidatesStack" }
+            require(queue.poll() == null) {
+                "queue: $queue, candidates: $candidates, candidatesStack: $candidatesStack"
+            }
         }
-        return if (candidatesStack.isEmpty() || candidatesStack.first().isEmpty()) null else candidatesStack.first().first()
+        return if (candidatesStack.isEmpty() || candidatesStack.first().isEmpty()) null
+        else candidatesStack.first().first()
     }
 
     fun generateNodeOrNull(neighborsList: List<List<Int>>): Node? {

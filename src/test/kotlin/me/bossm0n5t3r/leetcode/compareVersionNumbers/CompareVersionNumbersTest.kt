@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class CompareVersionNumbersTest {
     private val sut = CompareVersionNumbers.Solution()
 
-    private data class TestData(
-        val version1: String,
-        val version2: String,
-        val result: Int,
-    )
+    private data class TestData(val version1: String, val version2: String, val result: Int)
 
     @Test
     fun test() {
@@ -22,10 +18,7 @@ class CompareVersionNumbersTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.compareVersion(test.version1, test.version2),
-            )
+            assertEquals(test.result, sut.compareVersion(test.version1, test.version2))
         }
     }
 }

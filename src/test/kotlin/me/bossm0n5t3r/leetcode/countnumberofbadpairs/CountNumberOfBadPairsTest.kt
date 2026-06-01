@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class CountNumberOfBadPairsTest {
     private val sut = CountNumberOfBadPairs.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Long,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Long) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -33,16 +30,10 @@ class CountNumberOfBadPairsTest {
     @Test
     fun test() {
         val testDataList =
-            listOf(
-                TestData("[4,1,3,3]".toIntArray(), 5),
-                TestData("[1,2,3,4,5]".toIntArray(), 0),
-            )
+            listOf(TestData("[4,1,3,3]".toIntArray(), 5), TestData("[1,2,3,4,5]".toIntArray(), 0))
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.countBadPairs(testData.nums),
-            )
+            assertEquals(testData.result, sut.countBadPairs(testData.nums))
         }
     }
 }

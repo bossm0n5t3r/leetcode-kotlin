@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class ConstructKPalindromeStringsTest {
     private val sut = ConstructKPalindromeStrings.Solution()
 
-    private data class TestData(
-        val s: String,
-        val k: Int,
-        val result: Boolean,
-    )
+    private data class TestData(val s: String, val k: Int, val result: Boolean)
 
     @Test
     fun test() {
@@ -22,10 +18,7 @@ class ConstructKPalindromeStringsTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.canConstruct(testData.s, testData.k),
-            )
+            assertEquals(testData.result, sut.canConstruct(testData.s, testData.k))
         }
     }
 }

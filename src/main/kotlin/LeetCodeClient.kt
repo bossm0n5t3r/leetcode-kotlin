@@ -30,25 +30,19 @@ object LeetCodeClient {
     private const val GET_LEET_CODE_CONTEST_PROBLEMS_BY_CONTEST_SLUG_QUERY =
         "query contestQuestionList(\$contestSlug: String!) { contestQuestionList(contestSlug: \$contestSlug) { isAc credit title titleSlug titleCn questionId }} "
 
-    @Serializable
-    data class GraphQLResponse<T>(
-        val data: T,
-    )
+    @Serializable data class GraphQLResponse<T>(val data: T)
 
     @Serializable
     data class QuestionWrapper(
-        val question: DailyLeetCodeProblem.ActiveDailyCodingChallengeQuestion.Question,
+        val question: DailyLeetCodeProblem.ActiveDailyCodingChallengeQuestion.Question
     )
 
     @Serializable
     data class DailyLeetCodeProblem(
-        val activeDailyCodingChallengeQuestion: ActiveDailyCodingChallengeQuestion,
+        val activeDailyCodingChallengeQuestion: ActiveDailyCodingChallengeQuestion
     ) {
         @Serializable
-        data class ActiveDailyCodingChallengeQuestion(
-            val link: String,
-            val question: Question,
-        ) {
+        data class ActiveDailyCodingChallengeQuestion(val link: String, val question: Question) {
             @Serializable
             data class Question(
                 val questionFrontendId: String,
@@ -61,19 +55,13 @@ object LeetCodeClient {
                 val metaData: String,
             ) {
                 @Serializable
-                data class CodeSnippet(
-                    val lang: String,
-                    val langSlug: String,
-                    val code: String,
-                )
+                data class CodeSnippet(val lang: String, val langSlug: String, val code: String)
             }
         }
     }
 
     @Serializable
-    private data class ContestQuestionList(
-        val contestQuestionList: List<ContestQuestion>,
-    ) {
+    private data class ContestQuestionList(val contestQuestionList: List<ContestQuestion>) {
         @Serializable
         data class ContestQuestion(
             val isAc: Boolean,
@@ -85,16 +73,13 @@ object LeetCodeClient {
         )
     }
 
-    private fun List<DailyLeetCodeProblem.ActiveDailyCodingChallengeQuestion.Question.CodeSnippet>.toSampleCodes(): List<String> =
-        this
-            .find { it.lang == LANG_KOTLIN }
-            ?.code
-            ?.split("\n")
+    private fun List<DailyLeetCodeProblem.ActiveDailyCodingChallengeQuestion.Question.CodeSnippet>
+        .toSampleCodes(): List<String> =
+        this.find { it.lang == LANG_KOTLIN }?.code?.split("\n")
             ?: throw Exception("No Kotlin code snippet found")
 
     private fun String.toMethodParametersAndResultAsString(): String =
-        this
-            .substringAfter('(')
+        this.substringAfter('(')
             .substringBefore('{')
             .split(", ", "): ")
             .let {
@@ -106,33 +91,38 @@ object LeetCodeClient {
                         "val result: ${s.trim()}"
                     }
                 }
-            }.joinToString(", ")
+            }
+            .joinToString(", ")
 
     private fun DailyLeetCodeProblem.toLeetCodeProblem(): LeetCodeProblem {
         val sampleCodes: List<String> =
-            this.activeDailyCodingChallengeQuestion.question.codeSnippets
-                .toSampleCodes()
+            this.activeDailyCodingChallengeQuestion.question.codeSnippets.toSampleCodes()
         return LeetCodeProblem(
             name =
                 "${this.activeDailyCodingChallengeQuestion.question.questionFrontendId.trim()}. " +
-                    this.activeDailyCodingChallengeQuestion.question.title
-                        .trim(),
+                    this.activeDailyCodingChallengeQuestion.question.title.trim(),
             url = "$DOMAIN${this.activeDailyCodingChallengeQuestion.link.trim()}",
             sampleCodes = sampleCodes,
-            methodParametersAndResultAsString = sampleCodes[1].toMethodParametersAndResultAsString(),
+            methodParametersAndResultAsString =
+                sampleCodes[1].toMethodParametersAndResultAsString(),
             exampleTestcases =
-                this.activeDailyCodingChallengeQuestion.question.exampleTestcases
-                    .replace("\n", " / "),
+                this.activeDailyCodingChallengeQuestion.question.exampleTestcases.replace(
+                    "\n",
+                    " / ",
+                ),
         )
     }
 
-    private fun DailyLeetCodeProblem.ActiveDailyCodingChallengeQuestion.Question.toLeetCodeProblem(titleSlug: String): LeetCodeProblem {
+    private fun DailyLeetCodeProblem.ActiveDailyCodingChallengeQuestion.Question.toLeetCodeProblem(
+        titleSlug: String
+    ): LeetCodeProblem {
         val sampleCodes: List<String> = this.codeSnippets.toSampleCodes()
         return LeetCodeProblem(
             name = "${this.questionFrontendId}. $title",
             url = "$PROBLEM_URL/$titleSlug/",
             sampleCodes = sampleCodes,
-            methodParametersAndResultAsString = sampleCodes[1].toMethodParametersAndResultAsString(),
+            methodParametersAndResultAsString =
+                sampleCodes[1].toMethodParametersAndResultAsString(),
             exampleTestcases = this.exampleTestcases.replace("\n", " / "),
         )
     }
@@ -144,8 +134,11 @@ object LeetCodeClient {
                     url(GRAPHQL_URL)
                     contentType(ContentType.Application.Json)
                     setBody(mapOf("query" to GET_DAILY_LEET_CODE_PROBLEM_QUERY))
-                }.bodyAsText()
-        return Json.decodeFromString<GraphQLResponse<DailyLeetCodeProblem>>(response).data.toLeetCodeProblem()
+                }
+                .bodyAsText()
+        return Json.decodeFromString<GraphQLResponse<DailyLeetCodeProblem>>(response)
+            .data
+            .toLeetCodeProblem()
     }
 
     suspend fun getLeetCodeProblemByTitleSlug(titleSlug: String): LeetCodeProblem {
@@ -158,17 +151,19 @@ object LeetCodeClient {
                         mapOf(
                             "query" to GET_LEET_CODE_PROBLEM_BY_TITLE_SLUG_QUERY,
                             "variables" to Json.encodeToString(mapOf("titleSlug" to titleSlug)),
-                        ),
+                        )
                     )
-                }.bodyAsText()
-        return Json
-            .decodeFromString<GraphQLResponse<QuestionWrapper>>(response)
+                }
+                .bodyAsText()
+        return Json.decodeFromString<GraphQLResponse<QuestionWrapper>>(response)
             .data
             .question
             .toLeetCodeProblem(titleSlug)
     }
 
-    suspend fun getLeetCodeContestProblemTitleSlugsByContestSlug(contestSlug: String): List<String> {
+    suspend fun getLeetCodeContestProblemTitleSlugsByContestSlug(
+        contestSlug: String
+    ): List<String> {
         val response =
             client
                 .post {
@@ -178,11 +173,11 @@ object LeetCodeClient {
                         mapOf(
                             "query" to GET_LEET_CODE_CONTEST_PROBLEMS_BY_CONTEST_SLUG_QUERY,
                             "variables" to Json.encodeToString(mapOf("contestSlug" to contestSlug)),
-                        ),
+                        )
                     )
-                }.bodyAsText()
-        return Json
-            .decodeFromString<GraphQLResponse<ContestQuestionList>>(response)
+                }
+                .bodyAsText()
+        return Json.decodeFromString<GraphQLResponse<ContestQuestionList>>(response)
             .data
             .contestQuestionList
             .map { it.titleSlug }

@@ -2,17 +2,9 @@ package me.bossm0n5t3r.leetcode.handOfStraights
 
 class HandOfStraights {
     class Solution {
-        fun isNStraightHand(
-            hand: IntArray,
-            groupSize: Int,
-        ): Boolean {
+        fun isNStraightHand(hand: IntArray, groupSize: Int): Boolean {
             if (hand.size % groupSize != 0) return false
-            val intToCount =
-                hand
-                    .toList()
-                    .groupingBy { it }
-                    .eachCount()
-                    .toMutableMap()
+            val intToCount = hand.toList().groupingBy { it }.eachCount().toMutableMap()
             val sortedKeys = intToCount.keys.sorted()
             for (key in sortedKeys) {
                 var count = intToCount.getOrElse(key) { 0 }

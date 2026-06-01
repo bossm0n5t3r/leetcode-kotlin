@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class CheckIfNAndItsDoubleExistTest {
     private val sut = CheckIfNAndItsDoubleExist.Solution()
 
-    private data class TestData(
-        val arr: IntArray,
-        val result: Boolean,
-    ) {
+    private data class TestData(val arr: IntArray, val result: Boolean) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,10 +36,7 @@ class CheckIfNAndItsDoubleExistTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.checkIfExist(testData.arr),
-            )
+            assertEquals(testData.result, sut.checkIfExist(testData.arr))
         }
     }
 }

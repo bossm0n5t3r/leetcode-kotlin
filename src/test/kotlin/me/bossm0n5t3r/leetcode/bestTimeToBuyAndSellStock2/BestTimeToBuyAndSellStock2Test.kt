@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class BestTimeToBuyAndSellStock2Test {
     private val bestTimeToBuyAndSellStock2 = BestTimeToBuyAndSellStock2.Solution()
 
-    data class BestTimeToBuyAndSellStock2TestData(
-        val prices: IntArray,
-        val result: Int,
-    ) {
+    data class BestTimeToBuyAndSellStock2TestData(val prices: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class FindTheDuplicateNumberTest {
     private val findTheDuplicateNumber = FindTheDuplicateNumber.Solution()
 
-    data class FindTheDuplicateNumberTestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    data class FindTheDuplicateNumberTestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -33,14 +30,8 @@ class FindTheDuplicateNumberTest {
     fun findDuplicate() {
         val tests =
             listOf(
-                FindTheDuplicateNumberTestData(
-                    intArrayOf(1, 3, 4, 2, 2),
-                    2,
-                ),
-                FindTheDuplicateNumberTestData(
-                    intArrayOf(3, 1, 3, 4, 2),
-                    3,
-                ),
+                FindTheDuplicateNumberTestData(intArrayOf(1, 3, 4, 2, 2), 2),
+                FindTheDuplicateNumberTestData(intArrayOf(3, 1, 3, 4, 2), 3),
             )
         tests.forEach { test ->
             assertEquals(findTheDuplicateNumber.findDuplicateUsingSet(test.nums), test.result)

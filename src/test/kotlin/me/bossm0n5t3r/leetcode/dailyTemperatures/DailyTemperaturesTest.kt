@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class DailyTemperaturesTest {
     private val sut = DailyTemperatures.Solution()
 
-    private data class TestData(
-        val temperatures: IntArray,
-        val result: IntArray,
-    ) {
+    private data class TestData(val temperatures: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -33,13 +30,17 @@ class DailyTemperaturesTest {
     fun test() {
         val tests =
             listOf(
-                TestData(intArrayOf(73, 74, 75, 71, 69, 72, 76, 73), intArrayOf(1, 1, 4, 2, 1, 1, 0, 0)),
+                TestData(
+                    intArrayOf(73, 74, 75, 71, 69, 72, 76, 73),
+                    intArrayOf(1, 1, 4, 2, 1, 1, 0, 0),
+                ),
                 TestData(intArrayOf(30, 40, 50, 60), intArrayOf(1, 1, 1, 0)),
                 TestData(intArrayOf(30, 60, 90), intArrayOf(1, 1, 0)),
             )
 
         tests.forEach { test ->
-            assertThat(sut.dailyTemperatures(test.temperatures)).containsExactly(test.result.toTypedArray())
+            assertThat(sut.dailyTemperatures(test.temperatures))
+                .containsExactly(test.result.toTypedArray())
         }
     }
 }

@@ -2,11 +2,7 @@ package me.bossm0n5t3r.leetcode.findMissingObservations
 
 class FindMissingObservations {
     class Solution {
-        fun missingRolls(
-            rolls: IntArray,
-            mean: Int,
-            n: Int,
-        ): IntArray {
+        fun missingRolls(rolls: IntArray, mean: Int, n: Int): IntArray {
             val sumOfRolls = rolls.sum()
             val totalSum = mean * (n + rolls.size)
             val sumOfResult = totalSum - sumOfRolls

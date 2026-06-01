@@ -10,6 +10,7 @@ class OddStringDifference {
                 .first()
                 .first()
 
-        private fun String.toDifferenceIntegerArray(): List<Int> = this.windowed(2).map { it[1].code - it[0].code }
+        private fun String.toDifferenceIntegerArray(): List<Int> =
+            this.windowed(2).map { it[1].code - it[0].code }
     }
 }

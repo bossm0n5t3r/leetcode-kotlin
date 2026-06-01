@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class MaximumDepthOfBinaryTreeTest {
     private val maximumDepthOfBinaryTree = MaximumDepthOfBinaryTree.Solution()
 
-    data class MaximumDepthOfBinaryTreeTestData(
-        val root: TreeNode?,
-        val result: Int,
-    )
+    data class MaximumDepthOfBinaryTreeTestData(val root: TreeNode?, val result: Int)
 
     @Test
     fun maxDepth() {

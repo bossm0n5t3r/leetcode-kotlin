@@ -4,10 +4,7 @@ import java.util.PriorityQueue
 
 class LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit {
     class Solution {
-        fun longestSubarray(
-            nums: IntArray,
-            limit: Int,
-        ): Int {
+        fun longestSubarray(nums: IntArray, limit: Int): Int {
             val continuousSubArrayWithMaxAndMin = ContinuousSubArrayWithMaxAndMin(limit)
             var l = 0
             var r = 0
@@ -22,9 +19,7 @@ class LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit {
             return continuousSubArrayWithMaxAndMin.longestSubArrayLength
         }
 
-        class ContinuousSubArrayWithMaxAndMin(
-            private val limit: Int,
-        ) {
+        class ContinuousSubArrayWithMaxAndMin(private val limit: Int) {
             private var count = 0
             private val naturalOrderPQ = PriorityQueue(compareBy<Int> { it })
             private val reverseOrderPQ = PriorityQueue(compareByDescending<Int> { it })

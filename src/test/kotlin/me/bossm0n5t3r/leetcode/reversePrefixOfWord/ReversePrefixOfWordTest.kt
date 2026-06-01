@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class ReversePrefixOfWordTest {
     private val sut = ReversePrefixOfWord.Solution()
 
-    private data class TestData(
-        val word: String,
-        val ch: Char,
-        val result: String,
-    )
+    private data class TestData(val word: String, val ch: Char, val result: String)
 
     @Test
     fun test() {
@@ -21,11 +17,6 @@ class ReversePrefixOfWordTest {
                 TestData("abcd", 'z', "abcd"),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.reversePrefix(test.word, test.ch),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.reversePrefix(test.word, test.ch)) }
     }
 }

@@ -43,10 +43,7 @@ internal class LongestIncreasingPathInAMatrixTest {
                     matrixUtil.generateMatrixFrom("[[3,4,5],[3,2,6],[2,2,1]]"),
                     4,
                 ),
-                LongestIncreasingPathInAMatrixTestData(
-                    matrixUtil.generateMatrixFrom("[[1]]"),
-                    1,
-                ),
+                LongestIncreasingPathInAMatrixTestData(matrixUtil.generateMatrixFrom("[[1]]"), 1),
                 LongestIncreasingPathInAMatrixTestData(
                     matrixUtil.generateMatrixFrom(
                         "[[0,1,2,3,4,5,6,7,8,9]," +
@@ -63,7 +60,7 @@ internal class LongestIncreasingPathInAMatrixTest {
                             "[119,118,117,116,115,114,113,112,111,110]," +
                             "[120,121,122,123,124,125,126,127,128,129]," +
                             "[139,138,137,136,135,134,133,132,131,130]," +
-                            "[0,0,0,0,0,0,0,0,0,0]]",
+                            "[0,0,0,0,0,0,0,0,0,0]]"
                     ),
                     140,
                 ),
@@ -73,12 +70,10 @@ internal class LongestIncreasingPathInAMatrixTest {
                 ),
             )
         tests.forEach { test ->
-            longestIncreasingPathInAMatrix
-                .longestIncreasingPath(test.matrix)
-                .also {
-                    println(it)
-                    assertEquals(it, test.result)
-                }
+            longestIncreasingPathInAMatrix.longestIncreasingPath(test.matrix).also {
+                println(it)
+                assertEquals(it, test.result)
+            }
         }
     }
 }

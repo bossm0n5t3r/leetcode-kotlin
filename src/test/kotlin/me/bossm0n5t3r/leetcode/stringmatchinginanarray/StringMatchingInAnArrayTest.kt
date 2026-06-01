@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class StringMatchingInAnArrayTest {
     private val sut = StringMatchingInAnArray.Solution()
 
-    private data class TestData(
-        val words: Array<String>,
-        val result: List<String>,
-    ) {
+    private data class TestData(val words: Array<String>, val result: List<String>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,16 +31,16 @@ class StringMatchingInAnArrayTest {
     fun test() {
         val testDataList =
             listOf(
-                TestData("[\"mass\",\"as\",\"hero\",\"superhero\"]".toArrayOfString(), listOf("as", "hero")),
+                TestData(
+                    "[\"mass\",\"as\",\"hero\",\"superhero\"]".toArrayOfString(),
+                    listOf("as", "hero"),
+                ),
                 TestData("[\"leetcode\",\"et\",\"code\"]".toArrayOfString(), listOf("et", "code")),
                 TestData("[\"blue\",\"green\",\"bu\"]".toArrayOfString(), emptyList()),
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.stringMatching(testData.words),
-            )
+            assertEquals(testData.result, sut.stringMatching(testData.words))
         }
     }
 }

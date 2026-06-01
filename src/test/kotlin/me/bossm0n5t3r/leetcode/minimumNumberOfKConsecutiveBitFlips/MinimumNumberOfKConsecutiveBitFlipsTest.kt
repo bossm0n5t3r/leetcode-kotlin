@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class MinimumNumberOfKConsecutiveBitFlipsTest {
     private val sut = MinimumNumberOfKConsecutiveBitFlips.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val k: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val k: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -41,11 +37,6 @@ class MinimumNumberOfKConsecutiveBitFlipsTest {
                 TestData(intArrayOf(0, 0, 0, 1, 0, 1, 1, 0), 3, 3),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.minKBitFlips(test.nums, test.k),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.minKBitFlips(test.nums, test.k)) }
     }
 }

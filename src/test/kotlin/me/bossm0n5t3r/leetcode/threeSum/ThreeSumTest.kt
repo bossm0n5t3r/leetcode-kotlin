@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class ThreeSumTest {
     private val threeSum = ThreeSum.Solution()
 
-    data class ThreeSumTestData(
-        val nums: IntArray,
-        val result: List<List<Int>>,
-    ) {
+    data class ThreeSumTestData(val nums: IntArray, val result: List<List<Int>>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -35,19 +32,10 @@ class ThreeSumTest {
             listOf(
                 ThreeSumTestData(
                     intArrayOf(-1, 0, 1, 2, -1, -4),
-                    listOf(
-                        listOf(-1, -1, 2),
-                        listOf(-1, 0, 1),
-                    ),
+                    listOf(listOf(-1, -1, 2), listOf(-1, 0, 1)),
                 ),
-                ThreeSumTestData(
-                    intArrayOf(),
-                    listOf(),
-                ),
-                ThreeSumTestData(
-                    intArrayOf(0),
-                    listOf(),
-                ),
+                ThreeSumTestData(intArrayOf(), listOf()),
+                ThreeSumTestData(intArrayOf(0), listOf()),
             )
         tests.forEach { test ->
             assertThat(threeSum.threeSum(test.nums))

@@ -46,8 +46,22 @@ class PathWithMaximumProbabilityTest {
     fun test() {
         val tests =
             listOf(
-                TestData(3, "[[0,1],[1,2],[0,2]]".toArrayOfIntArray(), doubleArrayOf(0.5, 0.5, 0.2), 0, 2, 0.25000),
-                TestData(3, "[[0,1],[1,2],[0,2]]".toArrayOfIntArray(), doubleArrayOf(0.5, 0.5, 0.3), 0, 2, 0.30000),
+                TestData(
+                    3,
+                    "[[0,1],[1,2],[0,2]]".toArrayOfIntArray(),
+                    doubleArrayOf(0.5, 0.5, 0.2),
+                    0,
+                    2,
+                    0.25000,
+                ),
+                TestData(
+                    3,
+                    "[[0,1],[1,2],[0,2]]".toArrayOfIntArray(),
+                    doubleArrayOf(0.5, 0.5, 0.3),
+                    0,
+                    2,
+                    0.30000,
+                ),
                 TestData(3, "[[0,1]]".toArrayOfIntArray(), doubleArrayOf(0.5), 0, 2, 0.00000),
             )
 

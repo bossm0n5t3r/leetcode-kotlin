@@ -21,11 +21,7 @@ class SortColors {
             }
         }
 
-        private fun swap(
-            nums: IntArray,
-            i: Int,
-            j: Int,
-        ) {
+        private fun swap(nums: IntArray, i: Int, j: Int) {
             val tmp = nums[i]
             nums[i] = nums[j]
             nums[j] = tmp

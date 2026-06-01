@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class BalancedBinaryTreeTest {
     private val sut = BalancedBinaryTree.Solution()
 
-    private data class TestData(
-        val root: TreeNode?,
-        val result: Boolean,
-    )
+    private data class TestData(val root: TreeNode?, val result: Boolean)
 
     @Test
     fun test() {
@@ -25,17 +22,11 @@ class BalancedBinaryTreeTest {
                     TreeNodeUtil.generateTreeNodeOrNull(listOf(1, 2, 2, 3, 3, null, null, 4, 4)),
                     false,
                 ),
-                TestData(
-                    TreeNodeUtil.generateTreeNodeOrNull(emptyList()),
-                    true,
-                ),
+                TestData(TreeNodeUtil.generateTreeNodeOrNull(emptyList()), true),
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.isBalanced(testData.root),
-            )
+            assertEquals(testData.result, sut.isBalanced(testData.root))
         }
     }
 }

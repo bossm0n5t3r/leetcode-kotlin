@@ -4,10 +4,7 @@ import me.bossm0n5t3r.leetcode.utils.ListNode
 
 class SplitLinkedListInParts {
     class Solution {
-        fun splitListToParts(
-            head: ListNode?,
-            k: Int,
-        ): Array<ListNode?> {
+        fun splitListToParts(head: ListNode?, k: Int): Array<ListNode?> {
             val intListOfHead = head?.toList() ?: emptyList()
             if (intListOfHead.isEmpty()) {
                 return Array(k) { null }

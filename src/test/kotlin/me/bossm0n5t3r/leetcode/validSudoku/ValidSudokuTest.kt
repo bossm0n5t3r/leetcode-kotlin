@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class ValidSudokuTest {
     private val validSudoku = ValidSudoku.Solution()
 
-    data class ValidSudokuTestData(
-        val board: Array<CharArray>,
-        val result: Boolean,
-    ) {
+    data class ValidSudokuTestData(val board: Array<CharArray>, val result: Boolean) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -45,7 +42,8 @@ class ValidSudokuTest {
                         ,[".","6",".",".",".",".","2","8","."]
                         ,[".",".",".","4","1","9",".",".","5"]
                         ,[".",".",".",".","8",".",".","7","9"]]
-                        """.trimIndent(),
+                        """
+                            .trimIndent()
                     ),
                     true,
                 ),
@@ -61,7 +59,8 @@ class ValidSudokuTest {
                         ,[".","6",".",".",".",".","2","8","."]
                         ,[".",".",".","4","1","9",".",".","5"]
                         ,[".",".",".",".","8",".",".","7","9"]]
-                        """.trimIndent(),
+                        """
+                            .trimIndent()
                     ),
                     false,
                 ),
@@ -77,7 +76,8 @@ class ValidSudokuTest {
                         ,[".",".",".",".",".","2",".",".","."]
                         ,[".","2",".","9",".",".",".",".","."]
                         ,[".",".","4",".",".",".",".",".","."]]
-                        """.trimIndent(),
+                        """
+                            .trimIndent()
                     ),
                     false,
                 ),
@@ -92,11 +92,11 @@ class ValidSudokuTest {
         rawData
             .lines()
             .map { row ->
-                row
-                    .replace("]]", "]")
+                row.replace("]]", "]")
                     .substring(3, row.length - 2)
                     .split("\",\"")
                     .map { it[0] }
                     .toCharArray()
-            }.toTypedArray()
+            }
+            .toTypedArray()
 }

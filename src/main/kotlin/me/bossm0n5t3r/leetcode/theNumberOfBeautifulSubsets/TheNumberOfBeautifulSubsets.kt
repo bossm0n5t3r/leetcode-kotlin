@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.theNumberOfBeautifulSubsets
 
 class TheNumberOfBeautifulSubsets {
     class Solution {
-        fun beautifulSubsets(
-            nums: IntArray,
-            k: Int,
-        ): Int {
+        fun beautifulSubsets(nums: IntArray, k: Int): Int {
             val result = mutableListOf<MutableList<Int>>()
             dfs(nums, k, 0, mutableListOf(), result)
             return result.size

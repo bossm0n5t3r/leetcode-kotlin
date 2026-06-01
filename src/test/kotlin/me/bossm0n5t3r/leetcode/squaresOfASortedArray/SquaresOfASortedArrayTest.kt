@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class SquaresOfASortedArrayTest {
     private val sut = SquaresOfASortedArray.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: IntArray,
-    ) {
+    private data class TestData(val nums: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -37,8 +34,6 @@ class SquaresOfASortedArrayTest {
                 TestData(intArrayOf(-7, -3, 2, 3, 11), intArrayOf(4, 9, 9, 49, 121)),
             )
 
-        tests.forEach { test ->
-            assertThat(sut.sortedSquares(test.nums)).isEqualTo(test.result)
-        }
+        tests.forEach { test -> assertThat(sut.sortedSquares(test.nums)).isEqualTo(test.result) }
     }
 }

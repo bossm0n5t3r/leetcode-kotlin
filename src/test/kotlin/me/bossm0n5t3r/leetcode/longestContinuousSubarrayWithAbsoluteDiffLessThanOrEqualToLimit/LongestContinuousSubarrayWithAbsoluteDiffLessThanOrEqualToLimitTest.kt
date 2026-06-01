@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimitTest {
     private val sut = LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val limit: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val limit: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -42,10 +38,7 @@ class LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimitTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.longestSubarray(test.nums, test.limit),
-            )
+            assertEquals(test.result, sut.longestSubarray(test.nums, test.limit))
         }
     }
 }

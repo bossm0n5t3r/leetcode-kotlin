@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class MinimumRemoveToMakeValidParenthesesTest {
     private val sut = MinimumRemoveToMakeValidParentheses.Solution()
 
-    private data class TestData(
-        val s: String,
-        val result: String,
-    )
+    private data class TestData(val s: String, val result: String)
 
     @Test
     fun test() {
@@ -20,11 +17,6 @@ class MinimumRemoveToMakeValidParenthesesTest {
                 TestData("))((", ""),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.minRemoveToMakeValid(test.s),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.minRemoveToMakeValid(test.s)) }
     }
 }

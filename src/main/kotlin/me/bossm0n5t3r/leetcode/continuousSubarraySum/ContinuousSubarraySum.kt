@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.continuousSubarraySum
 
 class ContinuousSubarraySum {
     class Solution {
-        fun checkSubarraySum(
-            nums: IntArray,
-            k: Int,
-        ): Boolean {
+        fun checkSubarraySum(nums: IntArray, k: Int): Boolean {
             if (nums.size < 2) return false
             val remainderToIndex = mutableMapOf(0 to -1)
             var cumulativeSum = 0

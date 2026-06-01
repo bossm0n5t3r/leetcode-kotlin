@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class BinarySearchTreeToGreaterSumTreeTest {
     private val sut = BinarySearchTreeToGreaterSumTree.Solution()
 
-    private data class TestData(
-        val root: TreeNode?,
-        val result: TreeNode?,
-    )
+    private data class TestData(val root: TreeNode?, val result: TreeNode?)
 
     @Test
     fun test() {
@@ -19,23 +16,7 @@ class BinarySearchTreeToGreaterSumTreeTest {
             listOf(
                 TestData(
                     TreeNodeUtil.generateTreeNodeOrNull(
-                        listOf(
-                            4,
-                            1,
-                            6,
-                            0,
-                            2,
-                            5,
-                            7,
-                            null,
-                            null,
-                            null,
-                            3,
-                            null,
-                            null,
-                            null,
-                            8,
-                        ),
+                        listOf(4, 1, 6, 0, 2, 5, 7, null, null, null, 3, null, null, null, 8)
                     ),
                     TreeNodeUtil.generateTreeNodeOrNull(
                         listOf(
@@ -54,7 +35,7 @@ class BinarySearchTreeToGreaterSumTreeTest {
                             null,
                             null,
                             8,
-                        ),
+                        )
                     ),
                 ),
                 TestData(
@@ -64,9 +45,7 @@ class BinarySearchTreeToGreaterSumTreeTest {
             )
 
         tests.forEach { test ->
-            assertTrue {
-                TreeNodeUtil.isEqual(sut.bstToGst(test.root), test.result)
-            }
+            assertTrue { TreeNodeUtil.isEqual(sut.bstToGst(test.root), test.result) }
         }
     }
 }

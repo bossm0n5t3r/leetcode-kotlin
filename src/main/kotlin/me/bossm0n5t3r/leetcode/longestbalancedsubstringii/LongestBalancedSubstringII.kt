@@ -33,11 +33,7 @@ class LongestBalancedSubstringII {
                 longestLength = maxOf(longestLength, len)
             }
 
-            fun putOrUpdateLongestLength(
-                i: Int,
-                id: Long,
-                map: MutableMap<Long, Long>,
-            ) {
+            fun putOrUpdateLongestLength(i: Int, id: Long, map: MutableMap<Long, Long>) {
                 val value = map[id]
                 if (value == null) {
                     map[id] = i.toLong() + 1

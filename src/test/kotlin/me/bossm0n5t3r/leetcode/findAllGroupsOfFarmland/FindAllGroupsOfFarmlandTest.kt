@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class FindAllGroupsOfFarmlandTest {
     private val sut = FindAllGroupsOfFarmland.Solution()
 
-    private data class TestData(
-        val land: Array<IntArray>,
-        val result: Array<IntArray>,
-    ) {
+    private data class TestData(val land: Array<IntArray>, val result: Array<IntArray>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,7 +31,10 @@ class FindAllGroupsOfFarmlandTest {
     fun test() {
         val tests =
             listOf(
-                TestData("[[1,0,0],[0,1,1],[0,1,1]]".toArrayOfIntArray(), "[[0,0,0,0],[1,1,2,2]]".toArrayOfIntArray()),
+                TestData(
+                    "[[1,0,0],[0,1,1],[0,1,1]]".toArrayOfIntArray(),
+                    "[[0,0,0,0],[1,1,2,2]]".toArrayOfIntArray(),
+                ),
                 TestData("[[1,1],[1,1]]".toArrayOfIntArray(), "[[0,0,1,1]]".toArrayOfIntArray()),
                 TestData("[[0]]".toArrayOfIntArray(), "[]".toArrayOfIntArray()),
             )

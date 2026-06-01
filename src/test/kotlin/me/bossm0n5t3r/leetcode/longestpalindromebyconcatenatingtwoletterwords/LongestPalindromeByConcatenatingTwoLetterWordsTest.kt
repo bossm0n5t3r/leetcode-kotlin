@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class LongestPalindromeByConcatenatingTwoLetterWordsTest {
     private val sut = LongestPalindromeByConcatenatingTwoLetterWords.Solution()
 
-    private data class TestData(
-        val words: Array<String>,
-        val result: Int,
-    ) {
+    private data class TestData(val words: Array<String>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,10 +37,7 @@ class LongestPalindromeByConcatenatingTwoLetterWordsTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.longestPalindrome(testData.words),
-            )
+            assertEquals(testData.result, sut.longestPalindrome(testData.words))
         }
     }
 }

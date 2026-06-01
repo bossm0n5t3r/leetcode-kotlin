@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class OddStringDifferenceTest {
     private val sut = OddStringDifference.Solution()
 
-    private data class TestData(
-        val words: Array<String>,
-        val result: String,
-    ) {
+    private data class TestData(val words: Array<String>, val result: String) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,11 +35,6 @@ class OddStringDifferenceTest {
                 TestData("[\"aaa\",\"bob\",\"ccc\",\"ddd\"]".toArrayOfString(), "bob"),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.oddString(test.words),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.oddString(test.words)) }
     }
 }

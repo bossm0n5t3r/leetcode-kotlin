@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.allAncestorsOfANodeInADirectedAcyclicGraph
 
 class AllAncestorsOfANodeInADirectedAcyclicGraph {
     class Solution {
-        fun getAncestors(
-            n: Int,
-            edges: Array<IntArray>,
-        ): List<List<Int>> {
+        fun getAncestors(n: Int, edges: Array<IntArray>): List<List<Int>> {
             val arr = Array(n) { mutableListOf<Int>() }
             for (edge in edges) {
                 val (from, to) = edge
@@ -14,11 +11,7 @@ class AllAncestorsOfANodeInADirectedAcyclicGraph {
             return (0 until n).map { bfs(n, arr, it).sorted() }
         }
 
-        private fun bfs(
-            n: Int,
-            arr: Array<MutableList<Int>>,
-            cur: Int,
-        ): List<Int> {
+        private fun bfs(n: Int, arr: Array<MutableList<Int>>, cur: Int): List<Int> {
             val visited = BooleanArray(n) { false }
             visited[cur] = true
             val queue = mutableListOf(cur)

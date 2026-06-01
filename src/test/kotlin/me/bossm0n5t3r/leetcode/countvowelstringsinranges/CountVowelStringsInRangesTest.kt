@@ -43,7 +43,11 @@ class CountVowelStringsInRangesTest {
                     "[[0,2],[1,4],[1,1]]".toArrayOfIntArray(),
                     "[2,3,0]".toIntArray(),
                 ),
-                TestData("[\"a\",\"e\",\"i\"]".toArrayOfString(), "[[0,2],[0,1],[2,2]]".toArrayOfIntArray(), "[3,2,1]".toIntArray()),
+                TestData(
+                    "[\"a\",\"e\",\"i\"]".toArrayOfString(),
+                    "[[0,2],[0,1],[2,2]]".toArrayOfIntArray(),
+                    "[3,2,1]".toIntArray(),
+                ),
             )
 
         for (testData in testDataList) {

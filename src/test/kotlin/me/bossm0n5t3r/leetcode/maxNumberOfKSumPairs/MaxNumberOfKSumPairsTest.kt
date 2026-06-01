@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class MaxNumberOfKSumPairsTest {
     private val sut = MaxNumberOfKSumPairs.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val k: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val k: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,23 +30,10 @@ class MaxNumberOfKSumPairsTest {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    intArrayOf(1, 2, 3, 4),
-                    5,
-                    2,
-                ),
-                TestData(
-                    intArrayOf(3, 1, 3, 4, 3),
-                    6,
-                    1,
-                ),
+                TestData(intArrayOf(1, 2, 3, 4), 5, 2),
+                TestData(intArrayOf(3, 1, 3, 4, 3), 6, 1),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.maxOperations(test.nums, test.k),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.maxOperations(test.nums, test.k), test.result) }
     }
 }

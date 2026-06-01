@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.rotatestring
 
 class RotateString {
     class Solution {
-        fun rotateString(
-            s: String,
-            goal: String,
-        ): Boolean {
+        fun rotateString(s: String, goal: String): Boolean {
             if (s == goal) return true
             if (goal.length != s.length) return false
             var tmp = ""

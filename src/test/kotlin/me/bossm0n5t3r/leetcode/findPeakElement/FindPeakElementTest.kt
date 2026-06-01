@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class FindPeakElementTest {
     private val sut = FindPeakElement.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,21 +31,10 @@ class FindPeakElementTest {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    nums = "[1,2,3,1]".toIntArray(),
-                    result = 2,
-                ),
-                TestData(
-                    nums = "[1,2,1,3,5,6,4]".toIntArray(),
-                    result = 5,
-                ),
+                TestData(nums = "[1,2,3,1]".toIntArray(), result = 2),
+                TestData(nums = "[1,2,1,3,5,6,4]".toIntArray(), result = 5),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.findPeakElement(test.nums),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.findPeakElement(test.nums), test.result) }
     }
 }

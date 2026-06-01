@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class MinimumCommonValueTest {
     private val sut = MinimumCommonValue.Solution()
 
-    private data class TestData(
-        val nums1: IntArray,
-        val nums2: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val nums1: IntArray, val nums2: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,11 +36,6 @@ class MinimumCommonValueTest {
                 TestData(intArrayOf(1, 2, 3, 6), intArrayOf(2, 3, 4, 5), 2),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.getCommon(test.nums1, test.nums2),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.getCommon(test.nums1, test.nums2)) }
     }
 }

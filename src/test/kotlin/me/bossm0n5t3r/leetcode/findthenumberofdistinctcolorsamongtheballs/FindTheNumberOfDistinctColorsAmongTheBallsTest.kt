@@ -38,8 +38,16 @@ class FindTheNumberOfDistinctColorsAmongTheBallsTest {
     fun test() {
         val testDataList =
             listOf(
-                TestData(4, "[[1,4],[2,5],[1,3],[3,4]]".toArrayOfIntArray(), "[1,2,2,3]".toIntArray()),
-                TestData(4, "[[0,1],[1,2],[2,2],[3,4],[4,5]]".toArrayOfIntArray(), "[1,2,2,3,4]".toIntArray()),
+                TestData(
+                    4,
+                    "[[1,4],[2,5],[1,3],[3,4]]".toArrayOfIntArray(),
+                    "[1,2,2,3]".toIntArray(),
+                ),
+                TestData(
+                    4,
+                    "[[0,1],[1,2],[2,2],[3,4],[4,5]]".toArrayOfIntArray(),
+                    "[1,2,2,3,4]".toIntArray(),
+                ),
             )
 
         for (testData in testDataList) {

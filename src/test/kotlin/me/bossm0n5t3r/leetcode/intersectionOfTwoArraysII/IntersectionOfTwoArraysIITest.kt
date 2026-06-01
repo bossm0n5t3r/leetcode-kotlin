@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class IntersectionOfTwoArraysIITest {
     private val sut = IntersectionOfTwoArraysII.Solution()
 
-    private data class TestData(
-        val nums1: IntArray,
-        val nums2: IntArray,
-        val result: IntArray,
-    ) {
+    private data class TestData(val nums1: IntArray, val nums2: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

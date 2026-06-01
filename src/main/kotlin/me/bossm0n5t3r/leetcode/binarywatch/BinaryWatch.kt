@@ -10,9 +10,7 @@ class BinaryWatch {
             for (hour in 1 until 12) {
                 val countBits = hour.countOneBits()
                 tmpHours[countBits] =
-                    tmpHours.getOrDefault(countBits, mutableListOf()).apply {
-                        add(hour)
-                    }
+                    tmpHours.getOrDefault(countBits, mutableListOf()).apply { add(hour) }
             }
             hours = tmpHours
 
@@ -20,9 +18,7 @@ class BinaryWatch {
             for (minute in 0..59) {
                 val countBits = minute.countOneBits()
                 tmpMinutes[countBits] =
-                    tmpMinutes.getOrDefault(countBits, mutableListOf()).apply {
-                        add(minute)
-                    }
+                    tmpMinutes.getOrDefault(countBits, mutableListOf()).apply { add(minute) }
             }
             minutes = tmpMinutes
         }

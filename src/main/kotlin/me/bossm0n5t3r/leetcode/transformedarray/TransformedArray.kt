@@ -13,10 +13,7 @@ class TransformedArray {
             return result
         }
 
-        private fun wrapIndex(
-            index: Int,
-            n: Int,
-        ): Int {
+        private fun wrapIndex(index: Int, n: Int): Int {
             val mod = index % n
             return if (mod >= 0) mod else mod + n
         }

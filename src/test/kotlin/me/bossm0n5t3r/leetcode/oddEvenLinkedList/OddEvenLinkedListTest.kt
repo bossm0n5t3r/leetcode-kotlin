@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class OddEvenLinkedListTest {
     private val oddEvenLinkedList = OddEvenLinkedList.Solution()
 
-    data class OddEvenLinkedListTestData(
-        val head: ListNode?,
-        val result: ListNode?,
-    )
+    data class OddEvenLinkedListTestData(val head: ListNode?, val result: ListNode?)
 
     @Test
     fun oddEvenList() {

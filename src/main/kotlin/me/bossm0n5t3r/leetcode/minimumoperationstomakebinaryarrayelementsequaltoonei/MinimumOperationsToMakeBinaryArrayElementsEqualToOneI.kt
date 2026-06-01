@@ -14,10 +14,7 @@ class MinimumOperationsToMakeBinaryArrayElementsEqualToOneI {
             return if (nums.any { it == 0 }) -1 else count
         }
 
-        private fun operation(
-            nums: IntArray,
-            i: Int,
-        ) {
+        private fun operation(nums: IntArray, i: Int) {
             nums[i] = 1 - nums[i]
             nums[i + 1] = 1 - nums[i + 1]
             nums[i + 2] = 1 - nums[i + 2]

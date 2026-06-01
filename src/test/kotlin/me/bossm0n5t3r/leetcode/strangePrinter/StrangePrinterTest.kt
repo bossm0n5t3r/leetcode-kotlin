@@ -6,24 +6,12 @@ import org.junit.jupiter.api.Test
 class StrangePrinterTest {
     private val sut = StrangePrinter.Solution()
 
-    private data class TestData(
-        val s: String,
-        val result: Int,
-    )
+    private data class TestData(val s: String, val result: Int)
 
     @Test
     fun test() {
-        val tests =
-            listOf(
-                TestData("aaabbb", 2),
-                TestData("aba", 2),
-            )
+        val tests = listOf(TestData("aaabbb", 2), TestData("aba", 2))
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.strangePrinter(test.s),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.strangePrinter(test.s)) }
     }
 }

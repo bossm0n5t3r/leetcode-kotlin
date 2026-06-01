@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class RemoveDuplicatesFromSortedArrayTest {
     private val removeDuplicatesFromSortedArray = RemoveDuplicatesFromSortedArray.Solution()
 
-    data class RemoveDuplicatesFromSortedArrayTestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    data class RemoveDuplicatesFromSortedArrayTestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

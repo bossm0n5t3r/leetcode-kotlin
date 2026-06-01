@@ -46,7 +46,9 @@ class NearestExitFromEntranceInMazeTest {
                     result = 1,
                 ),
                 TestData(
-                    maze = "[[\"+\",\"+\",\"+\"],[\".\",\".\",\".\"],[\"+\",\"+\",\"+\"]]".toArrayOfCharArray(),
+                    maze =
+                        "[[\"+\",\"+\",\"+\"],[\".\",\".\",\".\"],[\"+\",\"+\",\"+\"]]"
+                            .toArrayOfCharArray(),
                     entrance = "[1,0]".toIntArray(),
                     result = 2,
                 ),
@@ -56,7 +58,9 @@ class NearestExitFromEntranceInMazeTest {
                     result = -1,
                 ),
                 TestData(
-                    maze = "[[\"+\",\".\",\".\"],[\"+\",\".\",\"+\"],[\".\",\".\",\"+\"]]".toArrayOfCharArray(),
+                    maze =
+                        "[[\"+\",\".\",\".\"],[\"+\",\".\",\"+\"],[\".\",\".\",\"+\"]]"
+                            .toArrayOfCharArray(),
                     entrance = "[2,1]".toIntArray(),
                     result = 1,
                 ),
@@ -64,10 +68,7 @@ class NearestExitFromEntranceInMazeTest {
 
         tests.forEach { test ->
             test.maze.forEach { println(it.toList()) }
-            assertEquals(
-                sut.nearestExit(test.maze, test.entrance),
-                test.result,
-            )
+            assertEquals(sut.nearestExit(test.maze, test.entrance), test.result)
         }
     }
 }

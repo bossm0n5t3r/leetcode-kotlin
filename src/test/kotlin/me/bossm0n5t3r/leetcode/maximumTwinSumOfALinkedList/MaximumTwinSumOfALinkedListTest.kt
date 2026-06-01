@@ -8,34 +8,17 @@ import org.junit.jupiter.api.Test
 class MaximumTwinSumOfALinkedListTest {
     private val sut = MaximumTwinSumOfALinkedList.Solution()
 
-    private data class TestData(
-        val head: ListNode?,
-        val result: Int,
-    )
+    private data class TestData(val head: ListNode?, val result: Int)
 
     @Test
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    ListNodeUtil.generateListNode(5, 4, 2, 1),
-                    6,
-                ),
-                TestData(
-                    ListNodeUtil.generateListNode(4, 2, 2, 3),
-                    7,
-                ),
-                TestData(
-                    ListNodeUtil.generateListNode(1, 100000),
-                    100001,
-                ),
+                TestData(ListNodeUtil.generateListNode(5, 4, 2, 1), 6),
+                TestData(ListNodeUtil.generateListNode(4, 2, 2, 3), 7),
+                TestData(ListNodeUtil.generateListNode(1, 100000), 100001),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.pairSum(test.head),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.pairSum(test.head), test.result) }
     }
 }

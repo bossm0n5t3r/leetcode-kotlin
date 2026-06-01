@@ -4,11 +4,9 @@ import java.util.PriorityQueue
 
 class MinimumOperationsToExceedThresholdValueII {
     class Solution {
-        fun minOperations(
-            nums: IntArray,
-            k: Int,
-        ): Int {
-            val pq = PriorityQueue<Long>(compareBy { it }).apply { addAll(nums.map { it.toLong() }) }
+        fun minOperations(nums: IntArray, k: Int): Int {
+            val pq =
+                PriorityQueue<Long>(compareBy { it }).apply { addAll(nums.map { it.toLong() }) }
             var operation = 0
             while (pq.peek() < k) {
                 val (x, y) = pq.poll() to pq.poll()

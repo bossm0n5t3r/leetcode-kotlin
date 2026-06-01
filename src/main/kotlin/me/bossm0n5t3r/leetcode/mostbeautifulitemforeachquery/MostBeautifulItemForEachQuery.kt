@@ -4,10 +4,7 @@ import java.util.TreeMap
 
 class MostBeautifulItemForEachQuery {
     class Solution {
-        fun maximumBeauty(
-            items: Array<IntArray>,
-            queries: IntArray,
-        ): IntArray {
+        fun maximumBeauty(items: Array<IntArray>, queries: IntArray): IntArray {
             val treeMap = TreeMap<Int, Int>()
             val sortedItems = items.sortedWith(compareBy<IntArray> { it[0] }.thenBy { it[1] })
             var maxBeauty = 0
@@ -16,7 +13,10 @@ class MostBeautifulItemForEachQuery {
                 treeMap[price] = tmp
                 maxBeauty = tmp
             }
-            return queries.toList().map { query -> treeMap.floorEntry(query)?.value ?: 0 }.toIntArray()
+            return queries
+                .toList()
+                .map { query -> treeMap.floorEntry(query)?.value ?: 0 }
+                .toIntArray()
         }
     }
 }

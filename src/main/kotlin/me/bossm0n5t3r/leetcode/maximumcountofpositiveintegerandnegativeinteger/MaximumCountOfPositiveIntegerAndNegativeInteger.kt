@@ -9,10 +9,7 @@ class MaximumCountOfPositiveIntegerAndNegativeInteger {
             return maxOf(firstZeroIndex, nums.size - firstOneIndex)
         }
 
-        private fun findFirstIndex(
-            nums: IntArray,
-            target: Int,
-        ): Int {
+        private fun findFirstIndex(nums: IntArray, target: Int): Int {
             var left = 0
             var right = nums.size
 

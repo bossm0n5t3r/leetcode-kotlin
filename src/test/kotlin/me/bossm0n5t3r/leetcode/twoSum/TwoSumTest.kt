@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class TwoSumTest {
     private val solution = TwoSum.Solution()
 
-    data class TwoSumTestData(
-        val nums: IntArray,
-        val target: Int,
-        val result: IntArray,
-    ) {
+    data class TwoSumTestData(val nums: IntArray, val target: Int, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

@@ -2,11 +2,7 @@ package me.bossm0n5t3r.leetcode.grumpyBookstoreOwner
 
 class GrumpyBookstoreOwner {
     class Solution {
-        fun maxSatisfied(
-            customers: IntArray,
-            grumpy: IntArray,
-            minutes: Int,
-        ): Int {
+        fun maxSatisfied(customers: IntArray, grumpy: IntArray, minutes: Int): Int {
             val n = customers.size
             var startMinute = 0
             var endMinute = minutes - 1

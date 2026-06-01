@@ -38,22 +38,12 @@ internal class MinimumAbsoluteDifferenceQueriesTest {
             listOf(
                 Example(
                     intArrayOf(1, 3, 4, 8),
-                    arrayOf(
-                        intArrayOf(0, 1),
-                        intArrayOf(1, 2),
-                        intArrayOf(2, 3),
-                        intArrayOf(0, 3),
-                    ),
+                    arrayOf(intArrayOf(0, 1), intArrayOf(1, 2), intArrayOf(2, 3), intArrayOf(0, 3)),
                     intArrayOf(2, 1, 4, 1),
                 ),
                 Example(
                     intArrayOf(4, 5, 2, 2, 7, 10),
-                    arrayOf(
-                        intArrayOf(2, 3),
-                        intArrayOf(0, 2),
-                        intArrayOf(0, 5),
-                        intArrayOf(3, 5),
-                    ),
+                    arrayOf(intArrayOf(2, 3), intArrayOf(0, 2), intArrayOf(0, 5), intArrayOf(3, 5)),
                     intArrayOf(-1, 1, 1, 3),
                 ),
                 Example(
@@ -69,12 +59,10 @@ internal class MinimumAbsoluteDifferenceQueriesTest {
                 ),
             )
         tests.forEach { test ->
-            sut
-                .minDifference(test.nums, test.queries)
-                .also {
-                    println(it.toList())
-                    assertArrayEquals(it, test.result)
-                }
+            sut.minDifference(test.nums, test.queries).also {
+                println(it.toList())
+                assertArrayEquals(it, test.result)
+            }
         }
     }
 }

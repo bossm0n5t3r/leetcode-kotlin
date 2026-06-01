@@ -2,20 +2,12 @@ package me.bossm0n5t3r.leetcode.kthSmallestElementInASortedMatrix
 
 class KthSmallestElementInASortedMatrix {
     class Solution {
-        fun kthSmallest(
-            matrix: Array<IntArray>,
-            k: Int,
-        ): Int = matrix.flatMap { it.toList() }.sorted()[k - 1]
+        fun kthSmallest(matrix: Array<IntArray>, k: Int): Int =
+            matrix.flatMap { it.toList() }.sorted()[k - 1]
 
-        fun kthSmallestByUsingBiSect(
-            matrix: Array<IntArray>,
-            k: Int,
-        ): Int = biSelect(matrix, k)
+        fun kthSmallestByUsingBiSect(matrix: Array<IntArray>, k: Int): Int = biSelect(matrix, k)
 
-        private fun biSelect(
-            matrix: Array<IntArray>,
-            k: Int,
-        ): Int {
+        private fun biSelect(matrix: Array<IntArray>, k: Int): Int {
             val n = matrix.size
             var low = matrix[0][0]
             var high = matrix[n - 1][n - 1] + 1

@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class DivideIntervalsIntoMinimumNumberOfGroupsTest {
     private val sut = DivideIntervalsIntoMinimumNumberOfGroups.Solution()
 
-    private data class TestData(
-        val intervals: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val intervals: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,10 +36,7 @@ class DivideIntervalsIntoMinimumNumberOfGroupsTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.minGroups(testData.intervals),
-            )
+            assertEquals(testData.result, sut.minGroups(testData.intervals))
         }
     }
 }

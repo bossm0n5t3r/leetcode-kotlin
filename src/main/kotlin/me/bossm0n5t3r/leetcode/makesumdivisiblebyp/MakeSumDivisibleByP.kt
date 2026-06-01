@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.makesumdivisiblebyp
 
 class MakeSumDivisibleByP {
     class Solution {
-        fun minSubarray(
-            nums: IntArray,
-            p: Int,
-        ): Int {
+        fun minSubarray(nums: IntArray, p: Int): Int {
             val n = nums.size
             val prefix = nums.runningFold(0) { acc, i -> (acc + i) % p }
             val total = prefix[n]

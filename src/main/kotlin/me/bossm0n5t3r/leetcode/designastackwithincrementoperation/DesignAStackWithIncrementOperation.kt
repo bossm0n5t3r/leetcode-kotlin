@@ -1,9 +1,7 @@
 package me.bossm0n5t3r.leetcode.designastackwithincrementoperation
 
 class DesignAStackWithIncrementOperation {
-    class CustomStack(
-        maxSize: Int,
-    ) {
+    class CustomStack(maxSize: Int) {
         private val store = IntArray(maxSize)
         private val initialIndex = -1
         private var index = initialIndex
@@ -18,10 +16,7 @@ class DesignAStackWithIncrementOperation {
             return store[index--]
         }
 
-        fun increment(
-            k: Int,
-            `val`: Int,
-        ) {
+        fun increment(k: Int, `val`: Int) {
             for (i in 0 until k) {
                 if (i > index) break
                 store[i] += `val`

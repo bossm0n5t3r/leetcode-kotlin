@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class MaximumTotalImportanceOfRoadsTest {
     private val sut = MaximumTotalImportanceOfRoads.Solution()
 
-    private data class TestData(
-        val n: Int,
-        val roads: Array<IntArray>,
-        val result: Long,
-    ) {
+    private data class TestData(val n: Int, val roads: Array<IntArray>, val result: Long) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -43,10 +39,7 @@ class MaximumTotalImportanceOfRoadsTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.maximumImportance(test.n, test.roads),
-            )
+            assertEquals(test.result, sut.maximumImportance(test.n, test.roads))
         }
     }
 }

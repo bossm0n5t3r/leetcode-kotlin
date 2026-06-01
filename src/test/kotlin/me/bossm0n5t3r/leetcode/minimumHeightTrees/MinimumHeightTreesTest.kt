@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class MinimumHeightTreesTest {
     private val sut = MinimumHeightTrees.Solution()
 
-    private data class TestData(
-        val n: Int,
-        val edges: Array<IntArray>,
-        val result: List<Int>,
-    ) {
+    private data class TestData(val n: Int, val edges: Array<IntArray>, val result: List<Int>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -42,10 +38,7 @@ class MinimumHeightTreesTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.findMinHeightTrees(test.n, test.edges),
-            )
+            assertEquals(test.result, sut.findMinHeightTrees(test.n, test.edges))
         }
     }
 }

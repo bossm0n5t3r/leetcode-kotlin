@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class FindEventualSafeStatesTest {
     private val sut = FindEventualSafeStates.Solution()
 
-    private data class TestData(
-        val graph: Array<IntArray>,
-        val result: List<Int>,
-    ) {
+    private data class TestData(val graph: Array<IntArray>, val result: List<Int>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,10 +36,7 @@ class FindEventualSafeStatesTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.eventualSafeNodes(testData.graph),
-            )
+            assertEquals(testData.result, sut.eventualSafeNodes(testData.graph))
         }
     }
 }

@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.thekthlexicographicalstringofallhappystringsofle
 
 class TheKThLexicographicalStringOfAllHappyStringsOfLengthN {
     class Solution {
-        fun getHappyString(
-            n: Int,
-            k: Int,
-        ): String {
+        fun getHappyString(n: Int, k: Int): String {
             val result = mutableListOf<String>()
             val chars = charArrayOf('a', 'b', 'c')
             dfs(chars, n, 0, "", result)

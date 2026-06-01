@@ -7,7 +7,6 @@ class LargestNumber {
                 .map { it.toString() }
                 .sortedWith { a, b -> (b + a).compareTo(a + b) }
                 .takeIf { it.first() != "0" }
-                ?.joinToString("")
-                ?: "0"
+                ?.joinToString("") ?: "0"
     }
 }

@@ -9,10 +9,7 @@ class CloneGraph {
             return clone(node, cloneMap)
         }
 
-        private fun clone(
-            node: Node?,
-            map: MutableMap<Node, Node>,
-        ): Node? {
+        private fun clone(node: Node?, map: MutableMap<Node, Node>): Node? {
             if (node == null) return null
             if (map.containsKey(node)) return map[node]
 

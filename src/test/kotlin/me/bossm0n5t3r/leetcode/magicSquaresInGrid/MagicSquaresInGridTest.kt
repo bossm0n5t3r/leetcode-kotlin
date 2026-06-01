@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class MagicSquaresInGridTest {
     private val sut = MagicSquaresInGrid.Solution()
 
-    private data class TestData(
-        val grid: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val grid: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,11 +35,6 @@ class MagicSquaresInGridTest {
                 TestData("[[8]]".toArrayOfIntArray(), 0),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.numMagicSquaresInside(test.grid),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.numMagicSquaresInside(test.grid)) }
     }
 }

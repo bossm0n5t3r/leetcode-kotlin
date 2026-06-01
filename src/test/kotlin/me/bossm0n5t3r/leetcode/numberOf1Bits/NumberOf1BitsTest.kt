@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class NumberOf1BitsTest {
     private val numberOf1Bits = NumberOf1Bits.Solution()
 
-    data class NumberOf1BitsTestData(
-        val n: Int,
-        val result: Int,
-    )
+    data class NumberOf1BitsTestData(val n: Int, val result: Int)
 
     @Test
     fun hammingWeight() {
@@ -20,8 +17,6 @@ class NumberOf1BitsTest {
                 NumberOf1BitsTestData(-3, 31),
                 NumberOf1BitsTestData(0, 0),
             )
-        tests.forEach { test ->
-            assertEquals(numberOf1Bits.hammingWeight(test.n), test.result)
-        }
+        tests.forEach { test -> assertEquals(numberOf1Bits.hammingWeight(test.n), test.result) }
     }
 }

@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class MinimumTimeDifferenceTest {
     private val sut = MinimumTimeDifference.Solution()
 
-    private data class TestData(
-        val timePoints: List<String>,
-        val result: Int,
-    )
+    private data class TestData(val timePoints: List<String>, val result: Int)
 
     @Test
     fun test() {
@@ -20,10 +17,7 @@ class MinimumTimeDifferenceTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.findMinDifference(testData.timePoints),
-            )
+            assertEquals(testData.result, sut.findMinDifference(testData.timePoints))
         }
     }
 }

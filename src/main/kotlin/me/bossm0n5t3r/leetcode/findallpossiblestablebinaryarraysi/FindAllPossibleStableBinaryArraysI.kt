@@ -2,11 +2,7 @@ package me.bossm0n5t3r.leetcode.findallpossiblestablebinaryarraysi
 
 class FindAllPossibleStableBinaryArraysI {
     class Solution {
-        fun numberOfStableArrays(
-            zero: Int,
-            one: Int,
-            limit: Int,
-        ): Int {
+        fun numberOfStableArrays(zero: Int, one: Int, limit: Int): Int {
             val modulo: Long = 1_000_000_007
             val dp = Array(zero + 1) { Array(one + 1) { LongArray(2) } }
             for (i in 0..minOf(zero, limit)) {

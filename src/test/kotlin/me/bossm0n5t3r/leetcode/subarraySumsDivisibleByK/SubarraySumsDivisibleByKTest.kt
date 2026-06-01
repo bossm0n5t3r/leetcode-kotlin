@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class SubarraySumsDivisibleByKTest {
     private val sut = SubarraySumsDivisibleByK.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val k: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val k: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -41,11 +37,6 @@ class SubarraySumsDivisibleByKTest {
                 TestData("[5]".toIntArray(), 9, 0),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.subarraysDivByK(test.nums, test.k),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.subarraysDivByK(test.nums, test.k)) }
     }
 }

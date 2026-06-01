@@ -5,10 +5,7 @@ import java.util.Queue
 
 class ShortestDistanceAfterRoadAdditionQueriesI {
     class Solution {
-        fun shortestDistanceAfterQueries(
-            n: Int,
-            queries: Array<IntArray>,
-        ): IntArray {
+        fun shortestDistanceAfterQueries(n: Int, queries: Array<IntArray>): IntArray {
             val (from, to) = 0 to n - 1
             val defaultMap =
                 (from..to)
@@ -20,13 +17,11 @@ class ShortestDistanceAfterRoadAdditionQueriesI {
                     defaultMap
                         .apply { this[u] = this.getOrDefault(u, mutableListOf()).apply { add(v) } }
                         .shortest(from, to)
-                }.toIntArray()
+                }
+                .toIntArray()
         }
 
-        private fun Map<Int, List<Int>>.shortest(
-            from: Int,
-            to: Int,
-        ): Int {
+        private fun Map<Int, List<Int>>.shortest(from: Int, to: Int): Int {
             val queue: Queue<Pair<Int, Int>> = LinkedList()
             queue.offer(from to 0)
             val visited = BooleanArray(to + 1)

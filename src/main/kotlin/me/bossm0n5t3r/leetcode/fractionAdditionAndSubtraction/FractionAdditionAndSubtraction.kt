@@ -3,10 +3,7 @@ package me.bossm0n5t3r.leetcode.fractionAdditionAndSubtraction
 class FractionAdditionAndSubtraction {
     class Solution {
         companion object {
-            private fun gcd(
-                x: Long,
-                y: Long,
-            ): Long =
+            private fun gcd(x: Long, y: Long): Long =
                 when {
                     x < 0L -> gcd(-x, y)
                     y < 0L -> gcd(x, -y)
@@ -21,10 +18,7 @@ class FractionAdditionAndSubtraction {
             }
         }
 
-        data class Fraction(
-            val numerator: Long,
-            val denominator: Long,
-        ) {
+        data class Fraction(val numerator: Long, val denominator: Long) {
             operator fun plus(other: Fraction): Fraction =
                 when {
                     this.denominator == other.denominator -> {
@@ -46,10 +40,7 @@ class FractionAdditionAndSubtraction {
 
         private fun String.toFraction(): Fraction {
             val (numerator, denominator) = this.split("/").map { it.toLong() }
-            return Fraction(
-                numerator,
-                denominator,
-            )
+            return Fraction(numerator, denominator)
         }
 
         fun fractionAddition(expression: String): String {

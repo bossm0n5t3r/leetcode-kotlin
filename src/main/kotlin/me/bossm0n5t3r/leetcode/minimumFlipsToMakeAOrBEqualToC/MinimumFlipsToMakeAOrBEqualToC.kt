@@ -2,11 +2,7 @@ package me.bossm0n5t3r.leetcode.minimumFlipsToMakeAOrBEqualToC
 
 class MinimumFlipsToMakeAOrBEqualToC {
     class Solution {
-        fun minFlips(
-            a: Int,
-            b: Int,
-            c: Int,
-        ): Int {
+        fun minFlips(a: Int, b: Int, c: Int): Int {
             val binaryAString = a.toString(2)
             val binaryBString = b.toString(2)
             val binaryCString = c.toString(2)

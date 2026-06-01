@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.beautifulArrangement2
 
 class BeautifulArrangement2 {
     class Solution {
-        fun constructArray(
-            n: Int,
-            k: Int,
-        ): IntArray {
+        fun constructArray(n: Int, k: Int): IntArray {
             val result = IntArray(n) { 0 }
             val sign = (k % 2) == 1
             var start = 1
@@ -39,10 +36,7 @@ class BeautifulArrangement2 {
             return result
         }
 
-        fun constructArraySolution(
-            n: Int,
-            k: Int,
-        ): IntArray {
+        fun constructArraySolution(n: Int, k: Int): IntArray {
             val result = IntArray(n) { 0 }
             var idx = 0
             (1 until n - k).forEach { result[idx++] = it }

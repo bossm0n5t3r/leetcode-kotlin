@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.makestringasubsequenceusingcyclicincrements
 
 class MakeStringASubsequenceUsingCyclicIncrements {
     class Solution {
-        fun canMakeSubsequence(
-            str1: String,
-            str2: String,
-        ): Boolean {
+        fun canMakeSubsequence(str1: String, str2: String): Boolean {
             var str1Index = 0
             var str2Index = 0
             while (str1Index < str1.length && str2Index < str2.length) {

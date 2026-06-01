@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class MaximumLevelSumOfABinaryTreeTest {
     private val sut = MaximumLevelSumOfABinaryTree.Solution()
 
-    private data class TestData(
-        val root: TreeNode?,
-        val result: Int,
-    )
+    private data class TestData(val root: TreeNode?, val result: Int)
 
     @Test
     fun test() {
@@ -24,17 +21,12 @@ class MaximumLevelSumOfABinaryTreeTest {
                 TestData(
                     root =
                         TreeNodeUtil.generateTreeNodeOrNull(
-                            listOf(989, null, 10250, 98693, -89388, null, null, null, -32127),
+                            listOf(989, null, 10250, 98693, -89388, null, null, null, -32127)
                         ),
                     result = 2,
                 ),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.maxLevelSum(test.root),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.maxLevelSum(test.root), test.result) }
     }
 }

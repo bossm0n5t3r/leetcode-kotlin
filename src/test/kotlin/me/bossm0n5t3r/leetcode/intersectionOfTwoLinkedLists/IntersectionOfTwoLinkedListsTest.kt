@@ -64,11 +64,7 @@ class IntersectionOfTwoLinkedListsTest {
                             basicSingleListNode[0][6],
                             basicSingleListNode[0][4],
                         ),
-                    headB =
-                        listOf(
-                            basicSingleListNode[0][1],
-                            basicSingleListNode[0][5],
-                        ),
+                    headB = listOf(basicSingleListNode[0][1], basicSingleListNode[0][5]),
                     result = null,
                 ),
             )

@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class ContinuousSubarraySumTest {
     private val sut = ContinuousSubarraySum.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val k: Int,
-        val result: Boolean,
-    ) {
+    private data class TestData(val nums: IntArray, val k: Int, val result: Boolean) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -444,7 +440,8 @@ class ContinuousSubarraySumTest {
                         4,9,7,9,0,5,0,2,0,2,9,8,2,0,5,0,4,6,7,7,1,5,2,5,9,
                         9,0,6,1,5,1,7,1,8,6,2,8,6,9,5,0,9,5,1,9,3,1,9,2,1
                     ]
-                    """.trimIndent()
+                    """
+                        .trimIndent()
                         .replace(" ", "")
                         .replace("\n", "")
                         .toIntArray(),
@@ -453,11 +450,6 @@ class ContinuousSubarraySumTest {
                 ),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.checkSubarraySum(test.nums, test.k),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.checkSubarraySum(test.nums, test.k)) }
     }
 }

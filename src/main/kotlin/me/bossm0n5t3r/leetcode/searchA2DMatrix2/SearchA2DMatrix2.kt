@@ -4,10 +4,7 @@ import java.util.LinkedList
 
 class SearchA2DMatrix2 {
     class Solution {
-        fun searchMatrix(
-            matrix: Array<IntArray>,
-            target: Int,
-        ): Boolean {
+        fun searchMatrix(matrix: Array<IntArray>, target: Int): Boolean {
             val queue = LinkedList<Pair<Int, Int>>()
             val m = matrix.size
             val n = matrix.first().size
@@ -29,10 +26,7 @@ class SearchA2DMatrix2 {
             return false
         }
 
-        fun searchMatrixEfficient(
-            matrix: Array<IntArray>,
-            target: Int,
-        ): Boolean {
+        fun searchMatrixEfficient(matrix: Array<IntArray>, target: Int): Boolean {
             if (matrix.isEmpty() || matrix.first().isEmpty()) return false
             var row = 0
             var col = matrix.first().size - 1

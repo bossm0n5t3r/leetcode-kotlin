@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.combinationSum
 
 class CombinationSum {
     class Solution {
-        fun combinationSum(
-            candidates: IntArray,
-            target: Int,
-        ): List<List<Int>> {
+        fun combinationSum(candidates: IntArray, target: Int): List<List<Int>> {
             val sortedCandidates = candidates.sorted()
             val result = mutableSetOf<List<Int>>()
             sortedCandidates.indices.forEach {

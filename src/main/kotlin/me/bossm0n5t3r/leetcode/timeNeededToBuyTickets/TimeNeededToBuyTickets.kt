@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.timeNeededToBuyTickets
 
 class TimeNeededToBuyTickets {
     class Solution {
-        fun timeRequiredToBuy(
-            tickets: IntArray,
-            k: Int,
-        ): Int {
+        fun timeRequiredToBuy(tickets: IntArray, k: Int): Int {
             var time = 0
             for (i in tickets.indices) {
                 time +=

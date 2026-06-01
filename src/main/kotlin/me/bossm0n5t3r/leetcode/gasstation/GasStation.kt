@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.gasstation
 
 class GasStation {
     class Solution {
-        fun canCompleteCircuit(
-            gas: IntArray,
-            cost: IntArray,
-        ): Int {
+        fun canCompleteCircuit(gas: IntArray, cost: IntArray): Int {
             var totalGas = 0
             var totalCost = 0
             var currentGas = 0

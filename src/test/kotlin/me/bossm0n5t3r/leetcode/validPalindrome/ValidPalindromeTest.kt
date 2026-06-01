@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class ValidPalindromeTest {
     private val validPalindrome = ValidPalindrome.Solution()
 
-    data class ValidPalindromeTestData(
-        val s: String,
-        val result: Boolean,
-    )
+    data class ValidPalindromeTestData(val s: String, val result: Boolean)
 
     @Test
     fun isPalindrome() {
@@ -20,8 +17,6 @@ class ValidPalindromeTest {
                 ValidPalindromeTestData(" ", true),
                 ValidPalindromeTestData("0P", false),
             )
-        tests.forEach { test ->
-            assertEquals(validPalindrome.isPalindrome(test.s), test.result)
-        }
+        tests.forEach { test -> assertEquals(validPalindrome.isPalindrome(test.s), test.result) }
     }
 }

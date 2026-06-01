@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class ReverseStringTest {
     private val solution = ReverseString.Solution()
 
-    data class ReverseStringTestData(
-        val s: CharArray,
-        val result: CharArray,
-    ) {
+    data class ReverseStringTestData(val s: CharArray, val result: CharArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -35,7 +32,10 @@ class ReverseStringTest {
             listOf(
                 ReverseStringTestData("hello".toCharArray(), "olleh".toCharArray()),
                 ReverseStringTestData("Hannah".toCharArray(), "hannaH".toCharArray()),
-                ReverseStringTestData("A man, a plan, a canal: Panama".toCharArray(), "amanaP :lanac a ,nalp a ,nam A".toCharArray()),
+                ReverseStringTestData(
+                    "A man, a plan, a canal: Panama".toCharArray(),
+                    "amanaP :lanac a ,nalp a ,nam A".toCharArray(),
+                ),
             )
         tests.forEach { test ->
             assertTrue(solution.reverseString(test.s).contentEquals(test.result))

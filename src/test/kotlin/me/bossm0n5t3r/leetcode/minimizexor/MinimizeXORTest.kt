@@ -6,25 +6,14 @@ import org.junit.jupiter.api.Test
 class MinimizeXORTest {
     private val sut = MinimizeXOR.Solution()
 
-    private data class TestData(
-        val num1: Int,
-        val num2: Int,
-        val result: Int,
-    )
+    private data class TestData(val num1: Int, val num2: Int, val result: Int)
 
     @Test
     fun test() {
-        val testDataList =
-            listOf(
-                TestData(3, 5, 3),
-                TestData(1, 12, 3),
-            )
+        val testDataList = listOf(TestData(3, 5, 3), TestData(1, 12, 3))
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.minimizeXor(testData.num1, testData.num2),
-            )
+            assertEquals(testData.result, sut.minimizeXor(testData.num1, testData.num2))
         }
     }
 }

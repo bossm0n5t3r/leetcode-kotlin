@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class MaximumNumberOfFishInAGridTest {
     private val sut = MaximumNumberOfFishInAGrid.Solution()
 
-    private data class TestData(
-        val grid: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val grid: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,11 +36,6 @@ class MaximumNumberOfFishInAGridTest {
                 TestData("[[10,5],[8,0]]".toArrayOfIntArray(), 23),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.findMaxFish(test.grid),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.findMaxFish(test.grid)) }
     }
 }

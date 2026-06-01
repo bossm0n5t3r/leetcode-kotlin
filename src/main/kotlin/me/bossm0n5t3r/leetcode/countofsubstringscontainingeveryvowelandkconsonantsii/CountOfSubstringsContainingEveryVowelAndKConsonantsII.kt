@@ -4,19 +4,13 @@ class CountOfSubstringsContainingEveryVowelAndKConsonantsII {
     class Solution {
         private fun Char.isVowel() = setOf('a', 'e', 'i', 'o', 'u').contains(this)
 
-        fun countOfSubstrings(
-            word: String,
-            k: Int,
-        ): Long {
+        fun countOfSubstrings(word: String, k: Int): Long {
             var result = 0L
             val vowelMap = mutableMapOf<Char, Int>()
             var consonantsCount = 0
             var (start, end) = 0 to 0
 
-            fun shrinkWindow(
-                word: String,
-                index: Int,
-            ) {
+            fun shrinkWindow(word: String, index: Int) {
                 if (word[index].isVowel()) {
                     vowelMap[word[index]] = vowelMap.getOrDefault(word[index], 0) - 1
                     if (vowelMap[word[index]] == 0) {

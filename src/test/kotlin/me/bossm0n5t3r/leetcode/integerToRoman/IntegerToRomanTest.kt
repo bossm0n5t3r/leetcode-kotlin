@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 internal class IntegerToRomanTest {
     private val integerToRoman = IntegerToRoman.Solution()
 
-    private data class IntegerToRomanTestData(
-        val num: Int,
-        val result: String,
-    )
+    private data class IntegerToRomanTestData(val num: Int, val result: String)
 
     @Test
     fun intToRoman() {

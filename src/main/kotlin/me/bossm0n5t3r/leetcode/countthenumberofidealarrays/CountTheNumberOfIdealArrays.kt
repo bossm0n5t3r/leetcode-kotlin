@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.countthenumberofidealarrays
 
 class CountTheNumberOfIdealArrays {
     class Solution {
-        fun idealArrays(
-            n: Int,
-            maxValue: Int,
-        ): Int {
+        fun idealArrays(n: Int, maxValue: Int): Int {
             val modulo = 1_000_000_007
             val dp = Array(15) { LongArray(maxValue + 1) }
             val combinations = Array(n + 1) { LongArray(15) }
@@ -20,7 +17,8 @@ class CountTheNumberOfIdealArrays {
             for (i in 1..n) {
                 combinations[i][0] = 1
                 for (j in 1..14) {
-                    combinations[i][j] = (combinations[i - 1][j - 1] + combinations[i - 1][j]) % modulo
+                    combinations[i][j] =
+                        (combinations[i - 1][j - 1] + combinations[i - 1][j]) % modulo
                 }
             }
 

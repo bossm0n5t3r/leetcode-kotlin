@@ -4,10 +4,7 @@ import kotlin.math.max
 
 class DeleteOperationForTwoStrings {
     class Solution {
-        fun minDistance(
-            word1: String,
-            word2: String,
-        ): Int {
+        fun minDistance(word1: String, word2: String): Int {
             val dp = Array(word1.length + 1) { IntArray(word2.length + 1) { 0 } }
             (1..word1.length).forEach { r ->
                 (1..word2.length).forEach { c ->

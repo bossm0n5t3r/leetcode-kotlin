@@ -6,15 +6,11 @@ class SudokuSolver {
             val sudokuWrapper = SudokuWrapper(result = Array(9) { CharArray(9) { '.' } })
             dfs(board, 0, sudokuWrapper)
             (0 until 9).forEach { r ->
-                (0 until 9).forEach { c ->
-                    board[r][c] = sudokuWrapper.result[r][c]
-                }
+                (0 until 9).forEach { c -> board[r][c] = sudokuWrapper.result[r][c] }
             }
         }
 
-        private data class SudokuWrapper(
-            val result: Array<CharArray>,
-        ) {
+        private data class SudokuWrapper(val result: Array<CharArray>) {
             override fun equals(other: Any?): Boolean {
                 if (this === other) return true
                 if (javaClass != other?.javaClass) return false
@@ -29,17 +25,11 @@ class SudokuSolver {
             override fun hashCode(): Int = result.contentDeepHashCode()
         }
 
-        private fun dfs(
-            board: Array<CharArray>,
-            cur: Int,
-            sudokuWrapper: SudokuWrapper,
-        ) {
+        private fun dfs(board: Array<CharArray>, cur: Int, sudokuWrapper: SudokuWrapper) {
             if (cur == 81) {
                 if (!isValid(sudokuWrapper.result) && isValid(board)) {
                     (0 until 9).forEach { r ->
-                        (0 until 9).forEach { c ->
-                            sudokuWrapper.result[r][c] = board[r][c]
-                        }
+                        (0 until 9).forEach { c -> sudokuWrapper.result[r][c] = board[r][c] }
                     }
                 }
                 return
@@ -59,11 +49,7 @@ class SudokuSolver {
             board[r][c] = tmp
         }
 
-        private fun getCandidates(
-            board: Array<CharArray>,
-            r: Int,
-            c: Int,
-        ): Set<Char> {
+        private fun getCandidates(board: Array<CharArray>, r: Int, c: Int): Set<Char> {
             if (board[r][c] != '.') return emptySet()
             val result = ('1'..'9').toMutableSet()
             (0 until 9).forEach { i ->
@@ -96,16 +82,17 @@ class SudokuSolver {
                     (0 until 3).forEach { tmpC ->
                         val tmp =
                             listOf(
-                                board[index][tmpC * 3],
-                                board[index][tmpC * 3 + 1],
-                                board[index][tmpC * 3 + 2],
-                                board[index + 1][tmpC * 3],
-                                board[index + 1][tmpC * 3 + 1],
-                                board[index + 1][tmpC * 3 + 2],
-                                board[index + 2][tmpC * 3],
-                                board[index + 2][tmpC * 3 + 1],
-                                board[index + 2][tmpC * 3 + 2],
-                            ).filter { it != '.' }
+                                    board[index][tmpC * 3],
+                                    board[index][tmpC * 3 + 1],
+                                    board[index][tmpC * 3 + 2],
+                                    board[index + 1][tmpC * 3],
+                                    board[index + 1][tmpC * 3 + 1],
+                                    board[index + 1][tmpC * 3 + 2],
+                                    board[index + 2][tmpC * 3],
+                                    board[index + 2][tmpC * 3 + 1],
+                                    board[index + 2][tmpC * 3 + 2],
+                                )
+                                .filter { it != '.' }
                                 .map { it.toString().toInt() }
                         if (tmp.sum() < 45) return false
                     }
@@ -114,16 +101,17 @@ class SudokuSolver {
             (0 until 9).forEach { c ->
                 val column =
                     listOf(
-                        board[0][c],
-                        board[1][c],
-                        board[2][c],
-                        board[3][c],
-                        board[4][c],
-                        board[5][c],
-                        board[6][c],
-                        board[7][c],
-                        board[8][c],
-                    ).filter { it != '.' }
+                            board[0][c],
+                            board[1][c],
+                            board[2][c],
+                            board[3][c],
+                            board[4][c],
+                            board[5][c],
+                            board[6][c],
+                            board[7][c],
+                            board[8][c],
+                        )
+                        .filter { it != '.' }
                         .map { it.toString().toInt() }
                 if (column.sum() < 45) return false
             }

@@ -5,13 +5,11 @@ import java.util.Queue
 
 class MaximizeHappinessOfSelectedChildren {
     class Solution {
-        fun maximumHappinessSum(
-            happiness: IntArray,
-            k: Int,
-        ): Long {
+        fun maximumHappinessSum(happiness: IntArray, k: Int): Long {
             val happinessQueue =
-                LinkedList<Long>()
-                    .apply { this.addAll(happiness.map { it.toLong() }.sortedDescending()) } as Queue<Long>
+                LinkedList<Long>().apply {
+                    this.addAll(happiness.map { it.toLong() }.sortedDescending())
+                } as Queue<Long>
 
             var result = 0L
             var tmp = 0

@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.relativeSortArray
 
 class RelativeSortArray {
     class Solution {
-        fun relativeSortArray(
-            arr1: IntArray,
-            arr2: IntArray,
-        ): IntArray {
+        fun relativeSortArray(arr1: IntArray, arr2: IntArray): IntArray {
             val numToCount = mutableMapOf<Int, Int>()
             for (num in arr1) {
                 numToCount[num] = numToCount.getOrDefault(num, 0) + 1
@@ -14,24 +11,17 @@ class RelativeSortArray {
             var index = 0
             for (num in arr2) {
                 val count = numToCount[num] ?: continue
-                repeat(count) {
-                    result[index++] = num
-                }
+                repeat(count) { result[index++] = num }
                 numToCount.remove(num)
             }
             for (sortedRemainedKey in numToCount.keys.sorted()) {
                 val count = numToCount[sortedRemainedKey] ?: continue
-                repeat(count) {
-                    result[index++] = sortedRemainedKey
-                }
+                repeat(count) { result[index++] = sortedRemainedKey }
             }
             return result
         }
 
-        fun relativeSortArrayUsingCountingSort(
-            arr1: IntArray,
-            arr2: IntArray,
-        ): IntArray {
+        fun relativeSortArrayUsingCountingSort(arr1: IntArray, arr2: IntArray): IntArray {
             val maxArr1 = arr1.max()
             val countArray = IntArray(maxArr1 + 1) { 0 }
             for (num in arr1) {

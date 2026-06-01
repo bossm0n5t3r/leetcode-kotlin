@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 internal class RemoveElementTest {
     private val removeElement = RemoveElement.Solution()
 
-    private data class RemoveElementTestData(
-        val nums: IntArray,
-        val `val`: Int,
-        val result: Int,
-    ) {
+    private data class RemoveElementTestData(val nums: IntArray, val `val`: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

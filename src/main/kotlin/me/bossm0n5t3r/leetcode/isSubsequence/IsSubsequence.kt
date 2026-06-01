@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.isSubsequence
 
 class IsSubsequence {
     class Solution {
-        fun isSubsequence(
-            s: String,
-            t: String,
-        ): Boolean {
+        fun isSubsequence(s: String, t: String): Boolean {
             val sLength = s.length
             val tLength = t.length
 

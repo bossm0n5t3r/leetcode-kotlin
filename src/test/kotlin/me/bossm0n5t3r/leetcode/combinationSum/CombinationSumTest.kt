@@ -36,22 +36,11 @@ internal class CombinationSumTest {
     fun combinationSum() {
         val tests =
             listOf(
-                Example(
-                    intArrayOf(2, 3, 6, 7),
-                    7,
-                    listOf(
-                        listOf(2, 2, 3),
-                        listOf(7),
-                    ),
-                ),
+                Example(intArrayOf(2, 3, 6, 7), 7, listOf(listOf(2, 2, 3), listOf(7))),
                 Example(
                     intArrayOf(2, 3, 5),
                     8,
-                    listOf(
-                        listOf(2, 2, 2, 2),
-                        listOf(2, 3, 3),
-                        listOf(3, 5),
-                    ),
+                    listOf(listOf(2, 2, 2, 2), listOf(2, 3, 3), listOf(3, 5)),
                 ),
             )
         tests.forEach { test ->

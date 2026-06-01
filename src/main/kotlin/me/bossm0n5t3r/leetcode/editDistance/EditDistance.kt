@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.editDistance
 
 class EditDistance {
     class Solution {
-        fun minDistance(
-            word1: String,
-            word2: String,
-        ): Int {
+        fun minDistance(word1: String, word2: String): Int {
             if (word1.isEmpty()) return word2.length
             if (word2.isEmpty()) return word1.length
 

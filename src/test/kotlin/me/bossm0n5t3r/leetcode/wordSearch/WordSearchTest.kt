@@ -81,22 +81,8 @@ internal class WordSearchTest {
                     "AAB",
                     true,
                 ),
-                WordSearchTest(
-                    arrayOf(
-                        charArrayOf('a'),
-                        charArrayOf('b'),
-                    ),
-                    "aba",
-                    false,
-                ),
-                WordSearchTest(
-                    arrayOf(
-                        charArrayOf('a'),
-                        charArrayOf('a'),
-                    ),
-                    "aa",
-                    true,
-                ),
+                WordSearchTest(arrayOf(charArrayOf('a'), charArrayOf('b')), "aba", false),
+                WordSearchTest(arrayOf(charArrayOf('a'), charArrayOf('a')), "aa", true),
                 WordSearchTest(
                     arrayOf(
                         charArrayOf('A', 'A', 'A', 'A', 'A', 'A'),

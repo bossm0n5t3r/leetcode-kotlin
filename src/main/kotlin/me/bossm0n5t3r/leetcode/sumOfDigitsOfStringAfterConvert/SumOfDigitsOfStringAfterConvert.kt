@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.sumOfDigitsOfStringAfterConvert
 
 class SumOfDigitsOfStringAfterConvert {
     class Solution {
-        fun getLucky(
-            s: String,
-            k: Int,
-        ): Int = s.convert().transform(k).toInt()
+        fun getLucky(s: String, k: Int): Int = s.convert().transform(k).toInt()
 
         private fun String.convert(): String = this.map { (it - 'a') + 1 }.joinToString("")
 

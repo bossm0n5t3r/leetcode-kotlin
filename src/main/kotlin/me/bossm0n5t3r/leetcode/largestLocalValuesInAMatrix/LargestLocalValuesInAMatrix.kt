@@ -9,16 +9,17 @@ class LargestLocalValuesInAMatrix {
                 for (c in 0 until n - 2) {
                     result[r][c] =
                         listOf(
-                            grid[r][c],
-                            grid[r][c + 1],
-                            grid[r][c + 2],
-                            grid[r + 1][c],
-                            grid[r + 1][c + 1],
-                            grid[r + 1][c + 2],
-                            grid[r + 2][c],
-                            grid[r + 2][c + 1],
-                            grid[r + 2][c + 2],
-                        ).max()
+                                grid[r][c],
+                                grid[r][c + 1],
+                                grid[r][c + 2],
+                                grid[r + 1][c],
+                                grid[r + 1][c + 1],
+                                grid[r + 1][c + 2],
+                                grid[r + 2][c],
+                                grid[r + 2][c + 1],
+                                grid[r + 2][c + 2],
+                            )
+                            .max()
                 }
             }
             return result

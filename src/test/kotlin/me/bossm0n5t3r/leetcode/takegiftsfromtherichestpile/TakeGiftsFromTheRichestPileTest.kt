@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class TakeGiftsFromTheRichestPileTest {
     private val sut = TakeGiftsFromTheRichestPile.Solution()
 
-    private data class TestData(
-        val gifts: IntArray,
-        val k: Int,
-        val result: Long,
-    ) {
+    private data class TestData(val gifts: IntArray, val k: Int, val result: Long) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -42,10 +38,7 @@ class TakeGiftsFromTheRichestPileTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.pickGifts(testData.gifts, testData.k),
-            )
+            assertEquals(testData.result, sut.pickGifts(testData.gifts, testData.k))
         }
     }
 }

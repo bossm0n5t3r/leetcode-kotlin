@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class MinimumObstacleRemovalToReachCornerTest {
     private val sut = MinimumObstacleRemovalToReachCorner.Solution()
 
-    private data class TestData(
-        val grid: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val grid: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,10 +36,7 @@ class MinimumObstacleRemovalToReachCornerTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.minimumObstacles(testData.grid),
-            )
+            assertEquals(testData.result, sut.minimumObstacles(testData.grid))
         }
     }
 }

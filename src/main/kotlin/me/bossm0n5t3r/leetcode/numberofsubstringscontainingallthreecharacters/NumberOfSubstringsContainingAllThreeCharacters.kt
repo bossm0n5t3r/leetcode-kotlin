@@ -19,11 +19,7 @@ class NumberOfSubstringsContainingAllThreeCharacters {
 
         private fun IntArray.allPositive() = this[0] > 0 && this[1] > 0 && this[2] > 0
 
-        private fun IntArray.update(
-            s: String,
-            index: Int,
-            diff: Int,
-        ) {
+        private fun IntArray.update(s: String, index: Int, diff: Int) {
             this[s[index].code - 'a'.code] += diff
         }
     }

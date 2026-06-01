@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class ContainsDuplicateTest {
     private val containsDuplicate = ContainsDuplicate.Solution()
 
-    data class ContainsDuplicateTestData(
-        val nums: IntArray,
-        val result: Boolean,
-    ) {
+    data class ContainsDuplicateTestData(val nums: IntArray, val result: Boolean) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

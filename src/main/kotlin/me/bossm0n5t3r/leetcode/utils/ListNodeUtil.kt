@@ -3,14 +3,13 @@ package me.bossm0n5t3r.leetcode.utils
 import me.bossm0n5t3r.leetcode.utils.StringUtil.toArrayOfIntArray
 import me.bossm0n5t3r.leetcode.utils.StringUtil.toIntArray
 
-class ListNode(
-    var `val`: Int,
-) {
+class ListNode(var `val`: Int) {
     var next: ListNode? = null
 }
 
 object ListNodeUtil {
-    fun generateArrayOfListNode(value: String): Array<ListNode?> = value.toArrayOfIntArray().map { generateListNode(*it) }.toTypedArray()
+    fun generateArrayOfListNode(value: String): Array<ListNode?> =
+        value.toArrayOfIntArray().map { generateListNode(*it) }.toTypedArray()
 
     fun generateListNode(string: String): ListNode? = generateListNode(*string.toIntArray())
 
@@ -27,10 +26,7 @@ object ListNodeUtil {
         return result
     }
 
-    fun findListNodeByValue(
-        value: Int,
-        head: ListNode,
-    ): ListNode {
+    fun findListNodeByValue(value: Int, head: ListNode): ListNode {
         var cur = head
         while (cur.`val` != value) {
             cur = cur.next!!
@@ -48,10 +44,7 @@ object ListNodeUtil {
         return result
     }
 
-    fun isEqual(
-        first: ListNode?,
-        second: ListNode?,
-    ): Boolean {
+    fun isEqual(first: ListNode?, second: ListNode?): Boolean {
         if (first == null && second == null) return true
         if (first == null || second == null) {
             print("First ")
@@ -81,9 +74,7 @@ object ListNodeUtil {
         val result = mutableListOf<List<ListNode>>()
         (0..9).forEach { _ ->
             val basicResult = mutableListOf<ListNode>()
-            (0..9).forEach { i ->
-                basicResult.add(ListNode(i))
-            }
+            (0..9).forEach { i -> basicResult.add(ListNode(i)) }
             result.add(basicResult)
         }
         return result

@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 internal class SwapNodesInPairsTest {
     private val swapNodesInPairs = SwapNodesInPairs.Solution()
 
-    private data class SwapNodesInPairsTestData(
-        val head: ListNode?,
-        val result: ListNode?,
-    )
+    private data class SwapNodesInPairsTestData(val head: ListNode?, val result: ListNode?)
 
     @Test
     fun swapPairs() {

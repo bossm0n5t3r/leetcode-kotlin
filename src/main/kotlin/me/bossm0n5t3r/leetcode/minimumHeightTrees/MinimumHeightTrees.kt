@@ -5,10 +5,7 @@ import java.util.Queue
 
 class MinimumHeightTrees {
     class Solution {
-        fun findMinHeightTrees(
-            n: Int,
-            edges: Array<IntArray>,
-        ): List<Int> {
+        fun findMinHeightTrees(n: Int, edges: Array<IntArray>): List<Int> {
             if (edges.isEmpty()) return listOf(0)
 
             val indegree = IntArray(n) { 0 }

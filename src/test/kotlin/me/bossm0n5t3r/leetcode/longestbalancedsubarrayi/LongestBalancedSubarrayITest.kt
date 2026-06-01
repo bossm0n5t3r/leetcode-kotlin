@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class LongestBalancedSubarrayITest {
     private val sut = LongestBalancedSubarrayI.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,10 +37,7 @@ class LongestBalancedSubarrayITest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.longestBalanced(testData.nums),
-            )
+            assertEquals(testData.result, sut.longestBalanced(testData.nums))
         }
     }
 }

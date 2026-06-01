@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class ExcelSheetColumnNumberTest {
     private val excelSheetColumnNumber = ExcelSheetColumnNumber.Solution()
 
-    data class ExcelSheetColumnNumberTestData(
-        val columnTitle: String,
-        val result: Int,
-    )
+    data class ExcelSheetColumnNumberTestData(val columnTitle: String, val result: Int)
 
     @Test
     fun titleToNumber() {

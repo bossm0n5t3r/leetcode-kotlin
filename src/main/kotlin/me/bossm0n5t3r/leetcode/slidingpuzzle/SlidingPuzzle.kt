@@ -29,47 +29,27 @@ class SlidingPuzzle {
         private fun String.candidates(): List<String> =
             when {
                 this[0] == '0' -> {
-                    listOf(
-                        this.swap(0, 1),
-                        this.swap(0, 3),
-                    )
+                    listOf(this.swap(0, 1), this.swap(0, 3))
                 }
 
                 this[1] == '0' -> {
-                    listOf(
-                        this.swap(1, 0),
-                        this.swap(1, 2),
-                        this.swap(1, 4),
-                    )
+                    listOf(this.swap(1, 0), this.swap(1, 2), this.swap(1, 4))
                 }
 
                 this[2] == '0' -> {
-                    listOf(
-                        this.swap(2, 1),
-                        this.swap(2, 5),
-                    )
+                    listOf(this.swap(2, 1), this.swap(2, 5))
                 }
 
                 this[3] == '0' -> {
-                    listOf(
-                        this.swap(3, 0),
-                        this.swap(3, 4),
-                    )
+                    listOf(this.swap(3, 0), this.swap(3, 4))
                 }
 
                 this[4] == '0' -> {
-                    listOf(
-                        this.swap(4, 3),
-                        this.swap(4, 5),
-                        this.swap(4, 1),
-                    )
+                    listOf(this.swap(4, 3), this.swap(4, 5), this.swap(4, 1))
                 }
 
                 this[5] == '0' -> {
-                    listOf(
-                        this.swap(5, 4),
-                        this.swap(5, 2),
-                    )
+                    listOf(this.swap(5, 4), this.swap(5, 2))
                 }
 
                 else -> {
@@ -77,16 +57,13 @@ class SlidingPuzzle {
                 }
             }
 
-        private fun String.swap(
-            cur: Int,
-            next: Int,
-        ): String =
-            this
-                .toCharArray()
+        private fun String.swap(cur: Int, next: Int): String =
+            this.toCharArray()
                 .apply {
                     val tmp = this[cur]
                     this[cur] = this[next]
                     this[next] = tmp
-                }.joinToString("")
+                }
+                .joinToString("")
     }
 }

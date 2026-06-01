@@ -36,11 +36,21 @@ class IntersectionOfTwoArrays2Test {
     fun intersect() {
         val tests =
             listOf(
-                IntersectionOfTwoArrays2TestData(intArrayOf(1, 2, 2, 1), intArrayOf(2, 2), intArrayOf(2, 2)),
-                IntersectionOfTwoArrays2TestData(intArrayOf(4, 9, 5), intArrayOf(9, 4, 9, 8, 4), intArrayOf(9, 4)),
+                IntersectionOfTwoArrays2TestData(
+                    intArrayOf(1, 2, 2, 1),
+                    intArrayOf(2, 2),
+                    intArrayOf(2, 2),
+                ),
+                IntersectionOfTwoArrays2TestData(
+                    intArrayOf(4, 9, 5),
+                    intArrayOf(9, 4, 9, 8, 4),
+                    intArrayOf(9, 4),
+                ),
             )
         tests.forEach { test ->
-            assertTrue(intersectionOfTwoArrays2.intersect(test.num1, test.num2).contentEquals(test.result))
+            assertTrue(
+                intersectionOfTwoArrays2.intersect(test.num1, test.num2).contentEquals(test.result)
+            )
         }
     }
 }

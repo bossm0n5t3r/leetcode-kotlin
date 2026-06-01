@@ -3,15 +3,16 @@ package me.bossm0n5t3r.leetcode.integerToEnglishWords
 class IntegerToEnglishWords {
     class Solution {
         fun numberToWords(num: Int): String =
-            num
-                .toString()
+            num.toString()
                 .reversed()
                 .chunked(3)
                 .withIndex()
                 .reversed()
                 .flatMap { (index, value) ->
-                    numberUnderThousandToWord(value.reversed()) + (commaToWord.takeIf { value != THREE_DIGITS_ZEROS }?.get(index) ?: "")
-                }.filter { it.isNotBlank() }
+                    numberUnderThousandToWord(value.reversed()) +
+                        (commaToWord.takeIf { value != THREE_DIGITS_ZEROS }?.get(index) ?: "")
+                }
+                .filter { it.isNotBlank() }
                 .joinToString(" ")
 
         private fun numberUnderThousandToWord(num: String): List<String> {
@@ -33,10 +34,8 @@ class IntegerToEnglishWords {
 
                 else -> {
                     val first = number / 100
-                    listOf(
-                        getWordFromNumber(first),
-                        getWordFromNumber(100),
-                    ) + numberUnderThousandToWord(num.tail())
+                    listOf(getWordFromNumber(first), getWordFromNumber(100)) +
+                        numberUnderThousandToWord(num.tail())
                 }
             }
         }
@@ -45,24 +44,18 @@ class IntegerToEnglishWords {
 
         private fun String.tail() = this.substring(1, this.length)
 
-        private fun getWordFromNumber(num: Int) = numberToWord[num] ?: error("Not found number: $num")
+        private fun getWordFromNumber(num: Int) =
+            numberToWord[num] ?: error("Not found number: $num")
 
-        private fun getWordFromNumberOrEmpty(
-            num: Int,
-            condition: () -> Boolean,
-        ) = numberToWord[num].takeIf { condition.invoke() } ?: ""
+        private fun getWordFromNumberOrEmpty(num: Int, condition: () -> Boolean) =
+            numberToWord[num].takeIf { condition.invoke() } ?: ""
 
         companion object {
             private const val TWO_DIGITS_ZEROS = "00"
             private const val THREE_DIGITS_ZEROS = "000"
 
             private val commaToWord =
-                mapOf(
-                    0 to "",
-                    1 to "Thousand",
-                    2 to "Million",
-                    3 to "Billion",
-                )
+                mapOf(0 to "", 1 to "Thousand", 2 to "Million", 3 to "Billion")
 
             private val numberToWord =
                 mapOf(

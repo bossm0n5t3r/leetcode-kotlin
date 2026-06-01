@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class GuessNumberHigherOrLowerTest {
     private val sut = GuessNumberHigherOrLower.Solution()
 
-    private data class TestData(
-        val n: Int,
-        val pick: Int,
-        val result: Int,
-    )
+    private data class TestData(val n: Int, val pick: Int, val result: Int)
 
     @Test
     fun test() {

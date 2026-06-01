@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.findchampionii
 
 class FindChampionII {
     class Solution {
-        fun findChampion(
-            n: Int,
-            edges: Array<IntArray>,
-        ): Int {
+        fun findChampion(n: Int, edges: Array<IntArray>): Int {
             val candidates = (0 until n).toMutableSet()
             val weakTeam = mutableSetOf<Int>()
             for ((a, b) in edges) {

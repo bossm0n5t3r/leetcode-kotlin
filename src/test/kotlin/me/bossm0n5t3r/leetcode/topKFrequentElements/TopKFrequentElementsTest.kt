@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class TopKFrequentElementsTest {
     private val topKFrequentElements = TopKFrequentElements.Solution()
 
-    data class TopKFrequentElementsTestData(
-        val nums: IntArray,
-        val k: Int,
-        val result: IntArray,
-    ) {
+    data class TopKFrequentElementsTestData(val nums: IntArray, val k: Int, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

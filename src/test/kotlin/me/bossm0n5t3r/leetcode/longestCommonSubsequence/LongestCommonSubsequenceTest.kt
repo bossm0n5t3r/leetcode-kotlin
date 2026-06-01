@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class LongestCommonSubsequenceTest {
     private val sut = LongestCommonSubsequence.Solution()
 
-    private data class TestData(
-        val text1: String,
-        val text2: String,
-        val result: Int,
-    )
+    private data class TestData(val text1: String, val text2: String, val result: Int)
 
     @Test
     fun test() {
@@ -22,10 +18,7 @@ class LongestCommonSubsequenceTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                sut.longestCommonSubsequence(test.text1, test.text2),
-                test.result,
-            )
+            assertEquals(sut.longestCommonSubsequence(test.text1, test.text2), test.result)
         }
     }
 }

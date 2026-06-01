@@ -8,8 +8,9 @@ class MinimumObstacleRemovalToReachCorner {
             val (m, n) = grid.size to grid.first().size
             val diff = intArrayOf(0, 0, 1, -1).zip(intArrayOf(1, -1, 0, 0))
             val pq =
-                PriorityQueue<Triple<Int, Int, Int>>(compareBy { it.third })
-                    .apply { offer(Triple(0, 0, grid[0][0])) }
+                PriorityQueue<Triple<Int, Int, Int>>(compareBy { it.third }).apply {
+                    offer(Triple(0, 0, grid[0][0]))
+                }
             val visited = mutableSetOf(0 to 0)
             while (pq.isNotEmpty()) {
                 val (r, c, broken) = pq.poll()

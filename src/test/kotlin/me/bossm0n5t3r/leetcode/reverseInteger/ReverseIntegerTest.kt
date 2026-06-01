@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class ReverseIntegerTest {
     private val reverseInteger = ReverseInteger.Solution()
 
-    data class ReverseIntegerTestData(
-        val x: Int,
-        val result: Int,
-    )
+    data class ReverseIntegerTestData(val x: Int, val result: Int)
 
     @Test
     fun reverse() {
@@ -21,8 +18,6 @@ class ReverseIntegerTest {
                 ReverseIntegerTestData(0, 0),
                 ReverseIntegerTestData(1534236469, 0),
             )
-        tests.forEach { test ->
-            assertEquals(reverseInteger.reverse(test.x), test.result)
-        }
+        tests.forEach { test -> assertEquals(reverseInteger.reverse(test.x), test.result) }
     }
 }

@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class NumberOfSubArraysWithOddSumTest {
     private val sut = NumberOfSubArraysWithOddSum.Solution()
 
-    private data class TestData(
-        val arr: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val arr: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,10 +37,7 @@ class NumberOfSubArraysWithOddSumTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.numOfSubarrays(testData.arr),
-            )
+            assertEquals(testData.result, sut.numOfSubarrays(testData.arr))
         }
     }
 }

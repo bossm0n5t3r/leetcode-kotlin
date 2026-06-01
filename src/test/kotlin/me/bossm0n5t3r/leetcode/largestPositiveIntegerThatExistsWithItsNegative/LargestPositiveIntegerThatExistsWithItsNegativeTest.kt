@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class LargestPositiveIntegerThatExistsWithItsNegativeTest {
     private val sut = LargestPositiveIntegerThatExistsWithItsNegative.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,11 +35,6 @@ class LargestPositiveIntegerThatExistsWithItsNegativeTest {
                 TestData(intArrayOf(-10, 8, 6, 7, -2, -3), -1),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.findMaxK(test.nums),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.findMaxK(test.nums)) }
     }
 }

@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.closestprimenumbersinrange
 
 class ClosestPrimeNumbersInRange {
     class Solution {
-        fun closestPrimes(
-            left: Int,
-            right: Int,
-        ): IntArray {
+        fun closestPrimes(left: Int, right: Int): IntArray {
             val isPrime = generatePrimes(right)
             val candidates = (left..right).filter { isPrime[it] }
             if (candidates.size <= 1) return IntArray(2) { -1 }

@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class ValidParenthesesTest {
     private val validParentheses = ValidParentheses.Solution()
 
-    data class ValidParenthesesTestData(
-        val s: String,
-        val result: Boolean,
-    )
+    data class ValidParenthesesTestData(val s: String, val result: Boolean)
 
     @Test
     fun isValid() {
@@ -21,8 +18,6 @@ class ValidParenthesesTest {
                 ValidParenthesesTestData("([)]", false),
                 ValidParenthesesTestData("{[]}", true),
             )
-        tests.forEach { test ->
-            assertEquals(validParentheses.isValid(test.s), test.result)
-        }
+        tests.forEach { test -> assertEquals(validParentheses.isValid(test.s), test.result) }
     }
 }

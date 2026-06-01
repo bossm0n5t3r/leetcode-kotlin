@@ -9,10 +9,7 @@ class Dota2Senate {
             var bannedDire = 0
             var totalRadiants = senate.count { it == 'R' }
             var totalDires = senate.count { it == 'D' }
-            val queue =
-                LinkedList<Char>().apply {
-                    this.addAll(senate.toList())
-                }
+            val queue = LinkedList<Char>().apply { this.addAll(senate.toList()) }
             while (totalRadiants != 0 && totalDires != 0) {
                 val cur = queue.poll()
                 if (cur == 'R') {

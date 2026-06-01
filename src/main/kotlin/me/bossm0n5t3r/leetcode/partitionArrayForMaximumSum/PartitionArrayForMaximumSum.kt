@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.partitionArrayForMaximumSum
 
 class PartitionArrayForMaximumSum {
     class Solution {
-        fun maxSumAfterPartitioning(
-            arr: IntArray,
-            k: Int,
-        ): Int {
+        fun maxSumAfterPartitioning(arr: IntArray, k: Int): Int {
             // Length of the input array
             val n = arr.size
 

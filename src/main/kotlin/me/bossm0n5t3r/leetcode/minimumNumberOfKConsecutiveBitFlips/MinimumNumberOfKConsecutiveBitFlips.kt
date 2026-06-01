@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.minimumNumberOfKConsecutiveBitFlips
 
 class MinimumNumberOfKConsecutiveBitFlips {
     class Solution {
-        fun minKBitFlips(
-            nums: IntArray,
-            k: Int,
-        ): Int {
+        fun minKBitFlips(nums: IntArray, k: Int): Int {
             var ans = 0
             val n = nums.size
             val diff = IntArray(n + 1)

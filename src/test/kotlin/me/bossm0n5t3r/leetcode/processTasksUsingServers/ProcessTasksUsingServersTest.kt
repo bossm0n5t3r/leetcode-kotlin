@@ -52,7 +52,26 @@ internal class ProcessTasksUsingServersTest {
                     intArrayOf(8, 0, 3, 9, 5, 1, 10, 6, 4, 2, 7, 9, 0),
                 ),
                 ProcessTasksUsingServersTestData(
-                    intArrayOf(74, 57, 61, 82, 67, 97, 67, 21, 61, 79, 21, 50, 14, 88, 48, 52, 76, 64),
+                    intArrayOf(
+                        74,
+                        57,
+                        61,
+                        82,
+                        67,
+                        97,
+                        67,
+                        21,
+                        61,
+                        79,
+                        21,
+                        50,
+                        14,
+                        88,
+                        48,
+                        52,
+                        76,
+                        64,
+                    ),
                     intArrayOf(21, 100, 48, 64, 20, 8, 28, 10, 3, 63, 7),
                     intArrayOf(12, 7, 10, 14, 11, 15, 1, 2, 8, 17, 4),
                 ),
@@ -534,12 +553,10 @@ internal class ProcessTasksUsingServersTest {
                 ),
             )
         tests.forEach { test ->
-            processTasksUsingServers
-                .assignTasks(test.servers, test.tasks)
-                .also {
-                    println(it.toList())
-                    assertArrayEquals(it, test.result)
-                }
+            processTasksUsingServers.assignTasks(test.servers, test.tasks).also {
+                println(it.toList())
+                assertArrayEquals(it, test.result)
+            }
         }
     }
 }

@@ -2,10 +2,12 @@ package me.bossm0n5t3r.leetcode.productOfArrayExceptSelf
 
 class ProductOfArrayExceptSelf {
     class Solution {
-        // You must write an algorithm that runs in O(n) time and without using the division operation.
+        // You must write an algorithm that runs in O(n) time and without using the division
+        // operation.
         // O(1) extra space complexity
         fun productExceptSelf(nums: IntArray): IntArray {
-            val (numOfZeroes, productOfArrayExceptZeroes) = getNumOfZeroesAndProductOfArrayExceptZeroes(nums)
+            val (numOfZeroes, productOfArrayExceptZeroes) =
+                getNumOfZeroesAndProductOfArrayExceptZeroes(nums)
             return when (numOfZeroes) {
                 0 -> {
                     val result = IntArray(nums.size)

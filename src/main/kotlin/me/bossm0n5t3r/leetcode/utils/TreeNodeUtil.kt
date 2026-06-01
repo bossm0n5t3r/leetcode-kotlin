@@ -3,9 +3,7 @@ package me.bossm0n5t3r.leetcode.utils
 import java.util.LinkedList
 import java.util.Queue
 
-class TreeNode(
-    var `val`: Int,
-) {
+class TreeNode(var `val`: Int) {
     var left: TreeNode? = null
     var right: TreeNode? = null
 }
@@ -57,10 +55,7 @@ object TreeNodeUtil {
         }
     }
 
-    fun isEqual(
-        first: TreeNode?,
-        second: TreeNode?,
-    ): Boolean {
+    fun isEqual(first: TreeNode?, second: TreeNode?): Boolean {
         if (first == null && second == null) return true
         if (first?.`val` != second?.`val`) return false
         val firstQ: Queue<TreeNode> = LinkedList()

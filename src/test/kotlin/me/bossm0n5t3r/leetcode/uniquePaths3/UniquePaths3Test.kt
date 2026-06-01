@@ -8,10 +8,7 @@ internal class UniquePaths3Test {
     private val uniquePaths3 = UniquePaths3.Solution()
     private val matrixUtil = MatrixUtil()
 
-    private data class UniquePaths3TestData(
-        val grid: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class UniquePaths3TestData(val grid: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -43,24 +40,17 @@ internal class UniquePaths3Test {
                     matrixUtil.generateMatrixFrom("[[1,0,0,0],[0,0,0,0],[0,0,0,2]]"),
                     4,
                 ),
-                UniquePaths3TestData(
-                    matrixUtil.generateMatrixFrom("[[0,1],[2,0]]"),
-                    0,
-                ),
+                UniquePaths3TestData(matrixUtil.generateMatrixFrom("[[0,1],[2,0]]"), 0),
             )
         tests.forEach { test ->
-            uniquePaths3
-                .uniquePathsIIIUsingBFS(test.grid)
-                .also {
-                    println(it)
-                    assertEquals(it, test.result)
-                }
-            uniquePaths3
-                .uniquePathsIIIUsingDFS(test.grid)
-                .also {
-                    println(it)
-                    assertEquals(it, test.result)
-                }
+            uniquePaths3.uniquePathsIIIUsingBFS(test.grid).also {
+                println(it)
+                assertEquals(it, test.result)
+            }
+            uniquePaths3.uniquePathsIIIUsingDFS(test.grid).also {
+                println(it)
+                assertEquals(it, test.result)
+            }
         }
     }
 }

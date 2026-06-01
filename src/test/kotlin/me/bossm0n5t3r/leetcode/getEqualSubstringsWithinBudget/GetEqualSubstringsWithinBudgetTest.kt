@@ -6,12 +6,7 @@ import org.junit.jupiter.api.Test
 class GetEqualSubstringsWithinBudgetTest {
     private val sut = GetEqualSubstringsWithinBudget.Solution()
 
-    private data class TestData(
-        val s: String,
-        val t: String,
-        val maxCost: Int,
-        val result: Int,
-    )
+    private data class TestData(val s: String, val t: String, val maxCost: Int, val result: Int)
 
     @Test
     fun test() {
@@ -23,10 +18,7 @@ class GetEqualSubstringsWithinBudgetTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.equalSubstring(test.s, test.t, test.maxCost),
-            )
+            assertEquals(test.result, sut.equalSubstring(test.s, test.t, test.maxCost))
         }
     }
 }

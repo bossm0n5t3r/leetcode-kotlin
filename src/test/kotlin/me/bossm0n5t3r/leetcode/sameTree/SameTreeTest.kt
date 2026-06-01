@@ -8,11 +8,7 @@ import org.junit.jupiter.api.Test
 class SameTreeTest {
     private val sut = SameTree.Solution()
 
-    private data class TestData(
-        val p: TreeNode?,
-        val q: TreeNode?,
-        val result: Boolean,
-    )
+    private data class TestData(val p: TreeNode?, val q: TreeNode?, val result: Boolean)
 
     @Test
     fun test() {
@@ -35,11 +31,6 @@ class SameTreeTest {
                 ),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.isSameTree(test.p, test.q),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.isSameTree(test.p, test.q)) }
     }
 }

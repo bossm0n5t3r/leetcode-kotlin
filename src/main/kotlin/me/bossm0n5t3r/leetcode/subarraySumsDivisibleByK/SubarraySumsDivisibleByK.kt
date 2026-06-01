@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.subarraySumsDivisibleByK
 
 class SubarraySumsDivisibleByK {
     class Solution {
-        fun subarraysDivByK(
-            nums: IntArray,
-            k: Int,
-        ): Int {
+        fun subarraysDivByK(nums: IntArray, k: Int): Int {
             var result = 0
             var cumulativeSum = 0
             val prefixMap = mutableMapOf(0 to 1)

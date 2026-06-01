@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class TimeNeededToBuyTicketsTest {
     private val sut = TimeNeededToBuyTickets.Solution()
 
-    private data class TestData(
-        val tickets: IntArray,
-        val k: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val tickets: IntArray, val k: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -35,16 +31,10 @@ class TimeNeededToBuyTicketsTest {
     @Test
     fun test() {
         val tests =
-            listOf(
-                TestData(intArrayOf(2, 3, 2), 2, 6),
-                TestData(intArrayOf(5, 1, 1, 1), 0, 8),
-            )
+            listOf(TestData(intArrayOf(2, 3, 2), 2, 6), TestData(intArrayOf(5, 1, 1, 1), 0, 8))
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.timeRequiredToBuy(test.tickets, test.k),
-            )
+            assertEquals(test.result, sut.timeRequiredToBuy(test.tickets, test.k))
         }
     }
 }

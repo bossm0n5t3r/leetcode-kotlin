@@ -2,11 +2,7 @@ package me.bossm0n5t3r.leetcode.maximumNumberOfIntegersToChooseFromARangeI
 
 class MaximumNumberOfIntegersToChooseFromARangeI {
     class Solution {
-        fun maxCount(
-            banned: IntArray,
-            n: Int,
-            maxSum: Int,
-        ): Int {
+        fun maxCount(banned: IntArray, n: Int, maxSum: Int): Int {
             val bannedSet = banned.toSet()
             val candidates =
                 (1..n)

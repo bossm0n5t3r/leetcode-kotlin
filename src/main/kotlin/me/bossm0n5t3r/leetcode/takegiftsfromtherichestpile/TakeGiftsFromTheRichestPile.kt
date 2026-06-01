@@ -4,10 +4,7 @@ import java.util.PriorityQueue
 
 class TakeGiftsFromTheRichestPile {
     class Solution {
-        fun pickGifts(
-            gifts: IntArray,
-            k: Int,
-        ): Long {
+        fun pickGifts(gifts: IntArray, k: Int): Long {
             val pq = PriorityQueue<Int>(compareByDescending { it })
             pq.addAll(gifts.toList())
             var times = k
@@ -18,6 +15,7 @@ class TakeGiftsFromTheRichestPile {
             return pq.sumOf { it.toLong() }
         }
 
-        private fun Int.squareRoot(div: Int = 1): Int = if (div * div <= this) this.squareRoot(div + 1) else div - 1
+        private fun Int.squareRoot(div: Int = 1): Int =
+            if (div * div <= this) this.squareRoot(div + 1) else div - 1
     }
 }

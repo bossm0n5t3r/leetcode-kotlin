@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class ClosestPrimeNumbersInRangeTest {
     private val sut = ClosestPrimeNumbersInRange.Solution()
 
-    private data class TestData(
-        val left: Int,
-        val right: Int,
-        val result: IntArray,
-    ) {
+    private data class TestData(val left: Int, val right: Int, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -36,15 +32,15 @@ class ClosestPrimeNumbersInRangeTest {
     @Test
     fun test() {
         val testDataList =
-            listOf(
-                TestData(10, 19, "[11,13]".toIntArray()),
-                TestData(4, 6, "[-1,-1]".toIntArray()),
-            )
+            listOf(TestData(10, 19, "[11,13]".toIntArray()), TestData(4, 6, "[-1,-1]".toIntArray()))
 
         for (testData in testDataList) {
             val expected = testData.result
             val actual = sut.closestPrimes(testData.left, testData.right)
-            assertTrue(expected.contentEquals(actual), "expected: ${expected.toList()}, actual: ${actual.toList()}")
+            assertTrue(
+                expected.contentEquals(actual),
+                "expected: ${expected.toList()}, actual: ${actual.toList()}",
+            )
         }
     }
 }

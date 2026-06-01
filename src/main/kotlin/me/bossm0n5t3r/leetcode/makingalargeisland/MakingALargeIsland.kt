@@ -58,7 +58,8 @@ class MakingALargeIsland {
                         }
 
                         // Sum the sizes of all unique neighboring islands
-                        val currentIslandSize = 1 + neighboringIslands.mapNotNull { islandIdToIslandSize[it] }.sum()
+                        val currentIslandSize =
+                            1 + neighboringIslands.mapNotNull { islandIdToIslandSize[it] }.sum()
 
                         maxIslandSize = maxOf(maxIslandSize, currentIslandSize)
                     }
@@ -74,23 +75,22 @@ class MakingALargeIsland {
             currentRow: Int,
             currentColumn: Int,
         ): Int {
-            if (currentRow < 0 ||
-                currentRow >= grid.size ||
-                currentColumn < 0 ||
-                currentColumn >= grid[0].size ||
-                grid[currentRow][currentColumn] != 1
+            if (
+                currentRow < 0 ||
+                    currentRow >= grid.size ||
+                    currentColumn < 0 ||
+                    currentColumn >= grid[0].size ||
+                    grid[currentRow][currentColumn] != 1
             ) {
                 return 0
             }
 
             grid[currentRow][currentColumn] = islandId
-            return (
-                1 +
-                    exploreIsland(grid, islandId, currentRow + 1, currentColumn) +
-                    exploreIsland(grid, islandId, currentRow - 1, currentColumn) +
-                    exploreIsland(grid, islandId, currentRow, currentColumn + 1) +
-                    exploreIsland(grid, islandId, currentRow, currentColumn - 1)
-            )
+            return (1 +
+                exploreIsland(grid, islandId, currentRow + 1, currentColumn) +
+                exploreIsland(grid, islandId, currentRow - 1, currentColumn) +
+                exploreIsland(grid, islandId, currentRow, currentColumn + 1) +
+                exploreIsland(grid, islandId, currentRow, currentColumn - 1))
         }
     }
 }

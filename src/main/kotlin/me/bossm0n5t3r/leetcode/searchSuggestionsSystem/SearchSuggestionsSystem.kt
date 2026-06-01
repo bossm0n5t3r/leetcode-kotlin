@@ -15,10 +15,7 @@ class SearchSuggestionsSystem {
 
         private val root = TrieNode()
 
-        fun suggestedProducts(
-            products: Array<String>,
-            searchWord: String,
-        ): List<List<String>> {
+        fun suggestedProducts(products: Array<String>, searchWord: String): List<List<String>> {
             for (product in products) {
                 insert(product)
             }

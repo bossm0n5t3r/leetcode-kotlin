@@ -8,11 +8,7 @@ import org.junit.jupiter.api.Test
 class FirstCompletelyPaintedRowOrColumnTest {
     private val sut = FirstCompletelyPaintedRowOrColumn.Solution()
 
-    private data class TestData(
-        val arr: IntArray,
-        val mat: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val arr: IntArray, val mat: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,14 +35,15 @@ class FirstCompletelyPaintedRowOrColumnTest {
         val testDataList =
             listOf(
                 TestData("[1,3,4,2]".toIntArray(), "[[1,4],[2,3]]".toArrayOfIntArray(), 2),
-                TestData("[2,8,7,4,1,3,5,6,9]".toIntArray(), "[[3,2,5],[1,4,6],[8,7,9]]".toArrayOfIntArray(), 3),
+                TestData(
+                    "[2,8,7,4,1,3,5,6,9]".toIntArray(),
+                    "[[3,2,5],[1,4,6],[8,7,9]]".toArrayOfIntArray(),
+                    3,
+                ),
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.firstCompleteIndex(testData.arr, testData.mat),
-            )
+            assertEquals(testData.result, sut.firstCompleteIndex(testData.arr, testData.mat))
         }
     }
 }

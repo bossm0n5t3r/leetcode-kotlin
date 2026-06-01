@@ -9,26 +9,18 @@ class StringUtilTest {
     fun toArrayOfIntArrayTest() {
         assertThat("[]".toArrayOfIntArray()).isEqualTo(emptyArray<IntArray>())
 
-        assertThat(
-            "[[3,2,1],[1,7,6],[2,7,7]]".toArrayOfIntArray(),
-        ).isEqualTo(
-            arrayOf(
-                intArrayOf(3, 2, 1),
-                intArrayOf(1, 7, 6),
-                intArrayOf(2, 7, 7),
-            ),
-        )
+        assertThat("[[3,2,1],[1,7,6],[2,7,7]]".toArrayOfIntArray())
+            .isEqualTo(arrayOf(intArrayOf(3, 2, 1), intArrayOf(1, 7, 6), intArrayOf(2, 7, 7)))
 
-        assertThat(
-            "[[3,1,2,2],[1,4,4,5],[2,4,2,2],[2,4,2,2]]".toArrayOfIntArray(),
-        ).isEqualTo(
-            arrayOf(
-                intArrayOf(3, 1, 2, 2),
-                intArrayOf(1, 4, 4, 5),
-                intArrayOf(2, 4, 2, 2),
-                intArrayOf(2, 4, 2, 2),
-            ),
-        )
+        assertThat("[[3,1,2,2],[1,4,4,5],[2,4,2,2],[2,4,2,2]]".toArrayOfIntArray())
+            .isEqualTo(
+                arrayOf(
+                    intArrayOf(3, 1, 2, 2),
+                    intArrayOf(1, 4, 4, 5),
+                    intArrayOf(2, 4, 2, 2),
+                    intArrayOf(2, 4, 2, 2),
+                )
+            )
 
         assertThat("[[1,2],[2,3],[5],[0],[5],[],[]]".toArrayOfIntArray())
             .isEqualTo(
@@ -40,7 +32,7 @@ class StringUtilTest {
                     intArrayOf(5),
                     intArrayOf(),
                     intArrayOf(),
-                ),
+                )
             )
 
         assertThat("[[1,2,3,4],[1,2],[3,4],[0,4],[]]".toArrayOfIntArray())
@@ -51,7 +43,7 @@ class StringUtilTest {
                     intArrayOf(3, 4),
                     intArrayOf(0, 4),
                     intArrayOf(),
-                ),
+                )
             )
     }
 }

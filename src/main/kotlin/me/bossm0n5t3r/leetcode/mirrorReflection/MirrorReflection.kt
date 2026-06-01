@@ -3,12 +3,10 @@ package me.bossm0n5t3r.leetcode.mirrorReflection
 class MirrorReflection {
     class Solution {
         /**
-         * @link https://leetcode.com/problems/mirror-reflection/discuss/146336/Java-solution-with-an-easy-to-understand-explanation
+         * @link
+         *   https://leetcode.com/problems/mirror-reflection/discuss/146336/Java-solution-with-an-easy-to-understand-explanation
          */
-        fun mirrorReflection(
-            p: Int,
-            q: Int,
-        ): Int {
+        fun mirrorReflection(p: Int, q: Int): Int {
             var m = 1
             var n = 1
             while (m * p != n * q) {

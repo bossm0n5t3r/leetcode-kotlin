@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class ReorderRoutesToMakeAllPathsLeadToTheCityZeroTest {
     private val sut = ReorderRoutesToMakeAllPathsLeadToTheCityZero.Solution()
 
-    private data class TestData(
-        val n: Int,
-        val connections: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val n: Int, val connections: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -47,18 +43,11 @@ class ReorderRoutesToMakeAllPathsLeadToTheCityZeroTest {
                     connections = "[[1,0],[1,2],[3,2],[3,4]]".toArrayOfIntArray(),
                     result = 2,
                 ),
-                TestData(
-                    n = 3,
-                    connections = "[[1,0],[2,0]]".toArrayOfIntArray(),
-                    result = 0,
-                ),
+                TestData(n = 3, connections = "[[1,0],[2,0]]".toArrayOfIntArray(), result = 0),
             )
 
         tests.forEach { test ->
-            assertEquals(
-                sut.minReorder(test.n, test.connections),
-                test.result,
-            )
+            assertEquals(sut.minReorder(test.n, test.connections), test.result)
         }
     }
 }

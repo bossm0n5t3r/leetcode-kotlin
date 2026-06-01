@@ -7,7 +7,8 @@ class MinimumTimeToVisitACellInAGrid {
         fun minimumTime(grid: Array<IntArray>): Int {
             if (minOf(grid[0][1], grid[1][0]) > 1) return -1
             val (m, n) = grid.size to grid[0].size
-            val dirs = arrayOf(intArrayOf(0, 1), intArrayOf(0, -1), intArrayOf(1, 0), intArrayOf(-1, 0))
+            val dirs =
+                arrayOf(intArrayOf(0, 1), intArrayOf(0, -1), intArrayOf(1, 0), intArrayOf(-1, 0))
             val minHeap = PriorityQueue<Triple<Int, Int, Int>>(compareBy { it.first })
             minHeap.offer(Triple(0, 0, 0))
             val visit = mutableSetOf<String>()

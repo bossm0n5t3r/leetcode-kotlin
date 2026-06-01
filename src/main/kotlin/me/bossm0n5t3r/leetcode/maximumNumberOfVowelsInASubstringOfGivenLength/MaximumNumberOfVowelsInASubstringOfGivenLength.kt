@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.maximumNumberOfVowelsInASubstringOfGivenLength
 
 class MaximumNumberOfVowelsInASubstringOfGivenLength {
     class Solution {
-        fun maxVowels(
-            s: String,
-            k: Int,
-        ): Int {
+        fun maxVowels(s: String, k: Int): Int {
             val vowels = setOf('a', 'e', 'i', 'o', 'u')
             var tmp = 0
             for (i in 0 until k) {

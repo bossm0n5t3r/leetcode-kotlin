@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.swapadjacentinlrstring
 
 class SwapAdjacentInLRString {
     class Solution {
-        fun canTransform(
-            start: String,
-            result: String,
-        ): Boolean {
+        fun canTransform(start: String, result: String): Boolean {
             val n = start.length
             var startIndex = 0
             var resultIndex = 0

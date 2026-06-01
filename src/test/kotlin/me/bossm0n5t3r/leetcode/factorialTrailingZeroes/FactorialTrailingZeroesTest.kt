@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class FactorialTrailingZeroesTest {
     private val factorialTrailingZeroes = FactorialTrailingZeroes.Solution()
 
-    data class FactorialTrailingZeroesTestData(
-        val n: Int,
-        val result: Int,
-    )
+    data class FactorialTrailingZeroesTestData(val n: Int, val result: Int)
 
     @Test
     fun trailingZeroes() {

@@ -9,12 +9,7 @@ class StrangePrinter {
             return minimumTurns(0, n - 1, removeDuplicatedString, memo)
         }
 
-        private fun minimumTurns(
-            start: Int,
-            end: Int,
-            s: String,
-            memo: Array<Array<Int?>>,
-        ): Int {
+        private fun minimumTurns(start: Int, end: Int, s: String, memo: Array<Array<Int?>>): Int {
             // Base case: empty string requires 0 turns
             if (start > end) {
                 return 0
@@ -34,8 +29,7 @@ class StrangePrinter {
                 if (s[k] == s[start]) {
                     // If match found, try splitting the problem
                     val turnsWithMatch =
-                        minimumTurns(start, k - 1, s, memo) +
-                            minimumTurns(k + 1, end, s, memo)
+                        minimumTurns(start, k - 1, s, memo) + minimumTurns(k + 1, end, s, memo)
                     minTurns = minOf(minTurns, turnsWithMatch)
                 }
             }
@@ -45,13 +39,13 @@ class StrangePrinter {
         }
 
         private fun removeDuplicates(s: String): String =
-            s
-                .fold(StringBuilder()) { acc: StringBuilder, c: Char ->
+            s.fold(StringBuilder()) { acc: StringBuilder, c: Char ->
                     if (acc.lastOrNull() != c) {
                         acc.append(c)
                     } else {
                         acc
                     }
-                }.toString()
+                }
+                .toString()
     }
 }

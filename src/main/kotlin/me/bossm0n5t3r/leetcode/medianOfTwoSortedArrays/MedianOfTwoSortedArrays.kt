@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.medianOfTwoSortedArrays
 
 class MedianOfTwoSortedArrays {
     class Solution {
-        data class ArrayData(
-            val nums1: IntArray,
-            val nums2: IntArray,
-        ) {
+        data class ArrayData(val nums1: IntArray, val nums2: IntArray) {
             var idxNum1: Int = 0
             var idxNum2: Int = 0
 
@@ -46,22 +43,15 @@ class MedianOfTwoSortedArrays {
             }
         }
 
-        fun findMedianSortedArrays(
-            nums1: IntArray,
-            nums2: IntArray,
-        ): Double {
+        fun findMedianSortedArrays(nums1: IntArray, nums2: IntArray): Double {
             val totalLength = nums1.size + nums2.size
             val arrayData = ArrayData(nums1, nums2)
 
             return if (totalLength % 2 == 0) {
-                repeat(totalLength / 2 - 1) {
-                    arrayData.next()
-                }
+                repeat(totalLength / 2 - 1) { arrayData.next() }
                 (arrayData.next() + arrayData.next()) / 2.0
             } else {
-                repeat(totalLength / 2) {
-                    arrayData.next()
-                }
+                repeat(totalLength / 2) { arrayData.next() }
                 arrayData.next().toDouble()
             }
         }

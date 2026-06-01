@@ -12,10 +12,7 @@ class DistributeElementsIntoTwoArraysI {
             return (arr1 + arr2).toIntArray()
         }
 
-        private fun selectArr(
-            arr1: MutableList<Int>,
-            arr2: MutableList<Int>,
-        ): MutableList<Int> =
+        private fun selectArr(arr1: MutableList<Int>, arr2: MutableList<Int>): MutableList<Int> =
             if (arr1.isEmpty()) {
                 arr1
             } else if (arr2.isEmpty()) {

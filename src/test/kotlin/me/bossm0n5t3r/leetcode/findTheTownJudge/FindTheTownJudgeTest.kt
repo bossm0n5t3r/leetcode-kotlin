@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class FindTheTownJudgeTest {
     private val sut = FindTheTownJudge.Solution()
 
-    private data class TestData(
-        val n: Int,
-        val trust: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val n: Int, val trust: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -42,11 +38,6 @@ class FindTheTownJudgeTest {
                 TestData(3, "[[1,3],[2,3],[3,1]]".toArrayOfIntArray(), -1),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.findJudge(test.n, test.trust),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.findJudge(test.n, test.trust)) }
     }
 }

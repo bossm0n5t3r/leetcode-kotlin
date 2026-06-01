@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class CountElementsWithMaximumFrequencyTest {
     private val sut = CountElementsWithMaximumFrequency.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -37,11 +34,6 @@ class CountElementsWithMaximumFrequencyTest {
                 TestData(intArrayOf(1, 2, 3, 4, 5), 5),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.maxFrequencyElements(test.nums),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.maxFrequencyElements(test.nums)) }
     }
 }

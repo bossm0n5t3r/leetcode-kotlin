@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class CheckIfBinaryStringHasAtMostOneSegmentOfOnesTest {
     private val sut = CheckIfBinaryStringHasAtMostOneSegmentOfOnes.Solution()
 
-    private data class TestData(
-        val s: String,
-        val result: Boolean,
-    )
+    private data class TestData(val s: String, val result: Boolean)
 
     @Test
     fun test() {
@@ -22,10 +19,7 @@ class CheckIfBinaryStringHasAtMostOneSegmentOfOnesTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.checkOnesSegment(testData.s),
-            )
+            assertEquals(testData.result, sut.checkOnesSegment(testData.s))
         }
     }
 }

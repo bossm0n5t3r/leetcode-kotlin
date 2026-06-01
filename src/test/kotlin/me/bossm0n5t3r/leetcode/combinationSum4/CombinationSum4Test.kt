@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 internal class CombinationSum4Test {
     private val sut = CombinationSum4.Solution()
 
-    private data class Example(
-        val nums: IntArray,
-        val target: Int,
-        val result: Int,
-    ) {
+    private data class Example(val nums: IntArray, val target: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,11 +30,7 @@ internal class CombinationSum4Test {
 
     @Test
     fun combinationSum4() {
-        val tests =
-            listOf(
-                Example(intArrayOf(1, 2, 3), 4, 7),
-                Example(intArrayOf(9), 3, 0),
-            )
+        val tests = listOf(Example(intArrayOf(1, 2, 3), 4, 7), Example(intArrayOf(9), 3, 0))
         tests.forEach { test ->
             assertEquals(sut.combinationSum4(test.nums, test.target), test.result)
         }

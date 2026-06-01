@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class GreatestEnglishLetterInUpperAndLowerCaseTest {
     private val sut = GreatestEnglishLetterInUpperAndLowerCase.Solution()
 
-    private data class TestData(
-        val s: String,
-        val result: String,
-    )
+    private data class TestData(val s: String, val result: String)
 
     @Test
     fun test() {
@@ -20,11 +17,6 @@ class GreatestEnglishLetterInUpperAndLowerCaseTest {
                 TestData("AbCdEfGhIjK", ""),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.greatestLetter(test.s),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.greatestLetter(test.s)) }
     }
 }

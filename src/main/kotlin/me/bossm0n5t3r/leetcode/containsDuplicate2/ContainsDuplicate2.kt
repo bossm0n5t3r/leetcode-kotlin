@@ -4,10 +4,7 @@ import kotlin.math.abs
 
 class ContainsDuplicate2 {
     class Solution {
-        fun containsNearbyDuplicate(
-            nums: IntArray,
-            k: Int,
-        ): Boolean {
+        fun containsNearbyDuplicate(nums: IntArray, k: Int): Boolean {
             val n = nums.size
             val recent = mutableMapOf<Int, Int>()
             (0 until n).forEach { i ->

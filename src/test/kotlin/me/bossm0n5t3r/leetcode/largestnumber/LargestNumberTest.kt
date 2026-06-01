@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class LargestNumberTest {
     private val sut = LargestNumber.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: String,
-    ) {
+    private data class TestData(val nums: IntArray, val result: String) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,10 +35,7 @@ class LargestNumberTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.largestNumber(testData.nums),
-            )
+            assertEquals(testData.result, sut.largestNumber(testData.nums))
         }
     }
 }

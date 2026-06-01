@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class ConvertSortedArrayToBSTTest {
     private val convertSortedArrayToBST = ConvertSortedArrayToBST.Solution()
 
-    data class ConvertSortedArrayToBSTTestData(
-        val nums: IntArray,
-        val result: TreeNode?,
-    ) {
+    data class ConvertSortedArrayToBSTTestData(val nums: IntArray, val result: TreeNode?) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -45,7 +42,12 @@ class ConvertSortedArrayToBSTTest {
                 ),
             )
         tests.forEach { test ->
-            assertTrue(TreeNodeUtil.isEqual(convertSortedArrayToBST.sortedArrayToBST(test.nums), test.result!!))
+            assertTrue(
+                TreeNodeUtil.isEqual(
+                    convertSortedArrayToBST.sortedArrayToBST(test.nums),
+                    test.result!!,
+                )
+            )
         }
     }
 }

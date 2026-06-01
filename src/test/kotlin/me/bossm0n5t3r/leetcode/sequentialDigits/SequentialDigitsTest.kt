@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class SequentialDigitsTest {
     private val sut = SequentialDigits.Solution()
 
-    private data class TestData(
-        val low: Int,
-        val high: Int,
-        val result: List<Int>,
-    )
+    private data class TestData(val low: Int, val high: Int, val result: List<Int>)
 
     @Test
     fun test() {
@@ -21,7 +17,8 @@ class SequentialDigitsTest {
             )
 
         tests.forEach { test ->
-            assertThat(sut.sequentialDigits(test.low, test.high)).containsExactlyElementsOf(test.result)
+            assertThat(sut.sequentialDigits(test.low, test.high))
+                .containsExactlyElementsOf(test.result)
         }
     }
 }

@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 internal class DistributeCoinsInBinaryTreeTest {
     private val distributeCoinsInBinaryTree = DistributeCoinsInBinaryTree.Solution()
 
-    private data class DistributeCoinsInBinaryTreeTestData(
-        val root: TreeNode?,
-        val result: Int,
-    )
+    private data class DistributeCoinsInBinaryTreeTestData(val root: TreeNode?, val result: Int)
 
     @Test
     fun distributeCoins() {
@@ -27,11 +24,9 @@ internal class DistributeCoinsInBinaryTreeTest {
                 ),
             )
         tests.forEach { test ->
-            distributeCoinsInBinaryTree
-                .distributeCoins(test.root)
-                .also {
-                    assertEquals(it, test.result)
-                }
+            distributeCoinsInBinaryTree.distributeCoins(test.root).also {
+                assertEquals(it, test.result)
+            }
         }
     }
 }

@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.kthDistinctStringInAnArray
 
 class KthDistinctStringInAnArray {
     class Solution {
-        fun kthDistinct(
-            arr: Array<String>,
-            k: Int,
-        ): String {
+        fun kthDistinct(arr: Array<String>, k: Int): String {
             val distinctStringList = mutableListOf<String>()
             val visited = mutableSetOf<String>()
             for (string in arr) {

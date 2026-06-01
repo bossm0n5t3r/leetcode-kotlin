@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class LongestPalindromeTest {
     private val sut = LongestPalindrome.Solution()
 
-    private data class TestData(
-        val s: String,
-        val result: Int,
-    )
+    private data class TestData(val s: String, val result: Int)
 
     @Test
     fun test() {
@@ -61,17 +58,13 @@ class LongestPalindromeTest {
                     thatgovernmentofthepeople
                     bythepeopleforthepeoplesh
                     allnotperishfromtheearth
-                    """.trimIndent()
+                    """
+                        .trimIndent()
                         .replace("\n", ""),
                     983,
                 ),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.longestPalindrome(test.s),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.longestPalindrome(test.s)) }
     }
 }

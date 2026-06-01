@@ -3,10 +3,7 @@ package me.bossm0n5t3r.leetcode.designHashMap
 class DesignHashMap {
     private val data = IntArray(1_000_000 + 1) { -1 }
 
-    fun put(
-        key: Int,
-        value: Int,
-    ) {
+    fun put(key: Int, value: Int) {
         data[key] = value
     }
 
@@ -18,11 +15,7 @@ class DesignHashMap {
 }
 
 class DesignAnotherHashMap {
-    private data class ListNode(
-        val key: Int,
-        val value: Int,
-        var next: ListNode?,
-    )
+    private data class ListNode(val key: Int, val value: Int, var next: ListNode?)
 
     private val size = 19997
     private val mul = 12582917
@@ -30,10 +23,7 @@ class DesignAnotherHashMap {
 
     private fun hash(key: Int) = (key.toLong() * mul % size).toInt()
 
-    fun put(
-        key: Int,
-        value: Int,
-    ) {
+    fun put(key: Int, value: Int) {
         remove(key)
         val h = hash(key)
         val node = ListNode(key, value, data[h])

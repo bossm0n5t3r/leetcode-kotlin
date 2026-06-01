@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class SubsetsTest {
     private val subsets = Subsets.Solution()
 
-    data class SubsetsTestData(
-        val nums: IntArray,
-        val result: List<List<Int>>,
-    ) {
+    data class SubsetsTestData(val nums: IntArray, val result: List<List<Int>>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -47,13 +44,7 @@ class SubsetsTest {
                         listOf(1, 2, 3),
                     ),
                 ),
-                SubsetsTestData(
-                    intArrayOf(0),
-                    listOf(
-                        listOf(),
-                        listOf(0),
-                    ),
-                ),
+                SubsetsTestData(intArrayOf(0), listOf(listOf(), listOf(0))),
             )
         tests.forEach { test ->
             val result = subsets.subsets(test.nums)

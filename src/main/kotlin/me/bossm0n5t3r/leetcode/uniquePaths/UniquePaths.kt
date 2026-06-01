@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.uniquePaths
 
 class UniquePaths {
     class Solution {
-        fun uniquePaths(
-            m: Int,
-            n: Int,
-        ): Int {
+        fun uniquePaths(m: Int, n: Int): Int {
             val min = minOf(m - 1, n - 1)
             val sum = m + n - 2
             var result = 1L
@@ -16,10 +13,7 @@ class UniquePaths {
             return result.toInt()
         }
 
-        fun uniquePathsUsingDP(
-            m: Int,
-            n: Int,
-        ): Int {
+        fun uniquePathsUsingDP(m: Int, n: Int): Int {
             val dp = Array(m) { IntArray(n) { 1 } }
             for (r in 1 until m) {
                 for (c in 1 until n) {

@@ -46,14 +46,7 @@ class FurthestBuildingYouCanReachTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.furthestBuilding(
-                    test.heights,
-                    test.bricks,
-                    test.ladders,
-                ),
-            )
+            assertEquals(test.result, sut.furthestBuilding(test.heights, test.bricks, test.ladders))
         }
     }
 }

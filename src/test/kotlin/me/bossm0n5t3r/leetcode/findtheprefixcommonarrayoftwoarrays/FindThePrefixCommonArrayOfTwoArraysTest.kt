@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class FindThePrefixCommonArrayOfTwoArraysTest {
     private val sut = FindThePrefixCommonArrayOfTwoArrays.Solution()
 
-    private data class TestData(
-        val A: IntArray,
-        val B: IntArray,
-        val result: IntArray,
-    ) {
+    private data class TestData(val A: IntArray, val B: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -36,7 +32,11 @@ class FindThePrefixCommonArrayOfTwoArraysTest {
     fun test() {
         val testDataList =
             listOf(
-                TestData("[1,3,2,4]".toIntArray(), "[3,1,2,4]".toIntArray(), "[0,2,3,4]".toIntArray()),
+                TestData(
+                    "[1,3,2,4]".toIntArray(),
+                    "[3,1,2,4]".toIntArray(),
+                    "[0,2,3,4]".toIntArray(),
+                ),
                 TestData("[2,3,1]".toIntArray(), "[3,1,2]".toIntArray(), "[0,1,3]".toIntArray()),
             )
 

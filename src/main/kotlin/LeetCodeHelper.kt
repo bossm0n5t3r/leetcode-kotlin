@@ -4,15 +4,10 @@ object LeetCodeHelper {
     fun String.toLowerCase() = this.substringAfter(". ").replace(regex, "").lowercase()
 
     private fun String.replaceRomanNumeralsAndSpecialCharacters() =
-        this
-            .replace("IV", "I V")
-            .replace("III", "I I I")
-            .replace("II", "I I")
-            .replace(regex, " ")
+        this.replace("IV", "I V").replace("III", "I I I").replace("II", "I I").replace(regex, " ")
 
     fun String.toPascalCase(): String {
-        return this
-            .substringAfter(". ")
+        return this.substringAfter(". ")
             .replaceRomanNumeralsAndSpecialCharacters()
             .trim()
             .split(" ")

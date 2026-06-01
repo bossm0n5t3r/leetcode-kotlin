@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class AppendCharactersToStringToMakeSubsequenceTest {
     private val sut = AppendCharactersToStringToMakeSubsequence.Solution()
 
-    private data class TestData(
-        val s: String,
-        val t: String,
-        val result: Int,
-    )
+    private data class TestData(val s: String, val t: String, val result: Int)
 
     @Test
     fun test() {
@@ -21,11 +17,6 @@ class AppendCharactersToStringToMakeSubsequenceTest {
                 TestData("z", "abcde", 5),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.appendCharacters(test.s, test.t),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.appendCharacters(test.s, test.t)) }
     }
 }

@@ -17,9 +17,9 @@ class InsertGreatestCommonDivisorsInLinkedList {
                     } else {
                         triple
                     }
-                }?.flatten()
-                ?.toListNode()
-                ?: head
+                }
+                ?.flatten()
+                ?.toListNode() ?: head
 
         private fun ListNode.toList(): List<Int> {
             val result = mutableListOf<Int>()

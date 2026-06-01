@@ -5,10 +5,7 @@ import java.util.Queue
 
 class MaximumSumOfDistinctSubarraysWithLengthK {
     class Solution {
-        fun maximumSubarraySum(
-            nums: IntArray,
-            k: Int,
-        ): Long {
+        fun maximumSubarraySum(nums: IntArray, k: Int): Long {
             val queue = LinkedList<Int>() as Queue<Int>
             val numCount = mutableMapOf<Int, Int>()
             var tmp = 0L

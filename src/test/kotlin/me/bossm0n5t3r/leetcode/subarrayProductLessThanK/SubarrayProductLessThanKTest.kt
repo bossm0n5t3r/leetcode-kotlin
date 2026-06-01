@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class SubarrayProductLessThanKTest {
     private val sut = SubarrayProductLessThanK.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val k: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val k: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -42,10 +38,7 @@ class SubarrayProductLessThanKTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.numSubarrayProductLessThanK(test.nums, test.k),
-            )
+            assertEquals(test.result, sut.numSubarrayProductLessThanK(test.nums, test.k))
         }
     }
 }

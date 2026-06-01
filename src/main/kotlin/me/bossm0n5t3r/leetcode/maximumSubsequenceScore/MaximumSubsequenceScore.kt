@@ -4,11 +4,7 @@ import java.util.PriorityQueue
 
 class MaximumSubsequenceScore {
     class Solution {
-        fun maxScore(
-            nums1: IntArray,
-            nums2: IntArray,
-            k: Int,
-        ): Long {
+        fun maxScore(nums1: IntArray, nums2: IntArray, k: Int): Long {
             val n = nums1.size
             val zippedTwoNumsWithSorting =
                 nums1

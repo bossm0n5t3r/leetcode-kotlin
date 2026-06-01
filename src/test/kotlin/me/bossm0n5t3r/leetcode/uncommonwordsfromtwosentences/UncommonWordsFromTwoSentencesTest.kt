@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class UncommonWordsFromTwoSentencesTest {
     private val sut = UncommonWordsFromTwoSentences.Solution()
 
-    private data class TestData(
-        val s1: String,
-        val s2: String,
-        val result: Array<String>,
-    ) {
+    private data class TestData(val s1: String, val s2: String, val result: Array<String>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

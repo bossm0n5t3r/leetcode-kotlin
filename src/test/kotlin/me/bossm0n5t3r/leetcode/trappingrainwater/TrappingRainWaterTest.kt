@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class TrappingRainWaterTest {
     private val sut = TrappingRainWater.Solution()
 
-    private data class TestData(
-        val height: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val height: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,10 +36,7 @@ class TrappingRainWaterTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.trap(testData.height),
-            )
+            assertEquals(testData.result, sut.trap(testData.height))
         }
     }
 }

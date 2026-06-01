@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class MapOfHighestPeakTest {
     private val sut = MapOfHighestPeak.Solution()
 
-    private data class TestData(
-        val isWater: Array<IntArray>,
-        val result: Array<IntArray>,
-    ) {
+    private data class TestData(val isWater: Array<IntArray>, val result: Array<IntArray>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,7 +31,10 @@ class MapOfHighestPeakTest {
         val testDataList =
             listOf(
                 TestData("[[0,1],[0,0]]".toArrayOfIntArray(), "[[1,0],[2,1]]".toArrayOfIntArray()),
-                TestData("[[0,0,1],[1,0,0],[0,0,0]]".toArrayOfIntArray(), "[[1,1,0],[0,1,1],[1,2,2]]".toArrayOfIntArray()),
+                TestData(
+                    "[[0,0,1],[1,0,0],[0,0,0]]".toArrayOfIntArray(),
+                    "[[1,1,0],[0,1,1],[1,2,2]]".toArrayOfIntArray(),
+                ),
             )
 
         for (testData in testDataList) {

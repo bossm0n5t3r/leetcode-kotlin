@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class CountGoodTripletsInAnArrayTest {
     private val sut = CountGoodTripletsInAnArray.Solution()
 
-    private data class TestData(
-        val nums1: IntArray,
-        val nums2: IntArray,
-        val result: Long,
-    ) {
+    private data class TestData(val nums1: IntArray, val nums2: IntArray, val result: Long) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -42,10 +38,7 @@ class CountGoodTripletsInAnArrayTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.goodTriplets(testData.nums1, testData.nums2),
-            )
+            assertEquals(testData.result, sut.goodTriplets(testData.nums1, testData.nums2))
         }
     }
 }

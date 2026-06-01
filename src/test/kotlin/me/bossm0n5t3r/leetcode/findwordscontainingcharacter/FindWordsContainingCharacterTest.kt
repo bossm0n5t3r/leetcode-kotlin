@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class FindWordsContainingCharacterTest {
     private val sut = FindWordsContainingCharacter.Solution()
 
-    private data class TestData(
-        val words: Array<String>,
-        val x: Char,
-        val result: List<Int>,
-    ) {
+    private data class TestData(val words: Array<String>, val x: Char, val result: List<Int>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -43,10 +39,7 @@ class FindWordsContainingCharacterTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.findWordsContaining(testData.words, testData.x),
-            )
+            assertEquals(testData.result, sut.findWordsContaining(testData.words, testData.x))
         }
     }
 }

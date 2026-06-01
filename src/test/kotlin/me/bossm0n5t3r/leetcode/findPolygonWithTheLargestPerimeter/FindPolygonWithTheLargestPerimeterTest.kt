@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class FindPolygonWithTheLargestPerimeterTest {
     private val sut = FindPolygonWithTheLargestPerimeter.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Long,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Long) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,11 +36,6 @@ class FindPolygonWithTheLargestPerimeterTest {
                 TestData("[5,5,50]".toIntArray(), -1),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.largestPerimeter(test.nums),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.largestPerimeter(test.nums)) }
     }
 }

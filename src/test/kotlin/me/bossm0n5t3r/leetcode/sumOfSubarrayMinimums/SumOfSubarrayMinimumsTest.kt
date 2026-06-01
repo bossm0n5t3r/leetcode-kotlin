@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class SumOfSubarrayMinimumsTest {
     private val sut = SumOfSubarrayMinimums.Solution()
 
-    private data class TestData(
-        val arr: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val arr: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -37,11 +34,6 @@ class SumOfSubarrayMinimumsTest {
                 TestData(intArrayOf(11, 81, 94, 43, 3), 444),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.sumSubarrayMins(test.arr),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.sumSubarrayMins(test.arr)) }
     }
 }

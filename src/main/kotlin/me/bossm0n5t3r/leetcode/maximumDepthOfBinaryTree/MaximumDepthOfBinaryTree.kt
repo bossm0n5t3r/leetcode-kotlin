@@ -1,9 +1,9 @@
 package me.bossm0n5t3r.leetcode.maximumDepthOfBinaryTree
 
-import me.bossm0n5t3r.leetcode.utils.TreeNode
 import java.util.LinkedList
 import java.util.Queue
 import java.util.Stack
+import me.bossm0n5t3r.leetcode.utils.TreeNode
 
 class MaximumDepthOfBinaryTree {
     class Solution {
@@ -32,10 +32,7 @@ class MaximumDepthOfBinaryTree {
 
         fun maxDepthAt230720(root: TreeNode?): Int {
             if (root == null) return 0
-            val stack =
-                Stack<Pair<TreeNode, Int>>().also {
-                    it.push(root to 1)
-                }
+            val stack = Stack<Pair<TreeNode, Int>>().also { it.push(root to 1) }
             var result = 0
             while (stack.isNotEmpty()) {
                 val (cur, depth) = stack.pop()

@@ -1,9 +1,7 @@
 package me.bossm0n5t3r.leetcode.designcirculardeque
 
 class DesignCircularDeque {
-    class MyCircularDeque(
-        private val k: Int,
-    ) {
+    class MyCircularDeque(private val k: Int) {
         private val arrayDeque = ArrayDeque<Int>(k)
 
         fun insertFront(value: Int): Boolean =

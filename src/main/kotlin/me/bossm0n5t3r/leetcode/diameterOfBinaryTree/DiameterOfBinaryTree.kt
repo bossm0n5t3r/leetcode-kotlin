@@ -10,10 +10,7 @@ class DiameterOfBinaryTree {
             return result[0]
         }
 
-        private fun dfs(
-            node: TreeNode?,
-            result: IntArray,
-        ): Int {
+        private fun dfs(node: TreeNode?, result: IntArray): Int {
             if (node == null) return 0
             val l = dfs(node.left, result)
             val r = dfs(node.right, result)

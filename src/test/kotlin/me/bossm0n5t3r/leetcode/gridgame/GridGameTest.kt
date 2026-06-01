@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class GridGameTest {
     private val sut = GridGame.Solution()
 
-    private data class TestData(
-        val grid: Array<IntArray>,
-        val result: Long,
-    ) {
+    private data class TestData(val grid: Array<IntArray>, val result: Long) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,10 +37,7 @@ class GridGameTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.gridGame(testData.grid),
-            )
+            assertEquals(testData.result, sut.gridGame(testData.grid))
         }
     }
 }

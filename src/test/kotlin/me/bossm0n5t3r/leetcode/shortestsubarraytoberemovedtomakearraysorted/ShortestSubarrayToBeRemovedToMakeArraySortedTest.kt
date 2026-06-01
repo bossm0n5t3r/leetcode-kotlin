@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class ShortestSubarrayToBeRemovedToMakeArraySortedTest {
     private val sut = ShortestSubarrayToBeRemovedToMakeArraySorted.Solution()
 
-    private data class TestData(
-        val arr: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val arr: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,10 +37,7 @@ class ShortestSubarrayToBeRemovedToMakeArraySortedTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.findLengthOfShortestSubarray(testData.arr),
-            )
+            assertEquals(testData.result, sut.findLengthOfShortestSubarray(testData.arr))
         }
     }
 }

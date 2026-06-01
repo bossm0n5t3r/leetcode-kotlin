@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class SetMatrixZeroesTest {
     private val sut = SetMatrixZeroes.Solution()
 
-    private data class TestData(
-        val matrix: Array<IntArray>,
-        val result: Array<IntArray>,
-    ) {
+    private data class TestData(val matrix: Array<IntArray>, val result: Array<IntArray>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -34,8 +31,14 @@ class SetMatrixZeroesTest {
     fun test() {
         val tests =
             listOf(
-                TestData("[[1,1,1],[1,0,1],[1,1,1]]".toArrayOfIntArray(), "[[1,0,1],[0,0,0],[1,0,1]]".toArrayOfIntArray()),
-                TestData("[[0,1,2,0],[3,4,5,2],[1,3,1,5]]".toArrayOfIntArray(), "[[0,0,0,0],[0,4,5,0],[0,3,1,0]]".toArrayOfIntArray()),
+                TestData(
+                    "[[1,1,1],[1,0,1],[1,1,1]]".toArrayOfIntArray(),
+                    "[[1,0,1],[0,0,0],[1,0,1]]".toArrayOfIntArray(),
+                ),
+                TestData(
+                    "[[0,1,2,0],[3,4,5,2],[1,3,1,5]]".toArrayOfIntArray(),
+                    "[[0,0,0,0],[0,4,5,0],[0,3,1,0]]".toArrayOfIntArray(),
+                ),
             )
 
         tests.forEach { test ->

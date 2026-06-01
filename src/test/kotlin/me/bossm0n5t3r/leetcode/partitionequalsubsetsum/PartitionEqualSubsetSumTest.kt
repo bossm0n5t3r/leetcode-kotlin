@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class PartitionEqualSubsetSumTest {
     private val sut = PartitionEqualSubsetSum.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Boolean,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Boolean) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,10 +36,7 @@ class PartitionEqualSubsetSumTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.canPartition(testData.nums),
-            )
+            assertEquals(testData.result, sut.canPartition(testData.nums))
         }
     }
 }

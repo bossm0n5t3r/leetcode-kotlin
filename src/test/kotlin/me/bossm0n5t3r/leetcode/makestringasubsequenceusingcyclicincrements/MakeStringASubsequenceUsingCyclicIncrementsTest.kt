@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class MakeStringASubsequenceUsingCyclicIncrementsTest {
     private val sut = MakeStringASubsequenceUsingCyclicIncrements.Solution()
 
-    private data class TestData(
-        val str1: String,
-        val str2: String,
-        val result: Boolean,
-    )
+    private data class TestData(val str1: String, val str2: String, val result: Boolean)
 
     @Test
     fun test() {
@@ -22,10 +18,7 @@ class MakeStringASubsequenceUsingCyclicIncrementsTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.canMakeSubsequence(testData.str1, testData.str2),
-            )
+            assertEquals(testData.result, sut.canMakeSubsequence(testData.str1, testData.str2))
         }
     }
 }

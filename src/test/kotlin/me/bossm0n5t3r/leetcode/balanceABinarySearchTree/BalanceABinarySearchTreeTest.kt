@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class BalanceABinarySearchTreeTest {
     private val sut = BalanceABinarySearchTree.Solution()
 
-    private data class TestData(
-        val root: TreeNode?,
-        val result: TreeNode?,
-    )
+    private data class TestData(val root: TreeNode?, val result: TreeNode?)
 
     @Test
     fun test() {
@@ -28,9 +25,7 @@ class BalanceABinarySearchTreeTest {
             )
 
         tests.forEach { test ->
-            assertTrue {
-                TreeNodeUtil.isEqual(sut.balanceBST(test.root), test.result)
-            }
+            assertTrue { TreeNodeUtil.isEqual(sut.balanceBST(test.root), test.result) }
         }
     }
 }

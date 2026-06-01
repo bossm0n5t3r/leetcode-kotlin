@@ -2,11 +2,7 @@ package me.bossm0n5t3r.leetcode.champagnetower
 
 class ChampagneTower {
     class Solution {
-        fun champagneTower(
-            poured: Int,
-            queryRow: Int,
-            queryGlass: Int,
-        ): Double {
+        fun champagneTower(poured: Int, queryRow: Int, queryGlass: Int): Double {
             val tower = Array(102) { DoubleArray(102) }
             tower[0][0] = poured.toDouble()
             for (r in 0..queryRow) {

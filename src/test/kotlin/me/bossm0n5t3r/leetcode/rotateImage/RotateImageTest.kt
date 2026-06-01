@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class RotateImageTest {
     private val rotateImage = RotateImage.Solution()
 
-    data class RotateImageTestData(
-        val matrix: Array<IntArray>,
-        val resultMatrix: Array<IntArray>,
-    ) {
+    data class RotateImageTestData(val matrix: Array<IntArray>, val resultMatrix: Array<IntArray>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -51,10 +48,7 @@ class RotateImageTest {
                         intArrayOf(16, 7, 10, 11),
                     ),
                 ),
-                RotateImageTestData(
-                    arrayOf(intArrayOf(1)),
-                    arrayOf(intArrayOf(1)),
-                ),
+                RotateImageTestData(arrayOf(intArrayOf(1)), arrayOf(intArrayOf(1))),
                 RotateImageTestData(
                     arrayOf(intArrayOf(1, 2), intArrayOf(3, 4)),
                     arrayOf(intArrayOf(3, 1), intArrayOf(4, 2)),
@@ -89,10 +83,7 @@ class RotateImageTest {
                         intArrayOf(16, 7, 10, 11),
                     ),
                 ),
-                RotateImageTestData(
-                    arrayOf(intArrayOf(1)),
-                    arrayOf(intArrayOf(1)),
-                ),
+                RotateImageTestData(arrayOf(intArrayOf(1)), arrayOf(intArrayOf(1))),
                 RotateImageTestData(
                     arrayOf(intArrayOf(1, 2), intArrayOf(3, 4)),
                     arrayOf(intArrayOf(3, 1), intArrayOf(4, 2)),
@@ -128,10 +119,7 @@ class RotateImageTest {
                         intArrayOf(16, 7, 10, 11),
                     ),
                 ),
-                RotateImageTestData(
-                    arrayOf(intArrayOf(1)),
-                    arrayOf(intArrayOf(1)),
-                ),
+                RotateImageTestData(arrayOf(intArrayOf(1)), arrayOf(intArrayOf(1))),
                 RotateImageTestData(
                     arrayOf(intArrayOf(1, 2), intArrayOf(3, 4)),
                     arrayOf(intArrayOf(3, 1), intArrayOf(4, 2)),

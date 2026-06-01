@@ -22,7 +22,12 @@ class MapOfHighestPeak {
                 for ((dr, dc) in diff) {
                     val nr = r + dr
                     val nc = c + dc
-                    if (nr in 0 until m && nc in 0 until n && visited[nr][nc].not() && result[nr][nc] == Int.MAX_VALUE) {
+                    if (
+                        nr in 0 until m &&
+                            nc in 0 until n &&
+                            visited[nr][nc].not() &&
+                            result[nr][nc] == Int.MAX_VALUE
+                    ) {
                         visited[nr][nc] = true
                         queue += Triple(nr, nc, height + 1)
                     }

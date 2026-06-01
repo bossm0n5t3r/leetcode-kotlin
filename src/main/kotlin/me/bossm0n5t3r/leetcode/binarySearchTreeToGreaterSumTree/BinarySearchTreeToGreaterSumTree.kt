@@ -9,10 +9,7 @@ class BinarySearchTreeToGreaterSumTree {
             return dfs(root, max)
         }
 
-        private fun dfs(
-            root: TreeNode?,
-            sum: IntArray,
-        ): TreeNode? {
+        private fun dfs(root: TreeNode?, sum: IntArray): TreeNode? {
             if (root == null) return null
             dfs(root.right, sum)
             sum[0] += root.`val`

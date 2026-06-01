@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 internal class BackspaceStringCompareTest {
     private val backspaceStringCompare = BackspaceStringCompare.Solution()
 
-    private data class BackspaceStringCompareTest(
-        val s: String,
-        val t: String,
-        val result: Boolean,
-    )
+    private data class BackspaceStringCompareTest(val s: String, val t: String, val result: Boolean)
 
     @Test
     fun backspaceCompare() {
@@ -25,7 +21,8 @@ internal class BackspaceStringCompareTest {
             println(result)
             assertEquals(result, test.result)
 
-            val resultWithRestriction = backspaceStringCompare.backspaceCompareWithRestriction(test.s, test.t)
+            val resultWithRestriction =
+                backspaceStringCompare.backspaceCompareWithRestriction(test.s, test.t)
             println(resultWithRestriction)
             assertEquals(resultWithRestriction, test.result)
         }

@@ -39,16 +39,8 @@ class KRadiusSubarrayAveragesTest {
                     3,
                     intArrayOf(-1, -1, -1, 5, 4, 4, -1, -1, -1),
                 ),
-                KRadiusSubarrayAveragesTestData(
-                    intArrayOf(100000),
-                    0,
-                    intArrayOf(100000),
-                ),
-                KRadiusSubarrayAveragesTestData(
-                    intArrayOf(8),
-                    100000,
-                    intArrayOf(-1),
-                ),
+                KRadiusSubarrayAveragesTestData(intArrayOf(100000), 0, intArrayOf(100000)),
+                KRadiusSubarrayAveragesTestData(intArrayOf(8), 100000, intArrayOf(-1)),
             )
         examples.forEach { example ->
             assertThat(kRadiusSubarrayAverages.getAverages(example.nums, example.k))

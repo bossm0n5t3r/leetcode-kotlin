@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class CrawlerLogFolderTest {
     private val sut = CrawlerLogFolder.Solution()
 
-    private data class TestData(
-        val logs: Array<String>,
-        val result: Int,
-    ) {
+    private data class TestData(val logs: Array<String>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,11 +35,6 @@ class CrawlerLogFolderTest {
                 TestData(arrayOf("d1/", "../", "../", "../"), 0),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.minOperations(test.logs),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.minOperations(test.logs)) }
     }
 }

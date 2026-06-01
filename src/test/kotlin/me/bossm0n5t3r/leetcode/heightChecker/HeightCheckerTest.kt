@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class HeightCheckerTest {
     private val sut = HeightChecker.Solution()
 
-    private data class TestData(
-        val heights: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val heights: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,11 +36,6 @@ class HeightCheckerTest {
                 TestData("[1,2,3,4,5]".toIntArray(), 0),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.heightChecker(test.heights),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.heightChecker(test.heights)) }
     }
 }

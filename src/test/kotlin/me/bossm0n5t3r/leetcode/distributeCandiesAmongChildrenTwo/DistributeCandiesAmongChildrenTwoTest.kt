@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class DistributeCandiesAmongChildrenTwoTest {
     private val sut = DistributeCandiesAmongChildrenTwo.Solution()
 
-    private data class TestData(
-        val n: Int,
-        val limit: Int,
-        val result: Long,
-    )
+    private data class TestData(val n: Int, val limit: Int, val result: Long)
 
     @Test
     fun test() {
@@ -23,10 +19,7 @@ class DistributeCandiesAmongChildrenTwoTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.distributeCandies(test.n, test.limit),
-            )
+            assertEquals(test.result, sut.distributeCandies(test.n, test.limit))
         }
     }
 }

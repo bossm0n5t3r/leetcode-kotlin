@@ -2,11 +2,7 @@ package me.bossm0n5t3r.leetcode.countofinterestingsubarrays
 
 class CountOfInterestingSubarrays {
     class Solution {
-        fun countInterestingSubarrays(
-            nums: List<Int>,
-            modulo: Int,
-            k: Int,
-        ): Long {
+        fun countInterestingSubarrays(nums: List<Int>, modulo: Int, k: Int): Long {
             val n = nums.size
             val cnt = mutableMapOf<Int, Int>()
             var prefix = 0

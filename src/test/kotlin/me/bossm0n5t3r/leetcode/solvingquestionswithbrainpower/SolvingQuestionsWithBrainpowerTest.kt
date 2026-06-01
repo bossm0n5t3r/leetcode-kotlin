@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class SolvingQuestionsWithBrainpowerTest {
     private val sut = SolvingQuestionsWithBrainpower.Solution()
 
-    private data class TestData(
-        val questions: Array<IntArray>,
-        val result: Long,
-    ) {
+    private data class TestData(val questions: Array<IntArray>, val result: Long) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,10 +36,7 @@ class SolvingQuestionsWithBrainpowerTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.mostPoints(testData.questions),
-            )
+            assertEquals(testData.result, sut.mostPoints(testData.questions))
         }
     }
 }

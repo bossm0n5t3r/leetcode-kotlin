@@ -2,12 +2,7 @@ package me.bossm0n5t3r.leetcode.countunguardedcellsinthegrid
 
 class CountUnguardedCellsInTheGrid {
     class Solution {
-        fun countUnguarded(
-            m: Int,
-            n: Int,
-            guards: Array<IntArray>,
-            walls: Array<IntArray>,
-        ): Int {
+        fun countUnguarded(m: Int, n: Int, guards: Array<IntArray>, walls: Array<IntArray>): Int {
             // wall: 1, guard: 2, guarded: 3, not guarded: 0
             val grid = Array(m) { IntArray(n) }
             var result = m * n
@@ -22,7 +17,10 @@ class CountUnguardedCellsInTheGrid {
             for ((guardR, guardC) in guards) {
                 // north
                 var step = 1
-                while (guardR - step >= 0 && (grid[guardR - step][guardC] == 0 || grid[guardR - step][guardC] == 3)) {
+                while (
+                    guardR - step >= 0 &&
+                        (grid[guardR - step][guardC] == 0 || grid[guardR - step][guardC] == 3)
+                ) {
                     val cur = grid[guardR - step][guardC]
                     if (cur == 3) {
                         step++
@@ -36,7 +34,10 @@ class CountUnguardedCellsInTheGrid {
                 }
                 // east
                 step = 1
-                while (guardC + step < n && (grid[guardR][guardC + step] == 0 || grid[guardR][guardC + step] == 3)) {
+                while (
+                    guardC + step < n &&
+                        (grid[guardR][guardC + step] == 0 || grid[guardR][guardC + step] == 3)
+                ) {
                     val cur = grid[guardR][guardC + step]
                     if (cur == 3) {
                         step++
@@ -50,7 +51,10 @@ class CountUnguardedCellsInTheGrid {
                 }
                 // south
                 step = 1
-                while (guardR + step < m && (grid[guardR + step][guardC] == 0 || grid[guardR + step][guardC] == 3)) {
+                while (
+                    guardR + step < m &&
+                        (grid[guardR + step][guardC] == 0 || grid[guardR + step][guardC] == 3)
+                ) {
                     val cur = grid[guardR + step][guardC]
                     if (cur == 3) {
                         step++
@@ -64,7 +68,10 @@ class CountUnguardedCellsInTheGrid {
                 }
                 // west
                 step = 1
-                while (guardC - step >= 0 && (grid[guardR][guardC - step] == 0 || grid[guardR][guardC - step] == 3)) {
+                while (
+                    guardC - step >= 0 &&
+                        (grid[guardR][guardC - step] == 0 || grid[guardR][guardC - step] == 3)
+                ) {
                     val cur = grid[guardR][guardC - step]
                     if (cur == 3) {
                         step++

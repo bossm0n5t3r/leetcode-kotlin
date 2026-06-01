@@ -8,11 +8,7 @@ import org.junit.jupiter.api.Test
 class DeleteNodeInABstTest {
     private val sut = DeleteNodeInABst.Solution()
 
-    private data class TestData(
-        val root: TreeNode?,
-        val key: Int,
-        val result: TreeNode?,
-    )
+    private data class TestData(val root: TreeNode?, val key: Int, val result: TreeNode?)
 
     @Test
     fun test() {
@@ -53,9 +49,7 @@ class DeleteNodeInABstTest {
         tests.forEach { test ->
             assertTrue {
                 TreeNodeUtil.isEqual(
-                    sut
-                        .deleteNode(test.root, test.key)
-                        .also { TreeNodeUtil.printTreeNode(it) },
+                    sut.deleteNode(test.root, test.key).also { TreeNodeUtil.printTreeNode(it) },
                     test.result,
                 )
             }

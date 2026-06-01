@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.maxNumberOfKSumPairs
 
 class MaxNumberOfKSumPairs {
     class Solution {
-        fun maxOperations(
-            nums: IntArray,
-            k: Int,
-        ): Int {
+        fun maxOperations(nums: IntArray, k: Int): Int {
             val numToCount = mutableMapOf<Int, Int>()
             var operations = 0
             for (num in nums) {

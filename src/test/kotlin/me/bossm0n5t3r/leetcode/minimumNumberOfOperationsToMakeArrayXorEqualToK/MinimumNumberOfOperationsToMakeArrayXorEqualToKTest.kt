@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class MinimumNumberOfOperationsToMakeArrayXorEqualToKTest {
     private val sut = MinimumNumberOfOperationsToMakeArrayXorEqualToK.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val k: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val k: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -35,16 +31,8 @@ class MinimumNumberOfOperationsToMakeArrayXorEqualToKTest {
     @Test
     fun test() {
         val tests =
-            listOf(
-                TestData(intArrayOf(2, 1, 3, 4), 1, 2),
-                TestData(intArrayOf(2, 0, 2, 0), 0, 0),
-            )
+            listOf(TestData(intArrayOf(2, 1, 3, 4), 1, 2), TestData(intArrayOf(2, 0, 2, 0), 0, 0))
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.minOperations(test.nums, test.k),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.minOperations(test.nums, test.k)) }
     }
 }

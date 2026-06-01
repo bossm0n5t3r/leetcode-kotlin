@@ -4,10 +4,7 @@ import kotlin.math.abs
 
 class ThreeSumClosest {
     class Solution {
-        fun threeSumClosest(
-            nums: IntArray,
-            target: Int,
-        ): Int {
+        fun threeSumClosest(nums: IntArray, target: Int): Int {
             val sortedNums = nums.sorted()
             var result = sortedNums.first() + sortedNums.last() + sortedNums[1]
             val size = sortedNums.size

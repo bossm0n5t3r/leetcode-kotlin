@@ -9,9 +9,7 @@ class PathWithMaximumGold {
                 for (c in 0 until n) {
                     if (grid[r][c] != 0) {
                         val visited =
-                            Array(m) { BooleanArray(n) { false } }.apply {
-                                this[r][c] = true
-                            }
+                            Array(m) { BooleanArray(n) { false } }.apply { this[r][c] = true }
                         val resultArray = IntArray(1) { 0 }
                         dfs(grid, visited, m, n, r, c, grid[r][c], resultArray)
                         if (resultArray[0] > answer) {
@@ -43,7 +41,9 @@ class PathWithMaximumGold {
             for (i in 0 until 4) {
                 val nr = r + dr[i]
                 val nc = c + dc[i]
-                if (nr in 0 until m && nc in 0 until n && grid[nr][nc] != 0 && visited[nr][nc].not()) {
+                if (
+                    nr in 0 until m && nc in 0 until n && grid[nr][nc] != 0 && visited[nr][nc].not()
+                ) {
                     visited[nr][nc] = true
                     dfs(grid, visited, m, n, nr, nc, curResult + grid[nr][nc], resultArray)
                     visited[nr][nc] = false

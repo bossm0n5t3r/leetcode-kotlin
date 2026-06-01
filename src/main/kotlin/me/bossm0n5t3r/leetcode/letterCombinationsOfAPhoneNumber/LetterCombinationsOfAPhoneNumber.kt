@@ -26,11 +26,8 @@ class LetterCombinationsOfAPhoneNumber {
                     result.addAll(targetLetters)
                 } else {
                     result =
-                        result.flatMap { first ->
-                            targetLetters.map { last ->
-                                "$first$last"
-                            }
-                        } as MutableList<String>
+                        result.flatMap { first -> targetLetters.map { last -> "$first$last" } }
+                            as MutableList<String>
                 }
                 idx++
             }
@@ -40,14 +37,13 @@ class LetterCombinationsOfAPhoneNumber {
         fun letterCombinationsGoodSolution(digits: String): List<String> {
             val result = LinkedList<String>()
             if (digits.isBlank()) return result
-            val digitToLetters = arrayOf("0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz")
+            val digitToLetters =
+                arrayOf("0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz")
             result.add("")
             while (result.peek().length != digits.length) {
                 val remove = result.remove()
                 val targetDigit = digits[remove.length].digitToInt()
-                (digitToLetters[targetDigit].toCharArray()).forEach {
-                    result.add("$remove$it")
-                }
+                (digitToLetters[targetDigit].toCharArray()).forEach { result.add("$remove$it") }
             }
             return result
         }

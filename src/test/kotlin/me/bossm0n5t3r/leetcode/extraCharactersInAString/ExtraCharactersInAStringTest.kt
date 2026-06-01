@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class ExtraCharactersInAStringTest {
     private val sut = ExtraCharactersInAString.Solution()
 
-    private data class TestData(
-        val s: String,
-        val dictionary: Array<String>,
-        val result: Int,
-    ) {
+    private data class TestData(val s: String, val dictionary: Array<String>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -63,10 +59,7 @@ class ExtraCharactersInAStringTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.minExtraChar(test.s, test.dictionary),
-            )
+            assertEquals(test.result, sut.minExtraChar(test.s, test.dictionary))
         }
     }
 }

@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.kThSmallestPrimeFraction
 
 class KThSmallestPrimeFraction {
     class Solution {
-        fun kthSmallestPrimeFraction(
-            arr: IntArray,
-            k: Int,
-        ): IntArray {
+        fun kthSmallestPrimeFraction(arr: IntArray, k: Int): IntArray {
             val sortedArr = arr.sorted()
             val result = mutableListOf<IntArray>()
             for (i in 0 until arr.size - 1) {

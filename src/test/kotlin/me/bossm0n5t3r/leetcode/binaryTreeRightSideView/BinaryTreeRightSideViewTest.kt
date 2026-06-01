@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class BinaryTreeRightSideViewTest {
     private val sut = BinaryTreeRightSideView.Solution()
 
-    private data class TestData(
-        val root: TreeNode?,
-        val result: List<Int>,
-    )
+    private data class TestData(val root: TreeNode?, val result: List<Int>)
 
     @Test
     fun test() {
@@ -25,17 +22,9 @@ class BinaryTreeRightSideViewTest {
                     root = TreeNodeUtil.generateTreeNodeOrNull(listOf(1, null, 3)),
                     result = listOf(1, 3),
                 ),
-                TestData(
-                    root = TreeNodeUtil.generateTreeNodeOrNull(listOf()),
-                    result = listOf(),
-                ),
+                TestData(root = TreeNodeUtil.generateTreeNodeOrNull(listOf()), result = listOf()),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.rightSideView(test.root),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.rightSideView(test.root), test.result) }
     }
 }

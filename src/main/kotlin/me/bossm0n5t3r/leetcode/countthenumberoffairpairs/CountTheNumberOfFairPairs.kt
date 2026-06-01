@@ -2,11 +2,7 @@ package me.bossm0n5t3r.leetcode.countthenumberoffairpairs
 
 class CountTheNumberOfFairPairs {
     class Solution {
-        fun countFairPairs(
-            nums: IntArray,
-            lower: Int,
-            upper: Int,
-        ): Long {
+        fun countFairPairs(nums: IntArray, lower: Int, upper: Int): Long {
             nums.sort() // 원본 배열을 직접 정렬하여 추가 메모리 사용 줄임
             var count = 0L
 
@@ -25,11 +21,7 @@ class CountTheNumberOfFairPairs {
             return count
         }
 
-        private fun findLowerBound(
-            nums: IntArray,
-            start: Int,
-            target: Int,
-        ): Int {
+        private fun findLowerBound(nums: IntArray, start: Int, target: Int): Int {
             var left = start
             var right = nums.size
 
@@ -44,11 +36,7 @@ class CountTheNumberOfFairPairs {
             return left
         }
 
-        private fun findUpperBound(
-            nums: IntArray,
-            start: Int,
-            target: Int,
-        ): Int {
+        private fun findUpperBound(nums: IntArray, start: Int, target: Int): Int {
             var left = start
             var right = nums.size - 1
 

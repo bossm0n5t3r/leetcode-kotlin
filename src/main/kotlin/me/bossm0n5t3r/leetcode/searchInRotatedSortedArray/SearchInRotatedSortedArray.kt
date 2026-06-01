@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.searchInRotatedSortedArray
 
 class SearchInRotatedSortedArray {
     class Solution {
-        fun search(
-            nums: IntArray,
-            target: Int,
-        ): Int {
+        fun search(nums: IntArray, target: Int): Int {
             var diff = 0
             val max = nums[diff]
             for (i in nums.indices) {

@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class MoveZeroesTest {
     private val moveZeroes = MoveZeroes.Solution()
 
-    data class MoveZeroesTestData(
-        val nums: IntArray,
-        val result: IntArray,
-    ) {
+    data class MoveZeroesTestData(val nums: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

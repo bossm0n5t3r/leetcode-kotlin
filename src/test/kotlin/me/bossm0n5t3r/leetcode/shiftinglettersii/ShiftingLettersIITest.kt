@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class ShiftingLettersIITest {
     private val sut = ShiftingLettersII.Solution()
 
-    private data class TestData(
-        val s: String,
-        val shifts: Array<IntArray>,
-        val result: String,
-    ) {
+    private data class TestData(val s: String, val shifts: Array<IntArray>, val result: String) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -42,10 +38,7 @@ class ShiftingLettersIITest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.shiftingLetters(testData.s, testData.shifts),
-            )
+            assertEquals(testData.result, sut.shiftingLetters(testData.s, testData.shifts))
         }
     }
 }

@@ -20,13 +20,19 @@ class LowestCommonAncestorOfABinaryTreeTest {
         val tests =
             listOf(
                 TestData(
-                    root = TreeNodeUtil.generateTreeNodeOrNull(listOf(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4)),
+                    root =
+                        TreeNodeUtil.generateTreeNodeOrNull(
+                            listOf(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4)
+                        ),
                     p = TreeNode(5),
                     q = TreeNode(1),
                     result = TreeNode(3),
                 ),
                 TestData(
-                    root = TreeNodeUtil.generateTreeNodeOrNull(listOf(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4)),
+                    root =
+                        TreeNodeUtil.generateTreeNodeOrNull(
+                            listOf(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4)
+                        ),
                     p = TreeNode(5),
                     q = TreeNode(4),
                     result = TreeNode(5),
@@ -41,12 +47,7 @@ class LowestCommonAncestorOfABinaryTreeTest {
 
         tests.forEach { test ->
             assertEquals(
-                sut
-                    .lowestCommonAncestor(
-                        root = test.root,
-                        p = test.p,
-                        q = test.q,
-                    )?.`val`,
+                sut.lowestCommonAncestor(root = test.root, p = test.p, q = test.q)?.`val`,
                 test.result?.`val`,
             )
         }

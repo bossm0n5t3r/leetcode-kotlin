@@ -25,10 +25,7 @@ class SpiralMatrix2 {
                 UP,
             }
 
-            fun next(
-                n: Int,
-                matrix: Array<IntArray>,
-            ) {
+            fun next(n: Int, matrix: Array<IntArray>) {
                 this.value++
                 when (direction) {
                     Direction.LEFT -> {

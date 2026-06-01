@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class NumberOfSeniorCitizensTest {
     private val sut = NumberOfSeniorCitizens.Solution()
 
-    private data class TestData(
-        val details: Array<String>,
-        val result: Int,
-    ) {
+    private data class TestData(val details: Array<String>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -37,11 +34,6 @@ class NumberOfSeniorCitizensTest {
                 TestData(arrayOf("1313579440F2036", "2921522980M5644"), 0),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.countSeniors(test.details),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.countSeniors(test.details)) }
     }
 }

@@ -8,16 +8,16 @@ import org.junit.jupiter.api.Test
 class NAryTreePostorderTraversalTest {
     private val sut = NAryTreePostorderTraversal.Solution()
 
-    private data class TestData(
-        val root: Node?,
-        val result: List<Int>,
-    )
+    private data class TestData(val root: Node?, val result: List<Int>)
 
     @Test
     fun test() {
         val tests =
             listOf(
-                TestData(NodeUtil.generateNodeOrNull(1, null, 3, 2, 4, null, 5, 6), listOf(5, 6, 3, 2, 4, 1)),
+                TestData(
+                    NodeUtil.generateNodeOrNull(1, null, 3, 2, 4, null, 5, 6),
+                    listOf(5, 6, 3, 2, 4, 1),
+                ),
                 TestData(
                     NodeUtil.generateNodeOrNull(
                         1,
@@ -50,11 +50,6 @@ class NAryTreePostorderTraversalTest {
                 ),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.postorder(test.root),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.postorder(test.root)) }
     }
 }

@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.numberOfCommonFactors
 
 class NumberOfCommonFactors {
     class Solution {
-        fun commonFactors(
-            a: Int,
-            b: Int,
-        ): Int {
+        fun commonFactors(a: Int, b: Int): Int {
             val gcd = gcd(a, b)
             var factor = 1
             var result = 0
@@ -18,10 +15,7 @@ class NumberOfCommonFactors {
             return result
         }
 
-        private fun gcd(
-            x: Int,
-            y: Int,
-        ): Int {
+        private fun gcd(x: Int, y: Int): Int {
             if (y != 0) {
                 return gcd(y, x % y)
             }

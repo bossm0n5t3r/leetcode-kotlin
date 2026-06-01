@@ -4,10 +4,7 @@ import me.bossm0n5t3r.leetcode.utils.ListNode
 
 class IntersectionOfTwoLinkedLists {
     class Solution {
-        fun getIntersectionNode(
-            headA: ListNode?,
-            headB: ListNode?,
-        ): ListNode? {
+        fun getIntersectionNode(headA: ListNode?, headB: ListNode?): ListNode? {
             var currA = headA
             var currB = headB
             while (currA != currB) {

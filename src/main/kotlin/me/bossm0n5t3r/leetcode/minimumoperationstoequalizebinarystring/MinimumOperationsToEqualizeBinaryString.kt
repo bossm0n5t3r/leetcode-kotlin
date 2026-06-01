@@ -6,10 +6,7 @@ import java.util.TreeSet
 
 class MinimumOperationsToEqualizeBinaryString {
     class Solution {
-        fun minOperations(
-            s: String,
-            k: Int,
-        ): Int {
+        fun minOperations(s: String, k: Int): Int {
             val n = s.length
             var m = 0
             val dist = IntArray(n + 1) { Int.MAX_VALUE }

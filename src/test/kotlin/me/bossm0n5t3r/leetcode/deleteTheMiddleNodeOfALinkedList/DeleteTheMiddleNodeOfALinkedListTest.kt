@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class DeleteTheMiddleNodeOfALinkedListTest {
     private val sut = DeleteTheMiddleNodeOfALinkedList.Solution()
 
-    private data class TestData(
-        val head: ListNode?,
-        val result: ListNode?,
-    )
+    private data class TestData(val head: ListNode?, val result: ListNode?)
 
     @Test
     fun test() {
@@ -25,26 +22,15 @@ class DeleteTheMiddleNodeOfALinkedListTest {
                     ListNodeUtil.generateListNode(1, 2, 3, 4),
                     ListNodeUtil.generateListNode(1, 2, 4),
                 ),
-                TestData(
-                    ListNodeUtil.generateListNode(2, 1),
-                    ListNodeUtil.generateListNode(2),
-                ),
-                TestData(
-                    ListNodeUtil.generateListNode(1),
-                    ListNodeUtil.generateListNode(),
-                ),
+                TestData(ListNodeUtil.generateListNode(2, 1), ListNodeUtil.generateListNode(2)),
+                TestData(ListNodeUtil.generateListNode(1), ListNodeUtil.generateListNode()),
             )
 
         tests.forEach { test ->
             val result = sut.deleteMiddle(test.head)
             ListNodeUtil.printListNode(result)
             ListNodeUtil.printListNode(test.result)
-            assertTrue {
-                ListNodeUtil.isEqual(
-                    result,
-                    test.result,
-                )
-            }
+            assertTrue { ListNodeUtil.isEqual(result, test.result) }
         }
     }
 }

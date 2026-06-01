@@ -53,7 +53,8 @@ object SolvedProblemListGenerator {
     private fun List<Int>.toTableHeader(): String =
         "| ${"#".padEnd(this[0])} | ${"Title".padEnd(this[1])} | ${"Solution".padEnd(this[2])} |"
 
-    private fun List<Int>.toTableSeparator(): String = "|-${"-".repeat(this[0])}-|-${"-".repeat(this[1])}-|-${"-".repeat(this[2])}-|"
+    private fun List<Int>.toTableSeparator(): String =
+        "|-${"-".repeat(this[0])}-|-${"-".repeat(this[1])}-|-${"-".repeat(this[2])}-|"
 
     private fun SolvedProblem.toWidths(): List<Int> =
         listOf(
@@ -65,7 +66,8 @@ object SolvedProblemListGenerator {
     private fun SolvedProblem.toMarkdownRow(maxWidths: List<Int>): String {
         val index = number.toString().padEnd(maxWidths[0])
         val problemName = "[$title]($url)".padEnd(maxWidths[1])
-        val location = "[Solution](src/main/kotlin/me/bossm0n5t3r/leetcode/$fileName)".padEnd(maxWidths[2])
+        val location =
+            "[Solution](src/main/kotlin/me/bossm0n5t3r/leetcode/$fileName)".padEnd(maxWidths[2])
         return "| $index | $problemName | $location |"
     }
 

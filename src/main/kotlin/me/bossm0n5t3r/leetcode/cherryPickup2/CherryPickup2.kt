@@ -5,12 +5,7 @@ class CherryPickup2 {
         fun cherryPickup(grid: Array<IntArray>): Int {
             val row = grid.size
             val col = grid[0].size
-            val dp =
-                Array(row + 1) {
-                    Array(col + 1) {
-                        IntArray(col + 1) { -1 }
-                    }
-                }
+            val dp = Array(row + 1) { Array(col + 1) { IntArray(col + 1) { -1 } } }
             var result = 0
             dp[0][0][col - 1] = grid[0][0] + grid[0][col - 1]
 

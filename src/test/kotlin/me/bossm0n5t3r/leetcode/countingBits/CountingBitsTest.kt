@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class CountingBitsTest {
     private val sut = CountingBits.Solution()
 
-    private data class TestData(
-        val n: Int,
-        val result: IntArray,
-    ) {
+    private data class TestData(val n: Int, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -33,18 +30,10 @@ class CountingBitsTest {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    n = 2,
-                    result = intArrayOf(0, 1, 1),
-                ),
-                TestData(
-                    n = 5,
-                    result = intArrayOf(0, 1, 1, 2, 1, 2),
-                ),
+                TestData(n = 2, result = intArrayOf(0, 1, 1)),
+                TestData(n = 5, result = intArrayOf(0, 1, 1, 2, 1, 2)),
             )
 
-        tests.forEach { test ->
-            assertThat(sut.countBits(test.n)).isEqualTo(test.result)
-        }
+        tests.forEach { test -> assertThat(sut.countBits(test.n)).isEqualTo(test.result) }
     }
 }

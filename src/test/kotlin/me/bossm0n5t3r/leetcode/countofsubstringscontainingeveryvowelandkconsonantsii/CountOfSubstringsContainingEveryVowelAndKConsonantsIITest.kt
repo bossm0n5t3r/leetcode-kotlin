@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class CountOfSubstringsContainingEveryVowelAndKConsonantsIITest {
     private val sut = CountOfSubstringsContainingEveryVowelAndKConsonantsII.Solution()
 
-    private data class TestData(
-        val word: String,
-        val k: Int,
-        val result: Long,
-    )
+    private data class TestData(val word: String, val k: Int, val result: Long)
 
     @Test
     fun test() {
@@ -22,10 +18,7 @@ class CountOfSubstringsContainingEveryVowelAndKConsonantsIITest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.countOfSubstrings(testData.word, testData.k),
-            )
+            assertEquals(testData.result, sut.countOfSubstrings(testData.word, testData.k))
         }
     }
 }

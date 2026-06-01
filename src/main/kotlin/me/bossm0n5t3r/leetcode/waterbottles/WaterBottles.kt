@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.waterbottles
 
 class WaterBottles {
     class Solution {
-        fun numWaterBottles(
-            numBottles: Int,
-            numExchange: Int,
-        ): Int {
+        fun numWaterBottles(numBottles: Int, numExchange: Int): Int {
             var total = numBottles
             var remainder = numBottles
             while (remainder >= numExchange) {

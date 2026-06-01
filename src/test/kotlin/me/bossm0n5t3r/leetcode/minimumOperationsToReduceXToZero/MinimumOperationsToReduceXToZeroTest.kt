@@ -36,21 +36,9 @@ internal class MinimumOperationsToReduceXToZeroTest {
     fun minOperations() {
         val tests =
             listOf(
-                MinimumOperationsToReduceXToZeroTestData(
-                    intArrayOf(1, 1, 4, 2, 3),
-                    5,
-                    2,
-                ),
-                MinimumOperationsToReduceXToZeroTestData(
-                    intArrayOf(5, 6, 7, 8, 9),
-                    4,
-                    -1,
-                ),
-                MinimumOperationsToReduceXToZeroTestData(
-                    intArrayOf(3, 2, 20, 1, 1, 3),
-                    10,
-                    5,
-                ),
+                MinimumOperationsToReduceXToZeroTestData(intArrayOf(1, 1, 4, 2, 3), 5, 2),
+                MinimumOperationsToReduceXToZeroTestData(intArrayOf(5, 6, 7, 8, 9), 4, -1),
+                MinimumOperationsToReduceXToZeroTestData(intArrayOf(3, 2, 20, 1, 1, 3), 10, 5),
                 MinimumOperationsToReduceXToZeroTestData(
                     intArrayOf(
                         5297,
@@ -708,19 +696,15 @@ internal class MinimumOperationsToReduceXToZeroTest {
                 ),
             )
         tests.forEach { test ->
-            minimumOperationsToReduceXToZero
-                .minOperations(test.nums, test.x)
-                .also {
-                    println(it)
-                    assertEquals(it, test.result)
-                }
+            minimumOperationsToReduceXToZero.minOperations(test.nums, test.x).also {
+                println(it)
+                assertEquals(it, test.result)
+            }
 
-            minimumOperationsToReduceXToZero
-                .minOperationsUsingMap(test.nums, test.x)
-                .also {
-                    println(it)
-                    assertEquals(it, test.result)
-                }
+            minimumOperationsToReduceXToZero.minOperationsUsingMap(test.nums, test.x).also {
+                println(it)
+                assertEquals(it, test.result)
+            }
         }
     }
 }

@@ -5,10 +5,7 @@ import org.junit.jupiter.api.Test
 class MinimumNumberOfOperationsToMoveAllBallsToEachBoxTest {
     private val sut = MinimumNumberOfOperationsToMoveAllBallsToEachBox.Solution()
 
-    private data class TestData(
-        val boxes: String,
-        val result: IntArray,
-    ) {
+    private data class TestData(val boxes: String, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

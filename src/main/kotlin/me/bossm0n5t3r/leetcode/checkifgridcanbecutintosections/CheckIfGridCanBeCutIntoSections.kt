@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.checkifgridcanbecutintosections
 
 class CheckIfGridCanBeCutIntoSections {
     class Solution {
-        fun checkValidCuts(
-            n: Int,
-            rectangles: Array<IntArray>,
-        ): Boolean {
+        fun checkValidCuts(n: Int, rectangles: Array<IntArray>): Boolean {
             val xRanges = mutableListOf<Pair<Int, Int>>()
             val yRanges = mutableListOf<Pair<Int, Int>>()
             for (rectangle in rectangles) {

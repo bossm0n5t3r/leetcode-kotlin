@@ -4,15 +4,9 @@ import java.util.PriorityQueue
 
 class MeetingRoomsThree {
     class Solution {
-        fun mostBooked(
-            n: Int,
-            meetings: Array<IntArray>,
-        ): Int {
+        fun mostBooked(n: Int, meetings: Array<IntArray>): Int {
             val sortedMeetings = meetings.sortedBy { it[0] }
-            val free =
-                PriorityQueue<Int>().apply {
-                    this.addAll(0 until n)
-                }
+            val free = PriorityQueue<Int>().apply { this.addAll(0 until n) }
             val taken =
                 PriorityQueue<Pair<Int, Int>> { a, b ->
                     if (a.first == b.first) a.second - b.second else a.first - b.first

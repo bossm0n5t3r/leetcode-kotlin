@@ -10,10 +10,7 @@ class LinkedListCycleTest {
 
     private val basicListNode = ListNodeUtil.generateBasicSingleListNode()
 
-    data class LinkedListCycleTestData(
-        val head: List<ListNode?>,
-        val result: Boolean,
-    )
+    data class LinkedListCycleTestData(val head: List<ListNode?>, val result: Boolean)
 
     @Test
     fun hasCycle() {
@@ -31,36 +28,16 @@ class LinkedListCycleTest {
                     result = true,
                 ),
                 LinkedListCycleTestData(
-                    head =
-                        listOf(
-                            basicListNode[0][1],
-                            basicListNode[0][2],
-                            basicListNode[0][1],
-                        ),
+                    head = listOf(basicListNode[0][1], basicListNode[0][2], basicListNode[0][1]),
                     result = true,
                 ),
-                LinkedListCycleTestData(
-                    head =
-                        listOf(
-                            basicListNode[0][1],
-                        ),
-                    result = false,
-                ),
+                LinkedListCycleTestData(head = listOf(basicListNode[0][1]), result = false),
             )
         tests.forEach { test ->
             val head = ListNodeUtil.connectListNode(test.head)
-            assertEquals(
-                linkedListCycle.hasCycleFirstApproach(head),
-                test.result,
-            )
-            assertEquals(
-                linkedListCycle.hasCycleSecondApproach(head),
-                test.result,
-            )
-            assertEquals(
-                linkedListCycle.hasCycleThirdApproach(head),
-                test.result,
-            )
+            assertEquals(linkedListCycle.hasCycleFirstApproach(head), test.result)
+            assertEquals(linkedListCycle.hasCycleSecondApproach(head), test.result)
+            assertEquals(linkedListCycle.hasCycleThirdApproach(head), test.result)
             ListNodeUtil.clearBasicSingleListNode(basicListNode)
         }
     }

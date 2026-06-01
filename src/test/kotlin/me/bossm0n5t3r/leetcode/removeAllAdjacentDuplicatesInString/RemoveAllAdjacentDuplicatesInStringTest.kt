@@ -23,7 +23,8 @@ internal class RemoveAllAdjacentDuplicatesInStringTest {
             println(result)
             assertEquals(result, test.result)
 
-            val resultUsingTwoPointers = removeAllAdjacentDuplicatesInString.removeDuplicatesUsingTwoPointers(test.s)
+            val resultUsingTwoPointers =
+                removeAllAdjacentDuplicatesInString.removeDuplicatesUsingTwoPointers(test.s)
             println(resultUsingTwoPointers)
             assertEquals(resultUsingTwoPointers, test.result)
         }

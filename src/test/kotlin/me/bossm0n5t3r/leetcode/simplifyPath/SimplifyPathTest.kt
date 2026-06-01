@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class SimplifyPathTest {
     private val sut = SimplifyPath.Solution()
 
-    private data class TestData(
-        val path: String,
-        val result: String,
-    )
+    private data class TestData(val path: String, val result: String)
 
     @Test
     fun test() {
@@ -22,11 +19,6 @@ class SimplifyPathTest {
                 TestData("/../", "/"),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.simplifyPath(test.path),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.simplifyPath(test.path)) }
     }
 }

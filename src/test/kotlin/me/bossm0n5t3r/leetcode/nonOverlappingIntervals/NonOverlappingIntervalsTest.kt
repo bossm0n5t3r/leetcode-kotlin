@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class NonOverlappingIntervalsTest {
     private val sut = NonOverlappingIntervals.Solution()
 
-    private data class TestData(
-        val intervals: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val intervals: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,10 +37,7 @@ class NonOverlappingIntervalsTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.eraseOverlapIntervals(test.intervals),
-            )
+            assertEquals(test.result, sut.eraseOverlapIntervals(test.intervals))
         }
     }
 }

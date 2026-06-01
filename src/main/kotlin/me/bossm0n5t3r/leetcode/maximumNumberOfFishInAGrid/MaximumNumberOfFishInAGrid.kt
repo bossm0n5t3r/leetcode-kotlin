@@ -22,17 +22,9 @@ class MaximumNumberOfFishInAGrid {
             return result
         }
 
-        private fun bfs(
-            grid: Array<IntArray>,
-            m: Int,
-            n: Int,
-            r: Int,
-            c: Int,
-        ): Int {
+        private fun bfs(grid: Array<IntArray>, m: Int, n: Int, r: Int, c: Int): Int {
             val queue =
-                LinkedList<Pair<Int, Int>>().apply {
-                    this.offer(r to c)
-                } as Queue<Pair<Int, Int>>
+                LinkedList<Pair<Int, Int>>().apply { this.offer(r to c) } as Queue<Pair<Int, Int>>
             var result = 0
             while (queue.isNotEmpty()) {
                 val (curR, curC) = queue.poll()

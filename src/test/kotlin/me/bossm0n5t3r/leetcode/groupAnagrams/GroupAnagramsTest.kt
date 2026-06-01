@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class GroupAnagramsTest {
     private val groupAnagrams = GroupAnagrams.Solution()
 
-    data class GroupAnagramsTestData(
-        val strs: Array<String>,
-        val result: List<List<String>>,
-    ) {
+    data class GroupAnagramsTestData(val strs: Array<String>, val result: List<List<String>>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -35,30 +32,13 @@ class GroupAnagramsTest {
             listOf(
                 GroupAnagramsTestData(
                     arrayOf("eat", "tea", "tan", "ate", "nat", "bat"),
-                    listOf(
-                        listOf("bat"),
-                        listOf("nat", "tan"),
-                        listOf("ate", "eat", "tea"),
-                    ),
+                    listOf(listOf("bat"), listOf("nat", "tan"), listOf("ate", "eat", "tea")),
                 ),
-                GroupAnagramsTestData(
-                    arrayOf(""),
-                    listOf(
-                        listOf(""),
-                    ),
-                ),
-                GroupAnagramsTestData(
-                    arrayOf("a"),
-                    listOf(
-                        listOf("a"),
-                    ),
-                ),
+                GroupAnagramsTestData(arrayOf(""), listOf(listOf(""))),
+                GroupAnagramsTestData(arrayOf("a"), listOf(listOf("a"))),
                 GroupAnagramsTestData(
                     arrayOf("ddddddddddg", "dgggggggggg"),
-                    listOf(
-                        listOf("ddddddddddg"),
-                        listOf("dgggggggggg"),
-                    ),
+                    listOf(listOf("ddddddddddg"), listOf("dgggggggggg")),
                 ),
             )
         tests.forEach { test ->

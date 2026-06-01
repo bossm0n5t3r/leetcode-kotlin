@@ -5,18 +5,12 @@ import java.util.Queue
 
 class CountSubIslands {
     class Solution {
-        private data class Point(
-            val r: Int,
-            val c: Int,
-        )
+        private data class Point(val r: Int, val c: Int)
 
         private val dr = intArrayOf(0, 0, 1, -1)
         private val dc = intArrayOf(1, -1, 0, 0)
 
-        fun countSubIslands(
-            grid1: Array<IntArray>,
-            grid2: Array<IntArray>,
-        ): Int {
+        fun countSubIslands(grid1: Array<IntArray>, grid2: Array<IntArray>): Int {
             var result = 0
             val (m, n) = grid1.size to grid1[0].size
             val visited = Array(m) { BooleanArray(n) }
@@ -58,7 +52,12 @@ class CountSubIslands {
                 for (i in 0 until 4) {
                     val nr = r + dr[i]
                     val nc = c + dc[i]
-                    if (nr in 0 until m && nc in 0 until n && grid[nr][nc] == 1 && visited[nr][nc].not()) {
+                    if (
+                        nr in 0 until m &&
+                            nc in 0 until n &&
+                            grid[nr][nc] == 1 &&
+                            visited[nr][nc].not()
+                    ) {
                         visited[nr][nc] = true
                         queue.offer(Point(nr, nc))
                     }

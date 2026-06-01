@@ -13,11 +13,7 @@ class ReverseString {
             return s
         }
 
-        private fun swap(
-            s: CharArray,
-            i: Int,
-            j: Int,
-        ) {
+        private fun swap(s: CharArray, i: Int, j: Int) {
             tmpChar = s[i]
             s[i] = s[j]
             s[j] = tmpChar

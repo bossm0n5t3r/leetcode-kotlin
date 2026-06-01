@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class RearrangeArrayElementsBySignTest {
     private val sut = RearrangeArrayElementsBySign.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: IntArray,
-    ) {
+    private data class TestData(val nums: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,8 +35,6 @@ class RearrangeArrayElementsBySignTest {
                 TestData("[-1,1]".toIntArray(), "[1,-1]".toIntArray()),
             )
 
-        tests.forEach { test ->
-            assertThat(sut.rearrangeArray(test.nums)).isEqualTo(test.result)
-        }
+        tests.forEach { test -> assertThat(sut.rearrangeArray(test.nums)).isEqualTo(test.result) }
     }
 }

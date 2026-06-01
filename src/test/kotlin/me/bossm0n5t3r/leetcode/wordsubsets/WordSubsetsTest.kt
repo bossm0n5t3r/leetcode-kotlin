@@ -50,10 +50,7 @@ class WordSubsetsTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.wordSubsets(testData.words1, testData.words2),
-            )
+            assertEquals(testData.result, sut.wordSubsets(testData.words1, testData.words2))
         }
     }
 }

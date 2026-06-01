@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class LargestLocalValuesInAMatrixTest {
     private val sut = LargestLocalValuesInAMatrix.Solution()
 
-    private data class TestData(
-        val grid: Array<IntArray>,
-        val result: Array<IntArray>,
-    ) {
+    private data class TestData(val grid: Array<IntArray>, val result: Array<IntArray>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -39,15 +36,14 @@ class LargestLocalValuesInAMatrixTest {
                     "[[9,9],[8,6]]".toArrayOfIntArray(),
                 ),
                 TestData(
-                    "[[1,1,1,1,1],[1,1,1,1,1],[1,1,2,1,1],[1,1,1,1,1],[1,1,1,1,1]]".toArrayOfIntArray(),
+                    "[[1,1,1,1,1],[1,1,1,1,1],[1,1,2,1,1],[1,1,1,1,1],[1,1,1,1,1]]"
+                        .toArrayOfIntArray(),
                     "[[2,2,2],[2,2,2],[2,2,2]]".toArrayOfIntArray(),
                 ),
             )
 
         tests.forEach { test ->
-            assertTrue {
-                test.result.contentDeepEquals(sut.largestLocal(test.grid))
-            }
+            assertTrue { test.result.contentDeepEquals(sut.largestLocal(test.grid)) }
         }
     }
 }

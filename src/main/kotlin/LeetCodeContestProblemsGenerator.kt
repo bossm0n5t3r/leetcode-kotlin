@@ -1,16 +1,14 @@
 import LeetCodeHelper.toLowerCase
 import LeetCodeHelper.toPascalCase
-import kotlinx.coroutines.runBlocking
 import java.io.File
 import java.nio.file.Paths
 import kotlin.io.path.exists
+import kotlinx.coroutines.runBlocking
 
 object LeetCodeContestProblemsGenerator {
     fun run(contestSlug: String) {
         readProblemTitleSlugs(contestSlug).forEach { titleSlug ->
-            with(readProblem(titleSlug)) {
-                this.create()
-            }
+            with(readProblem(titleSlug)) { this.create() }
         }
     }
 
@@ -24,10 +22,9 @@ object LeetCodeContestProblemsGenerator {
         println("Done!")
     }
 
-    private fun readProblemTitleSlugs(contestSlug: String): List<String> =
-        runBlocking {
-            LeetCodeClient.getLeetCodeContestProblemTitleSlugsByContestSlug(contestSlug)
-        }
+    private fun readProblemTitleSlugs(contestSlug: String): List<String> = runBlocking {
+        LeetCodeClient.getLeetCodeContestProblemTitleSlugsByContestSlug(contestSlug)
+    }
 
     private fun readProblem(titleSlug: String): Problem {
         val problem = runBlocking { LeetCodeClient.getLeetCodeProblemByTitleSlug(titleSlug) }
@@ -56,14 +53,16 @@ object LeetCodeContestProblemsGenerator {
             println("Created directory: ${newProblemPath.toAbsolutePath()}\n")
 
             // Create README.md
-            File(newProblemPath.toString(), "README.md").writeText(
-                """
+            File(newProblemPath.toString(), "README.md")
+                .writeText(
+                    """
                 # $name
                 
                 - [$url]($url)
                 
-                """.trimIndent(),
-            )
+                """
+                        .trimIndent()
+                )
 
             // Create Problem
             val pascalCaseProblemName = name.toPascalCase()
@@ -75,12 +74,13 @@ object LeetCodeContestProblemsGenerator {
                         ""
                     }
                 }
-            File(newProblemPath.toString(), "$pascalCaseProblemName.kt").writeText(
-                "package me.bossm0n5t3r.leetcode.$filePath\n\n" +
-                    "class $pascalCaseProblemName {\n" +
-                    "${sampleCodeString}\n" +
-                    "}\n",
-            )
+            File(newProblemPath.toString(), "$pascalCaseProblemName.kt")
+                .writeText(
+                    "package me.bossm0n5t3r.leetcode.$filePath\n\n" +
+                        "class $pascalCaseProblemName {\n" +
+                        "${sampleCodeString}\n" +
+                        "}\n"
+                )
         } catch (e: Exception) {
             println("Error: ${e.message}")
         }
@@ -104,8 +104,9 @@ object LeetCodeContestProblemsGenerator {
             val pascalCaseTestName = name.toPascalCase()
             val pascalCaseTestClassName = "${pascalCaseTestName}Test"
 
-            File(newTestPath.toString(), "$pascalCaseTestClassName.kt").writeText(
-                """
+            File(newTestPath.toString(), "$pascalCaseTestClassName.kt")
+                .writeText(
+                    """
                 package me.bossm0n5t3r.leetcode.$filePath
 
                 import org.junit.jupiter.api.Test
@@ -133,8 +134,9 @@ object LeetCodeContestProblemsGenerator {
                     }
                 }
 
-                """.trimIndent(),
-            )
+                """
+                        .trimIndent()
+                )
         } catch (e: Exception) {
             println("Error: ${e.message}")
         }

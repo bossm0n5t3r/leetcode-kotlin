@@ -4,10 +4,7 @@ import kotlin.math.abs
 
 class FindKThSmallestPairDistance {
     class Solution {
-        fun smallestDistancePair(
-            nums: IntArray,
-            k: Int,
-        ): Int {
+        fun smallestDistancePair(nums: IntArray, k: Int): Int {
             val countArray = IntArray(1_000_001)
             for (i in 0 until nums.size - 1) {
                 for (j in i + 1 until nums.size) {

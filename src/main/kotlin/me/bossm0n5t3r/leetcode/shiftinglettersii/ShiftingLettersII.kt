@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.shiftinglettersii
 
 class ShiftingLettersII {
     class Solution {
-        fun shiftingLetters(
-            s: String,
-            shifts: Array<IntArray>,
-        ): String {
+        fun shiftingLetters(s: String, shifts: Array<IntArray>): String {
             val shiftResult =
                 shifts.fold(IntArray(s.length)) { acc: IntArray, shift: IntArray ->
                     val (start, end, direction) = shift

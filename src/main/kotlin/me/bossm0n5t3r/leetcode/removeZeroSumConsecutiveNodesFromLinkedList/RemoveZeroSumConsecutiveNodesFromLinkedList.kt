@@ -5,10 +5,7 @@ import me.bossm0n5t3r.leetcode.utils.ListNode
 class RemoveZeroSumConsecutiveNodesFromLinkedList {
     class Solution {
         fun removeZeroSumSublists(head: ListNode?): ListNode? =
-            head
-                .toMutableList()
-                .removeAllZeroSumSubLists()
-                .toListNode()
+            head.toMutableList().removeAllZeroSumSubLists().toListNode()
 
         private fun ListNode?.toMutableList(): MutableList<Int> {
             val result = mutableListOf<Int>()
@@ -40,10 +37,8 @@ class RemoveZeroSumConsecutiveNodesFromLinkedList {
             return copied
         }
 
-        private fun List<Int>.removeRange(
-            i: Int,
-            j: Int,
-        ): List<Int> = this.subList(0, i) + this.subList(j, this.size)
+        private fun List<Int>.removeRange(i: Int, j: Int): List<Int> =
+            this.subList(0, i) + this.subList(j, this.size)
 
         private fun List<Int>.toListNode(): ListNode? {
             if (this.isEmpty()) return null

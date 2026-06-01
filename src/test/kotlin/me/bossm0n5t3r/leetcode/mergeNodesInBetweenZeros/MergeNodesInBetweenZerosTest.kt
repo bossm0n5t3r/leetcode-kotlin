@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class MergeNodesInBetweenZerosTest {
     private val sut = MergeNodesInBetweenZeros.Solution()
 
-    private data class TestData(
-        val head: ListNode?,
-        val result: ListNode?,
-    )
+    private data class TestData(val head: ListNode?, val result: ListNode?)
 
     @Test
     fun test() {
@@ -28,12 +25,7 @@ class MergeNodesInBetweenZerosTest {
             )
 
         tests.forEach { test ->
-            assertTrue {
-                ListNodeUtil.isEqual(
-                    sut.mergeNodes(test.head),
-                    test.result,
-                )
-            }
+            assertTrue { ListNodeUtil.isEqual(sut.mergeNodes(test.head), test.result) }
         }
     }
 }

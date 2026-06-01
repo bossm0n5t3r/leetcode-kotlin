@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class RemoveNodesFromLinkedListTest {
     private val sut = RemoveNodesFromLinkedList.Solution()
 
-    private data class TestData(
-        val head: ListNode?,
-        val result: ListNode?,
-    )
+    private data class TestData(val head: ListNode?, val result: ListNode?)
 
     @Test
     fun test() {
@@ -28,12 +25,7 @@ class RemoveNodesFromLinkedListTest {
             )
 
         tests.forEach { test ->
-            assertTrue {
-                ListNodeUtil.isEqual(
-                    test.result,
-                    sut.removeNodes(test.head),
-                )
-            }
+            assertTrue { ListNodeUtil.isEqual(test.result, sut.removeNodes(test.head)) }
         }
     }
 }

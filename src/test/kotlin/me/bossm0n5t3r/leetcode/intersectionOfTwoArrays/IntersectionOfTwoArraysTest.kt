@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class IntersectionOfTwoArraysTest {
     private val sut = IntersectionOfTwoArrays.Solution()
 
-    private data class TestData(
-        val nums1: IntArray,
-        val nums2: IntArray,
-        val result: IntArray,
-    ) {
+    private data class TestData(val nums1: IntArray, val nums2: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -41,7 +37,8 @@ class IntersectionOfTwoArraysTest {
             )
 
         tests.forEach { test ->
-            assertThat(sut.intersection(test.nums1, test.nums2)).containsExactlyInAnyOrder(test.result.toTypedArray())
+            assertThat(sut.intersection(test.nums1, test.nums2))
+                .containsExactlyInAnyOrder(test.result.toTypedArray())
         }
     }
 }

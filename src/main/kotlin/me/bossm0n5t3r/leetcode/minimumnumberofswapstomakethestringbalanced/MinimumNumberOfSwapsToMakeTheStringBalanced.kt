@@ -12,7 +12,8 @@ class MinimumNumberOfSwapsToMakeTheStringBalanced {
             for (c in sCharArray) {
                 if (c == '[') openBrackets++ else closeBrackets++
                 if (openBrackets < closeBrackets) {
-                    val (updatedCloseBracketIndex, updatedOpenBracketIndex) = swap(sCharArray, closeBracketIndex, openBracketIndex)
+                    val (updatedCloseBracketIndex, updatedOpenBracketIndex) =
+                        swap(sCharArray, closeBracketIndex, openBracketIndex)
                     closeBracketIndex = updatedCloseBracketIndex
                     openBracketIndex = updatedOpenBracketIndex
                     closeBrackets--
@@ -23,11 +24,7 @@ class MinimumNumberOfSwapsToMakeTheStringBalanced {
             return result
         }
 
-        private fun swap(
-            sCharArray: CharArray,
-            startIndex: Int,
-            endIndex: Int,
-        ): Pair<Int, Int> {
+        private fun swap(sCharArray: CharArray, startIndex: Int, endIndex: Int): Pair<Int, Int> {
             var s = startIndex
             var e = endIndex
             while (s < sCharArray.size && sCharArray[s] == '[') {

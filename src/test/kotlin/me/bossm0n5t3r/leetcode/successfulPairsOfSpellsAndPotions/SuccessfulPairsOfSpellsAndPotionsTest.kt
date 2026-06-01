@@ -55,7 +55,8 @@ class SuccessfulPairsOfSpellsAndPotionsTest {
             )
 
         tests.forEach { test ->
-            assertThat(sut.successfulPairs(test.spells, test.potions, test.success)).isEqualTo(test.result)
+            assertThat(sut.successfulPairs(test.spells, test.potions, test.success))
+                .isEqualTo(test.result)
         }
     }
 }

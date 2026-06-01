@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class AbbreviatingTheProductOfARangeTest {
     private val sut = AbbreviatingTheProductOfARange.Solution()
 
-    private data class TestData(
-        val left: Int,
-        val right: Int,
-        val result: String,
-    )
+    private data class TestData(val left: Int, val right: Int, val result: String)
 
     @Test
     fun test() {
@@ -23,10 +19,7 @@ class AbbreviatingTheProductOfARangeTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.abbreviateProduct(testData.left, testData.right),
-            )
+            assertEquals(testData.result, sut.abbreviateProduct(testData.left, testData.right))
         }
     }
 }

@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.countthenumberofgoodsubarrays
 
 class CountTheNumberOfGoodSubarrays {
     class Solution {
-        fun countGood(
-            nums: IntArray,
-            k: Int,
-        ): Long {
+        fun countGood(nums: IntArray, k: Int): Long {
             var k = k
             var count = 0L
             val countMap = mutableMapOf<Int, Int>()

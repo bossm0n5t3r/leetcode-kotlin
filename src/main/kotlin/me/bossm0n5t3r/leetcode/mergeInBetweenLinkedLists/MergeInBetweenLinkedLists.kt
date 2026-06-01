@@ -4,12 +4,7 @@ import me.bossm0n5t3r.leetcode.utils.ListNode
 
 class MergeInBetweenLinkedLists {
     class Solution {
-        fun mergeInBetween(
-            list1: ListNode?,
-            a: Int,
-            b: Int,
-            list2: ListNode?,
-        ): ListNode? {
+        fun mergeInBetween(list1: ListNode?, a: Int, b: Int, list2: ListNode?): ListNode? {
             var currNode = list1
             var index = 0
             while (index < a - 1) {

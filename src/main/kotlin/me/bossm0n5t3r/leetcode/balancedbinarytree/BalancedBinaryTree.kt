@@ -8,7 +8,9 @@ class BalancedBinaryTree {
             if (root == null) return true
             val leftHeight = root.left?.getHeight() ?: 0
             val rightHeight = root.right?.getHeight() ?: 0
-            return abs(leftHeight - rightHeight) <= 1 && isBalanced(root.left) && isBalanced(root.right)
+            return abs(leftHeight - rightHeight) <= 1 &&
+                isBalanced(root.left) &&
+                isBalanced(root.right)
         }
 
         private fun TreeNode.getHeight(): Int {

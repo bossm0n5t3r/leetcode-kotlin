@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class MaximumValueOfAnOrderedTripletIITest {
     private val sut = MaximumValueOfAnOrderedTripletII.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Long,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Long) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,10 +37,7 @@ class MaximumValueOfAnOrderedTripletIITest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.maximumTripletValue(testData.nums),
-            )
+            assertEquals(testData.result, sut.maximumTripletValue(testData.nums))
         }
     }
 }

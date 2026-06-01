@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class CountGoodNumbersTest {
     private val sut = CountGoodNumbers.Solution()
 
-    private data class TestData(
-        val n: Long,
-        val result: Int,
-    )
+    private data class TestData(val n: Long, val result: Int)
 
     @Test
     fun test() {
@@ -22,10 +19,7 @@ class CountGoodNumbersTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.countGoodNumbers(testData.n),
-            )
+            assertEquals(testData.result, sut.countGoodNumbers(testData.n))
         }
     }
 }

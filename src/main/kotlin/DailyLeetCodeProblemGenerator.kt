@@ -1,9 +1,9 @@
 import LeetCodeHelper.toLowerCase
 import LeetCodeHelper.toPascalCase
-import kotlinx.coroutines.runBlocking
 import java.io.File
 import java.nio.file.Paths
 import kotlin.io.path.exists
+import kotlinx.coroutines.runBlocking
 
 object DailyLeetCodeProblemGenerator {
     fun generateProblem(titleSlug: String = "") =
@@ -76,14 +76,16 @@ object DailyLeetCodeProblemGenerator {
             println("Created directory: ${newProblemPath.toAbsolutePath()}\n")
 
             // Create README.md
-            File(newProblemPath.toString(), "README.md").writeText(
-                """
+            File(newProblemPath.toString(), "README.md")
+                .writeText(
+                    """
                 # $name
                 
                 - [$url]($url)
                 
-                """.trimIndent(),
-            )
+                """
+                        .trimIndent()
+                )
 
             // Create Problem
             val pascalCaseProblemName = name.toPascalCase()
@@ -95,12 +97,13 @@ object DailyLeetCodeProblemGenerator {
                         ""
                     }
                 }
-            File(newProblemPath.toString(), "$pascalCaseProblemName.kt").writeText(
-                "package me.bossm0n5t3r.leetcode.$filePath\n\n" +
-                    "class $pascalCaseProblemName {\n" +
-                    "${sampleCodeString}\n" +
-                    "}\n",
-            )
+            File(newProblemPath.toString(), "$pascalCaseProblemName.kt")
+                .writeText(
+                    "package me.bossm0n5t3r.leetcode.$filePath\n\n" +
+                        "class $pascalCaseProblemName {\n" +
+                        "${sampleCodeString}\n" +
+                        "}\n"
+                )
         } catch (e: Exception) {
             println("Error: ${e.message}")
         }
@@ -124,8 +127,9 @@ object DailyLeetCodeProblemGenerator {
             val pascalCaseTestName = name.toPascalCase()
             val pascalCaseTestClassName = "${pascalCaseTestName}Test"
 
-            File(newTestPath.toString(), "$pascalCaseTestClassName.kt").writeText(
-                """
+            File(newTestPath.toString(), "$pascalCaseTestClassName.kt")
+                .writeText(
+                    """
                 package me.bossm0n5t3r.leetcode.$filePath
 
                 import org.junit.jupiter.api.Test
@@ -153,8 +157,9 @@ object DailyLeetCodeProblemGenerator {
                     }
                 }
 
-                """.trimIndent(),
-            )
+                """
+                        .trimIndent()
+                )
         } catch (e: Exception) {
             println("Error: ${e.message}")
         }

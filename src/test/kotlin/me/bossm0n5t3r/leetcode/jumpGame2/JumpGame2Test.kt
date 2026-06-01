@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 internal class JumpGame2Test {
     private val sut = JumpGame2.Solution()
 
-    private data class Example(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    private data class Example(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -32,12 +29,7 @@ internal class JumpGame2Test {
     @Test
     fun jump() {
         val tests =
-            listOf(
-                Example(intArrayOf(2, 3, 1, 1, 4), 2),
-                Example(intArrayOf(2, 3, 0, 1, 4), 2),
-            )
-        tests.forEach { test ->
-            assertEquals(sut.jump(test.nums), test.result)
-        }
+            listOf(Example(intArrayOf(2, 3, 1, 1, 4), 2), Example(intArrayOf(2, 3, 0, 1, 4), 2))
+        tests.forEach { test -> assertEquals(sut.jump(test.nums), test.result) }
     }
 }

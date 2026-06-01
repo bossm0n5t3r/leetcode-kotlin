@@ -43,7 +43,11 @@ class MostBeautifulItemForEachQueryTest {
                     "[1,2,3,4,5,6]".toIntArray(),
                     "[2,4,5,5,6,6]".toIntArray(),
                 ),
-                TestData("[[1,2],[1,2],[1,3],[1,4]]".toArrayOfIntArray(), "[1]".toIntArray(), "[4]".toIntArray()),
+                TestData(
+                    "[[1,2],[1,2],[1,3],[1,4]]".toArrayOfIntArray(),
+                    "[1]".toIntArray(),
+                    "[4]".toIntArray(),
+                ),
                 TestData("[[10,1000]]".toArrayOfIntArray(), "[5]".toIntArray(), "[0]".toIntArray()),
             )
 

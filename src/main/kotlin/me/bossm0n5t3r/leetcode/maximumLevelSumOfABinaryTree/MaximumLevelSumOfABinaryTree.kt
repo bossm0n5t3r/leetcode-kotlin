@@ -1,7 +1,7 @@
 package me.bossm0n5t3r.leetcode.maximumLevelSumOfABinaryTree
 
-import me.bossm0n5t3r.leetcode.utils.TreeNode
 import java.util.LinkedList
+import me.bossm0n5t3r.leetcode.utils.TreeNode
 
 class MaximumLevelSumOfABinaryTree {
     class Solution {
@@ -10,10 +10,7 @@ class MaximumLevelSumOfABinaryTree {
             var level = 0
             var smallestLevel = Int.MAX_VALUE
             var maximalSum = Int.MIN_VALUE
-            val queue =
-                LinkedList<TreeNode>().apply {
-                    this.add(root)
-                }
+            val queue = LinkedList<TreeNode>().apply { this.add(root) }
             while (queue.isNotEmpty()) {
                 val size = queue.size
                 var tmp = 0

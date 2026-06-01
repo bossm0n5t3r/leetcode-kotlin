@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.distributeCandiesAmongChildrenTwo
 
 class DistributeCandiesAmongChildrenTwo {
     class Solution {
-        fun distributeCandies(
-            n: Int,
-            limit: Int,
-        ): Long {
+        fun distributeCandies(n: Int, limit: Int): Long {
             var result = 0L
             for (i in 0..minOf(n, limit)) {
                 val remain = n - i

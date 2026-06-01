@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class DistributeElementsIntoTwoArraysITest {
     private val sut = DistributeElementsIntoTwoArraysI.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: IntArray,
-    ) {
+    private data class TestData(val nums: IntArray, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -37,8 +34,6 @@ class DistributeElementsIntoTwoArraysITest {
                 TestData(intArrayOf(5, 4, 3, 8), intArrayOf(5, 3, 4, 8)),
             )
 
-        tests.forEach { test ->
-            assertThat(sut.resultArray(test.nums)).isEqualTo(test.result)
-        }
+        tests.forEach { test -> assertThat(sut.resultArray(test.nums)).isEqualTo(test.result) }
     }
 }

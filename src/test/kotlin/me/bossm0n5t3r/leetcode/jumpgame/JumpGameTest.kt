@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class JumpGameTest {
     private val sut = JumpGame.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Boolean,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Boolean) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,10 +35,7 @@ class JumpGameTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.canJump(testData.nums),
-            )
+            assertEquals(testData.result, sut.canJump(testData.nums))
         }
     }
 }

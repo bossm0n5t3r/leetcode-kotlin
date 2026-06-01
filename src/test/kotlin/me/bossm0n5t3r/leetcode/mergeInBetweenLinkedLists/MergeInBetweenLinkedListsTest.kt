@@ -32,12 +32,26 @@ class MergeInBetweenLinkedListsTest {
                     2,
                     5,
                     ListNodeUtil.generateListNode(1000000, 1000001, 1000002, 1000003, 1000004),
-                    ListNodeUtil.generateListNode(0, 1, 1000000, 1000001, 1000002, 1000003, 1000004, 6),
+                    ListNodeUtil.generateListNode(
+                        0,
+                        1,
+                        1000000,
+                        1000001,
+                        1000002,
+                        1000003,
+                        1000004,
+                        6,
+                    ),
                 ),
             )
 
         tests.forEach { test ->
-            assertTrue(ListNodeUtil.isEqual(sut.mergeInBetween(test.list1, test.a, test.b, test.list2), test.result))
+            assertTrue(
+                ListNodeUtil.isEqual(
+                    sut.mergeInBetween(test.list1, test.a, test.b, test.list2),
+                    test.result,
+                )
+            )
         }
     }
 }

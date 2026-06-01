@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class MissingNumberTest {
     private val missingNumber = MissingNumber.Solution()
 
-    data class MissingNumberTestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    data class MissingNumberTestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,8 +35,6 @@ class MissingNumberTest {
                 MissingNumberTestData(intArrayOf(9, 6, 4, 2, 3, 5, 7, 0, 1), 8),
                 MissingNumberTestData(intArrayOf(0), 1),
             )
-        tests.forEach { test ->
-            assertEquals(missingNumber.missingNumber(test.nums), test.result)
-        }
+        tests.forEach { test -> assertEquals(missingNumber.missingNumber(test.nums), test.result) }
     }
 }

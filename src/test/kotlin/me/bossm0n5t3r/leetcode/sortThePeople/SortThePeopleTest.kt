@@ -51,9 +51,7 @@ class SortThePeopleTest {
             )
 
         tests.forEach { test ->
-            assertTrue {
-                sut.sortPeople(test.names, test.heights).contentDeepEquals(test.result)
-            }
+            assertTrue { sut.sortPeople(test.names, test.heights).contentDeepEquals(test.result) }
         }
     }
 }

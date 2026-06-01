@@ -6,16 +6,27 @@ import org.junit.jupiter.api.Test
 class BinaryWatchTest {
     private val sut = BinaryWatch.Solution()
 
-    private data class TestData(
-        val turnedOn: Int,
-        val result: List<String>,
-    )
+    private data class TestData(val turnedOn: Int, val result: List<String>)
 
     @Test
     fun test() {
         val testDataList =
             listOf(
-                TestData(1, listOf("0:01", "0:02", "0:04", "0:08", "0:16", "0:32", "1:00", "2:00", "4:00", "8:00")),
+                TestData(
+                    1,
+                    listOf(
+                        "0:01",
+                        "0:02",
+                        "0:04",
+                        "0:08",
+                        "0:16",
+                        "0:32",
+                        "1:00",
+                        "2:00",
+                        "4:00",
+                        "8:00",
+                    ),
+                ),
                 TestData(9, emptyList()),
                 TestData(0, listOf("0:00")),
                 TestData(

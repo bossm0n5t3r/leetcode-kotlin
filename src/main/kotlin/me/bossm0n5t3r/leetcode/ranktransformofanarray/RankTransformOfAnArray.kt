@@ -4,8 +4,7 @@ class RankTransformOfAnArray {
     class Solution {
         fun arrayRankTransform(arr: IntArray): IntArray {
             val numToRank =
-                arr
-                    .toList()
+                arr.toList()
                     .groupBy { it }
                     .keys
                     .sorted()

@@ -6,25 +6,14 @@ import org.junit.jupiter.api.Test
 class LetterTilePossibilitiesTest {
     private val sut = LetterTilePossibilities.Solution()
 
-    private data class TestData(
-        val tiles: String,
-        val result: Int,
-    )
+    private data class TestData(val tiles: String, val result: Int)
 
     @Test
     fun test() {
-        val testDataList =
-            listOf(
-                TestData("AAB", 8),
-                TestData("AAABBC", 188),
-                TestData("V", 1),
-            )
+        val testDataList = listOf(TestData("AAB", 8), TestData("AAABBC", 188), TestData("V", 1))
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.numTilePossibilities(testData.tiles),
-            )
+            assertEquals(testData.result, sut.numTilePossibilities(testData.tiles))
         }
     }
 }

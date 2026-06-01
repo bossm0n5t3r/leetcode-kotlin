@@ -10,11 +10,7 @@ class MaximumTwinSumOfALinkedList {
             var result = Int.MIN_VALUE
             while (curHead != null && reverse != null) {
                 val tmp = curHead.`val` + reverse.`val`
-                result =
-                    maxOf(
-                        result,
-                        tmp,
-                    )
+                result = maxOf(result, tmp)
                 curHead = curHead.next
                 reverse = reverse.next
             }

@@ -6,10 +6,7 @@ class SumOfRootToLeafBinaryNumbers {
     class Solution {
         fun sumRootToLeaf(root: TreeNode?): Int = calculateSum(root, 0)
 
-        private fun calculateSum(
-            node: TreeNode?,
-            currentSum: Int,
-        ): Int {
+        private fun calculateSum(node: TreeNode?, currentSum: Int): Int {
             if (node == null) return 0
 
             // 현재까지의 합에 2를 곱하고(비트 시프트) 현재 노드 값을 더함

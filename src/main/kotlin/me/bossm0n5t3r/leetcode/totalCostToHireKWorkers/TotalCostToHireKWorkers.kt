@@ -5,25 +5,19 @@ import kotlin.collections.ArrayDeque
 
 class TotalCostToHireKWorkers {
     class Solution {
-        fun totalCost(
-            costs: IntArray,
-            k: Int,
-            candidates: Int,
-        ): Long {
+        fun totalCost(costs: IntArray, k: Int, candidates: Int): Long {
             if (costs.size < candidates * 2) {
                 return costs.sorted().take(k).sumOf { it.toLong() }
             }
             var totalCost = 0L
-            val costToIndexPriorityQueue = PriorityQueue(compareBy<Pair<Int, Int>> { it.first }.thenBy { it.second })
+            val costToIndexPriorityQueue =
+                PriorityQueue(compareBy<Pair<Int, Int>> { it.first }.thenBy { it.second })
 
             val costToIndex =
-                costs
-                    .mapIndexed { index, cost -> cost to index }
-                    .sortedBy { it.second }
+                costs.mapIndexed { index, cost -> cost to index }.sortedBy { it.second }
 
             val costToIndexArrayDeque =
-                ArrayDeque<Pair<Int, Int>>()
-                    .apply { this.addAll(costToIndex) }
+                ArrayDeque<Pair<Int, Int>>().apply { this.addAll(costToIndex) }
             val firstIndices = mutableSetOf<Int>()
             val lastIndices = mutableSetOf<Int>()
 

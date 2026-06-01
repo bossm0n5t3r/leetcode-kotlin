@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class PascalsTriangleTest {
     private val pascalsTriangle = PascalsTriangle.Solution()
 
-    data class PascalsTriangleTestData(
-        val numsRow: Int,
-        val result: List<List<Int>>,
-    )
+    data class PascalsTriangleTestData(val numsRow: Int, val result: List<List<Int>>)
 
     @Test
     fun generate() {
@@ -27,8 +24,6 @@ class PascalsTriangleTest {
                 ),
                 PascalsTriangleTestData(1, listOf(listOf(1))),
             )
-        tests.forEach { test ->
-            assertEquals(pascalsTriangle.generate(test.numsRow), test.result)
-        }
+        tests.forEach { test -> assertEquals(pascalsTriangle.generate(test.numsRow), test.result) }
     }
 }

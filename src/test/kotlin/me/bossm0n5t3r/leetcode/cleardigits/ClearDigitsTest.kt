@@ -6,24 +6,14 @@ import org.junit.jupiter.api.Test
 class ClearDigitsTest {
     private val sut = ClearDigits.Solution()
 
-    private data class TestData(
-        val s: String,
-        val result: String,
-    )
+    private data class TestData(val s: String, val result: String)
 
     @Test
     fun test() {
-        val testDataList =
-            listOf(
-                TestData("abc", "abc"),
-                TestData("cb34", ""),
-            )
+        val testDataList = listOf(TestData("abc", "abc"), TestData("cb34", ""))
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.clearDigits(testData.s),
-            )
+            assertEquals(testData.result, sut.clearDigits(testData.s))
         }
     }
 }

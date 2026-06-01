@@ -4,10 +4,7 @@ class MultiplyStrings {
     class Solution {
         private val zero = '0'.code
 
-        fun multiply(
-            num1: String,
-            num2: String,
-        ): String {
+        fun multiply(num1: String, num2: String): String {
             val layer = mutableListOf<String>()
             var maxLength = 0
             (num2.length - 1 downTo 0).forEachIndexed { index, i ->
@@ -18,14 +15,13 @@ class MultiplyStrings {
                 }
                 layer.add(tmp)
             }
-            val paddingZeroLayer =
-                layer.map {
-                    if (it.length < maxLength) {
-                        it.padStart(maxLength, '0')
-                    } else {
-                        it
-                    }
+            val paddingZeroLayer = layer.map {
+                if (it.length < maxLength) {
+                    it.padStart(maxLength, '0')
+                } else {
+                    it
                 }
+            }
             var result = ""
             var jump = 0
             (maxLength - 1 downTo 0).forEach { i ->
@@ -42,10 +38,7 @@ class MultiplyStrings {
             return result
         }
 
-        private fun multiplyOneDigit(
-            num1: String,
-            digit: Char,
-        ): String {
+        private fun multiplyOneDigit(num1: String, digit: Char): String {
             val intDigit = digit.code - zero
             var result = ""
             var jump = 0

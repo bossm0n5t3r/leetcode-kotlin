@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class RemoveZeroSumConsecutiveNodesFromLinkedListTest {
     private val sut = RemoveZeroSumConsecutiveNodesFromLinkedList.Solution()
 
-    private data class TestData(
-        val head: ListNode?,
-        val result: ListNode?,
-    )
+    private data class TestData(val head: ListNode?, val result: ListNode?)
 
     @Test
     fun test() {
@@ -33,10 +30,7 @@ class RemoveZeroSumConsecutiveNodesFromLinkedListTest {
                     ListNodeUtil.generateListNode(1, 3, 2, -3, -2, 5, 5, -5, 1),
                     ListNodeUtil.generateListNode(1, 5, 1),
                 ),
-                TestData(
-                    ListNodeUtil.generateListNode(0, 0),
-                    ListNodeUtil.generateListNode(),
-                ),
+                TestData(ListNodeUtil.generateListNode(0, 0), ListNodeUtil.generateListNode()),
                 TestData(
                     ListNodeUtil.generateListNode(-1, 1, 0, 1),
                     ListNodeUtil.generateListNode(1),

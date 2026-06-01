@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class CombinationSum3Test {
     private val sut = CombinationSum3.Solution()
 
-    private data class TestData(
-        val k: Int,
-        val n: Int,
-        val result: List<List<Int>>,
-    )
+    private data class TestData(val k: Int, val n: Int, val result: List<List<Int>>)
 
     @Test
     fun test() {
@@ -22,11 +18,6 @@ class CombinationSum3Test {
                 TestData(4, 1, "[]".toListOfIntList()),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                sut.combinationSum3(test.k, test.n),
-                test.result,
-            )
-        }
+        tests.forEach { test -> assertEquals(sut.combinationSum3(test.k, test.n), test.result) }
     }
 }

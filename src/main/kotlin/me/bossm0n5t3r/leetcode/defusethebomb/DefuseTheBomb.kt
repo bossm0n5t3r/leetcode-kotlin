@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.defusethebomb
 
 class DefuseTheBomb {
     class Solution {
-        fun decrypt(
-            code: IntArray,
-            k: Int,
-        ): IntArray {
+        fun decrypt(code: IntArray, k: Int): IntArray {
             var result = IntArray(code.size).toList()
             if (k == 0) return result.toIntArray()
             var count = if (k > 0) k else -k

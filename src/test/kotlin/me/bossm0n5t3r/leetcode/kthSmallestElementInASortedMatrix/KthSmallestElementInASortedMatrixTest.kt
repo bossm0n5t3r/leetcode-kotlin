@@ -41,15 +41,17 @@ class KthSmallestElementInASortedMatrixTest {
                     8,
                     13,
                 ),
-                KthSmallestElementInASortedMatrixTestData(
-                    arrayOf(intArrayOf(-5)),
-                    1,
-                    -5,
-                ),
+                KthSmallestElementInASortedMatrixTestData(arrayOf(intArrayOf(-5)), 1, -5),
             )
         tests.forEach { test ->
-            assertEquals(kthSmallestElementInASortedMatrix.kthSmallest(test.matrix, test.k), test.result)
-            assertEquals(kthSmallestElementInASortedMatrix.kthSmallestByUsingBiSect(test.matrix, test.k), test.result)
+            assertEquals(
+                kthSmallestElementInASortedMatrix.kthSmallest(test.matrix, test.k),
+                test.result,
+            )
+            assertEquals(
+                kthSmallestElementInASortedMatrix.kthSmallestByUsingBiSect(test.matrix, test.k),
+                test.result,
+            )
         }
     }
 }

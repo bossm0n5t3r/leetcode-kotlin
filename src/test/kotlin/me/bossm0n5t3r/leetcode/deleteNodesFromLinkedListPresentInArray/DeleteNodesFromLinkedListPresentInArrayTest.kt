@@ -8,11 +8,7 @@ import org.junit.jupiter.api.Test
 class DeleteNodesFromLinkedListPresentInArrayTest {
     private val sut = DeleteNodesFromLinkedListPresentInArray.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val head: ListNode?,
-        val result: ListNode?,
-    ) {
+    private data class TestData(val nums: IntArray, val head: ListNode?, val result: ListNode?) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -56,9 +52,7 @@ class DeleteNodesFromLinkedListPresentInArrayTest {
             )
 
         tests.forEach { test ->
-            assertTrue {
-                ListNodeUtil.isEqual(sut.modifiedList(test.nums, test.head), test.result)
-            }
+            assertTrue { ListNodeUtil.isEqual(sut.modifiedList(test.nums, test.head), test.result) }
         }
     }
 }

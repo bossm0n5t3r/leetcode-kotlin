@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class SlidingPuzzleTest {
     private val sut = SlidingPuzzle.Solution()
 
-    private data class TestData(
-        val board: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val board: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,10 +37,7 @@ class SlidingPuzzleTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.slidingPuzzle(testData.board),
-            )
+            assertEquals(testData.result, sut.slidingPuzzle(testData.board))
         }
     }
 }

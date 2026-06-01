@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class ReverseOnlyLettersTest {
     private val sut = ReverseOnlyLetters.Solution()
 
-    private data class TestData(
-        val s: String,
-        val result: String,
-    )
+    private data class TestData(val s: String, val result: String)
 
     @Test
     fun test() {
@@ -21,10 +18,7 @@ class ReverseOnlyLettersTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.reverseOnlyLetters(testData.s),
-            )
+            assertEquals(testData.result, sut.reverseOnlyLetters(testData.s))
         }
     }
 }

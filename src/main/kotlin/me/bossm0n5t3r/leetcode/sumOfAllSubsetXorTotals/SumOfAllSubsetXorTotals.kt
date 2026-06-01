@@ -8,12 +8,7 @@ class SumOfAllSubsetXorTotals {
             return result.first()
         }
 
-        private fun dfs(
-            nums: IntArray,
-            index: Int,
-            curXor: Int,
-            result: IntArray,
-        ) {
+        private fun dfs(nums: IntArray, index: Int, curXor: Int, result: IntArray) {
             if (index == nums.size) {
                 result[0] += curXor
                 return

@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class MinimumTimeToVisitACellInAGridTest {
     private val sut = MinimumTimeToVisitACellInAGrid.Solution()
 
-    private data class TestData(
-        val grid: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val grid: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -118,16 +115,16 @@ class MinimumTimeToVisitACellInAGridTest {
                     3487,90922,48595,67492,27477,29950,33956,21923,44758,51379,15187,60353,36501,91945,361,73727,28589,81386,98937,54482,82324],[2884,
                     27889,65184,97101,46240,43679,56817,6811,77530,87062,10882,39246,71974,84923,49851,16401,33633,71109,59604,86549,88723,87023],[174
                     87,44579,66797,93512,24551,3696,31058,1294,70832,72388,81117,84561,58907,68282,51589,17136,31265,18430,96723,91522,51100,91198]]
-                    """.trimIndent().replace("\n", "").toArrayOfIntArray(),
+                    """
+                        .trimIndent()
+                        .replace("\n", "")
+                        .toArrayOfIntArray(),
                     91199,
                 ),
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.minimumTime(testData.grid),
-            )
+            assertEquals(testData.result, sut.minimumTime(testData.grid))
         }
     }
 }

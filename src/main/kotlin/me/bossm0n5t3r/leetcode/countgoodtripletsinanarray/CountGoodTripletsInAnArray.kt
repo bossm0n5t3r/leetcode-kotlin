@@ -2,15 +2,10 @@ package me.bossm0n5t3r.leetcode.countgoodtripletsinanarray
 
 class CountGoodTripletsInAnArray {
     class Solution {
-        class FenwickTree(
-            size: Int,
-        ) {
+        class FenwickTree(size: Int) {
             private val tree = IntArray(size + 1)
 
-            fun update(
-                index: Int,
-                delta: Int,
-            ) {
+            fun update(index: Int, delta: Int) {
                 var tmpIndex = index
                 tmpIndex++
                 while (tmpIndex < tree.size) {
@@ -31,10 +26,7 @@ class CountGoodTripletsInAnArray {
             }
         }
 
-        fun goodTriplets(
-            nums1: IntArray,
-            nums2: IntArray,
-        ): Long {
+        fun goodTriplets(nums1: IntArray, nums2: IntArray): Long {
             val n = nums1.size
             val pos2 = IntArray(n)
             val reversedIndexMapping = IntArray(n)

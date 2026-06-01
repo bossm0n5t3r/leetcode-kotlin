@@ -4,10 +4,7 @@ import java.util.Stack
 
 class BackspaceStringCompare {
     class Solution {
-        fun backspaceCompare(
-            s: String,
-            t: String,
-        ): Boolean {
+        fun backspaceCompare(s: String, t: String): Boolean {
             val sStack = Stack<Char>()
             val tStack = Stack<Char>()
             s.forEach { c ->
@@ -27,10 +24,7 @@ class BackspaceStringCompare {
             return sStack == tStack
         }
 
-        fun backspaceCompareWithRestriction(
-            s: String,
-            t: String,
-        ): Boolean {
+        fun backspaceCompareWithRestriction(s: String, t: String): Boolean {
             // Follow up: Can you solve it in O(n) time and O(1) space?
             var sIdx = s.length - 1
             var tIdx = t.length - 1

@@ -7,12 +7,7 @@ import org.junit.jupiter.api.Test
 class DivideAnArrayIntoSubarraysWithMinimumCostIITest {
     private val sut = DivideAnArrayIntoSubarraysWithMinimumCostII.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val k: Int,
-        val dist: Int,
-        val result: Long,
-    ) {
+    private data class TestData(val nums: IntArray, val k: Int, val dist: Int, val result: Long) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,31 +35,13 @@ class DivideAnArrayIntoSubarraysWithMinimumCostIITest {
     fun test() {
         val testDataList =
             listOf(
-                TestData(
-                    "[1,3,2,6,4,2]".toIntArray(),
-                    3,
-                    3,
-                    5,
-                ),
-                TestData(
-                    "[10,1,2,2,2,1]".toIntArray(),
-                    4,
-                    3,
-                    15,
-                ),
-                TestData(
-                    "[10,8,18,9]".toIntArray(),
-                    3,
-                    1,
-                    36,
-                ),
+                TestData("[1,3,2,6,4,2]".toIntArray(), 3, 3, 5),
+                TestData("[10,1,2,2,2,1]".toIntArray(), 4, 3, 15),
+                TestData("[10,8,18,9]".toIntArray(), 3, 1, 36),
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.minimumCost(testData.nums, testData.k, testData.dist),
-            )
+            assertEquals(testData.result, sut.minimumCost(testData.nums, testData.k, testData.dist))
         }
     }
 }

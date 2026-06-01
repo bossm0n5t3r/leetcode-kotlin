@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class OpenTheLockTest {
     private val sut = OpenTheLock.Solution()
 
-    private data class TestData(
-        val deadends: Array<String>,
-        val target: String,
-        val result: Int,
-    ) {
+    private data class TestData(val deadends: Array<String>, val target: String, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,14 +34,15 @@ class OpenTheLockTest {
             listOf(
                 TestData(arrayOf("0201", "0101", "0102", "1212", "2002"), "0202", 6),
                 TestData(arrayOf("8888"), "0009", 1),
-                TestData(arrayOf("8887", "8889", "8878", "8898", "8788", "8988", "7888", "9888"), "8888", -1),
+                TestData(
+                    arrayOf("8887", "8889", "8878", "8898", "8788", "8988", "7888", "9888"),
+                    "8888",
+                    -1,
+                ),
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.openLock(test.deadends, test.target),
-            )
+            assertEquals(test.result, sut.openLock(test.deadends, test.target))
         }
     }
 }

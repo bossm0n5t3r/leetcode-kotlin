@@ -34,12 +34,9 @@ internal class SudokuSolverTest {
             .split("],[")
             .map { row ->
                 val rowLength = row.length
-                row
-                    .substring(1, rowLength - 1)
-                    .split("\",\"")
-                    .map { it.single() }
-                    .toCharArray()
-            }.toTypedArray()
+                row.substring(1, rowLength - 1).split("\",\"").map { it.single() }.toCharArray()
+            }
+            .toTypedArray()
     }
 
     @Test
@@ -58,7 +55,9 @@ internal class SudokuSolverTest {
                         [".","6",".",".",".",".","2","8","."],
                         [".",".",".","4","1","9",".",".","5"],
                         [".",".",".",".","8",".",".","7","9"]]
-                        """.trimIndent().toSudokuBoard(),
+                        """
+                            .trimIndent()
+                            .toSudokuBoard(),
                     result =
                         """
                         [["5","3","4","6","7","8","9","1","2"],
@@ -70,7 +69,9 @@ internal class SudokuSolverTest {
                         ["9","6","1","5","3","7","2","8","4"],
                         ["2","8","7","4","1","9","6","3","5"],
                         ["3","4","5","2","8","6","1","7","9"]]
-                        """.trimIndent().toSudokuBoard(),
+                        """
+                            .trimIndent()
+                            .toSudokuBoard(),
                 ),
                 SudokuSolverTestData(
                     board =
@@ -84,7 +85,9 @@ internal class SudokuSolverTest {
                         [".",".",".","8",".","3",".","2","."],
                         [".",".",".",".",".",".",".",".","6"],
                         [".",".",".","2","7","5","9",".","."]]
-                        """.trimIndent().toSudokuBoard(),
+                        """
+                            .trimIndent()
+                            .toSudokuBoard(),
                     result =
                         """
                         [["5","1","9","7","4","8","6","3","2"],
@@ -96,7 +99,9 @@ internal class SudokuSolverTest {
                         ["9","7","5","8","6","3","1","2","4"],
                         ["8","3","2","4","9","1","7","5","6"],
                         ["6","4","1","2","7","5","9","8","3"]]
-                        """.trimIndent().toSudokuBoard(),
+                        """
+                            .trimIndent()
+                            .toSudokuBoard(),
                 ),
             )
         tests.forEach { test ->
@@ -122,7 +127,9 @@ internal class SudokuSolverTest {
             ["9","6","1","5","3","7","2","8","4"],
             ["2","8","7","4","1","9","6","3","5"],
             ["3","4","5","2","8","6","1","7","9"]]
-            """.trimIndent().toSudokuBoard()
+            """
+                .trimIndent()
+                .toSudokuBoard()
         assertTrue(sudokuSolver.isValid(validResult))
         val invalidResult =
             """
@@ -135,7 +142,9 @@ internal class SudokuSolverTest {
             [".","6",".",".",".",".","2","8","."],
             [".",".",".","4","1","9",".",".","5"],
             [".",".",".",".","8",".",".","7","9"]]
-            """.trimIndent().toSudokuBoard()
+            """
+                .trimIndent()
+                .toSudokuBoard()
         assertFalse(sudokuSolver.isValid(invalidResult))
     }
 }

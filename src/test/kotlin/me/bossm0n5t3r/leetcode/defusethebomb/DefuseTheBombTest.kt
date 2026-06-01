@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class DefuseTheBombTest {
     private val sut = DefuseTheBomb.Solution()
 
-    private data class TestData(
-        val code: IntArray,
-        val k: Int,
-        val result: IntArray,
-    ) {
+    private data class TestData(val code: IntArray, val k: Int, val result: IntArray) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -43,9 +39,7 @@ class DefuseTheBombTest {
             )
 
         for (testData in testDataList) {
-            assertTrue {
-                testData.result.contentEquals(sut.decrypt(testData.code, testData.k))
-            }
+            assertTrue { testData.result.contentEquals(sut.decrypt(testData.code, testData.k)) }
         }
     }
 }

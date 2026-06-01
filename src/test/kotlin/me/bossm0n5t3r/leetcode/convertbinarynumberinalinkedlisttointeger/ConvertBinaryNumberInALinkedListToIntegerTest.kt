@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test
 class ConvertBinaryNumberInALinkedListToIntegerTest {
     private val sut = ConvertBinaryNumberInALinkedListToInteger.Solution()
 
-    private data class TestData(
-        val head: ListNode?,
-        val result: Int,
-    )
+    private data class TestData(val head: ListNode?, val result: Int)
 
     @Test
     fun test() {
@@ -22,10 +19,7 @@ class ConvertBinaryNumberInALinkedListToIntegerTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.getDecimalValue(testData.head),
-            )
+            assertEquals(testData.result, sut.getDecimalValue(testData.head))
         }
     }
 }

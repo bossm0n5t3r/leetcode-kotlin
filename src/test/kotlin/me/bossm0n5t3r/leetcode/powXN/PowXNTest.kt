@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class PowXNTest {
     private val sut = PowXN.Solution()
 
-    private data class TestData(
-        val x: Double,
-        val n: Int,
-        val result: Double,
-    )
+    private data class TestData(val x: Double, val n: Int, val result: Double)
 
     @Test
     fun test() {
@@ -22,11 +18,6 @@ class PowXNTest {
                 TestData(0.00001, 2147483647, 0.0),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.myPow(test.x, test.n),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.myPow(test.x, test.n)) }
     }
 }

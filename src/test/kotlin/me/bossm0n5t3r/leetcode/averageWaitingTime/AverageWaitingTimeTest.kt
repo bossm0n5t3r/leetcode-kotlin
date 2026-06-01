@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class AverageWaitingTimeTest {
     private val sut = AverageWaitingTime.Solution()
 
-    private data class TestData(
-        val customers: Array<IntArray>,
-        val result: Double,
-    ) {
+    private data class TestData(val customers: Array<IntArray>, val result: Double) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,11 +35,6 @@ class AverageWaitingTimeTest {
                 TestData("[[5,2],[5,4],[10,3],[20,1]]".toArrayOfIntArray(), 3.25000),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.averageWaitingTime(test.customers),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.averageWaitingTime(test.customers)) }
     }
 }

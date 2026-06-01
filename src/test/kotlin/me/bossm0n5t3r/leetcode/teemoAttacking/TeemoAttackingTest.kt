@@ -7,11 +7,7 @@ import org.junit.jupiter.api.Test
 class TeemoAttackingTest {
     private val sut = TeemoAttacking.Solution()
 
-    private data class TestData(
-        val timeSeries: IntArray,
-        val duration: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val timeSeries: IntArray, val duration: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -37,23 +33,12 @@ class TeemoAttackingTest {
     fun test() {
         val tests =
             listOf(
-                TestData(
-                    timeSeries = "[1,4]".toIntArray(),
-                    duration = 2,
-                    result = 4,
-                ),
-                TestData(
-                    timeSeries = "[1,2]".toIntArray(),
-                    duration = 2,
-                    result = 3,
-                ),
+                TestData(timeSeries = "[1,4]".toIntArray(), duration = 2, result = 4),
+                TestData(timeSeries = "[1,2]".toIntArray(), duration = 2, result = 3),
             )
 
         tests.forEach { test ->
-            assertEquals(
-                sut.findPoisonedDuration(test.timeSeries, test.duration),
-                test.result,
-            )
+            assertEquals(sut.findPoisonedDuration(test.timeSeries, test.duration), test.result)
         }
     }
 }

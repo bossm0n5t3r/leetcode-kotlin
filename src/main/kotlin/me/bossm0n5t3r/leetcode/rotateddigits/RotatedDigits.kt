@@ -17,15 +17,7 @@ class RotatedDigits {
 
         companion object {
             private val ROTATED_DIGITS =
-                mapOf(
-                    0 to 0,
-                    1 to 1,
-                    8 to 8,
-                    2 to 5,
-                    5 to 2,
-                    6 to 9,
-                    9 to 6,
-                )
+                mapOf(0 to 0, 1 to 1, 8 to 8, 2 to 5, 5 to 2, 6 to 9, 9 to 6)
         }
     }
 }

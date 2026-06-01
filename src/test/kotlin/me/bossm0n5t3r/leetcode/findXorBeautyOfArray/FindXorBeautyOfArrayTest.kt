@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class FindXorBeautyOfArrayTest {
     private val sut = FindXorBeautyOfArray.Solution()
 
-    private data class TestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    private data class TestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -37,11 +34,6 @@ class FindXorBeautyOfArrayTest {
                 TestData(intArrayOf(15, 45, 20, 2, 34, 35, 5, 44, 32, 30), 34),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.xorBeauty(test.nums),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.xorBeauty(test.nums)) }
     }
 }

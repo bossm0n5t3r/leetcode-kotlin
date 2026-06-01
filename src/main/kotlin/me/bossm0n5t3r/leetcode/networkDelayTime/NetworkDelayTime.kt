@@ -4,15 +4,11 @@ import java.util.PriorityQueue
 
 class NetworkDelayTime {
     class Solution {
-        fun networkDelayTime(
-            times: Array<IntArray>,
-            n: Int,
-            k: Int,
-        ): Int {
+        fun networkDelayTime(times: Array<IntArray>, n: Int, k: Int): Int {
             val graph =
-                times.groupBy { it.first() }.mapValues { (_, value) ->
-                    value.map { it[1] to it[2] }
-                }
+                times
+                    .groupBy { it.first() }
+                    .mapValues { (_, value) -> value.map { it[1] to it[2] } }
             val (dist, _) = dijkstra(graph, n, k)
 
             return dist.maxOrNull()?.let {

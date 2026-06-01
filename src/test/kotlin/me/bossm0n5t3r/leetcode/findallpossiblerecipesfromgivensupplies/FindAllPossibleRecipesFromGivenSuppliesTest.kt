@@ -55,7 +55,8 @@ class FindAllPossibleRecipesFromGivenSuppliesTest {
                 ),
                 TestData(
                     "[\"bread\",\"sandwich\",\"burger\"]".toArrayOfString(),
-                    "[[\"yeast\",\"flour\"],[\"bread\",\"meat\"],[\"sandwich\",\"meat\",\"bread\"]]".toListOfStringList(),
+                    "[[\"yeast\",\"flour\"],[\"bread\",\"meat\"],[\"sandwich\",\"meat\",\"bread\"]]"
+                        .toListOfStringList(),
                     "[\"yeast\",\"flour\",\"meat\"]".toArrayOfString(),
                     listOf("bread", "sandwich", "burger"),
                 ),
@@ -70,8 +71,9 @@ class FindAllPossibleRecipesFromGivenSuppliesTest {
 
         for (testData in testDataList) {
             assertThat(
-                sut.findAllRecipes(testData.recipes, testData.ingredients, testData.supplies),
-            ).containsExactlyElementsOf(testData.result)
+                    sut.findAllRecipes(testData.recipes, testData.ingredients, testData.supplies)
+                )
+                .containsExactlyElementsOf(testData.result)
         }
     }
 }

@@ -8,11 +8,7 @@ import org.junit.jupiter.api.Test
 class NumberOfGoodLeafNodesPairsTest {
     private val sut = NumberOfGoodLeafNodesPairs.Solution()
 
-    private data class TestData(
-        val root: TreeNode?,
-        val distance: Int,
-        val result: Int,
-    )
+    private data class TestData(val root: TreeNode?, val distance: Int, val result: Int)
 
     @Test
     fun test() {
@@ -22,21 +18,7 @@ class NumberOfGoodLeafNodesPairsTest {
                 TestData(TreeNodeUtil.generateTreeNodeOrNull(listOf(1, 2, 3, 4, 5, 6, 7)), 3, 2),
                 TestData(
                     TreeNodeUtil.generateTreeNodeOrNull(
-                        listOf(
-                            7,
-                            1,
-                            4,
-                            6,
-                            null,
-                            5,
-                            3,
-                            null,
-                            null,
-                            null,
-                            null,
-                            null,
-                            2,
-                        ),
+                        listOf(7, 1, 4, 6, null, 5, 3, null, null, null, null, null, 2)
                     ),
                     3,
                     1,
@@ -44,10 +26,7 @@ class NumberOfGoodLeafNodesPairsTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.countPairs(test.root, test.distance),
-            )
+            assertEquals(test.result, sut.countPairs(test.root, test.distance))
         }
     }
 }

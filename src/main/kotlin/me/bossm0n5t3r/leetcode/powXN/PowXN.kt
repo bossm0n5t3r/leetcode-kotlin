@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.powXN
 
 class PowXN {
     class Solution {
-        fun myPow(
-            x: Double,
-            n: Int,
-        ): Double {
+        fun myPow(x: Double, n: Int): Double {
             var varX = x
             var varN = n
             if (varN < 0) {

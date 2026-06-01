@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 class CheckIfAWordOccursAsAPrefixOfAnyWordInASentenceTest {
     private val sut = CheckIfAWordOccursAsAPrefixOfAnyWordInASentence.Solution()
 
-    private data class TestData(
-        val sentence: String,
-        val searchWord: String,
-        val result: Int,
-    )
+    private data class TestData(val sentence: String, val searchWord: String, val result: Int)
 
     @Test
     fun test() {

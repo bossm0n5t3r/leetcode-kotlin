@@ -4,10 +4,7 @@ import me.bossm0n5t3r.leetcode.utils.ListNode
 
 class ReverseNodesInKGroup {
     class Solution {
-        fun reverseKGroup(
-            head: ListNode?,
-            k: Int,
-        ): ListNode? =
+        fun reverseKGroup(head: ListNode?, k: Int): ListNode? =
             head
                 ?.toList()
                 ?.chunked(k)

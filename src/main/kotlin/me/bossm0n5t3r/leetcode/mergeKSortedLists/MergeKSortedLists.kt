@@ -1,7 +1,7 @@
 package me.bossm0n5t3r.leetcode.mergeKSortedLists
 
-import me.bossm0n5t3r.leetcode.utils.ListNode
 import java.util.PriorityQueue
+import me.bossm0n5t3r.leetcode.utils.ListNode
 
 class MergeKSortedLists {
     class Solution {

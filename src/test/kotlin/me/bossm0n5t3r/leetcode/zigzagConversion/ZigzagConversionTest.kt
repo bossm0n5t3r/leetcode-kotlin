@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test
 internal class ZigzagConversionTest {
     private val zigzagConversion = ZigzagConversion.Solution()
 
-    private data class ZigzagConversionTestData(
-        val s: String,
-        val numRows: Int,
-        val result: String,
-    )
+    private data class ZigzagConversionTestData(val s: String, val numRows: Int, val result: String)
 
     @Test
     fun convert() {

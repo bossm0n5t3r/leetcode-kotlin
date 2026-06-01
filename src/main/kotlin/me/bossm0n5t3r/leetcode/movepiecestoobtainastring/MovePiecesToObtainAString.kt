@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.movepiecestoobtainastring
 
 class MovePiecesToObtainAString {
     class Solution {
-        fun canChange(
-            start: String,
-            target: String,
-        ): Boolean {
+        fun canChange(start: String, target: String): Boolean {
             val n = start.length
             var startIndex = 0
             var targetIndex = 0

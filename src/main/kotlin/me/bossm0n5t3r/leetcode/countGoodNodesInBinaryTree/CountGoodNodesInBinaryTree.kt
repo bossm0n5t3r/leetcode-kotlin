@@ -1,16 +1,13 @@
 package me.bossm0n5t3r.leetcode.countGoodNodesInBinaryTree
 
-import me.bossm0n5t3r.leetcode.utils.TreeNode
 import java.util.Stack
+import me.bossm0n5t3r.leetcode.utils.TreeNode
 
 class CountGoodNodesInBinaryTree {
     class Solution {
         fun goodNodes(root: TreeNode?): Int {
             if (root == null) return 0
-            val stack =
-                Stack<Pair<TreeNode, Int>>().also {
-                    it.push(root to root.`val`)
-                }
+            val stack = Stack<Pair<TreeNode, Int>>().also { it.push(root to root.`val`) }
             var result = 0
             while (stack.isNotEmpty()) {
                 val (cur, maxOfPath) = stack.pop()

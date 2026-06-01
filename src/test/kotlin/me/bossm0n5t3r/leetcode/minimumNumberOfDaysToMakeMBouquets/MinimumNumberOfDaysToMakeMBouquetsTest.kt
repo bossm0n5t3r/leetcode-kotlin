@@ -6,12 +6,7 @@ import org.junit.jupiter.api.Test
 class MinimumNumberOfDaysToMakeMBouquetsTest {
     private val sut = MinimumNumberOfDaysToMakeMBouquets.Solution()
 
-    private data class TestData(
-        val bloomDay: IntArray,
-        val m: Int,
-        val k: Int,
-        val result: Int,
-    ) {
+    private data class TestData(val bloomDay: IntArray, val m: Int, val k: Int, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -45,10 +40,7 @@ class MinimumNumberOfDaysToMakeMBouquetsTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.minDays(test.bloomDay, test.m, test.k),
-            )
+            assertEquals(test.result, sut.minDays(test.bloomDay, test.m, test.k))
         }
     }
 }

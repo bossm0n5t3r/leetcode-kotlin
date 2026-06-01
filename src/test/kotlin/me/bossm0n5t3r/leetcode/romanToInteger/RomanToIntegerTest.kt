@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class RomanToIntegerTest {
     private val romanToInteger = RomanToInteger.Solution()
 
-    data class RomanToIntegerTestData(
-        val s: String,
-        val result: Int,
-    )
+    data class RomanToIntegerTestData(val s: String, val result: Int)
 
     @Test
     fun romanToInt() {
@@ -21,8 +18,6 @@ class RomanToIntegerTest {
                 RomanToIntegerTestData("MCMXCIV", 1994),
                 RomanToIntegerTestData("III", 3),
             )
-        tests.forEach { test ->
-            assertEquals(romanToInteger.romanToInt(test.s), test.result)
-        }
+        tests.forEach { test -> assertEquals(romanToInteger.romanToInt(test.s), test.result) }
     }
 }

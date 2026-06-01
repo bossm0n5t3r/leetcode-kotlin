@@ -4,13 +4,7 @@ import java.math.BigInteger
 
 class StringToInteger {
     class Solution {
-        fun myAtoi(s: String): Int =
-            s
-                .step1()
-                .step2()
-                .step3()
-                .step4()
-                .step5()
+        fun myAtoi(s: String): Int = s.step1().step2().step3().step4().step5()
 
         private fun String.step1(): Pair<Char, String> = '+' to this.trim()
 

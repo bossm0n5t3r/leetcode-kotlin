@@ -4,10 +4,7 @@ import me.bossm0n5t3r.leetcode.utils.ListNode
 
 class RemoveNthNodeFromEndOfList {
     class Solution {
-        fun removeNthFromEnd(
-            head: ListNode?,
-            n: Int,
-        ): ListNode? {
+        fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
             val valueList = mutableListOf<Int>()
             var cur = head
             while (cur != null) {
@@ -26,10 +23,7 @@ class RemoveNthNodeFromEndOfList {
             return result
         }
 
-        fun removeNthFromEndUsingPointers(
-            head: ListNode?,
-            n: Int,
-        ): ListNode? {
+        fun removeNthFromEndUsingPointers(head: ListNode?, n: Int): ListNode? {
             val start = ListNode(-1)
             var slow: ListNode? = start
             var fast: ListNode? = start

@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 class MajorityElementTest {
     private val majorityElement = MajorityElement.Solution()
 
-    data class MajorityElementTestData(
-        val nums: IntArray,
-        val result: Int,
-    ) {
+    data class MajorityElementTestData(val nums: IntArray, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

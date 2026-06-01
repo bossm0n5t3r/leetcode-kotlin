@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class CountServersThatCommunicateTest {
     private val sut = CountServersThatCommunicate.Solution()
 
-    private data class TestData(
-        val grid: Array<IntArray>,
-        val result: Int,
-    ) {
+    private data class TestData(val grid: Array<IntArray>, val result: Int) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -40,10 +37,7 @@ class CountServersThatCommunicateTest {
             )
 
         for (testData in testDataList) {
-            assertEquals(
-                testData.result,
-                sut.countServers(testData.grid),
-            )
+            assertEquals(testData.result, sut.countServers(testData.grid))
         }
     }
 }

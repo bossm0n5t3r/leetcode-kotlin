@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.kokoEatingBananas
 
 class KokoEatingBananas {
     class Solution {
-        fun minEatingSpeed(
-            piles: IntArray,
-            h: Int,
-        ): Int {
+        fun minEatingSpeed(piles: IntArray, h: Int): Int {
             val maxPile = binarySearchForFindingMax(piles, 0, piles.size - 1)
             if (piles.size == h) return maxPile
             var start = 0
@@ -24,11 +21,7 @@ class KokoEatingBananas {
         }
 
         @Suppress("ReturnCount")
-        private fun binarySearchForFindingMax(
-            piles: IntArray,
-            start: Int,
-            end: Int,
-        ): Int {
+        private fun binarySearchForFindingMax(piles: IntArray, start: Int, end: Int): Int {
             if (start > end) return -1
             if (start == end) return piles[start]
             if (start + 1 == end) return maxOf(piles[start], piles[end])
@@ -40,11 +33,7 @@ class KokoEatingBananas {
             )
         }
 
-        private fun isValid(
-            piles: IntArray,
-            h: Int,
-            k: Int,
-        ): Boolean {
+        private fun isValid(piles: IntArray, h: Int, k: Int): Boolean {
             var hours = 0L
             for (pile in piles) {
                 hours += pile / k

@@ -5,18 +5,14 @@ import kotlin.math.min
 class MinimumAbsoluteDifferenceQueries {
     class Solution {
         /**
-         * @link https://leetcode.com/problems/minimum-absolute-difference-queries/discuss/1284329/Java-or-Prefix-sum-or-Easy-to-Understand-or-What-if-constraints-were-different
+         * @link
+         *   https://leetcode.com/problems/minimum-absolute-difference-queries/discuss/1284329/Java-or-Prefix-sum-or-Easy-to-Understand-or-What-if-constraints-were-different
          */
-        fun minDifference(
-            nums: IntArray,
-            queries: Array<IntArray>,
-        ): IntArray {
+        fun minDifference(nums: IntArray, queries: Array<IntArray>): IntArray {
             val n = nums.size
             val count = Array(n + 1) { IntArray(100) { 0 } }
             (0 until n).forEach { i ->
-                (0 until 100).forEach { j ->
-                    count[i + 1][j] = count[i][j]
-                }
+                (0 until 100).forEach { j -> count[i + 1][j] = count[i][j] }
                 ++count[i + 1][nums[i] - 1]
             }
 
@@ -38,7 +34,8 @@ class MinimumAbsoluteDifferenceQueries {
                         min = -1
                     }
                     min
-                }.toIntArray()
+                }
+                .toIntArray()
         }
     }
 }

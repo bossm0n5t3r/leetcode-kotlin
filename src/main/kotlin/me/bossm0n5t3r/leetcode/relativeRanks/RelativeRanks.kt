@@ -14,11 +14,9 @@ class RelativeRanks {
                                 2 -> "Bronze Medal"
                                 else -> "${index + 1}"
                             }
-                    }.toMap()
-            return score
-                .toList()
-                .mapNotNull { scoreToRank[it] }
-                .toTypedArray()
+                    }
+                    .toMap()
+            return score.toList().mapNotNull { scoreToRank[it] }.toTypedArray()
         }
     }
 }

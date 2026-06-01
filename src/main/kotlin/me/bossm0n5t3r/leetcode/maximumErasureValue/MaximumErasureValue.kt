@@ -15,7 +15,8 @@ class MaximumErasureValue {
                         start++
                     }
                 }
-                result = result.coerceAtLeast(partialSum[end] - partialSum.getOrElse(start - 1) { 0 })
+                result =
+                    result.coerceAtLeast(partialSum[end] - partialSum.getOrElse(start - 1) { 0 })
                 cache[num] = end
             }
             return result

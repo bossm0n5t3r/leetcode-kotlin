@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test
 class ThreeConsecutiveOddsTest {
     private val sut = ThreeConsecutiveOdds.Solution()
 
-    private data class TestData(
-        val arr: IntArray,
-        val result: Boolean,
-    ) {
+    private data class TestData(val arr: IntArray, val result: Boolean) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -38,11 +35,6 @@ class ThreeConsecutiveOddsTest {
                 TestData("[1,2,34,3,4,5,7,23,12]".toIntArray(), true),
             )
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.threeConsecutiveOdds(test.arr),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.threeConsecutiveOdds(test.arr)) }
     }
 }

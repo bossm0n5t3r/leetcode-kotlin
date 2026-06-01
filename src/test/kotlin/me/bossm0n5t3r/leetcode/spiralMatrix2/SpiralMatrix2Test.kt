@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 internal class SpiralMatrix2Test {
     private val spiralMatrix2 = SpiralMatrix2.Solution()
 
-    private data class SpiralMatrix2TestData(
-        val n: Int,
-        val result: Array<IntArray>,
-    ) {
+    private data class SpiralMatrix2TestData(val n: Int, val result: Array<IntArray>) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
@@ -35,18 +32,9 @@ internal class SpiralMatrix2Test {
             listOf(
                 SpiralMatrix2TestData(
                     3,
-                    arrayOf(
-                        intArrayOf(1, 2, 3),
-                        intArrayOf(8, 9, 4),
-                        intArrayOf(7, 6, 5),
-                    ),
+                    arrayOf(intArrayOf(1, 2, 3), intArrayOf(8, 9, 4), intArrayOf(7, 6, 5)),
                 ),
-                SpiralMatrix2TestData(
-                    1,
-                    arrayOf(
-                        intArrayOf(1),
-                    ),
-                ),
+                SpiralMatrix2TestData(1, arrayOf(intArrayOf(1))),
             )
         tests.forEach { test ->
             val result = spiralMatrix2.generateMatrix(test.n)

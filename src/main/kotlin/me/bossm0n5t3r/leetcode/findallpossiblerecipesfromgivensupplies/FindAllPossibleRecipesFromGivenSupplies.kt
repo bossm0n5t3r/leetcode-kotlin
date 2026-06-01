@@ -32,7 +32,10 @@ class FindAllPossibleRecipesFromGivenSupplies {
                     canMake = false
                     break
                 }
-                if (!supplies.contains(i) && !canMakeRecipe(i, supplies, recipeAndIngredientMap, visited + i)) {
+                if (
+                    !supplies.contains(i) &&
+                        !canMakeRecipe(i, supplies, recipeAndIngredientMap, visited + i)
+                ) {
                     canMake = false
                     break
                 }

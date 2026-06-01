@@ -6,25 +6,12 @@ import org.junit.jupiter.api.Test
 class MinimumLengthOfStringAfterDeletingSimilarEndsTest {
     private val sut = MinimumLengthOfStringAfterDeletingSimilarEnds.Solution()
 
-    private data class TestData(
-        val s: String,
-        val result: Int,
-    )
+    private data class TestData(val s: String, val result: Int)
 
     @Test
     fun test() {
-        val tests =
-            listOf(
-                TestData("ca", 2),
-                TestData("cabaabac", 0),
-                TestData("aabccabba", 3),
-            )
+        val tests = listOf(TestData("ca", 2), TestData("cabaabac", 0), TestData("aabccabba", 3))
 
-        tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.minimumLength(test.s),
-            )
-        }
+        tests.forEach { test -> assertEquals(test.result, sut.minimumLength(test.s)) }
     }
 }

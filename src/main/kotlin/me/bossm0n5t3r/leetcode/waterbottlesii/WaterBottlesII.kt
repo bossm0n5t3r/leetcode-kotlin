@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.waterbottlesii
 
 class WaterBottlesII {
     class Solution {
-        fun maxBottlesDrunk(
-            numBottles: Int,
-            numExchange: Int,
-        ): Int {
+        fun maxBottlesDrunk(numBottles: Int, numExchange: Int): Int {
             var total = 0
             var fullBottles = numBottles
             var emptyBottles = 0

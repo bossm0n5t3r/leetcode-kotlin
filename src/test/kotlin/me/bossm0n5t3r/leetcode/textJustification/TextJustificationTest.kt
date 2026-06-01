@@ -37,15 +37,7 @@ class TextJustificationTest {
         val tests =
             listOf(
                 TestData(
-                    arrayOf(
-                        "This",
-                        "is",
-                        "an",
-                        "example",
-                        "of",
-                        "text",
-                        "justification.",
-                    ),
+                    arrayOf("This", "is", "an", "example", "of", "text", "justification."),
                     16,
                     listOf("This    is    an", "example  of text", "justification.  "),
                 ),
@@ -88,10 +80,7 @@ class TextJustificationTest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.fullJustify(test.words, test.maxWidth),
-            )
+            assertEquals(test.result, sut.fullJustify(test.words, test.maxWidth))
         }
     }
 }

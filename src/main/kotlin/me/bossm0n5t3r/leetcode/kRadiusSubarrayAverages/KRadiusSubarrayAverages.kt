@@ -2,10 +2,7 @@ package me.bossm0n5t3r.leetcode.kRadiusSubarrayAverages
 
 class KRadiusSubarrayAverages {
     class Solution {
-        fun getAverages(
-            nums: IntArray,
-            k: Int,
-        ): IntArray {
+        fun getAverages(nums: IntArray, k: Int): IntArray {
             val result = IntArray(nums.size) { -1 }
             val diameter = 2 * k + 1
             if (nums.size < diameter) return result

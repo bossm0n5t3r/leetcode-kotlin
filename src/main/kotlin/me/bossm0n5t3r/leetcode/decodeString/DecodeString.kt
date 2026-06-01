@@ -32,9 +32,7 @@ class DecodeString {
                         }
                         tmp.deleteCharAt(0)
                         tmp.deleteCharAt(tmp.lastIndex)
-                        repeat(stack.toString().toInt()) {
-                            result.append(tmp)
-                        }
+                        repeat(stack.toString().toInt()) { result.append(tmp) }
                         stack.clear()
                         idx--
                     }
@@ -48,34 +46,33 @@ class DecodeString {
             return if (result.contains('[')) decodeString(result.toString()) else result.toString()
         }
 
-        fun decodeStringUsingStack(s: String): String =
-            buildString {
-                val repeatStack = ArrayDeque<Pair<Int, Int>>()
-                var numOfRepeats = 0
-                for (c in s) {
-                    when (c) {
-                        in numbers -> {
-                            numOfRepeats = numOfRepeats * 10 + (c - '0')
-                        }
+        fun decodeStringUsingStack(s: String): String = buildString {
+            val repeatStack = ArrayDeque<Pair<Int, Int>>()
+            var numOfRepeats = 0
+            for (c in s) {
+                when (c) {
+                    in numbers -> {
+                        numOfRepeats = numOfRepeats * 10 + (c - '0')
+                    }
 
-                        '[' -> {
-                            repeatStack += (numOfRepeats to length)
-                            numOfRepeats = 0
-                        }
+                    '[' -> {
+                        repeatStack += (numOfRepeats to length)
+                        numOfRepeats = 0
+                    }
 
-                        ']' -> {
-                            val (repeats, startIdx) = repeatStack.removeLast()
-                            if (repeats > 1) {
-                                val substring = this.substring(startIdx)
-                                repeat(repeats - 1) { append(substring) }
-                            }
+                    ']' -> {
+                        val (repeats, startIdx) = repeatStack.removeLast()
+                        if (repeats > 1) {
+                            val substring = this.substring(startIdx)
+                            repeat(repeats - 1) { append(substring) }
                         }
+                    }
 
-                        else -> {
-                            append(c)
-                        }
+                    else -> {
+                        append(c)
                     }
                 }
             }
+        }
     }
 }

@@ -46,10 +46,7 @@ class MaximumNumberOfIntegersToChooseFromARangeITest {
             )
 
         tests.forEach { test ->
-            assertEquals(
-                test.result,
-                sut.maxCount(test.banned, test.n, test.maxSum),
-            )
+            assertEquals(test.result, sut.maxCount(test.banned, test.n, test.maxSum))
         }
     }
 }

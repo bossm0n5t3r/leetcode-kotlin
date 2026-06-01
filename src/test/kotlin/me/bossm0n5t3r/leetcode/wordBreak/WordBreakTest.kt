@@ -6,21 +6,13 @@ import org.junit.jupiter.api.Test
 class WordBreakTest {
     private val wordBreak = WordBreak.Solution()
 
-    data class WordBreakTestData(
-        val s: String,
-        val wordDict: List<String>,
-        val result: Boolean,
-    )
+    data class WordBreakTestData(val s: String, val wordDict: List<String>, val result: Boolean)
 
     @Test
     fun wordBreak() {
         val tests =
             listOf(
-                WordBreakTestData(
-                    s = "leetcode",
-                    wordDict = listOf("leet", "code"),
-                    result = true,
-                ),
+                WordBreakTestData(s = "leetcode", wordDict = listOf("leet", "code"), result = true),
                 WordBreakTestData(
                     s = "applepenapple",
                     wordDict = listOf("apple", "pen"),
@@ -31,11 +23,7 @@ class WordBreakTest {
                     wordDict = listOf("cats", "dog", "sand", "and", "cat"),
                     result = false,
                 ),
-                WordBreakTestData(
-                    s = "cars",
-                    wordDict = listOf("car", "ca", "rs"),
-                    result = true,
-                ),
+                WordBreakTestData(s = "cars", wordDict = listOf("car", "ca", "rs"), result = true),
             )
         tests.forEach { test ->
             assertEquals(wordBreak.wordBreak(test.s, test.wordDict), test.result)
