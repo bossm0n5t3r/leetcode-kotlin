@@ -1,8 +1,7 @@
 [versions]
 jdk = "25"
 kotlin = "2.3.21"
-ktlint-gradle = "14.2.0"
-pinterest-ktlint = "1.8.0"
+ktfmt-gradle = "0.26.0"
 junit = "6.0.3"
 assertj = "3.27.7"
 kotlinx-serialization = "1.11.0"
@@ -23,4 +22,4 @@ ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint-gradle" }
+ktfmt = { id = "com.ncorti.ktfmt.gradle", version.ref = "ktfmt-gradle" }
