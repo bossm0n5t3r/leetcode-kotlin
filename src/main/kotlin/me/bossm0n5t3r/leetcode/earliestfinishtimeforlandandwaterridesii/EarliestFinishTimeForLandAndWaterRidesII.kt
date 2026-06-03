@@ -20,36 +20,49 @@ class EarliestFinishTimeForLandAndWaterRidesII {
             secondStart: IntArray,
             secondDuration: IntArray,
         ): Int {
-            val firstData =
-                firstStart.zip(firstDuration).sortedWith(compareBy { it.first + it.second })
-            val secondData = secondStart.zip(secondDuration).sortedWith(compareBy { it.first })
-
-            val n = secondData.size
-            val suffixMinFinish = IntArray(n + 1) { Int.MAX_VALUE }
-            for (i in n - 1 downTo 0) {
-                val finish = secondData[i].first + secondData[i].second
-                suffixMinFinish[i] = minOf(finish, suffixMinFinish[i + 1])
-            }
+            val firstRides = firstStart.toRides(firstDuration).sortedBy { it.finish }
+            val secondRides = secondStart.toRides(secondDuration).sortedBy { it.start }
+            val suffixMinFinish = buildSuffixMinFinish(secondRides)
 
             var result = Int.MAX_VALUE
-            var minDuration = Int.MAX_VALUE
+            var minAvailableSecondDuration = Int.MAX_VALUE
             var secondIndex = 0
 
-            for ((fStart, fDuration) in firstData) {
-                val firstFinish = fStart + fDuration
+            for (firstRide in firstRides) {
+                val firstFinish = firstRide.finish
 
-                while (secondIndex < n && secondData[secondIndex].first <= firstFinish) {
-                    minDuration = minOf(minDuration, secondData[secondIndex].second)
+                while (
+                    secondIndex < secondRides.size && secondRides[secondIndex].start <= firstFinish
+                ) {
+                    minAvailableSecondDuration =
+                        minOf(minAvailableSecondDuration, secondRides[secondIndex].duration)
                     secondIndex++
                 }
 
-                if (minDuration != Int.MAX_VALUE) {
-                    result = minOf(result, firstFinish + minDuration)
+                if (minAvailableSecondDuration != Int.MAX_VALUE) {
+                    result = minOf(result, firstFinish + minAvailableSecondDuration)
                 }
                 result = minOf(result, suffixMinFinish[secondIndex])
             }
 
             return result
+        }
+
+        private fun buildSuffixMinFinish(rides: List<Ride>): IntArray {
+            val suffixMinFinish = IntArray(rides.size + 1) { Int.MAX_VALUE }
+            for (i in rides.lastIndex downTo 0) {
+                suffixMinFinish[i] = minOf(rides[i].finish, suffixMinFinish[i + 1])
+            }
+            return suffixMinFinish
+        }
+
+        private fun IntArray.toRides(duration: IntArray): List<Ride> {
+            return this.zip(duration) { start, duration -> Ride(start, duration) }
+        }
+
+        private data class Ride(val start: Int, val duration: Int) {
+            val finish: Int
+                get() = start + duration
         }
     }
 }
