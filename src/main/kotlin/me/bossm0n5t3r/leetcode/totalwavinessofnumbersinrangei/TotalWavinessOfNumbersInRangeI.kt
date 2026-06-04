@@ -7,12 +7,26 @@ class TotalWavinessOfNumbersInRangeI {
         }
 
         private fun Int.getWaviness(): Int {
-            return this.toString()
-                .map { it.digitToInt() }
-                .windowed(2)
-                .map { it.first() - it.last() }
-                .windowed(size = 2)
-                .count { it.size == 2 && (it.first() * it.last()) < 0 }
+            var number = this
+            val previousDigit = number % 10
+            number /= 10
+
+            var currentDigit = number % 10
+            var previousDiff = currentDigit - previousDigit
+            number /= 10
+
+            var waviness = 0
+            while (number > 0) {
+                val nextDigit = number % 10
+                val currentDiff = nextDigit - currentDigit
+
+                if (previousDiff * currentDiff < 0) waviness++
+
+                previousDiff = currentDiff
+                currentDigit = nextDigit
+                number /= 10
+            }
+            return waviness
         }
     }
 }
