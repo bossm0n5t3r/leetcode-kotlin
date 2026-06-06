@@ -55,6 +55,9 @@ class TotalWavinessOfNumbersInRangeII {
         }
 
         companion object {
+            // Among all 000..999 three-digit blocks, exactly 570 blocks are wave patterns.
+            // For each fixed pair of left/right digits, the middle digit is a wave when it is
+            // smaller than both or larger than both, so we preallocate that exact count.
             private val wavePatterns =
                 IntArray(570).also { patterns ->
                     var index = 0
