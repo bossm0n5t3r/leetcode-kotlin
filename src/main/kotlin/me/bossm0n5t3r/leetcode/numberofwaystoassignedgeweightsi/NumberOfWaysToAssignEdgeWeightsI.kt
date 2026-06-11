@@ -4,7 +4,9 @@ class NumberOfWaysToAssignEdgeWeightsI {
     class Solution {
         fun assignEdgeWeights(edges: Array<IntArray>): Int {
             val graph = Array(edges.size + 2) { mutableListOf<Int>() }
-            for ((u, v) in edges) {
+            for (edge in edges) {
+                val u = edge[0]
+                val v = edge[1]
                 graph[u].add(v)
                 graph[v].add(u)
             }
