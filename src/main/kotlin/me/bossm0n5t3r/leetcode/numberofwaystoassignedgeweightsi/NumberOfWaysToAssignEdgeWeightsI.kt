@@ -1,48 +1,61 @@
 package me.bossm0n5t3r.leetcode.numberofwaystoassignedgeweightsi
 
-import java.math.BigDecimal
-import java.util.Stack
-
 class NumberOfWaysToAssignEdgeWeightsI {
     class Solution {
         fun assignEdgeWeights(edges: Array<IntArray>): Int {
-            val n = edges.size + 1
-            val map = mutableMapOf<Int, MutableList<Int>>()
+            val graph = Array(edges.size + 2) { mutableListOf<Int>() }
             for ((u, v) in edges) {
-                map[u] = map.getOrDefault(u, mutableListOf()).apply { add(v) }
-                map[v] = map.getOrDefault(v, mutableListOf()).apply { add(u) }
+                graph[u].add(v)
+                graph[v].add(u)
             }
-            val maxDepth = dfs(map, n).also { println(it.toList()) }.max()
-            return BigDecimal.valueOf(2L)
-                .pow(maxDepth - 1)
-                .remainder(BigDecimal.valueOf(1_000_000_007))
-                .toInt()
+
+            return powMod(exponent = maxDepth(graph) - 1)
         }
 
-        private data class Node(val cur: Int, val depth: Int)
+        private fun maxDepth(graph: Array<MutableList<Int>>): Int {
+            val nodes = IntArray(graph.size)
+            val parents = IntArray(graph.size)
+            val depths = IntArray(graph.size)
+            var size = 1
+            var result = 0
 
-        private fun dfs(map: Map<Int, List<Int>>, n: Int): IntArray {
-            val visited = BooleanArray(n + 1) { false }
-            val depth = IntArray(n + 1) { 0 }
-            val stack = Stack<Node>()
-            stack.push(Node(1, 0))
+            nodes[0] = 1
 
-            while (stack.isNotEmpty()) {
-                val (curNode, curDepth) = stack.pop()
-                visited[curNode] = true
-                val candidates = map[curNode].orEmpty()
-                if (candidates.isEmpty() || candidates.all { visited[it] }) {
-                    depth[curNode] = curDepth
-                    continue
-                }
-                for (nextNode in candidates) {
-                    if (!visited[nextNode]) {
-                        stack.push(Node(nextNode, curDepth + 1))
-                    }
+            while (size > 0) {
+                size--
+                val node = nodes[size]
+                val parent = parents[size]
+                val depth = depths[size]
+                if (depth > result) result = depth
+
+                for (next in graph[node]) {
+                    if (next == parent) continue
+                    nodes[size] = next
+                    parents[size] = node
+                    depths[size] = depth + 1
+                    size++
                 }
             }
 
-            return depth
+            return result
+        }
+
+        private fun powMod(base: Int = 2, exponent: Int): Int {
+            var value = base.toLong()
+            var power = exponent
+            var result = 1L
+
+            while (power > 0) {
+                if (power and 1 == 1) result = result * value % MOD
+                value = value * value % MOD
+                power = power shr 1
+            }
+
+            return result.toInt()
+        }
+
+        private companion object {
+            const val MOD = 1_000_000_007
         }
     }
 }
