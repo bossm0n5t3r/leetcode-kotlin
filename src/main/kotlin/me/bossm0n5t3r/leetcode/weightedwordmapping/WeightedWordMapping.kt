@@ -3,15 +3,15 @@ package me.bossm0n5t3r.leetcode.weightedwordmapping
 class WeightedWordMapping {
     class Solution {
         fun mapWordWeights(words: Array<String>, weights: IntArray): String {
-            return words.joinToString("") { word -> word.toWeight(weights).toMappedCharacter() }
+            return buildString(words.size) {
+                for (word in words) {
+                    append('z' - word.toWeight(weights))
+                }
+            }
         }
 
         private fun String.toWeight(weights: IntArray): Int {
-            return sumOf { weights[it - 'a'] } % MOD
-        }
-
-        private fun Int.toMappedCharacter(): String {
-            return ('a' + (25 - this)).toString()
+            return fold(0) { acc, ch -> (acc + weights[ch - 'a']) % MOD }
         }
 
         private companion object {
