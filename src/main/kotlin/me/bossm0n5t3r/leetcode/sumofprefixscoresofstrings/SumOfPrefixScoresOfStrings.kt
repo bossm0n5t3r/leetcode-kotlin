@@ -12,7 +12,7 @@ class SumOfPrefixScoresOfStrings {
                     node?.links?.set(index, TrieNode())
                 }
                 node = node?.links?.get(index)
-                node?.score = (node?.score ?: 0) + 1
+                node?.score = node.score + 1
             }
         }
 

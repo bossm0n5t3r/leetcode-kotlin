@@ -17,7 +17,7 @@ class DeleteTheMiddleNodeOfALinkedList {
             while (--size > 0) {
                 move = move?.next
             }
-            move?.next = move?.next?.next
+            move?.next = move.next?.next
             return head
         }
     }

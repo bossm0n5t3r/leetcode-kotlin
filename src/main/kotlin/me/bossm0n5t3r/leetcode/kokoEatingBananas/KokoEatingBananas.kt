@@ -8,7 +8,6 @@ class KokoEatingBananas {
             var start = 0
             var end = maxPile
             while (start < end) {
-                println("start: $start, end: $end")
                 val mid = (start + end) / 2
                 if (mid == 0) break
                 if (isValid(piles, h, mid)) {

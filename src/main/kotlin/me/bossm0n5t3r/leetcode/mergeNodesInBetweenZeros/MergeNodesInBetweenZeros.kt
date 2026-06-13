@@ -18,7 +18,7 @@ class MergeNodesInBetweenZeros {
                     }
                     continue
                 }
-                resultIterator?.`val` = (resultIterator?.`val` ?: 0) + value
+                resultIterator?.`val` = resultIterator.`val` + value
             }
             return result.next
         }
