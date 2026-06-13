@@ -47,7 +47,7 @@ class FindTheDifferenceOfTwoArraysTest {
             )
 
         tests.forEach { test ->
-            assertEquals(sut.findDifference(test.nums1, test.nums2), test.result)
+            assertEquals(test.result, sut.findDifference(test.nums1, test.nums2))
         }
     }
 }

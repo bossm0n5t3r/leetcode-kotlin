@@ -23,6 +23,6 @@ class SymmetricTreeTest {
                     false,
                 ),
             )
-        tests.forEach { test -> assertEquals(symmetricTree.isSymmetric(test.root), test.result) }
+        tests.forEach { test -> assertEquals(test.result, symmetricTree.isSymmetric(test.root)) }
     }
 }

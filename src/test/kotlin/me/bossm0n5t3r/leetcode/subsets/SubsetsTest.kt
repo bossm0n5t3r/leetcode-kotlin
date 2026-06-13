@@ -48,7 +48,7 @@ class SubsetsTest {
             )
         tests.forEach { test ->
             val result = subsets.subsets(test.nums)
-            assertEquals(result.size, test.result.size)
+            assertEquals(test.result.size, result.size)
             assertTrue(result.containsAll(test.result))
         }
     }

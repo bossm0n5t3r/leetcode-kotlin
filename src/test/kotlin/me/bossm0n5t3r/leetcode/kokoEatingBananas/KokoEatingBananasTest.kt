@@ -44,6 +44,6 @@ class KokoEatingBananasTest {
                 ),
             )
 
-        tests.forEach { test -> assertEquals(sut.minEatingSpeed(test.piles, test.h), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.minEatingSpeed(test.piles, test.h)) }
     }
 }

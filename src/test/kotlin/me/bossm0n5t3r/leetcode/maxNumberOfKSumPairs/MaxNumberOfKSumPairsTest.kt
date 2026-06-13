@@ -34,6 +34,6 @@ class MaxNumberOfKSumPairsTest {
                 TestData(intArrayOf(3, 1, 3, 4, 3), 6, 1),
             )
 
-        tests.forEach { test -> assertEquals(sut.maxOperations(test.nums, test.k), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.maxOperations(test.nums, test.k)) }
     }
 }

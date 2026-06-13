@@ -36,6 +36,6 @@ class KthLargestElementInAnArrayTest {
                 TestData(nums = intArrayOf(3, 2, 3, 1, 2, 4, 5, 5, 6), k = 4, result = 4),
             )
 
-        tests.forEach { test -> assertEquals(sut.findKthLargest(test.nums, test.k), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.findKthLargest(test.nums, test.k)) }
     }
 }

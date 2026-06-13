@@ -18,7 +18,7 @@ class MaximizeTheConfusionOfAnExamTest {
             )
 
         tests.forEach { test ->
-            assertEquals(sut.maxConsecutiveAnswers(test.answerKey, test.k), test.result)
+            assertEquals(test.result, sut.maxConsecutiveAnswers(test.answerKey, test.k))
         }
     }
 }

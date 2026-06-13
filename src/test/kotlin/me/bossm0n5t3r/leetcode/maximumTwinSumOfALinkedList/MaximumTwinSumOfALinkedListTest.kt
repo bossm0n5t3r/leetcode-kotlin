@@ -19,6 +19,6 @@ class MaximumTwinSumOfALinkedListTest {
                 TestData(ListNodeUtil.generateListNode(1, 100000), 100001),
             )
 
-        tests.forEach { test -> assertEquals(sut.pairSum(test.head), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.pairSum(test.head)) }
     }
 }

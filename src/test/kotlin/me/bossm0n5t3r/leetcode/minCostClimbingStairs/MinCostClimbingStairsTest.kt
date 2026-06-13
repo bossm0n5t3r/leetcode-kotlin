@@ -35,6 +35,6 @@ class MinCostClimbingStairsTest {
                 TestData(cost = "[1,100,1,1,1,100,1,1,100,1]".toIntArray(), result = 6),
             )
 
-        tests.forEach { test -> assertEquals(sut.minCostClimbingStairs(test.cost), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.minCostClimbingStairs(test.cost)) }
     }
 }

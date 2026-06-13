@@ -20,13 +20,11 @@ internal class RemoveAllAdjacentDuplicatesInStringTest {
             )
         tests.forEach { test ->
             val result = removeAllAdjacentDuplicatesInString.removeDuplicates(test.s)
-            println(result)
-            assertEquals(result, test.result)
+            assertEquals(test.result, result)
 
             val resultUsingTwoPointers =
                 removeAllAdjacentDuplicatesInString.removeDuplicatesUsingTwoPointers(test.s)
-            println(resultUsingTwoPointers)
-            assertEquals(resultUsingTwoPointers, test.result)
+            assertEquals(test.result, resultUsingTwoPointers)
         }
     }
 }

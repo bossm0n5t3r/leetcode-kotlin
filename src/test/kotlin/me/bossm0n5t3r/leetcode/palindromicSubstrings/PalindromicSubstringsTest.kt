@@ -14,14 +14,10 @@ internal class PalindromicSubstringsTest {
         val tests =
             listOf(PalindromicSubstringsTestData("abc", 3), PalindromicSubstringsTestData("aaa", 6))
         tests.forEach { test ->
-            palindromicSubstrings.countSubstrings(test.s).also {
-                println(it)
-                assertEquals(it, test.result)
-            }
+            palindromicSubstrings.countSubstrings(test.s).also { assertEquals(test.result, it) }
 
             palindromicSubstrings.countSubstringsUsingDP(test.s).also {
-                println(it)
-                assertEquals(it, test.result)
+                assertEquals(test.result, it)
             }
         }
     }

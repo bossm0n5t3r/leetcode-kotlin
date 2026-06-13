@@ -41,6 +41,6 @@ class EqualRowAndColumnPairsTest {
                 TestData(grid = "[[13,13],[13,13]]".toArrayOfIntArray(), result = 4),
             )
 
-        tests.forEach { test -> assertEquals(sut.equalPairs(test.grid), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.equalPairs(test.grid)) }
     }
 }

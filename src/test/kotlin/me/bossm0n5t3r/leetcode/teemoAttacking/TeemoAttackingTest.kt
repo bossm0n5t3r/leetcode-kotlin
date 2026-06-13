@@ -38,7 +38,7 @@ class TeemoAttackingTest {
             )
 
         tests.forEach { test ->
-            assertEquals(sut.findPoisonedDuration(test.timeSeries, test.duration), test.result)
+            assertEquals(test.result, sut.findPoisonedDuration(test.timeSeries, test.duration))
         }
     }
 }

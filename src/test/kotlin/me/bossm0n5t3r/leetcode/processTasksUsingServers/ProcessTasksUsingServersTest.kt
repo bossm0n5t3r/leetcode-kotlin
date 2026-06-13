@@ -554,7 +554,6 @@ internal class ProcessTasksUsingServersTest {
             )
         tests.forEach { test ->
             processTasksUsingServers.assignTasks(test.servers, test.tasks).also {
-                println(it.toList())
                 assertArrayEquals(it, test.result)
             }
         }

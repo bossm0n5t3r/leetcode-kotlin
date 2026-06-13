@@ -25,6 +25,6 @@ class BinaryTreeRightSideViewTest {
                 TestData(root = TreeNodeUtil.generateTreeNodeOrNull(listOf()), result = listOf()),
             )
 
-        tests.forEach { test -> assertEquals(sut.rightSideView(test.root), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.rightSideView(test.root)) }
     }
 }

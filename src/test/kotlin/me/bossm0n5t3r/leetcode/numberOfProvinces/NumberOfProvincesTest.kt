@@ -52,6 +52,6 @@ class NumberOfProvincesTest {
                 ),
             )
 
-        tests.forEach { test -> assertEquals(sut.findCircleNum(test.isConnected), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.findCircleNum(test.isConnected)) }
     }
 }

@@ -49,8 +49,7 @@ internal class ShortestPathInBinaryMatrixTest {
             )
         tests.forEach { test ->
             shortestPathInBinaryMatrix.shortestPathBinaryMatrix(test.grid).also {
-                println(it)
-                assertEquals(it, test.result)
+                assertEquals(test.result, it)
             }
         }
     }

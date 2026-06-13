@@ -35,6 +35,6 @@ class FindPeakElementTest {
                 TestData(nums = "[1,2,1,3,5,6,4]".toIntArray(), result = 5),
             )
 
-        tests.forEach { test -> assertEquals(sut.findPeakElement(test.nums), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.findPeakElement(test.nums)) }
     }
 }

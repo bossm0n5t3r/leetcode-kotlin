@@ -31,7 +31,7 @@ class BinaryTreeLevelOrderTraversalTest {
                 ),
             )
         tests.forEach { test ->
-            assertEquals(binaryTreeLevelOrderTraversal.levelOrder(test.root), test.result)
+            assertEquals(test.result, binaryTreeLevelOrderTraversal.levelOrder(test.root))
         }
     }
 }

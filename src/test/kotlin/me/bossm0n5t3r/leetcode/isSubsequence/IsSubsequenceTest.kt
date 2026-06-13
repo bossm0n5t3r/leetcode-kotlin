@@ -12,6 +12,6 @@ class IsSubsequenceTest {
     fun test() {
         val tests = listOf(TestData("abc", "ahbgdc", true), TestData("axc", "ahbgdc", false))
 
-        tests.forEach { test -> assertEquals(sut.isSubsequence(test.s, test.t), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.isSubsequence(test.s, test.t)) }
     }
 }

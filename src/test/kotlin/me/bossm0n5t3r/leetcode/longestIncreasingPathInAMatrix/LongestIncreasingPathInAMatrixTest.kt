@@ -71,8 +71,7 @@ internal class LongestIncreasingPathInAMatrixTest {
             )
         tests.forEach { test ->
             longestIncreasingPathInAMatrix.longestIncreasingPath(test.matrix).also {
-                println(it)
-                assertEquals(it, test.result)
+                assertEquals(test.result, it)
             }
         }
     }

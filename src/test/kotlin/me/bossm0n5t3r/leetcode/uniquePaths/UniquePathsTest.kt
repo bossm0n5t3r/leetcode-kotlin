@@ -17,8 +17,8 @@ class UniquePathsTest {
                 UniquePathsTestData(16, 16, 155117520),
             )
         tests.forEach { test ->
-            assertEquals(uniquePaths.uniquePaths(test.m, test.n), test.result)
-            assertEquals(uniquePaths.uniquePathsUsingDP(test.m, test.n), test.result)
+            assertEquals(test.result, uniquePaths.uniquePaths(test.m, test.n))
+            assertEquals(test.result, uniquePaths.uniquePathsUsingDP(test.m, test.n))
         }
     }
 }

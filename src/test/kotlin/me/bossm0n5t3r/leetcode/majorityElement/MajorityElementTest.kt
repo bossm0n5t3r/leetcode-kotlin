@@ -37,7 +37,7 @@ class MajorityElementTest {
                 MajorityElementTestData(intArrayOf(6, 5, 5), 5),
             )
         tests.forEach { test ->
-            assertEquals(majorityElement.majorityElement(test.nums), test.result)
+            assertEquals(test.result, majorityElement.majorityElement(test.nums))
         }
     }
 }

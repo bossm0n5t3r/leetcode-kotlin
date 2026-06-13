@@ -17,8 +17,8 @@ class RemovingStarsFromAStringTest {
             )
 
         tests.forEach { test ->
-            assertEquals(sut.removeStars(test.s), test.result)
-            assertEquals(sut.removeStarsWithoutUsingStack(test.s), test.result)
+            assertEquals(test.result, sut.removeStars(test.s))
+            assertEquals(test.result, sut.removeStarsWithoutUsingStack(test.s))
         }
     }
 }

@@ -44,8 +44,7 @@ internal class OnesAndZeroesTest {
             )
         tests.forEach { test ->
             onesAndZeroes.findMaxForm(test.strs, test.m, test.n).also {
-                println(it)
-                assertEquals(it, test.result)
+                assertEquals(test.result, it)
             }
         }
     }

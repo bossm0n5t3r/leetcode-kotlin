@@ -56,7 +56,6 @@ class RotateImageTest {
             )
         tests.forEach { test ->
             val inputMatrix = test.matrix
-            inputMatrix.forEach { println(it.toList()) }
             rotateImage.rotateMyFirstSolution(inputMatrix)
         }
     }
@@ -91,7 +90,6 @@ class RotateImageTest {
             )
         tests.forEach { test ->
             val inputMatrix = test.matrix.copyOf()
-            inputMatrix.forEach { println(it.toList()) }
             rotateImage.rotateApproachFirst(inputMatrix)
             assertThat(inputMatrix).isEqualTo(test.resultMatrix)
         }
@@ -127,7 +125,6 @@ class RotateImageTest {
             )
         tests.forEach { test ->
             val inputMatrix = test.matrix.copyOf()
-            inputMatrix.forEach { println(it.toList()) }
             rotateImage.rotateApproachSecond(inputMatrix)
             assertThat(inputMatrix).isEqualTo(test.resultMatrix)
         }

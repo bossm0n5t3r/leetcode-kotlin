@@ -9,7 +9,7 @@ class ListNodeUtilTest {
     fun getLastListNodeTest() {
         val listNode = ListNodeUtil.generateListNode(1, 2, 3, 4, 5)
         val lastListNode = ListNodeUtil.getLastListNode(listNode!!)
-        assertEquals(lastListNode.`val`, 5)
+        assertEquals(5, lastListNode.`val`)
     }
 
     @Test
@@ -27,7 +27,7 @@ class ListNodeUtilTest {
         var cur: ListNode? = ListNodeUtil.connectListNode(listNodeData)
         for (i in expectListNodeVal.indices) {
             assertTrue(cur != null)
-            assertEquals(cur?.`val`, expectListNodeVal[i])
+            assertEquals(expectListNodeVal[i], cur?.`val`)
             if (i == expectListNodeVal.size - 1) {
                 assertTrue(cur?.next == null)
                 break

@@ -32,6 +32,6 @@ class FindTheHighestAltitudeTest {
                 TestData(gain = intArrayOf(-4, -3, -2, -1, 4, 3, 2), result = 0),
             )
 
-        tests.forEach { test -> assertEquals(sut.largestAltitude(test.gain), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.largestAltitude(test.gain)) }
     }
 }

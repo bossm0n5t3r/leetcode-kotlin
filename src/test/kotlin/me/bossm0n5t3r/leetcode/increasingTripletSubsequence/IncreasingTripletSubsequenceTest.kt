@@ -33,6 +33,6 @@ class IncreasingTripletSubsequenceTest {
                 TestData(intArrayOf(2, 1, 5, 0, 4, 6), true),
             )
 
-        tests.forEach { test -> assertEquals(sut.increasingTriplet(test.nums), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.increasingTriplet(test.nums)) }
     }
 }

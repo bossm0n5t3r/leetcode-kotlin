@@ -26,7 +26,7 @@ class KthSmallestElementInABSTTest {
                 ),
             )
         tests.forEach { test ->
-            assertEquals(kthSmallestElementInABST.kthSmallest(test.root, test.k), test.result)
+            assertEquals(test.result, kthSmallestElementInABST.kthSmallest(test.root, test.k))
         }
     }
 }

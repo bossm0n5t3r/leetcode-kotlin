@@ -103,11 +103,7 @@ internal class SudokuSolverFasterTest {
                 ),
             )
         tests.forEach { test ->
-            println("before")
-            test.board.forEach { println(it.toList()) }
             sudokuSolverFaster.solveSudoku(test.board)
-            println("after")
-            test.board.forEach { println(it.toList()) }
             assertThat(test.board).isDeepEqualTo(test.result)
         }
     }

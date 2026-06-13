@@ -39,7 +39,7 @@ class StringCompressionTest {
             )
 
         tests.forEach { test ->
-            assertEquals(sut.compress(test.chars), test.result)
+            assertEquals(test.result, sut.compress(test.chars))
             assertThat(test.chars.take(test.modifiedChars.size).toCharArray())
                 .containsExactly(*test.modifiedChars)
         }

@@ -35,6 +35,6 @@ class FizzBuzzTest {
                     ),
                 ),
             )
-        tests.forEach { test -> assertEquals(fizzBuzz.fizzBuzz(test.n), test.result) }
+        tests.forEach { test -> assertEquals(test.result, fizzBuzz.fizzBuzz(test.n)) }
     }
 }

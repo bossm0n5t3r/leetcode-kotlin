@@ -18,7 +18,7 @@ class FirstUniqueCharacterInAStringTest {
             )
 
         tests.forEach { test ->
-            assertEquals(firstUniqueCharacterInAString.firstUniqChar(test.s), test.result)
+            assertEquals(test.result, firstUniqueCharacterInAString.firstUniqChar(test.s))
         }
     }
 }

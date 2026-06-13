@@ -33,6 +33,6 @@ class HouseRobberTest {
                 HouseRobberTestData(intArrayOf(1, 2, 3, 1), 4),
                 HouseRobberTestData(intArrayOf(2, 7, 9, 3, 1), 12),
             )
-        tests.forEach { test -> assertEquals(houseRobber.rob(test.nums), test.result) }
+        tests.forEach { test -> assertEquals(test.result, houseRobber.rob(test.nums)) }
     }
 }

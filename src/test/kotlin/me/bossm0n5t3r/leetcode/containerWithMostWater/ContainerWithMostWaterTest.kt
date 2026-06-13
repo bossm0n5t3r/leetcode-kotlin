@@ -33,9 +33,8 @@ internal class ContainerWithMostWaterTest {
                 ContainerWithMostWaterTestData(intArrayOf(1, 2, 1), 2),
             )
         tests.forEach { test ->
-            println(containerWithMostWater.maxArea(test.height))
-            assertEquals(containerWithMostWater.maxArea(test.height), test.result)
-            assertEquals(containerWithMostWater.maxAreaAt230709(test.height), test.result)
+            assertEquals(test.result, containerWithMostWater.maxArea(test.height))
+            assertEquals(test.result, containerWithMostWater.maxAreaAt230709(test.height))
         }
     }
 }

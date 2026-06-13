@@ -18,7 +18,7 @@ class DetermineIfTwoStringsAreCloseTest {
             )
 
         tests.forEach { test ->
-            assertEquals(sut.closeStrings(test.word1, test.word2), test.result)
+            assertEquals(test.result, sut.closeStrings(test.word1, test.word2))
         }
     }
 }

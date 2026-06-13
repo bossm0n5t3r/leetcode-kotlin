@@ -21,7 +21,7 @@ class GuessNumberHigherOrLowerTest {
         tests.forEach { test ->
             sut.init(test.n, test.pick)
 
-            assertEquals(sut.guessNumber(test.n), test.result)
+            assertEquals(test.result, sut.guessNumber(test.n))
         }
     }
 }

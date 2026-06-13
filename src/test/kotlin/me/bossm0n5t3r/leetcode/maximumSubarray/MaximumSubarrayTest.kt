@@ -34,6 +34,6 @@ class MaximumSubarrayTest {
                 MaximumSubarrayTestData(intArrayOf(1), 1),
                 MaximumSubarrayTestData(intArrayOf(5, 4, -1, 7, 8), 23),
             )
-        tests.forEach { test -> assertEquals(maximumSubarray.maxSubArray(test.nums), test.result) }
+        tests.forEach { test -> assertEquals(test.result, maximumSubarray.maxSubArray(test.nums)) }
     }
 }

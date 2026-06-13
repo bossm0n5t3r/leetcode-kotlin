@@ -126,11 +126,11 @@ class MinStackTest {
                     }
 
                     "top" -> {
-                        assertEquals(minStack.top(), outputData[index])
+                        assertEquals(outputData[index], minStack.top())
                     }
 
                     "getMin" -> {
-                        assertEquals(minStack.getMin(), outputData[index])
+                        assertEquals(outputData[index], minStack.getMin())
                     }
                 }
             }

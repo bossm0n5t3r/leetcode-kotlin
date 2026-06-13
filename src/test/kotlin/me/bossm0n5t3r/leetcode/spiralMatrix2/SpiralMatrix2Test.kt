@@ -38,7 +38,6 @@ internal class SpiralMatrix2Test {
             )
         tests.forEach { test ->
             val result = spiralMatrix2.generateMatrix(test.n)
-            result.forEach { println(it.toList()) }
             assertThat(result).isDeepEqualTo(test.result)
         }
     }

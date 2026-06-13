@@ -35,13 +35,11 @@ internal class MaximumErasureValueTest {
             )
         tests.forEach { test ->
             maximumErasureValue.maximumUniqueSubarray(test.nums).also {
-                println(it)
-                assertEquals(it, test.result)
+                assertEquals(test.result, it)
             }
 
             maximumErasureValue.maximumUniqueSubarrayAnotherWay(test.nums).also {
-                println(it)
-                assertEquals(it, test.result)
+                assertEquals(test.result, it)
             }
         }
     }

@@ -26,7 +26,7 @@ class WordBreakTest {
                 WordBreakTestData(s = "cars", wordDict = listOf("car", "ca", "rs"), result = true),
             )
         tests.forEach { test ->
-            assertEquals(wordBreak.wordBreak(test.s, test.wordDict), test.result)
+            assertEquals(test.result, wordBreak.wordBreak(test.s, test.wordDict))
         }
     }
 }

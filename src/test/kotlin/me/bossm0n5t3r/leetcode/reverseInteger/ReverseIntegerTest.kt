@@ -18,6 +18,6 @@ class ReverseIntegerTest {
                 ReverseIntegerTestData(0, 0),
                 ReverseIntegerTestData(1534236469, 0),
             )
-        tests.forEach { test -> assertEquals(reverseInteger.reverse(test.x), test.result) }
+        tests.forEach { test -> assertEquals(test.result, reverseInteger.reverse(test.x)) }
     }
 }

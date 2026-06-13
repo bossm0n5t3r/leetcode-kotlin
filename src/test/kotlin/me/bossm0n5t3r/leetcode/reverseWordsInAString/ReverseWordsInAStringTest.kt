@@ -16,6 +16,6 @@ class ReverseWordsInAStringTest {
                 TestData("  hello world  ", "world hello"),
             )
 
-        tests.forEach { test -> assertEquals(sut.reverseWords(test.s), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.reverseWords(test.s)) }
     }
 }

@@ -16,6 +16,6 @@ class GreatestCommonDivisorOfStringsTest {
                 TestData("ABABAB", "ABAB", "AB"),
                 TestData("LEET", "CODE", ""),
             )
-        tests.forEach { test -> assertEquals(sut.gcdOfStrings(test.str1, test.str2), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.gcdOfStrings(test.str1, test.str2)) }
     }
 }

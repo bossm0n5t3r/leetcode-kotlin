@@ -23,15 +23,12 @@ internal class LetterCombinationsOfAPhoneNumberTest {
                 LetterCombinationsOfAPhoneNumberTestData("2", listOf("a", "b", "c")),
             )
         tests.forEach { test ->
-            println(letterCombinationsOfAPhoneNumber.letterCombinations(test.digits))
             assertThat(letterCombinationsOfAPhoneNumber.letterCombinations(test.digits))
                 .containsExactlyInAnyOrderElementsOf(test.result)
 
-            println(letterCombinationsOfAPhoneNumber.letterCombinationsGoodSolution(test.digits))
             assertThat(letterCombinationsOfAPhoneNumber.letterCombinationsGoodSolution(test.digits))
                 .containsExactlyInAnyOrderElementsOf(test.result)
 
-            println(letterCombinationsOfAPhoneNumber.letterCombinationsAt230829(test.digits))
             assertThat(letterCombinationsOfAPhoneNumber.letterCombinationsAt230829(test.digits))
                 .containsExactlyInAnyOrderElementsOf(test.result)
         }

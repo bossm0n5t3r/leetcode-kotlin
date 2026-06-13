@@ -38,7 +38,7 @@ class MedianOfTwoSortedArraysTest {
             )
 
         tests.forEach { test ->
-            assertEquals(sut.findMedianSortedArrays(test.nums1, test.nums2), test.result)
+            assertEquals(test.result, sut.findMedianSortedArrays(test.nums1, test.nums2))
         }
     }
 }

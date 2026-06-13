@@ -12,6 +12,6 @@ class Dota2SenateTest {
     fun test() {
         val tests = listOf(TestData("RD", "Radiant"), TestData("RDD", "Dire"))
 
-        tests.forEach { test -> assertEquals(sut.predictPartyVictory(test.senate), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.predictPartyVictory(test.senate)) }
     }
 }

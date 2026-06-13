@@ -62,8 +62,7 @@ internal class NetworkDelayTimeTest {
             )
         tests.forEach { test ->
             val result = networkDelayTime.networkDelayTime(test.times, test.n, test.k)
-            println(result)
-            assertEquals(result, test.result)
+            assertEquals(test.result, result)
         }
     }
 }

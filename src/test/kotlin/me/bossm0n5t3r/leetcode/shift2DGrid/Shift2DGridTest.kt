@@ -64,7 +64,6 @@ internal class Shift2DGridTest {
             )
         tests.forEach { test ->
             val result = shift2DGrid.shiftGrid(test.grid, test.k)
-            println(result)
             assertThat(result).containsExactlyInAnyOrderElementsOf(test.result)
         }
     }

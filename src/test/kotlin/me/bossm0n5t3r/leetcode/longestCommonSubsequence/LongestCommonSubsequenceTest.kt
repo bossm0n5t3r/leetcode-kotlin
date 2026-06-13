@@ -18,7 +18,7 @@ class LongestCommonSubsequenceTest {
             )
 
         tests.forEach { test ->
-            assertEquals(sut.longestCommonSubsequence(test.text1, test.text2), test.result)
+            assertEquals(test.result, sut.longestCommonSubsequence(test.text1, test.text2))
         }
     }
 }

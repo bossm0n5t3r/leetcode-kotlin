@@ -19,8 +19,8 @@ class PowerOfThreeTest {
                 PowerOfThreeTestData(-3, false),
             )
         tests.forEach { test ->
-            assertEquals(powerOfThree.isPowerOfThree(test.n), test.result)
-            assertEquals(powerOfThree.isPowerOfThreeUsingMathematics(test.n), test.result)
+            assertEquals(test.result, powerOfThree.isPowerOfThree(test.n))
+            assertEquals(test.result, powerOfThree.isPowerOfThreeUsingMathematics(test.n))
         }
     }
 }

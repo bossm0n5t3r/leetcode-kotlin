@@ -45,7 +45,6 @@ internal class FourSumTest {
             )
         tests.forEach { test ->
             val result = fourSum.fourSum(test.nums, test.target)
-            println(result)
             assertThat(result).containsExactlyInAnyOrderElementsOf(test.result)
         }
     }

@@ -35,8 +35,6 @@ internal class AddTwoNumbersTest {
                 ),
             )
         tests.forEach { test ->
-            //            println(ListNodeUtil.listNodeToList(addTwoNumbers.addTwoNumbers(test.l1,
-            // test.l2)))
             assertTrue(
                 ListNodeUtil.isEqual(addTwoNumbers.addTwoNumbers(test.l1, test.l2), test.result)
             )

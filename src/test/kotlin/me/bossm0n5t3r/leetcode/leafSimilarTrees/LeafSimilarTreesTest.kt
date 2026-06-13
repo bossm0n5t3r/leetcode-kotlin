@@ -32,6 +32,6 @@ class LeafSimilarTreesTest {
                 ),
             )
 
-        tests.forEach { test -> assertEquals(sut.leafSimilar(test.root1, test.root2), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.leafSimilar(test.root1, test.root2)) }
     }
 }

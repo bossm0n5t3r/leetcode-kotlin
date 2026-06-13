@@ -30,6 +30,6 @@ internal class JumpGame2Test {
     fun jump() {
         val tests =
             listOf(Example(intArrayOf(2, 3, 1, 1, 4), 2), Example(intArrayOf(2, 3, 0, 1, 4), 2))
-        tests.forEach { test -> assertEquals(sut.jump(test.nums), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.jump(test.nums)) }
     }
 }

@@ -22,8 +22,7 @@ internal class MinimumNumberOfStepsToMakeTwoStringsAnagram2Test {
             )
         tests.forEach { test ->
             val result = minimumNumberOfStepsToMakeTwoStringsAnagram2.minSteps(test.s, test.t)
-            println(result)
-            assertEquals(result, test.result)
+            assertEquals(test.result, result)
         }
     }
 }

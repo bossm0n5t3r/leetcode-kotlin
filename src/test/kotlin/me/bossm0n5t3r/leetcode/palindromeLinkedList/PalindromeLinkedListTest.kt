@@ -19,7 +19,7 @@ class PalindromeLinkedListTest {
                 PalindromeLinkedListTestData(ListNodeUtil.generateListNode(1, 2), false),
             )
         tests.forEach { test ->
-            assertEquals(palindromeLinkedList.isPalindrome(test.head), test.result)
+            assertEquals(test.result, palindromeLinkedList.isPalindrome(test.head))
         }
     }
 }

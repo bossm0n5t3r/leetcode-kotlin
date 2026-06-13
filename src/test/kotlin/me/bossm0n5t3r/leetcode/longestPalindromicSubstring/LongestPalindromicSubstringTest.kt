@@ -20,8 +20,7 @@ internal class LongestPalindromicSubstringTest {
                 LongestPalindromicSubstringTestData("aaaa", "aaaa"),
             )
         tests.forEach { test ->
-            println(longestPalindromicSubstring.longestPalindrome(test.s))
-            assertEquals(longestPalindromicSubstring.longestPalindrome(test.s), test.result)
+            assertEquals(test.result, longestPalindromicSubstring.longestPalindrome(test.s))
         }
     }
 }

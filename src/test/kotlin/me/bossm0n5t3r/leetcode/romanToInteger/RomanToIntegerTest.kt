@@ -18,6 +18,6 @@ class RomanToIntegerTest {
                 RomanToIntegerTestData("MCMXCIV", 1994),
                 RomanToIntegerTestData("III", 3),
             )
-        tests.forEach { test -> assertEquals(romanToInteger.romanToInt(test.s), test.result) }
+        tests.forEach { test -> assertEquals(test.result, romanToInteger.romanToInt(test.s)) }
     }
 }

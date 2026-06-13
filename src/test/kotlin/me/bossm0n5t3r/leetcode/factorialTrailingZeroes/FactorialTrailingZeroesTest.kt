@@ -17,7 +17,7 @@ class FactorialTrailingZeroesTest {
                 FactorialTrailingZeroesTestData(0, 0),
             )
         tests.forEach { test ->
-            assertEquals(factorialTrailingZeroes.trailingZeroes(test.n), test.result)
+            assertEquals(test.result, factorialTrailingZeroes.trailingZeroes(test.n))
         }
     }
 }

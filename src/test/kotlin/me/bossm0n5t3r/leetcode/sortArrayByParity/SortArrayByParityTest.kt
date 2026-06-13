@@ -35,11 +35,9 @@ internal class SortArrayByParityTest {
             )
         tests.forEach { test ->
             val result = sortArrayByParity.sortArrayByParity(test.nums)
-            println(result.toList())
             assertTrue(result.contentEquals(test.result))
 
             val resultWithSwap = sortArrayByParity.sortArrayByParityWithSwap(test.nums)
-            println(resultWithSwap.toList())
             assertTrue(resultWithSwap.contentEquals(test.result))
         }
     }

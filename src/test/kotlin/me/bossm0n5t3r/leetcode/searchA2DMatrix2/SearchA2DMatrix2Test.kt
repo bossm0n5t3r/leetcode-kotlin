@@ -68,12 +68,10 @@ internal class SearchA2DMatrix2Test {
             )
         tests.forEach { test ->
             val result = searchA2DMatrix2.searchMatrix(test.matrix, test.target)
-            println(result)
-            assertEquals(result, test.result)
+            assertEquals(test.result, result)
 
             val resultEfficient = searchA2DMatrix2.searchMatrixEfficient(test.matrix, test.target)
-            println(resultEfficient)
-            assertEquals(resultEfficient, test.result)
+            assertEquals(test.result, resultEfficient)
         }
     }
 }

@@ -43,14 +43,8 @@ internal class UniquePaths3Test {
                 UniquePaths3TestData(matrixUtil.generateMatrixFrom("[[0,1],[2,0]]"), 0),
             )
         tests.forEach { test ->
-            uniquePaths3.uniquePathsIIIUsingBFS(test.grid).also {
-                println(it)
-                assertEquals(it, test.result)
-            }
-            uniquePaths3.uniquePathsIIIUsingDFS(test.grid).also {
-                println(it)
-                assertEquals(it, test.result)
-            }
+            uniquePaths3.uniquePathsIIIUsingBFS(test.grid).also { assertEquals(test.result, it) }
+            uniquePaths3.uniquePathsIIIUsingDFS(test.grid).also { assertEquals(test.result, it) }
         }
     }
 }

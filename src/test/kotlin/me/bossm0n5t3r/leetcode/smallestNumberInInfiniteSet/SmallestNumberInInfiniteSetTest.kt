@@ -8,13 +8,13 @@ class SmallestNumberInInfiniteSetTest {
     fun test() {
         val sut = SmallestNumberInInfiniteSet.SmallestInfiniteSet()
 
-        assertEquals(sut.addBack(2), Unit)
-        assertEquals(sut.popSmallest(), 1)
-        assertEquals(sut.popSmallest(), 2)
-        assertEquals(sut.popSmallest(), 3)
-        assertEquals(sut.addBack(1), Unit)
-        assertEquals(sut.popSmallest(), 1)
-        assertEquals(sut.popSmallest(), 4)
-        assertEquals(sut.popSmallest(), 5)
+        assertEquals(Unit, sut.addBack(2))
+        assertEquals(1, sut.popSmallest())
+        assertEquals(2, sut.popSmallest())
+        assertEquals(3, sut.popSmallest())
+        assertEquals(Unit, sut.addBack(1))
+        assertEquals(1, sut.popSmallest())
+        assertEquals(4, sut.popSmallest())
+        assertEquals(5, sut.popSmallest())
     }
 }

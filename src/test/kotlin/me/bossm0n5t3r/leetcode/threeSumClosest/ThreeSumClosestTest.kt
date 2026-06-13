@@ -40,8 +40,7 @@ internal class ThreeSumClosestTest {
                 ThreeSumClosestTestData(intArrayOf(0, 0, 0), 1, 0),
             )
         tests.forEach { test ->
-            println(threeSumClosest.threeSumClosest(test.nums, test.target))
-            assertEquals(threeSumClosest.threeSumClosest(test.nums, test.target), test.result)
+            assertEquals(test.result, threeSumClosest.threeSumClosest(test.nums, test.target))
         }
     }
 }

@@ -22,6 +22,6 @@ class KeysAndRoomsTest {
                 ),
             )
 
-        tests.forEach { test -> assertEquals(sut.canVisitAllRooms(test.rooms), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.canVisitAllRooms(test.rooms)) }
     }
 }

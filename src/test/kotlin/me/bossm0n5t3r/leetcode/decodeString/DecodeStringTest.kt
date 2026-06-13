@@ -18,8 +18,8 @@ class DecodeStringTest {
             )
 
         tests.forEach { test ->
-            assertEquals(sut.decodeString(test.s), test.result)
-            assertEquals(sut.decodeStringUsingStack(test.s), test.result)
+            assertEquals(test.result, sut.decodeString(test.s))
+            assertEquals(test.result, sut.decodeStringUsingStack(test.s))
         }
     }
 }

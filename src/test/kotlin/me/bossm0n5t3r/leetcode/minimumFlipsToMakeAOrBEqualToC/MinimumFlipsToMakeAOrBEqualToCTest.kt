@@ -17,6 +17,6 @@ class MinimumFlipsToMakeAOrBEqualToCTest {
                 TestData(a = 1, b = 2, c = 3, result = 0),
             )
 
-        tests.forEach { test -> assertEquals(sut.minFlips(test.a, test.b, test.c), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.minFlips(test.a, test.b, test.c)) }
     }
 }

@@ -37,12 +37,10 @@ internal class BeautifulArrangement2Test {
             )
         tests.forEach { test ->
             beautifulArrangement2.constructArray(test.n, test.k).also {
-                println(it.toList())
                 assertThat(test.result).contains(it)
             }
 
             beautifulArrangement2.constructArraySolution(test.n, test.k).also {
-                println(it.toList())
                 assertThat(test.result).contains(it)
             }
         }

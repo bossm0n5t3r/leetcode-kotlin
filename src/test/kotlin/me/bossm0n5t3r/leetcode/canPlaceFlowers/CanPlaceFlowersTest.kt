@@ -35,7 +35,7 @@ class CanPlaceFlowersTest {
             )
 
         tests.forEach { test ->
-            assertEquals(sut.canPlaceFlowers(test.flowerbed, test.n), test.result)
+            assertEquals(test.result, sut.canPlaceFlowers(test.flowerbed, test.n))
         }
     }
 }

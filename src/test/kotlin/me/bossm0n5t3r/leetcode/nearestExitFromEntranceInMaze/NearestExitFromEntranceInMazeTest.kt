@@ -67,8 +67,7 @@ class NearestExitFromEntranceInMazeTest {
             )
 
         tests.forEach { test ->
-            test.maze.forEach { println(it.toList()) }
-            assertEquals(sut.nearestExit(test.maze, test.entrance), test.result)
+            assertEquals(test.result, sut.nearestExit(test.maze, test.entrance))
         }
     }
 }

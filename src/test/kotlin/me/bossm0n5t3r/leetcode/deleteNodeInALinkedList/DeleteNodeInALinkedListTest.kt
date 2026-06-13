@@ -48,7 +48,7 @@ class DeleteNodeInALinkedListTest {
             val node = ListNodeUtil.findListNodeByValue(test.node, test.head!!)
             deleteNodeInALinkedList = DeleteNodeInALinkedList.Solution(test.head)
             deleteNodeInALinkedList.deleteNode(node)
-            assertEquals(ListNodeUtil.listNodeToList(deleteNodeInALinkedList.head), test.result)
+            assertEquals(test.result, ListNodeUtil.listNodeToList(deleteNodeInALinkedList.head))
         }
     }
 }

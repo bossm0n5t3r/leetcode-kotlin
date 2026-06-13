@@ -50,7 +50,7 @@ class UniquePathsTest2 {
                 ),
             )
         tests.forEach { test ->
-            assertEquals(uniquePaths2.uniquePathsWithObstacles(test.obstacleGrid), test.result)
+            assertEquals(test.result, uniquePaths2.uniquePathsWithObstacles(test.obstacleGrid))
         }
     }
 }

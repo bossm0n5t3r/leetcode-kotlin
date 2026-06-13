@@ -33,6 +33,6 @@ class LongestSubarrayOf1SAfterDeletingOneElementTest {
                 TestData(nums = intArrayOf(1, 1, 1), result = 2),
             )
 
-        tests.forEach { test -> assertEquals(sut.longestSubarray(test.nums), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.longestSubarray(test.nums)) }
     }
 }

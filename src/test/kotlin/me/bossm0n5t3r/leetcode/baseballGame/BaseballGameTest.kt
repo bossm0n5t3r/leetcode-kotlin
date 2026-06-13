@@ -36,8 +36,7 @@ internal class BaseballGameTest {
             )
         tests.forEach { test ->
             val result = baseballGame.calPoints(test.ops)
-            println(result)
-            assertEquals(result, test.result)
+            assertEquals(test.result, result)
         }
     }
 }

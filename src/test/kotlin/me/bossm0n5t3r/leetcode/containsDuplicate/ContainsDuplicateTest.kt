@@ -35,7 +35,7 @@ class ContainsDuplicateTest {
                 ContainsDuplicateTestData(intArrayOf(1, 1, 1, 3, 3, 4, 3, 2, 4, 2), true),
             )
         tests.forEach { test ->
-            assertEquals(containsDuplicate.containsDuplicate(test.nums), test.result)
+            assertEquals(test.result, containsDuplicate.containsDuplicate(test.nums))
         }
     }
 }

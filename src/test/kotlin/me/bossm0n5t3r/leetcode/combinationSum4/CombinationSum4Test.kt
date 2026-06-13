@@ -32,7 +32,7 @@ internal class CombinationSum4Test {
     fun combinationSum4() {
         val tests = listOf(Example(intArrayOf(1, 2, 3), 4, 7), Example(intArrayOf(9), 3, 0))
         tests.forEach { test ->
-            assertEquals(sut.combinationSum4(test.nums, test.target), test.result)
+            assertEquals(test.result, sut.combinationSum4(test.nums, test.target))
         }
     }
 }

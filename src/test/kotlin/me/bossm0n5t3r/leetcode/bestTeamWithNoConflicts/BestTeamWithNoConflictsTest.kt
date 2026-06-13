@@ -67,8 +67,7 @@ internal class BestTeamWithNoConflictsTest {
             )
         tests.forEach { test ->
             val result = bestTeamWithNoConflicts.bestTeamScore(test.scores, test.ages)
-            println(result)
-            assertEquals(result, test.result)
+            assertEquals(test.result, result)
         }
     }
 }

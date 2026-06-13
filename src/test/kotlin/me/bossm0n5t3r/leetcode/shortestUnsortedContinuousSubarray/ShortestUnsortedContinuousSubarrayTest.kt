@@ -41,8 +41,7 @@ internal class ShortestUnsortedContinuousSubarrayTest {
             )
         tests.forEach { test ->
             val result = shortestUnsortedContinuousSubarray.findUnsortedSubarray(test.nums)
-            println(result)
-            assertEquals(result, test.result)
+            assertEquals(test.result, result)
         }
     }
 }

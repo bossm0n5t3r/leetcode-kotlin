@@ -33,6 +33,6 @@ class UniqueNumberOfOccurrencesTest {
                 TestData(arr = intArrayOf(-3, 0, 1, -3, 1, 1, 1, -3, 10, 0), result = true),
             )
 
-        tests.forEach { test -> assertEquals(sut.uniqueOccurrences(test.arr), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.uniqueOccurrences(test.arr)) }
     }
 }

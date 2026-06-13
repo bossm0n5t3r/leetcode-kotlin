@@ -35,6 +35,6 @@ class MissingNumberTest {
                 MissingNumberTestData(intArrayOf(9, 6, 4, 2, 3, 5, 7, 0, 1), 8),
                 MissingNumberTestData(intArrayOf(0), 1),
             )
-        tests.forEach { test -> assertEquals(missingNumber.missingNumber(test.nums), test.result) }
+        tests.forEach { test -> assertEquals(test.result, missingNumber.missingNumber(test.nums)) }
     }
 }

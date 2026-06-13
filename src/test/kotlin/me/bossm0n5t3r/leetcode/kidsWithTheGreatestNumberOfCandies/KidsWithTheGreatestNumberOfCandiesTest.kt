@@ -39,7 +39,7 @@ class KidsWithTheGreatestNumberOfCandiesTest {
                 TestData(intArrayOf(12, 1, 12), 10, listOf(true, false, true)),
             )
         tests.forEach { test ->
-            assertEquals(sut.kidsWithCandies(test.candies, test.extraCandies), test.result)
+            assertEquals(test.result, sut.kidsWithCandies(test.candies, test.extraCandies))
         }
     }
 }

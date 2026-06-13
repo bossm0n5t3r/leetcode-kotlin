@@ -49,8 +49,8 @@ class FindIfPathExistsInGraphTest {
 
         tests.forEach { test ->
             assertEquals(
-                sut.validPath(test.n, test.edges, test.source, test.destination),
                 test.result,
+                sut.validPath(test.n, test.edges, test.source, test.destination),
             )
         }
     }

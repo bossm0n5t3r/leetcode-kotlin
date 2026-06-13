@@ -11,6 +11,6 @@ class ReverseVowelsOfAStringTest {
     @Test
     fun test() {
         val tests = listOf(TestData("hello", "holle"), TestData("leetcode", "leotcede"))
-        tests.forEach { test -> assertEquals(sut.reverseVowels(test.s), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.reverseVowels(test.s)) }
     }
 }

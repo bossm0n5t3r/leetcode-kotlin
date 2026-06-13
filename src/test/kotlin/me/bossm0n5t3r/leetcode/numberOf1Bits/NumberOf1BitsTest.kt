@@ -17,6 +17,6 @@ class NumberOf1BitsTest {
                 NumberOf1BitsTestData(-3, 31),
                 NumberOf1BitsTestData(0, 0),
             )
-        tests.forEach { test -> assertEquals(numberOf1Bits.hammingWeight(test.n), test.result) }
+        tests.forEach { test -> assertEquals(test.result, numberOf1Bits.hammingWeight(test.n)) }
     }
 }

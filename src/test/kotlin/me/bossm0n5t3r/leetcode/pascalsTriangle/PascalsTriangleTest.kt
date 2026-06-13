@@ -24,6 +24,6 @@ class PascalsTriangleTest {
                 ),
                 PascalsTriangleTestData(1, listOf(listOf(1))),
             )
-        tests.forEach { test -> assertEquals(pascalsTriangle.generate(test.numsRow), test.result) }
+        tests.forEach { test -> assertEquals(test.result, pascalsTriangle.generate(test.numsRow)) }
     }
 }

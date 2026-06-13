@@ -26,8 +26,7 @@ internal class SmallestStringWithSwapsTest {
             )
         tests.forEach { test ->
             val result = smallestStringWithSwaps.smallestStringWithSwaps(test.s, test.pairs)
-            println(result)
-            assertEquals(result, test.result)
+            assertEquals(test.result, result)
         }
     }
 }

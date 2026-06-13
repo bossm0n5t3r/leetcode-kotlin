@@ -56,6 +56,6 @@ class PathSum3Test {
                 ),
             )
 
-        tests.forEach { test -> assertEquals(sut.pathSum(test.root, test.targetSum), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.pathSum(test.root, test.targetSum)) }
     }
 }

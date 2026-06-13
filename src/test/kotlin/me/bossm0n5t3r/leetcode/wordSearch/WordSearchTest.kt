@@ -96,10 +96,6 @@ internal class WordSearchTest {
                     false,
                 ),
             )
-        tests.forEach { test ->
-            println(test.word)
-            println(wordSearch.exist(test.board, test.word))
-            assertEquals(wordSearch.exist(test.board, test.word), test.result)
-        }
+        tests.forEach { test -> assertEquals(test.result, wordSearch.exist(test.board, test.word)) }
     }
 }

@@ -47,7 +47,7 @@ class ReorderRoutesToMakeAllPathsLeadToTheCityZeroTest {
             )
 
         tests.forEach { test ->
-            assertEquals(sut.minReorder(test.n, test.connections), test.result)
+            assertEquals(test.result, sut.minReorder(test.n, test.connections))
         }
     }
 }

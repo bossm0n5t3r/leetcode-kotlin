@@ -18,7 +18,7 @@ class ExcelSheetColumnNumberTest {
                 ExcelSheetColumnNumberTestData("FXSHRXW", 2147483647),
             )
         tests.forEach { test ->
-            assertEquals(excelSheetColumnNumber.titleToNumber(test.columnTitle), test.result)
+            assertEquals(test.result, excelSheetColumnNumber.titleToNumber(test.columnTitle))
         }
     }
 }

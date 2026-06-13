@@ -18,6 +18,6 @@ class CombinationSum3Test {
                 TestData(4, 1, "[]".toListOfIntList()),
             )
 
-        tests.forEach { test -> assertEquals(sut.combinationSum3(test.k, test.n), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.combinationSum3(test.k, test.n)) }
     }
 }

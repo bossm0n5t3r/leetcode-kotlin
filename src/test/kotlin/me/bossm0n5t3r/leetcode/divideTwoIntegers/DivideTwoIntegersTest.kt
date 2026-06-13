@@ -27,8 +27,7 @@ internal class DivideTwoIntegersTest {
             )
         tests.forEach { test ->
             val result = divideTwoIntegers.divide(test.dividend, test.divisor)
-            println(result)
-            assertEquals(result, test.result)
+            assertEquals(test.result, result)
         }
     }
 

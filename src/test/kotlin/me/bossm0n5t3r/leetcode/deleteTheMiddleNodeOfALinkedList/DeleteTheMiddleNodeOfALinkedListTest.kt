@@ -28,8 +28,6 @@ class DeleteTheMiddleNodeOfALinkedListTest {
 
         tests.forEach { test ->
             val result = sut.deleteMiddle(test.head)
-            ListNodeUtil.printListNode(result)
-            ListNodeUtil.printListNode(test.result)
             assertTrue { ListNodeUtil.isEqual(result, test.result) }
         }
     }

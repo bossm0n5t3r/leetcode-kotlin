@@ -35,9 +35,9 @@ class LinkedListCycleTest {
             )
         tests.forEach { test ->
             val head = ListNodeUtil.connectListNode(test.head)
-            assertEquals(linkedListCycle.hasCycleFirstApproach(head), test.result)
-            assertEquals(linkedListCycle.hasCycleSecondApproach(head), test.result)
-            assertEquals(linkedListCycle.hasCycleThirdApproach(head), test.result)
+            assertEquals(test.result, linkedListCycle.hasCycleFirstApproach(head))
+            assertEquals(test.result, linkedListCycle.hasCycleSecondApproach(head))
+            assertEquals(test.result, linkedListCycle.hasCycleThirdApproach(head))
             ListNodeUtil.clearBasicSingleListNode(basicListNode)
         }
     }

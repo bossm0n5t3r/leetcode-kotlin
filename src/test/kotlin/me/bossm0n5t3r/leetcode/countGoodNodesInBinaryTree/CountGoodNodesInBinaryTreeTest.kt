@@ -25,6 +25,6 @@ class CountGoodNodesInBinaryTreeTest {
                 TestData(root = TreeNodeUtil.generateTreeNodeOrNull(listOf(1)), result = 1),
             )
 
-        tests.forEach { test -> assertEquals(sut.goodNodes(test.root), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.goodNodes(test.root)) }
     }
 }

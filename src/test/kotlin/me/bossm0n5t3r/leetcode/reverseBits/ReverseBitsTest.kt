@@ -12,6 +12,6 @@ class ReverseBitsTest {
     fun reverseBits() {
         val tests =
             listOf(ReverseBitsTestData(43261596, 964176192), ReverseBitsTestData(-3, -1073741825))
-        tests.forEach { test -> assertEquals(reverseBits.reverseBits(test.n), test.result) }
+        tests.forEach { test -> assertEquals(test.result, reverseBits.reverseBits(test.n)) }
     }
 }

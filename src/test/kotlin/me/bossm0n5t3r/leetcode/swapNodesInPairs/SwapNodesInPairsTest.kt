@@ -33,7 +33,6 @@ internal class SwapNodesInPairsTest {
             )
         tests.forEach { test ->
             val result = swapNodesInPairs.swapPairs(test.head)
-            ListNodeUtil.printListNode(result)
             assertTrue(ListNodeUtil.isEqual(result, test.result))
         }
     }

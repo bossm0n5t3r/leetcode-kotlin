@@ -38,6 +38,6 @@ class MaxConsecutiveOnes3Test {
                 ),
             )
 
-        tests.forEach { test -> assertEquals(sut.longestOnes(test.nums, test.k), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.longestOnes(test.nums, test.k)) }
     }
 }

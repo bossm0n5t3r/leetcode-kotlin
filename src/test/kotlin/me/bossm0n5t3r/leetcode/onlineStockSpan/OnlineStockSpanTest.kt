@@ -8,12 +8,12 @@ class OnlineStockSpanTest {
 
     @Test
     fun test() {
-        assertEquals(sut.next(100), 1)
-        assertEquals(sut.next(80), 1)
-        assertEquals(sut.next(60), 1)
-        assertEquals(sut.next(70), 2)
-        assertEquals(sut.next(60), 1)
-        assertEquals(sut.next(75), 4)
-        assertEquals(sut.next(85), 6)
+        assertEquals(1, sut.next(100))
+        assertEquals(1, sut.next(80))
+        assertEquals(1, sut.next(60))
+        assertEquals(2, sut.next(70))
+        assertEquals(1, sut.next(60))
+        assertEquals(4, sut.next(75))
+        assertEquals(6, sut.next(85))
     }
 }

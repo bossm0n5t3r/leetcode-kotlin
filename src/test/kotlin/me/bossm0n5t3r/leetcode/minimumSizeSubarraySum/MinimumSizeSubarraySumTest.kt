@@ -36,7 +36,7 @@ class MinimumSizeSubarraySumTest {
             )
 
         tests.forEach { test ->
-            assertEquals(sut.minSubArrayLen(test.target, test.nums), test.result)
+            assertEquals(test.result, sut.minSubArrayLen(test.target, test.nums))
         }
     }
 }

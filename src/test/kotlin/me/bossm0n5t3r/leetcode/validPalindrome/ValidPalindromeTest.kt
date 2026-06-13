@@ -17,6 +17,6 @@ class ValidPalindromeTest {
                 ValidPalindromeTestData(" ", true),
                 ValidPalindromeTestData("0P", false),
             )
-        tests.forEach { test -> assertEquals(validPalindrome.isPalindrome(test.s), test.result) }
+        tests.forEach { test -> assertEquals(test.result, validPalindrome.isPalindrome(test.s)) }
     }
 }

@@ -34,9 +34,9 @@ class FindTheDuplicateNumberTest {
                 FindTheDuplicateNumberTestData(intArrayOf(3, 1, 3, 4, 2), 3),
             )
         tests.forEach { test ->
-            assertEquals(findTheDuplicateNumber.findDuplicateUsingSet(test.nums), test.result)
-            assertEquals(findTheDuplicateNumber.findDuplicateUsingArray(test.nums), test.result)
-            assertEquals(findTheDuplicateNumber.findDuplicateUsingO1Space(test.nums), test.result)
+            assertEquals(test.result, findTheDuplicateNumber.findDuplicateUsingSet(test.nums))
+            assertEquals(test.result, findTheDuplicateNumber.findDuplicateUsingArray(test.nums))
+            assertEquals(test.result, findTheDuplicateNumber.findDuplicateUsingO1Space(test.nums))
         }
     }
 }

@@ -18,13 +18,11 @@ internal class BackspaceStringCompareTest {
             )
         tests.forEach { test ->
             val result = backspaceStringCompare.backspaceCompare(test.s, test.t)
-            println(result)
-            assertEquals(result, test.result)
+            assertEquals(test.result, result)
 
             val resultWithRestriction =
                 backspaceStringCompare.backspaceCompareWithRestriction(test.s, test.t)
-            println(resultWithRestriction)
-            assertEquals(resultWithRestriction, test.result)
+            assertEquals(test.result, resultWithRestriction)
         }
     }
 }

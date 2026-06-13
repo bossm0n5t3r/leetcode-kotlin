@@ -34,7 +34,7 @@ class BestTimeToBuyAndSellStockTest {
                 BestTimeToBuyAndSellStockTestData(intArrayOf(7, 6, 4, 3, 1), 0),
             )
         tests.forEach { test ->
-            assertEquals(bestTimeToBuyAndSellStock.maxProfit(test.prices), test.result)
+            assertEquals(test.result, bestTimeToBuyAndSellStock.maxProfit(test.prices))
         }
     }
 }

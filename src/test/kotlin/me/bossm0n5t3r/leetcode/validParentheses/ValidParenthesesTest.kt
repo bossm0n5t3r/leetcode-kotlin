@@ -18,6 +18,6 @@ class ValidParenthesesTest {
                 ValidParenthesesTestData("([)]", false),
                 ValidParenthesesTestData("{[]}", true),
             )
-        tests.forEach { test -> assertEquals(validParentheses.isValid(test.s), test.result) }
+        tests.forEach { test -> assertEquals(test.result, validParentheses.isValid(test.s)) }
     }
 }

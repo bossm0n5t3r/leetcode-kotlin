@@ -35,6 +35,6 @@ class MaximumAverageSubarrayITest {
                 TestData(intArrayOf(0, 1, 1, 3, 3), 4, 2.0),
             )
 
-        tests.forEach { test -> assertEquals(sut.findMaxAverage(test.nums, test.k), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.findMaxAverage(test.nums, test.k)) }
     }
 }

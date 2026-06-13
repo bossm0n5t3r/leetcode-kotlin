@@ -17,6 +17,6 @@ class MaximumNumberOfVowelsInASubstringOfGivenLengthTest {
                 TestData(s = "leetcode", k = 3, result = 2),
             )
 
-        tests.forEach { test -> assertEquals(sut.maxVowels(test.s, test.k), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.maxVowels(test.s, test.k)) }
     }
 }

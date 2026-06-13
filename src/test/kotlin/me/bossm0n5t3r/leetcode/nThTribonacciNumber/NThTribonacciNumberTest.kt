@@ -12,6 +12,6 @@ class NThTribonacciNumberTest {
     fun test() {
         val tests = listOf(TestData(4, 4), TestData(25, 1389537))
 
-        tests.forEach { test -> assertEquals(sut.tribonacci(test.n), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.tribonacci(test.n)) }
     }
 }

@@ -26,8 +26,8 @@ class ReverseLinkedListTest {
             )
         tests.forEach { test ->
             assertEquals(
-                ListNodeUtil.listNodeToList(reverseLinkedList.reverseList(test.head)),
                 test.result,
+                ListNodeUtil.listNodeToList(reverseLinkedList.reverseList(test.head)),
             )
         }
     }

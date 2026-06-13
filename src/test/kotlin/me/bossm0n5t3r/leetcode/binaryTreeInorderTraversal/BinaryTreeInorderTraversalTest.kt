@@ -33,19 +33,19 @@ class BinaryTreeInorderTraversalTest {
             val resultRecursiveApproach =
                 binaryTreeInorderTraversal.inorderTraversalRecursiveApproach(test.root)
             assertTrue(resultRecursiveApproach.containsAll(test.result))
-            assertEquals(resultRecursiveApproach.size, test.result.size)
+            assertEquals(test.result.size, resultRecursiveApproach.size)
 
             // Iterating Method Using Stack
             val resultIteratingMethodUsingStack =
                 binaryTreeInorderTraversal.inorderTraversalIteratingMethodUsingStack(test.root)
             assertTrue(resultIteratingMethodUsingStack.containsAll(test.result))
-            assertEquals(resultIteratingMethodUsingStack.size, test.result.size)
+            assertEquals(test.result.size, resultIteratingMethodUsingStack.size)
 
             // Morris Traversal
             val resultMorrisTraversal =
                 binaryTreeInorderTraversal.inorderTraversalMorrisTraversal(test.root)
             assertTrue(resultMorrisTraversal.containsAll(test.result))
-            assertEquals(resultMorrisTraversal.size, test.result.size)
+            assertEquals(test.result.size, resultMorrisTraversal.size)
         }
     }
 }

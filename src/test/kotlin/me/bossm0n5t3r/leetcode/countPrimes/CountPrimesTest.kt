@@ -12,6 +12,6 @@ class CountPrimesTest {
     fun countPrimes() {
         val tests =
             listOf(CountPrimesTestData(10, 4), CountPrimesTestData(0, 0), CountPrimesTestData(1, 0))
-        tests.forEach { test -> assertEquals(countPrimes.countPrimes(test.n), test.result) }
+        tests.forEach { test -> assertEquals(test.result, countPrimes.countPrimes(test.n)) }
     }
 }

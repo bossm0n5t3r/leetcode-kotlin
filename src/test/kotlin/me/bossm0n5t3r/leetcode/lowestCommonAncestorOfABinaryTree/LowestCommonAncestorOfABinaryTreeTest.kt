@@ -47,8 +47,8 @@ class LowestCommonAncestorOfABinaryTreeTest {
 
         tests.forEach { test ->
             assertEquals(
-                sut.lowestCommonAncestor(root = test.root, p = test.p, q = test.q)?.`val`,
                 test.result?.`val`,
+                sut.lowestCommonAncestor(root = test.root, p = test.p, q = test.q)?.`val`,
             )
         }
     }

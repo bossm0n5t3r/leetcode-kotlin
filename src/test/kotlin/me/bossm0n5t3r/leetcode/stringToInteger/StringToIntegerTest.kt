@@ -20,16 +20,13 @@ internal class StringToIntegerTest {
                 StringToIntegerTestData("+1", 1),
                 StringToIntegerTestData("20000000000000000000", 2147483647),
             )
-        tests.forEach { test ->
-            println(stringToInteger.myAtoi(test.s))
-            assertEquals(stringToInteger.myAtoi(test.s), test.result)
-        }
+        tests.forEach { test -> assertEquals(test.result, stringToInteger.myAtoi(test.s)) }
     }
 
     @Test
     fun step3Test() {
-        assertEquals(Pair('+', "123121").step3(), Pair('+', "123121"))
-        assertEquals(Pair('+', "tests123121").step3(), Pair('+', ""))
-        assertEquals(Pair('+', "     123121").step3(), Pair('+', ""))
+        assertEquals(Pair('+', "123121"), Pair('+', "123121").step3())
+        assertEquals(Pair('+', ""), Pair('+', "tests123121").step3())
+        assertEquals(Pair('+', ""), Pair('+', "     123121").step3())
     }
 }

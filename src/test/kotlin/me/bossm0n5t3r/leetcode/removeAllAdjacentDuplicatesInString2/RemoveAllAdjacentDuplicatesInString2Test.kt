@@ -28,8 +28,7 @@ internal class RemoveAllAdjacentDuplicatesInString2Test {
             )
         tests.forEach { test ->
             val result = removeAllAdjacentDuplicatesInString2.removeDuplicates(test.s, test.k)
-            println(result)
-            assertEquals(result, test.result)
+            assertEquals(test.result, result)
         }
     }
 }

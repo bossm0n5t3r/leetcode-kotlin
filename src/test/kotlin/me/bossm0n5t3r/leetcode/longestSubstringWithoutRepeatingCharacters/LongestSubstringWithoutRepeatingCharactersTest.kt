@@ -25,10 +25,9 @@ internal class LongestSubstringWithoutRepeatingCharactersTest {
                 LongestSubstringWithoutRepeatingCharactersTestData("aab", 2),
             )
         tests.forEach { test ->
-            println(test.s)
             assertEquals(
-                longestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring(test.s),
                 test.result,
+                longestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring(test.s),
             )
         }
     }

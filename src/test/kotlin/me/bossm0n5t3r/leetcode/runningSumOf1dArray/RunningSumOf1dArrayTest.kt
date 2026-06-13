@@ -35,10 +35,7 @@ internal class RunningSumOf1dArrayTest {
                 RunningSumOf1dArrayTestData(intArrayOf(3, 1, 2, 10, 1), intArrayOf(3, 4, 6, 16, 17)),
             )
         tests.forEach { test ->
-            runningSumOf1dArray.runningSum(test.nums).also {
-                println(it.toList())
-                assertArrayEquals(it, test.result)
-            }
+            runningSumOf1dArray.runningSum(test.nums).also { assertArrayEquals(it, test.result) }
         }
     }
 }

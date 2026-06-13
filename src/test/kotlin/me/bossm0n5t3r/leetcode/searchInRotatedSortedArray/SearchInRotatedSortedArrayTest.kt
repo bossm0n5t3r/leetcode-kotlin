@@ -36,6 +36,6 @@ internal class SearchInRotatedSortedArrayTest {
                 Example(intArrayOf(4, 5, 6, 7, 0, 1, 2), 3, -1),
                 Example(intArrayOf(1), 0, -1),
             )
-        tests.forEach { test -> assertEquals(sut.search(test.nums, test.target), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.search(test.nums, test.target)) }
     }
 }

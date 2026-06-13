@@ -28,10 +28,7 @@ internal class DeepestLeavesSumTest {
                 ),
             )
         tests.forEach { test ->
-            deepestLeavesSum.deepestLeavesSum(test.root).also {
-                println(it)
-                assertEquals(it, test.result)
-            }
+            deepestLeavesSum.deepestLeavesSum(test.root).also { assertEquals(test.result, it) }
         }
     }
 }

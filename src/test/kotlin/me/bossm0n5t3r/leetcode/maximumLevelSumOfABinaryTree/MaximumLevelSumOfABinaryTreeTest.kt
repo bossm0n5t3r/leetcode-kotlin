@@ -27,6 +27,6 @@ class MaximumLevelSumOfABinaryTreeTest {
                 ),
             )
 
-        tests.forEach { test -> assertEquals(sut.maxLevelSum(test.root), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.maxLevelSum(test.root)) }
     }
 }

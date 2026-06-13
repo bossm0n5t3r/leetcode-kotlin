@@ -17,7 +17,7 @@ class MergeStringsAlternatelyTest {
                 TestData("abcd", "pq", "apbqcd"),
             )
         tests.forEach { test ->
-            assertEquals(sut.mergeAlternately(test.word1, test.word2), test.result)
+            assertEquals(test.result, sut.mergeAlternately(test.word1, test.word2))
         }
     }
 }

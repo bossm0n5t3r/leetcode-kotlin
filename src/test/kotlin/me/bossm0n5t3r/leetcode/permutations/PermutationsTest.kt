@@ -48,7 +48,7 @@ class PermutationsTest {
         tests.forEach { test ->
             val result = permutations.permute(test.nums)
             assertTrue(result.containsAll(test.result))
-            assertEquals(result.size, test.result.size)
+            assertEquals(test.result.size, result.size)
         }
     }
 }

@@ -36,7 +36,7 @@ internal class RemoveElementTest {
                 RemoveElementTestData(intArrayOf(0, 1, 2, 2, 3, 0, 4, 2), 2, 5),
             )
         tests.forEach { test ->
-            assertEquals(removeElement.removeElement(test.nums, test.`val`), test.result)
+            assertEquals(test.result, removeElement.removeElement(test.nums, test.`val`))
         }
     }
 }

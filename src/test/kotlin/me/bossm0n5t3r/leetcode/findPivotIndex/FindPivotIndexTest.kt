@@ -33,6 +33,6 @@ class FindPivotIndexTest {
                 TestData(nums = intArrayOf(2, 1, -1), result = 0),
             )
 
-        tests.forEach { test -> assertEquals(sut.pivotIndex(test.nums), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.pivotIndex(test.nums)) }
     }
 }

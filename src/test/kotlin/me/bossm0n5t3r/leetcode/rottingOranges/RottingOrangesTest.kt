@@ -37,6 +37,6 @@ class RottingOrangesTest {
                 TestData(grid = "[[0]]".toArrayOfIntArray(), result = 0),
             )
 
-        tests.forEach { test -> assertEquals(sut.orangesRotting(test.grid), test.result) }
+        tests.forEach { test -> assertEquals(test.result, sut.orangesRotting(test.grid)) }
     }
 }

@@ -22,15 +22,15 @@ class GenerateParenthesesTest {
         tests.forEach { test ->
             val resultBruteForce = generateParentheses.generateParenthesisBruteForce(test.n)
             assertTrue(resultBruteForce.containsAll(test.result))
-            assertEquals(resultBruteForce.size, test.result.size)
+            assertEquals(test.result.size, resultBruteForce.size)
 
             val resultBacktracking = generateParentheses.generateParenthesisBacktracking(test.n)
             assertTrue(resultBacktracking.containsAll(test.result))
-            assertEquals(resultBacktracking.size, test.result.size)
+            assertEquals(test.result.size, resultBacktracking.size)
 
             val resultClosureNumber = generateParentheses.generateParenthesisClosureNumber(test.n)
             assertTrue(resultClosureNumber.containsAll(test.result))
-            assertEquals(resultClosureNumber.size, test.result.size)
+            assertEquals(test.result.size, resultClosureNumber.size)
         }
     }
 }

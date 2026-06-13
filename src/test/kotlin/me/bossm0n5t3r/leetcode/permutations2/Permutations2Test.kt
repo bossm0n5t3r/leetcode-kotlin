@@ -49,9 +49,8 @@ internal class Permutations2Test {
             )
         tests.forEach { test ->
             val result = permutations2.permuteUnique(test.nums)
-            println(result)
             assertTrue(result.containsAll(test.result))
-            assertEquals(result.size, test.result.size)
+            assertEquals(test.result.size, result.size)
         }
     }
 }

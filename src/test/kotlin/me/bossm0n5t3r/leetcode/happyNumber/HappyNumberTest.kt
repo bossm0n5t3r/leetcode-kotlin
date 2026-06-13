@@ -11,6 +11,6 @@ class HappyNumberTest {
     @Test
     fun isHappy() {
         val tests = listOf(HappyNumberTestData(19, true), HappyNumberTestData(2, false))
-        tests.forEach { test -> assertEquals(happyNumber.isHappy(test.n), test.result) }
+        tests.forEach { test -> assertEquals(test.result, happyNumber.isHappy(test.n)) }
     }
 }

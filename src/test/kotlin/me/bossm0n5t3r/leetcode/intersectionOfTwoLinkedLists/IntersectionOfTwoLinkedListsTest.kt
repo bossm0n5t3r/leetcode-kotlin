@@ -72,8 +72,8 @@ class IntersectionOfTwoLinkedListsTest {
             val headA = ListNodeUtil.connectListNode(test.headA)
             val headB = ListNodeUtil.connectListNode(test.headB)
             assertEquals(
-                intersectionOfTwoLinkedLists.getIntersectionNode(headA, headB),
                 test.result,
+                intersectionOfTwoLinkedLists.getIntersectionNode(headA, headB),
             )
             ListNodeUtil.clearBasicSingleListNode(basicSingleListNode)
         }

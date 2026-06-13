@@ -23,10 +23,8 @@ internal class NQueensTest {
             )
         tests.forEach { test ->
             nQueens.solveNQueens(test.n).also {
-                println(it)
                 assertThat(it).containsExactlyInAnyOrderElementsOf(test.result)
             }
         }
-        println(nQueens.solveNQueens(8))
     }
 }

@@ -15,6 +15,6 @@ class ValidAnagramTest {
                 ValidAnagramTestData("anagram", "nagaram", true),
                 ValidAnagramTestData("rat", "car", false),
             )
-        tests.forEach { test -> assertEquals(validAnagram.isAnagram(test.s, test.t), test.result) }
+        tests.forEach { test -> assertEquals(test.result, validAnagram.isAnagram(test.s, test.t)) }
     }
 }
