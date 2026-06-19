@@ -4,7 +4,7 @@ class FindTheHighestAltitude {
     class Solution {
         fun largestAltitude(gain: IntArray): Int {
             var tmp = 0
-            var highest = tmp
+            var highest = 0
             for (diff in gain) {
                 tmp += diff
                 if (tmp > highest) highest = tmp
