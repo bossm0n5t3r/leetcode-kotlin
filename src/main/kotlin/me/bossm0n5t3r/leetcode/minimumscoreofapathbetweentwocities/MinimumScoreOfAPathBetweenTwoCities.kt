@@ -3,30 +3,31 @@ package me.bossm0n5t3r.leetcode.minimumscoreofapathbetweentwocities
 class MinimumScoreOfAPathBetweenTwoCities {
     class Solution {
         fun minScore(n: Int, roads: Array<IntArray>): Int {
-            val adj = Array(n + 1) { mutableListOf<Pair<Int, Int>>() }
-            for ((u, v, w) in roads) {
-                adj[u].add(v to w)
-                adj[v].add(u to w)
-            }
+            val parent = IntArray(n + 1) { it }
+            val minWeight = IntArray(n + 1) { Int.MAX_VALUE }
 
-            val visited = BooleanArray(n + 1)
-            val stack = ArrayDeque<Int>()
-            stack.add(1)
-            visited[1] = true
-            var result = Int.MAX_VALUE
-
-            while (stack.isNotEmpty()) {
-                val u = stack.removeLast()
-                for ((v, w) in adj[u]) {
-                    result = minOf(result, w)
-                    if (!visited[v]) {
-                        visited[v] = true
-                        stack.add(v)
-                    }
+            fun find(x: Int): Int {
+                var root = x
+                while (parent[root] != root) {
+                    parent[root] = parent[parent[root]]
+                    root = parent[root]
                 }
+                return root
             }
 
-            return result
+            for ((u, v, w) in roads) {
+                val rootU = find(u)
+                val rootV = find(v)
+
+                val mergedMin = minOf(minWeight[rootU], minWeight[rootV], w)
+
+                if (rootU != rootV) {
+                    parent[rootU] = rootV
+                }
+                minWeight[rootV] = mergedMin
+            }
+
+            return minWeight[find(1)]
         }
     }
 }
