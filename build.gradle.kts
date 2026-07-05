@@ -25,6 +25,13 @@ dependencies {
 
 tasks.test { useJUnitPlatform() }
 
+tasks.register<JavaExec>("runMain") {
+    group = "application"
+    description = "Runs src/main/kotlin/Main.kt"
+    classpath = sourceSets["main"].runtimeClasspath
+    mainClass.set("MainKt")
+}
+
 kotlin { jvmToolchain(libs.versions.jdk.get().toInt()) }
 
 ktfmt { kotlinLangStyle() }
