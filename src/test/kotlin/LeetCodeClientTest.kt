@@ -1,5 +1,7 @@
+import LeetCodeClient.toInlineExampleTestcases
 import kotlinx.serialization.json.Json
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertDoesNotThrow
 
@@ -31,5 +33,27 @@ class LeetCodeClientTest {
             "{\"query\":\"dummy query\",\"variables\":\"{\\\"titleSlug\\\":\\\"dummy-title-slug\\\"}\"}",
             result,
         )
+    }
+
+    @Test
+    fun `toInlineExampleTestcases normalizes LF-only input to a single inline string`() {
+        val input = "4\n[[1,2,9],[2,3,6],[2,4,5],[1,4,7]]\n1\n4"
+
+        val result = input.toInlineExampleTestcases()
+
+        assertEquals("4 / [[1,2,9],[2,3,6],[2,4,5],[1,4,7]] / 1 / 4", result)
+        assertFalse(result.contains("\n"), "normalized string must not contain \\n")
+        assertFalse(result.contains("\r"), "normalized string must not contain \\r")
+    }
+
+    @Test
+    fun `toInlineExampleTestcases normalizes CRLF and trailing CR input to a single inline string`() {
+        val input = "\"acbac\"\r\n[1,2,3,0]\r"
+
+        val result = input.toInlineExampleTestcases()
+
+        assertEquals("\"acbac\" / [1,2,3,0]", result)
+        assertFalse(result.contains("\n"), "normalized string must not contain \\n")
+        assertFalse(result.contains("\r"), "normalized string must not contain \\r")
     }
 }

@@ -106,36 +106,13 @@ object LeetCodeContestProblemsGenerator {
 
             File(newTestPath.toString(), "$pascalCaseTestClassName.kt")
                 .writeText(
-                    """
-                package me.bossm0n5t3r.leetcode.$filePath
-
-                import org.junit.jupiter.api.Test
-                import org.junit.jupiter.api.Assertions.assertEquals
-
-                class $pascalCaseTestClassName {
-                    private val sut = $pascalCaseTestName.Solution()
-                    
-                    private data class TestData($methodParametersAndResultAsString)
-                    
-                    @Test
-                    fun test() {
-                        // Example Testcases
-                        // $exampleTestcases
-                        val testDataList = listOf(
-                            TestData(),
-                        )
-                        
-                        for (testData in testDataList) {
-                            assertEquals(
-                                testData.result,
-                                sut
-                            )
-                        }
-                    }
-                }
-
-                """
-                        .trimIndent()
+                    generateTestFileContent(
+                        packageName = "me.bossm0n5t3r.leetcode.$filePath",
+                        problemClassName = pascalCaseTestName,
+                        testClassName = pascalCaseTestClassName,
+                        methodParametersAndResultAsString = methodParametersAndResultAsString,
+                        exampleTestcases = exampleTestcases,
+                    )
                 )
         } catch (e: Exception) {
             println("Error: ${e.message}")

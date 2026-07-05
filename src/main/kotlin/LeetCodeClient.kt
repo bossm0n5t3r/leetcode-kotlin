@@ -78,6 +78,8 @@ object LeetCodeClient {
         this.find { it.lang == LANG_KOTLIN }?.code?.split("\n")
             ?: throw Exception("No Kotlin code snippet found")
 
+    internal fun String.toInlineExampleTestcases(): String = trim().lines().joinToString(" / ")
+
     private fun String.toMethodParametersAndResultAsString(): String =
         this.substringAfter('(')
             .substringBefore('{')
@@ -106,10 +108,8 @@ object LeetCodeClient {
             methodParametersAndResultAsString =
                 sampleCodes[1].toMethodParametersAndResultAsString(),
             exampleTestcases =
-                this.activeDailyCodingChallengeQuestion.question.exampleTestcases.replace(
-                    "\n",
-                    " / ",
-                ),
+                this.activeDailyCodingChallengeQuestion.question.exampleTestcases
+                    .toInlineExampleTestcases(),
         )
     }
 
@@ -123,7 +123,7 @@ object LeetCodeClient {
             sampleCodes = sampleCodes,
             methodParametersAndResultAsString =
                 sampleCodes[1].toMethodParametersAndResultAsString(),
-            exampleTestcases = this.exampleTestcases.replace("\n", " / "),
+            exampleTestcases = this.exampleTestcases.toInlineExampleTestcases(),
         )
     }
 
