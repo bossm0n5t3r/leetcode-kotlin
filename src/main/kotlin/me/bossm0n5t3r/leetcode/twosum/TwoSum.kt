@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.twoSum
+package me.bossm0n5t3r.leetcode.twosum
 
 class TwoSum {
     class Solution {
