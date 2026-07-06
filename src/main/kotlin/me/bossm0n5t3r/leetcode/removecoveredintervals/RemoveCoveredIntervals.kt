@@ -1,19 +1,20 @@
 package me.bossm0n5t3r.leetcode.removecoveredintervals
 
-import java.util.PriorityQueue
-
 class RemoveCoveredIntervals {
     class Solution {
         fun removeCoveredIntervals(intervals: Array<IntArray>): Int {
-            val pq: PriorityQueue<IntArray> =
-                PriorityQueue(compareBy<IntArray> { it.first() }.thenByDescending { it.last() })
-            pq.addAll(intervals)
+            val n = intervals.size
+            val sorted =
+                intervals.sortedWith(
+                    compareBy<IntArray> { it.first() }.thenByDescending { it.last() }
+                )
             var result = 0
-            while (pq.isNotEmpty()) {
-                val cur = pq.poll()
+            var index = 0
+            while (index < n) {
+                val cur = sorted[index++]
                 result++
-                while (pq.isNotEmpty() && cur isCover pq.peek()) {
-                    pq.poll()
+                while (index < n && cur isCover sorted[index]) {
+                    index++
                 }
             }
             return result
