@@ -8,19 +8,35 @@ class PathExistenceQueriesInAGraphI {
             maxDiff: Int,
             queries: Array<IntArray>,
         ): BooleanArray {
-            return queries.map { (u, v) -> nums.isStepExist(u, v, maxDiff) }.toBooleanArray()
-        }
+            var i = 0
+            var j = 1
 
-        private fun IntArray.isStepExist(start: Int, end: Int, maxDiff: Int): Boolean {
-            if (start == end) return true
-            if (start > end) return this.isStepExist(end, start, maxDiff)
-            var num = this[start]
-            for (i in (start + 1)..end) {
-                val next = this[i]
-                if (next - num > maxDiff) return false
-                num = next
+            var currentGroup = 0
+            val nodeGroups = IntArray(n) { 0 }
+
+            while (j < n) {
+                val diff = nums[j] - nums[i]
+                if (diff <= maxDiff) {
+                    nodeGroups[i] = currentGroup
+                    nodeGroups[j] = currentGroup
+                } else {
+                    nodeGroups[i] = currentGroup
+                    currentGroup++
+                    nodeGroups[j] = currentGroup
+                }
+                i++
+                j++
             }
-            return true
+
+            val result = BooleanArray(queries.size) { false }
+            for ((k, element) in queries.withIndex()) {
+                val left = element[0]
+                val right = element[1]
+                if (left == right || (nodeGroups[left] == nodeGroups[right])) {
+                    result[k] = true
+                }
+            }
+            return result
         }
     }
 }
