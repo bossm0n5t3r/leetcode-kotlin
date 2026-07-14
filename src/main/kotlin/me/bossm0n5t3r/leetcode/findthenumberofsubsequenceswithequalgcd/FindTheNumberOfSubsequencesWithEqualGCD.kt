@@ -7,27 +7,27 @@ class FindTheNumberOfSubsequencesWithEqualGCD {
         }
 
         fun subsequencePairCount(nums: IntArray): Int {
-            var maxOfNums = 0
-            for (num in nums) {
-                maxOfNums = maxOf(maxOfNums, num)
-            }
+            val maxOfNums = nums.maxOrNull() ?: 0
 
-            var dp = Array(maxOfNums + 1) { IntArray(maxOfNums + 1) { 0 } }
+            var dp = Array(maxOfNums + 1) { IntArray(maxOfNums + 1) }
             dp[0][0] = 1
 
             for (num in nums) {
-                val ndp = Array(maxOfNums + 1) { IntArray(maxOfNums + 1) { 0 } }
+                val ndp = Array(maxOfNums + 1) { IntArray(maxOfNums + 1) }
+                val gcdWithNum = IntArray(maxOfNums + 1) { gcd(it, num) }
                 for (i in 0..maxOfNums) {
-                    val divisor1 = gcd(i, num)
+                    val divisor1 = gcdWithNum[i]
+                    val dpRow = dp[i]
+                    val ndpRow = ndp[i]
+                    val ndpDiv1Row = ndp[divisor1]
                     for (j in 0..maxOfNums) {
-                        val tmp = dp[i][j]
-                        if (tmp == 0) {
-                            continue
-                        }
-                        val divisor2 = gcd(j, num)
-                        ndp[i][j] = (ndp[i][j] + tmp) % MODULO
-                        ndp[divisor1][j] = (ndp[divisor1][j] + tmp) % MODULO
-                        ndp[i][divisor2] = (ndp[i][divisor2] + tmp) % MODULO
+                        val tmp = dpRow[j]
+                        if (tmp == 0) continue
+
+                        val divisor2 = gcdWithNum[j]
+                        ndpRow[j] = addMod(ndpRow[j], tmp)
+                        ndpDiv1Row[j] = addMod(ndpDiv1Row[j], tmp)
+                        ndpRow[divisor2] = addMod(ndpRow[divisor2], tmp)
                     }
                 }
                 dp = ndp
@@ -35,20 +35,25 @@ class FindTheNumberOfSubsequencesWithEqualGCD {
 
             var result = 0
             for (i in 1..maxOfNums) {
-                result = (result + dp[i][i]) % MODULO
+                result = addMod(result, dp[i][i])
             }
             return result
         }
 
+        private fun addMod(a: Int, b: Int): Int {
+            val sum = a + b
+            return if (sum >= MODULO) sum - MODULO else sum
+        }
+
         private fun gcd(a: Int, b: Int): Int {
-            var a = a
-            var b = b
-            while (b != 0) {
-                val temp = a
-                a = b
-                b = temp % b
+            var x = a
+            var y = b
+            while (y != 0) {
+                val temp = x
+                x = y
+                y = temp % y
             }
-            return a
+            return x
         }
     }
 }
