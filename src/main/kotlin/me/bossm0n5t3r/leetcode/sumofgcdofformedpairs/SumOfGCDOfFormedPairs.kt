@@ -3,18 +3,23 @@ package me.bossm0n5t3r.leetcode.sumofgcdofformedpairs
 class SumOfGCDOfFormedPairs {
     class Solution {
         fun gcdSum(nums: IntArray): Long {
+            val n = nums.size
+            val prefixGcd = IntArray(n)
             var mx = 0
-            val prefixGcd = mutableListOf<Int>()
-            for (num in nums) {
+            for (i in 0 until n) {
+                val num = nums[i]
                 mx = maxOf(mx, num)
-                prefixGcd += gcd(mx, num)
+                prefixGcd[i] = gcd(mx, num)
             }
             prefixGcd.sort()
+
             var result = 0L
-            while (prefixGcd.size > 1) {
-                val first = prefixGcd.removeFirst()
-                val last = prefixGcd.removeLast()
-                result += gcd(first, last)
+            var left = 0
+            var right = n - 1
+            while (left < right) {
+                result += gcd(prefixGcd[left], prefixGcd[right])
+                left++
+                right--
             }
             return result
         }
@@ -23,9 +28,9 @@ class SumOfGCDOfFormedPairs {
             var x = a
             var y = b
             while (y != 0) {
-                val temp = x
+                val temp = x % y
                 x = y
-                y = temp % y
+                y = temp
             }
             return x
         }
