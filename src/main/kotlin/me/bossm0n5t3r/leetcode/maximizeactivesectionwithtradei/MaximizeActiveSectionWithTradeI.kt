@@ -2,44 +2,35 @@ package me.bossm0n5t3r.leetcode.maximizeactivesectionwithtradei
 
 class MaximizeActiveSectionWithTradeI {
     class Solution {
-        private data class Segment(val isOne: Boolean, val length: Int)
-
-        fun maxActiveSectionsAfterTrade(s: String): Int {
-            val segments = buildSegments(s)
-
+        fun maxActiveSectionsAfterTrade(input: String): Int {
             var totalOnes = 0
-            var bestGain = 0
-            for (i in segments.indices) {
-                val (isOne, length) = segments[i]
-                if (isOne) totalOnes += length
+            var prevZeros = 0
+            var maxGain = 0
 
-                if (i == 0 || i == segments.lastIndex) continue
-                if (!segments[i - 1].isOne && !segments[i + 1].isOne) {
-                    bestGain = maxOf(bestGain, segments[i - 1].length + segments[i + 1].length)
+            var i = 0
+            val n = input.length
+            while (i < n) {
+                var ones = 0
+                while (i < n && input[i] == '1') {
+                    i++
+                    totalOnes++
+                    ones++
                 }
+
+                var zeros = 0
+                while (i < n && input[i] == '0') {
+                    i++
+                    zeros++
+                }
+
+                if (prevZeros > 0 && ones > 0 && zeros > 0) {
+                    maxGain = maxOf(maxGain, prevZeros + zeros)
+                }
+
+                prevZeros = zeros
             }
 
-            return totalOnes + bestGain
-        }
-
-        private fun buildSegments(s: String): List<Segment> {
-            if (s.isEmpty()) return emptyList()
-
-            return buildList {
-                var isOne = s[0] == '1'
-                var length = 1
-                for (i in 1..s.lastIndex) {
-                    val cur = s[i] == '1'
-                    if (cur == isOne) {
-                        length++
-                    } else {
-                        add(Segment(isOne, length))
-                        isOne = cur
-                        length = 1
-                    }
-                }
-                add(Segment(isOne, length))
-            }
+            return totalOnes + maxGain
         }
     }
 }
