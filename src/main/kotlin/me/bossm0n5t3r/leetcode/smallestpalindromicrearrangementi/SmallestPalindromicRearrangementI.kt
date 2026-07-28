@@ -3,36 +3,31 @@ package me.bossm0n5t3r.leetcode.smallestpalindromicrearrangementi
 class SmallestPalindromicRearrangementI {
     class Solution {
         fun smallestPalindrome(s: String): String {
-            val chars = IntArray(26) { 0 }
-            for (c in s) chars[c - 'a']++
-            val ascending = ArrayDeque<Char>()
-            var turnOver = Char.MIN_VALUE
-            val descending = ArrayDeque<Char>()
-            for (i in 0 until 26) {
-                val count = chars[i]
-                when {
-                    count == 0 -> continue
-                    count % 2 == 0 -> {
-                        repeat(count / 2) {
-                            ascending.addLast('a' + i)
-                            descending.addFirst('a' + i)
-                        }
-                    }
-                    else -> {
-                        val char = 'a' + i
-                        turnOver = char
-                        repeat(count / 2) {
-                            ascending.addLast('a' + i)
-                            descending.addFirst('a' + i)
-                        }
-                    }
+            val frequency = IntArray(26)
+            for (char in s) {
+                frequency[char - 'a']++
+            }
+
+            val result = StringBuilder(s.length)
+            var middle = -1
+
+            for (i in frequency.indices) {
+                repeat(frequency[i] / 2) { result.append('a' + i) }
+
+                if (frequency[i] % 2 != 0) {
+                    middle = i
                 }
             }
-            return buildString {
-                append(ascending.toCharArray())
-                if (turnOver != Char.MIN_VALUE) append(turnOver)
-                append(descending.toCharArray())
+
+            val halfLength = result.length
+            if (middle >= 0) {
+                result.append('a' + middle)
             }
+            for (i in halfLength - 1 downTo 0) {
+                result.append(result[i])
+            }
+
+            return result.toString()
         }
     }
 }
