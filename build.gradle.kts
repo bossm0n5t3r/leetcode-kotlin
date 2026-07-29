@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlinx.serialization)
     alias(libs.plugins.ktfmt)
+    application
 }
 
 repositories { mavenCentral() }
@@ -23,14 +24,9 @@ dependencies {
     implementation(libs.ktor.serialization.kotlinx.json)
 }
 
-tasks.test { useJUnitPlatform() }
+application { mainClass.set("MainKt") }
 
-tasks.register<JavaExec>("runMain") {
-    group = "application"
-    description = "Runs src/main/kotlin/Main.kt"
-    classpath = sourceSets["main"].runtimeClasspath
-    mainClass.set("MainKt")
-}
+tasks.test { useJUnitPlatform() }
 
 kotlin { jvmToolchain(libs.versions.jdk.get().toInt()) }
 
