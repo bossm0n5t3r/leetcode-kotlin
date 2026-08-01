@@ -4,6 +4,8 @@ class PredictTheWinner {
     class Solution {
         fun predictTheWinner(nums: IntArray): Boolean {
             val n = nums.size
+            // memo[i][j] = nums[i..j] 구간에서 현재 턴인 플레이어가 얻을 수 있는 최대 점수 차이
+            // row(i) = 구간의 시작 인덱스, col(j) = 구간의 끝 인덱스
             val memo = Array(n) { IntArray(n) { Int.MIN_VALUE } }
 
             fun scoreDiff(i: Int, j: Int): Int {
