@@ -3,17 +3,16 @@ package me.bossm0n5t3r.leetcode.smallestmissingintegergreaterthansequentialprefi
 class SmallestMissingIntegerGreaterThanSequentialPrefixSum {
     class Solution {
         fun missingInteger(nums: IntArray): Int {
-            var tmpIndex = 0
-            var longestPrefixSum = nums[tmpIndex]
-            while (tmpIndex + 1 < nums.size && nums[tmpIndex] + 1 == nums[tmpIndex + 1]) {
-                tmpIndex++
-                longestPrefixSum += nums[tmpIndex]
+            var result = nums[0]
+            for (i in 1 until nums.size) {
+                if (nums[i] != nums[i - 1] + 1) break
+                result += nums[i]
             }
             val numsSet = nums.toSet()
-            while (numsSet.contains(longestPrefixSum)) {
-                longestPrefixSum++
+            while (result in numsSet) {
+                result++
             }
-            return longestPrefixSum
+            return result
         }
     }
 }
