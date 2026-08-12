@@ -7,7 +7,8 @@ class LengthOfLongestSubarrayWithAtMostKFrequency {
             var start = -1
             val frequency = mutableMapOf<Int, Int>()
 
-            for ((end, endElement) in nums.withIndex()) {
+            for (end in nums.indices) {
+                val endElement = nums[end]
                 frequency[endElement] = frequency.getOrDefault(endElement, 0) + 1
                 while (frequency[endElement]?.let { it > k } ?: false) {
                     start++
