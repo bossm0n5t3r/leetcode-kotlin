@@ -4,17 +4,19 @@ class LengthOfLongestSubarrayWithAtMostKFrequency {
     class Solution {
         fun maxSubarrayLength(nums: IntArray, k: Int): Int {
             var result = 0
-            var start = -1
-            val frequency = mutableMapOf<Int, Int>()
+            var start = 0
+            val frequency = mutableMapOf<Int, Int>().withDefault { 0 }
 
             for (end in nums.indices) {
                 val endElement = nums[end]
-                frequency[endElement] = frequency.getOrDefault(endElement, 0) + 1
-                while (frequency[endElement]?.let { it > k } ?: false) {
+                frequency[endElement] = frequency.getValue(endElement) + 1
+
+                while (frequency.getValue(endElement) > k) {
+                    frequency[nums[start]] = frequency.getValue(nums[start]) - 1
                     start++
-                    frequency[nums[start]] = frequency.getOrDefault(nums[start], 0) - 1
                 }
-                result = maxOf(result, end - start)
+
+                result = maxOf(result, end - start + 1)
             }
 
             return result
