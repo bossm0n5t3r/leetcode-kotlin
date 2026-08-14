@@ -5,14 +5,14 @@ class MaximumLengthSubstringWithTwoOccurrences {
         fun maximumLengthSubstring(s: String): Int {
             var result = 0
             var start = 0
-            val frequency = mutableMapOf<Char, Int>().withDefault { 0 }
+            val frequency = IntArray(26) { 0 }
 
             for (end in s.indices) {
                 val endElement = s[end]
-                frequency[endElement] = frequency.getValue(endElement) + 1
+                frequency[endElement - 'a']++
 
-                while (frequency.getValue(endElement) > 2) {
-                    frequency[s[start]] = frequency.getValue(s[start]) - 1
+                while (frequency[endElement - 'a'] > 2) {
+                    frequency[s[start] - 'a']--
                     start++
                 }
 
