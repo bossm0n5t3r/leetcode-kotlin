@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.containsDuplicate
+package me.bossm0n5t3r.leetcode.containsduplicate
 
 class ContainsDuplicate {
     class Solution {
