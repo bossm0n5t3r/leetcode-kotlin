@@ -3,18 +3,13 @@ package me.bossm0n5t3r.leetcode.peoplewhoselistoffavoritecompaniesisnotasubsetof
 class PeopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList {
     class Solution {
         fun peopleIndexes(favoriteCompanies: List<List<String>>): List<Int> {
-            val deduplicatedFavoriteCompanies = favoriteCompanies.map { it.toSet() }
-            return deduplicatedFavoriteCompanies.mapIndexedNotNull { index, strings ->
-                for (i in deduplicatedFavoriteCompanies.indices) {
-                    if (i == index) continue
-                    if (
-                        deduplicatedFavoriteCompanies[i].size >= strings.size &&
-                            deduplicatedFavoriteCompanies[i].containsAll(strings)
-                    ) {
-                        return@mapIndexedNotNull null
-                    }
+            val sets = favoriteCompanies.map { it.toSet() }
+            return sets.indices.filter { index ->
+                sets.indices.none { otherIndex ->
+                    otherIndex != index &&
+                        sets[otherIndex].size >= sets[index].size &&
+                        sets[otherIndex].containsAll(sets[index])
                 }
-                index
             }
         }
     }
