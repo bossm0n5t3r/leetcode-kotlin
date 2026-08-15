@@ -6,8 +6,9 @@ class TwoSum {
             if (nums.size == 2) return intArrayOf(0, 1)
             val length = nums.size
             for (i in 0 until length - 1) {
+                val complement = target - nums[i]
                 for (j in i + 1 until length) {
-                    if (nums[i] + nums[j] == target) return intArrayOf(i, j)
+                    if (nums[j] == complement) return intArrayOf(i, j)
                 }
             }
             return intArrayOf()
