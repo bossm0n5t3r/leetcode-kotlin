@@ -7,8 +7,12 @@ class PeopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList {
             return deduplicatedFavoriteCompanies.mapIndexedNotNull { index, strings ->
                 for (i in deduplicatedFavoriteCompanies.indices) {
                     if (i == index) continue
-                    if (deduplicatedFavoriteCompanies[i].containsAll(strings))
+                    if (
+                        deduplicatedFavoriteCompanies[i].size >= strings.size &&
+                            deduplicatedFavoriteCompanies[i].containsAll(strings)
+                    ) {
                         return@mapIndexedNotNull null
+                    }
                 }
                 index
             }
