@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.productOfArrayExceptSelf
+package me.bossm0n5t3r.leetcode.productofarrayexceptself
 
 class ProductOfArrayExceptSelf {
     class Solution {
