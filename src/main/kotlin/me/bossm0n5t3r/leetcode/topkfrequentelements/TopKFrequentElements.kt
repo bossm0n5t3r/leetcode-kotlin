@@ -1,23 +1,21 @@
 package me.bossm0n5t3r.leetcode.topkfrequentelements
 
-import java.util.PriorityQueue
-
 class TopKFrequentElements {
     class Solution {
         fun topKFrequent(nums: IntArray, k: Int): IntArray {
             val frequency = nums.toList().groupingBy { it }.eachCount()
-            val pq =
-                PriorityQueue(
-                    compareByDescending<Pair<Int, Int>> { it.second }.thenComparing { it.first }
-                )
-            pq.addAll(frequency.toList())
-            return buildList {
-                    repeat(k) {
-                        val (num, _) = pq.poll()
-                        add(num)
-                    }
+            val bucket = Array<MutableList<Int>>(nums.size + 1) { mutableListOf() }
+            for ((num, count) in frequency) {
+                bucket[count].add(num)
+            }
+            val result = mutableListOf<Int>()
+            for (count in nums.size downTo 1) {
+                for (num in bucket[count]) {
+                    result.add(num)
+                    if (result.size == k) return result.toIntArray()
                 }
-                .toIntArray()
+            }
+            return result.toIntArray()
         }
     }
 }
