@@ -13,9 +13,7 @@ class CrawlerLogFolder {
                         }
                     }
 
-                    "./" -> {
-                        Unit
-                    }
+                    "./" -> {}
 
                     else -> {
                         depth++
