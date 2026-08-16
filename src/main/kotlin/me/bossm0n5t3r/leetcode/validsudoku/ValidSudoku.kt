@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.validSudoku
+package me.bossm0n5t3r.leetcode.validsudoku
 
 class ValidSudoku {
     class Solution {
@@ -90,8 +90,8 @@ class ValidSudoku {
         fun isValidSudokuSecondApproach(board: Array<CharArray>): Boolean {
             val seen = mutableSetOf<String>()
             val sudokuIndex = 0 until 9
-            sudokuIndex.forEach { r ->
-                sudokuIndex.forEach { c ->
+            for (r in sudokuIndex) {
+                for (c in sudokuIndex) {
                     if (board[r][c] != '.') {
                         val element = "(${board[r][c]})"
                         if (

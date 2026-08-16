@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.validSudoku
+package me.bossm0n5t3r.leetcode.validsudoku
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
