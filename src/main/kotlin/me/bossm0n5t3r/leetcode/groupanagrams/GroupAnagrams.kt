@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.groupAnagrams
+package me.bossm0n5t3r.leetcode.groupanagrams
 
 class GroupAnagrams {
     class Solution {

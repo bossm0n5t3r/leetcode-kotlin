@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.groupAnagrams
+package me.bossm0n5t3r.leetcode.groupanagrams
 
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
