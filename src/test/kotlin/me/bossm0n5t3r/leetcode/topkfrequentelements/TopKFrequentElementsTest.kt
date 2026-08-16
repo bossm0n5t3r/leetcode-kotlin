@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.topKFrequentElements
+package me.bossm0n5t3r.leetcode.topkfrequentelements
 
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
