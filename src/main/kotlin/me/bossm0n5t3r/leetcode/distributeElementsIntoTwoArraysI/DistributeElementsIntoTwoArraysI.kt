@@ -13,16 +13,11 @@ class DistributeElementsIntoTwoArraysI {
         }
 
         private fun selectArr(arr1: MutableList<Int>, arr2: MutableList<Int>): MutableList<Int> =
-            if (arr1.isEmpty()) {
-                arr1
-            } else if (arr2.isEmpty()) {
-                arr2
-            } else {
-                if (arr1.last() > arr2.last()) {
-                    arr1
-                } else {
-                    arr2
-                }
+            when {
+                arr1.isEmpty() -> arr1
+                arr2.isEmpty() -> arr2
+                arr1.last() > arr2.last() -> arr1
+                else -> arr2
             }
     }
 }
