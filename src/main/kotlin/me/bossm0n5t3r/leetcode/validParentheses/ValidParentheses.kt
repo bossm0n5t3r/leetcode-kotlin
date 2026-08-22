@@ -3,17 +3,19 @@ package me.bossm0n5t3r.leetcode.validParentheses
 class ValidParentheses {
     class Solution {
         fun isValid(s: String): Boolean {
-            val map = mapOf(')' to '(', '}' to '{', ']' to '[')
-            val stack = mutableListOf<Char>()
+            val n = s.length
+            if (n % 2 != 0) return false
+            val stack = CharArray(n)
+            var top = 0
             for (c in s) {
-                if (c in map) {
-                    if (stack.isEmpty() || stack.last() != map[c]) return false
-                    stack.removeAt(stack.size - 1)
-                } else {
-                    stack.add(c)
+                when (c) {
+                    '(' -> stack[top++] = ')'
+                    '[' -> stack[top++] = ']'
+                    '{' -> stack[top++] = '}'
+                    else -> if (top == 0 || stack[--top] != c) return false
                 }
             }
-            return stack.isEmpty()
+            return top == 0
         }
     }
 }
