@@ -3,26 +3,17 @@ package me.bossm0n5t3r.leetcode.longestconsecutivesequence
 class LongestConsecutiveSequence {
     class Solution {
         fun longestConsecutive(nums: IntArray): Int {
-            val set = mutableSetOf<Int>()
-            for (num in nums) set += num
+            val set = nums.toHashSet()
             var result = 0
-            for (num in nums) {
-                if (num !in set) continue
-                var tmp = num
-                val downSide = mutableSetOf<Int>()
-                while (tmp - 1 in set) {
-                    tmp--
-                    downSide += tmp
+            for (num in set) {
+                if (num - 1 in set) continue
+                var current = num
+                var length = 1
+                while (current + 1 in set) {
+                    current++
+                    length++
                 }
-                tmp = num
-                val upSide = mutableSetOf<Int>()
-                while (tmp + 1 in set) {
-                    tmp++
-                    upSide += tmp
-                }
-                val total = downSide + num + upSide
-                result = maxOf(result, total.size)
-                set -= total
+                result = maxOf(result, length)
             }
             return result
         }
