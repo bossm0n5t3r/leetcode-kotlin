@@ -6,12 +6,23 @@ import kotlin.io.path.exists
 import kotlinx.coroutines.runBlocking
 
 object DailyLeetCodeProblemGenerator {
-    fun generateProblem(titleSlug: String = "") =
+    fun generateProblem(rawInput: String = "") {
+        val titleSlug = rawInput.toTitleSlug()
         if (titleSlug.isBlank()) {
             run()
         } else {
             run(titleSlug)
         }
+    }
+
+    private fun String.toTitleSlug(): String {
+        val trimmed = this.trim()
+        return if ("/problems/" in trimmed) {
+            trimmed.substringAfter("/problems/").substringBefore("/").substringBefore("?")
+        } else {
+            trimmed
+        }
+    }
 
     private fun run() {
         with(readProblem()) {
