@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.evaluateReversePolishNotation
+package me.bossm0n5t3r.leetcode.evaluatereversepolishnotation
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
