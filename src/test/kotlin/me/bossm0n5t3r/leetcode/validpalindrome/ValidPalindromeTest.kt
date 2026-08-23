@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.validPalindrome
+package me.bossm0n5t3r.leetcode.validpalindrome
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
