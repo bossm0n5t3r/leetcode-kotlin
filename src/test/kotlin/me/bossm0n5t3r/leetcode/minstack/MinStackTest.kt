@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.minStack
+package me.bossm0n5t3r.leetcode.minstack
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

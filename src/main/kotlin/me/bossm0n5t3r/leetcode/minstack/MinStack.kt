@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.minStack
+package me.bossm0n5t3r.leetcode.minstack
 
 class MinStack {
     /** initialize your data structure here. */
