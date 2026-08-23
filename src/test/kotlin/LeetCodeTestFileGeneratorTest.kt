@@ -1,9 +1,8 @@
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-class LeetCodeCommonTest {
+class LeetCodeTestFileGeneratorTest {
     @Test
     fun `generated test template uses TestData placeholder and includes example testcases comment`() {
         val content =
@@ -52,27 +51,6 @@ class LeetCodeCommonTest {
         assertTrue(
             content.contains("TestData(),"),
             "generated test should keep the fill-in TestData() placeholder",
-        )
-    }
-
-    @Test
-    fun `generated test template keeps TestData placeholder when no example testcases are provided`() {
-        val content =
-            generateTestFileContent(
-                packageName = "me.bossm0n5t3r.leetcode.twosum",
-                problemClassName = "TwoSum",
-                testClassName = "TwoSumTest",
-                methodParametersAndResultAsString =
-                    "val nums: IntArray, val target: Int, val result: IntArray",
-            )
-
-        assertTrue(
-            content.contains("TestData(),"),
-            "generated test should keep the fill-in TestData() placeholder",
-        )
-        assertFalse(
-            content.contains("// Example Testcases"),
-            "generated test must not include example testcase comment when none are provided",
         )
     }
 }

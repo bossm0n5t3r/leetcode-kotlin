@@ -1,12 +1,10 @@
 import LeetCodeHelper.normalizeExistingPackageToLowercase
-import LeetCodeHelper.toLowerCase
 import LeetCodeHelper.toPascalCase
 import java.io.File
-import java.nio.file.Paths
 import kotlin.io.path.exists
 import kotlinx.coroutines.runBlocking
 
-object DailyLeetCodeProblemGenerator {
+object LeetCodeProblemGenerator {
 
     fun generateProblem(
         rawInput: String = "",
@@ -58,34 +56,16 @@ object DailyLeetCodeProblemGenerator {
         }
     }
 
-    private fun readProblem(): Problem {
-        val problem = runBlocking { LeetCodeClient.getDailyLeetCodeProblem() }
-        return Problem(
-            name = problem.name,
-            url = problem.url,
-            sampleCodes = problem.sampleCodes,
-            methodParametersAndResultAsString = problem.methodParametersAndResultAsString,
-            exampleTestcases = problem.exampleTestcases,
-            filePath = problem.name.toLowerCase(),
-        )
+    private fun readProblem(): LeetCodeProblem = runBlocking {
+        LeetCodeClient.getDailyLeetCodeProblem()
     }
 
-    private fun readProblem(titleSlug: String): Problem {
-        val problem = runBlocking { LeetCodeClient.getLeetCodeProblemByTitleSlug(titleSlug) }
-        return Problem(
-            name = problem.name,
-            url = problem.url,
-            sampleCodes = problem.sampleCodes,
-            methodParametersAndResultAsString = problem.methodParametersAndResultAsString,
-            exampleTestcases = problem.exampleTestcases,
-            filePath = problem.name.toLowerCase(),
-        )
+    private fun readProblem(titleSlug: String): LeetCodeProblem = runBlocking {
+        LeetCodeClient.getLeetCodeProblemByTitleSlug(titleSlug)
     }
 
-    private fun Problem.createFiles(recreateExistingProblem: Boolean) {
-        val (name, url, sampleCodes, _, _, filePath) = this
-        val newProblemPath =
-            Paths.get(problemPath.toString(), filePath).normalizeExistingPackageToLowercase()
+    private fun LeetCodeProblem.createFiles(recreateExistingProblem: Boolean) {
+        val newProblemPath = problemPath.resolve(filePath).normalizeExistingPackageToLowercase()
         try {
             if (newProblemPath.exists()) {
                 if (!recreateExistingProblem) {
@@ -135,10 +115,8 @@ object DailyLeetCodeProblemGenerator {
         }
     }
 
-    private fun Problem.createTest(recreateExistingTest: Boolean) {
-        val (name, _, _, methodParametersAndResultAsString, exampleTestcases, filePath) = this
-        val newTestPath =
-            Paths.get(testPath.toString(), filePath).normalizeExistingPackageToLowercase()
+    private fun LeetCodeProblem.createTest(recreateExistingTest: Boolean) {
+        val newTestPath = testPath.resolve(filePath).normalizeExistingPackageToLowercase()
         try {
             if (newTestPath.exists()) {
                 if (!recreateExistingTest) {

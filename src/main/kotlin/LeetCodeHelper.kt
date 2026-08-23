@@ -26,8 +26,6 @@ object LeetCodeHelper {
             }
     }
 
-    fun String.makePrettyUrl() = this.substringBefore("submissions").substringBefore("?")
-
     fun Path.normalizeExistingPackageToLowercase(): Path {
         val lowercasePath = resolveSibling(fileName.toString().lowercase())
         val matchingDirectories =

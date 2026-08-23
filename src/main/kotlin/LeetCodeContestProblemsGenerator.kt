@@ -1,7 +1,5 @@
-import LeetCodeHelper.toLowerCase
 import LeetCodeHelper.toPascalCase
 import java.io.File
-import java.nio.file.Paths
 import kotlin.io.path.exists
 import kotlinx.coroutines.runBlocking
 
@@ -12,13 +10,13 @@ object LeetCodeContestProblemsGenerator {
         }
     }
 
-    private fun Problem.create() {
+    private fun LeetCodeProblem.create() {
         println()
         println("Problem: $name")
         println("URL: $url")
         println()
-        createFiles(this)
-        createTest(this)
+        createFiles()
+        createTest()
         println("Done!")
     }
 
@@ -26,21 +24,12 @@ object LeetCodeContestProblemsGenerator {
         LeetCodeClient.getLeetCodeContestProblemTitleSlugsByContestSlug(contestSlug)
     }
 
-    private fun readProblem(titleSlug: String): Problem {
-        val problem = runBlocking { LeetCodeClient.getLeetCodeProblemByTitleSlug(titleSlug) }
-        return Problem(
-            name = problem.name,
-            url = problem.url,
-            sampleCodes = problem.sampleCodes,
-            methodParametersAndResultAsString = problem.methodParametersAndResultAsString,
-            exampleTestcases = problem.exampleTestcases,
-            filePath = problem.name.toLowerCase(),
-        )
+    private fun readProblem(titleSlug: String): LeetCodeProblem = runBlocking {
+        LeetCodeClient.getLeetCodeProblemByTitleSlug(titleSlug)
     }
 
-    private fun createFiles(problem: Problem) {
-        val (name, url, sampleCodes, _, _, filePath) = problem
-        val newProblemPath = Paths.get(problemPath.toString(), filePath)
+    private fun LeetCodeProblem.createFiles() {
+        val newProblemPath = problemPath.resolve(filePath)
         try {
             if (newProblemPath.exists()) {
                 println("Problem already exists!")
@@ -86,9 +75,8 @@ object LeetCodeContestProblemsGenerator {
         }
     }
 
-    private fun createTest(problem: Problem) {
-        val (name, _, _, methodParametersAndResultAsString, exampleTestcases, filePath) = problem
-        val newTestPath = Paths.get(testPath.toString(), filePath)
+    private fun LeetCodeProblem.createTest() {
+        val newTestPath = testPath.resolve(filePath)
         try {
             if (newTestPath.exists()) {
                 println("Test already exists!")

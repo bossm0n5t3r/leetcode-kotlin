@@ -1,4 +1,4 @@
 fun main() {
-    DailyLeetCodeProblemGenerator.generateProblem()
+    LeetCodeProblemGenerator.generateProblem()
     SolvedProblemListGenerator.generate()
 }
