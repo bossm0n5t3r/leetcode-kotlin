@@ -1,3 +1,5 @@
+package me.bossm0n5t3r.leetcodegen
+
 import java.io.File
 
 object SolvedProblemListGenerator {

@@ -1,3 +1,5 @@
+package me.bossm0n5t3r.leetcodegen
+
 internal fun generateTestFileContent(
     packageName: String,
     problemClassName: String,

@@ -1,38 +1,80 @@
-import LeetCodeHelper.toPascalCase
+package me.bossm0n5t3r.leetcodegen
+
 import java.io.File
 import kotlin.io.path.exists
 import kotlinx.coroutines.runBlocking
+import me.bossm0n5t3r.leetcodegen.LeetCodeHelper.normalizeExistingPackageToLowercase
+import me.bossm0n5t3r.leetcodegen.LeetCodeHelper.toPascalCase
 
-object LeetCodeContestProblemsGenerator {
-    fun run(contestSlug: String) {
-        readProblemTitleSlugs(contestSlug).forEach { titleSlug ->
-            with(readProblem(titleSlug)) { this.create() }
+object LeetCodeProblemGenerator {
+
+    fun generateProblem(
+        rawInput: String = "",
+        recreateExistingProblem: Boolean = true,
+        recreateExistingTest: Boolean = true,
+    ) {
+        val titleSlug = rawInput.toTitleSlug()
+        if (titleSlug.isBlank()) {
+            run(recreateExistingProblem, recreateExistingTest)
+        } else {
+            run(titleSlug, recreateExistingProblem, recreateExistingTest)
         }
     }
 
-    private fun LeetCodeProblem.create() {
-        println()
-        println("Problem: $name")
-        println("URL: $url")
-        println()
-        createFiles()
-        createTest()
-        println("Done!")
+    private fun String.toTitleSlug(): String {
+        val trimmed = this.trim()
+        return if ("/problems/" in trimmed) {
+            trimmed.substringAfter("/problems/").substringBefore("/").substringBefore("?")
+        } else {
+            trimmed
+        }
     }
 
-    private fun readProblemTitleSlugs(contestSlug: String): List<String> = runBlocking {
-        LeetCodeClient.getLeetCodeContestProblemTitleSlugsByContestSlug(contestSlug)
+    private fun run(recreateExistingProblem: Boolean, recreateExistingTest: Boolean) {
+        with(readProblem()) {
+            println()
+            println("Problem: $name")
+            println("URL: $url")
+            println()
+            createFiles(recreateExistingProblem)
+            createTest(recreateExistingTest)
+            println("Done!")
+        }
+    }
+
+    private fun run(
+        titleSlug: String,
+        recreateExistingProblem: Boolean,
+        recreateExistingTest: Boolean,
+    ) {
+        with(readProblem(titleSlug)) {
+            println()
+            println("Problem: $name")
+            println("URL: $url")
+            println()
+            createFiles(recreateExistingProblem)
+            createTest(recreateExistingTest)
+            println("Done!")
+        }
+    }
+
+    private fun readProblem(): LeetCodeProblem = runBlocking {
+        LeetCodeClient.getDailyLeetCodeProblem()
     }
 
     private fun readProblem(titleSlug: String): LeetCodeProblem = runBlocking {
         LeetCodeClient.getLeetCodeProblemByTitleSlug(titleSlug)
     }
 
-    private fun LeetCodeProblem.createFiles() {
-        val newProblemPath = problemPath.resolve(filePath)
+    private fun LeetCodeProblem.createFiles(recreateExistingProblem: Boolean) {
+        val newProblemPath = problemPath.resolve(filePath).normalizeExistingPackageToLowercase()
         try {
             if (newProblemPath.exists()) {
-                println("Problem already exists!")
+                if (!recreateExistingProblem) {
+                    println("Existing problem kept. Skipping problem generation.")
+                    return
+                }
+                println("Problem already exists. Recreating...")
                 newProblemPath.toFile().deleteRecursively()
                 println("Previous problem deleted!")
                 println()
@@ -75,11 +117,15 @@ object LeetCodeContestProblemsGenerator {
         }
     }
 
-    private fun LeetCodeProblem.createTest() {
-        val newTestPath = testPath.resolve(filePath)
+    private fun LeetCodeProblem.createTest(recreateExistingTest: Boolean) {
+        val newTestPath = testPath.resolve(filePath).normalizeExistingPackageToLowercase()
         try {
             if (newTestPath.exists()) {
-                println("Test already exists!")
+                if (!recreateExistingTest) {
+                    println("Existing test kept. Skipping test generation.")
+                    return
+                }
+                println("Test already exists. Recreating...")
                 newTestPath.toFile().deleteRecursively()
                 println("Previous test deleted!")
                 println()

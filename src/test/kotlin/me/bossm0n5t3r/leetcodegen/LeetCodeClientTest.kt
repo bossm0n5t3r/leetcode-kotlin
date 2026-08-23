@@ -1,5 +1,7 @@
-import LeetCodeClient.toInlineExampleTestcases
+package me.bossm0n5t3r.leetcodegen
+
 import kotlinx.serialization.json.Json
+import me.bossm0n5t3r.leetcodegen.LeetCodeClient.toInlineExampleTestcases
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Test

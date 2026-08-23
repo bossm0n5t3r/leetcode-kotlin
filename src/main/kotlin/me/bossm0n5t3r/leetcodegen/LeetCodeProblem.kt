@@ -1,4 +1,6 @@
-import LeetCodeHelper.toLowerCase
+package me.bossm0n5t3r.leetcodegen
+
+import me.bossm0n5t3r.leetcodegen.LeetCodeHelper.toLowerCase
 
 data class LeetCodeProblem(
     val name: String,

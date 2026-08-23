@@ -1,3 +1,5 @@
+package me.bossm0n5t3r.leetcodegen
+
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
