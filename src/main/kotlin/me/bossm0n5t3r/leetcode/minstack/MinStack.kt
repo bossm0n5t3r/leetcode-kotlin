@@ -1,26 +1,26 @@
 package me.bossm0n5t3r.leetcode.minstack
 
 class MinStack {
-    /** initialize your data structure here. */
-    private val s = mutableListOf<Int>()
-    private var min = Int.MAX_VALUE
+    private val stack = mutableListOf<Int>()
+    private val minStack = mutableListOf<Int>()
 
     fun push(`val`: Int) {
-        s.add(`val`)
-        if (`val` < min) {
-            min = `val`
+        stack.add(`val`)
+
+        if (minStack.isEmpty() || `val` <= minStack.last()) {
+            minStack.add(`val`)
         }
     }
 
     fun pop() {
-        val last = s.last()
-        s.removeAt(s.lastIndex)
-        if (last == min) {
-            min = if (s.isEmpty()) Int.MAX_VALUE else s.minOrNull()!!
+        val value = stack.removeAt(stack.lastIndex)
+
+        if (value == minStack.last()) {
+            minStack.removeAt(minStack.lastIndex)
         }
     }
 
-    fun top(): Int = s.last()
+    fun top(): Int = stack.last()
 
-    fun getMin(): Int = min
+    fun getMin(): Int = minStack.last()
 }
