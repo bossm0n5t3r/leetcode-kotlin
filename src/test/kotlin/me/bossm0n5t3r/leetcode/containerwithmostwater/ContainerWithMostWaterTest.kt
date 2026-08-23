@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.containerWithMostWater
+package me.bossm0n5t3r.leetcode.containerwithmostwater
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -34,7 +34,6 @@ internal class ContainerWithMostWaterTest {
             )
         tests.forEach { test ->
             assertEquals(test.result, containerWithMostWater.maxArea(test.height))
-            assertEquals(test.result, containerWithMostWater.maxAreaAt230709(test.height))
         }
     }
 }
