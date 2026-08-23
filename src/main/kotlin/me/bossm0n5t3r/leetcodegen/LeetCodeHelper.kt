@@ -9,14 +9,31 @@ object LeetCodeHelper {
         Regex("""(?m)^package[ \t]+([A-Za-z_][A-Za-z0-9_.]*)[ \t]*$""")
 
     private val regex = Regex("[^a-zA-Z0-9]")
+    private val leadingDigitsRegex = Regex("""^\d+""")
+    private val digitWords =
+        arrayOf("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
 
-    fun String.toLowerCase() = this.substringAfter(". ").replace(regex, "").lowercase()
+    fun String.toLowerCase() =
+        this.substringAfter(". ").replaceLeadingDigits().replace(regex, "").lowercase()
+
+    private fun String.replaceLeadingDigits(): String {
+        val leadingDigits = leadingDigitsRegex.find(this)?.value ?: return this
+        val digitPrefix = buildString {
+            leadingDigits.forEachIndexed { index, digit ->
+                if (index > 0) append(' ')
+                append(digitWords[digit.digitToInt()])
+            }
+        }
+        val remainder = removePrefix(leadingDigits).trimStart()
+        return if (remainder.isEmpty()) digitPrefix else "$digitPrefix $remainder"
+    }
 
     private fun String.replaceRomanNumeralsAndSpecialCharacters() =
         this.replace("IV", "I V").replace("III", "I I I").replace("II", "I I").replace(regex, " ")
 
     fun String.toPascalCase(): String {
         return this.substringAfter(". ")
+            .replaceLeadingDigits()
             .replaceRomanNumeralsAndSpecialCharacters()
             .trim()
             .split(" ")
