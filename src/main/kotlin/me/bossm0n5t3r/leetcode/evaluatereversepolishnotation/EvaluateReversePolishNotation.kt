@@ -1,30 +1,25 @@
 package me.bossm0n5t3r.leetcode.evaluatereversepolishnotation
 
-import java.util.Stack
-
 class EvaluateReversePolishNotation {
     class Solution {
         fun evalRPN(tokens: Array<String>): Int {
-            val stack = Stack<Int>()
-            for (i in tokens.indices) {
-                val token = tokens[i]
-                if (token == "+" || token == "-" || token == "*" || token == "/") {
-                    val b = stack.pop()
-                    val a = stack.pop()
-                    val result =
-                        when (token) {
-                            "+" -> a + b
-                            "-" -> a - b
-                            "*" -> a * b
-                            "/" -> a / b
-                            else -> error("Unexpected token: $token")
-                        }
-                    stack.push(result)
-                    continue
+            val stack = ArrayDeque<Int>()
+            for (token in tokens) {
+                when (token) {
+                    "+" -> stack.doOperation { a, b -> a + b }
+                    "-" -> stack.doOperation { a, b -> a - b }
+                    "*" -> stack.doOperation { a, b -> a * b }
+                    "/" -> stack.doOperation { a, b -> a / b }
+                    else -> stack.addLast(token.toInt())
                 }
-                stack.push(token.toInt())
             }
-            return stack.peek()
+            return stack.removeLast()
+        }
+
+        private fun ArrayDeque<Int>.doOperation(operation: (Int, Int) -> Int) {
+            val second = removeLast()
+            val first = removeLast()
+            addLast(operation(first, second))
         }
     }
 }
