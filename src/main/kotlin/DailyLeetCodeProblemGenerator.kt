@@ -6,12 +6,16 @@ import kotlin.io.path.exists
 import kotlinx.coroutines.runBlocking
 
 object DailyLeetCodeProblemGenerator {
-    fun generateProblem(rawInput: String = "") {
+    fun generateProblem(
+        rawInput: String = "",
+        recreateExistingProblem: Boolean = true,
+        recreateExistingTest: Boolean = true,
+    ) {
         val titleSlug = rawInput.toTitleSlug()
         if (titleSlug.isBlank()) {
-            run()
+            run(recreateExistingProblem, recreateExistingTest)
         } else {
-            run(titleSlug)
+            run(titleSlug, recreateExistingProblem, recreateExistingTest)
         }
     }
 
@@ -24,26 +28,30 @@ object DailyLeetCodeProblemGenerator {
         }
     }
 
-    private fun run() {
+    private fun run(recreateExistingProblem: Boolean, recreateExistingTest: Boolean) {
         with(readProblem()) {
             println()
             println("Problem: $name")
             println("URL: $url")
             println()
-            createFiles(this)
-            createTest(this)
+            createFiles(recreateExistingProblem)
+            createTest(recreateExistingTest)
             println("Done!")
         }
     }
 
-    private fun run(titleSlug: String) {
+    private fun run(
+        titleSlug: String,
+        recreateExistingProblem: Boolean,
+        recreateExistingTest: Boolean,
+    ) {
         with(readProblem(titleSlug)) {
             println()
             println("Problem: $name")
             println("URL: $url")
             println()
-            createFiles(this)
-            createTest(this)
+            createFiles(recreateExistingProblem)
+            createTest(recreateExistingTest)
             println("Done!")
         }
     }
@@ -72,12 +80,16 @@ object DailyLeetCodeProblemGenerator {
         )
     }
 
-    private fun createFiles(problem: Problem) {
-        val (name, url, sampleCodes, _, _, filePath) = problem
+    private fun Problem.createFiles(recreateExistingProblem: Boolean) {
+        val (name, url, sampleCodes, _, _, filePath) = this
         val newProblemPath = Paths.get(problemPath.toString(), filePath)
         try {
             if (newProblemPath.exists()) {
-                println("Problem already exists!")
+                if (!recreateExistingProblem) {
+                    println("Existing problem kept. Skipping problem generation.")
+                    return
+                }
+                println("Problem already exists. Recreating...")
                 newProblemPath.toFile().deleteRecursively()
                 println("Previous problem deleted!")
                 println()
@@ -120,12 +132,16 @@ object DailyLeetCodeProblemGenerator {
         }
     }
 
-    private fun createTest(problem: Problem) {
-        val (name, _, _, methodParametersAndResultAsString, exampleTestcases, filePath) = problem
+    private fun Problem.createTest(recreateExistingTest: Boolean) {
+        val (name, _, _, methodParametersAndResultAsString, exampleTestcases, filePath) = this
         val newTestPath = Paths.get(testPath.toString(), filePath)
         try {
             if (newTestPath.exists()) {
-                println("Test already exists!")
+                if (!recreateExistingTest) {
+                    println("Existing test kept. Skipping test generation.")
+                    return
+                }
+                println("Test already exists. Recreating...")
                 newTestPath.toFile().deleteRecursively()
                 println("Previous test deleted!")
                 println()
