@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.reverseLinkedList
+package me.bossm0n5t3r.leetcode.reverselinkedlist
 
 import me.bossm0n5t3r.leetcode.utils.ListNode
 import me.bossm0n5t3r.leetcode.utils.ListNodeUtil
