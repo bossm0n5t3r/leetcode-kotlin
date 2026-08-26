@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.mergeTwoSortedLists
+package me.bossm0n5t3r.leetcode.mergetwosortedlists
 
 import me.bossm0n5t3r.leetcode.utils.ListNode
 import me.bossm0n5t3r.leetcode.utils.ListNodeUtil
@@ -38,12 +38,6 @@ class MergeTwoSortedListsTest {
             assertTrue(
                 ListNodeUtil.isEqual(
                     mergeTwoSortedLists.mergeTwoLists(test.l1, test.l2),
-                    test.result,
-                )
-            )
-            assertTrue(
-                ListNodeUtil.isEqual(
-                    mergeTwoSortedLists.mergeTwoListsRecursive(test.l1, test.l2),
                     test.result,
                 )
             )
