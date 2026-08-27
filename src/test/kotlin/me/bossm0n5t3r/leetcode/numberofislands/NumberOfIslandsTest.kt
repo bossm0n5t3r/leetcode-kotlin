@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.numberOfIslands
+package me.bossm0n5t3r.leetcode.numberofislands
 
 import me.bossm0n5t3r.leetcode.utils.StringUtil.toArrayOfCharArray
 import org.junit.jupiter.api.Assertions.assertEquals
