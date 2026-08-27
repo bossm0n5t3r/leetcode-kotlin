@@ -1,12 +1,12 @@
-package me.bossm0n5t3r.leetcode.combinationSum
+package me.bossm0n5t3r.leetcode.combinationsum
 
 class CombinationSum {
     class Solution {
         fun combinationSum(candidates: IntArray, target: Int): List<List<Int>> {
             val sortedCandidates = candidates.sorted()
             val result = mutableSetOf<List<Int>>()
-            sortedCandidates.indices.forEach {
-                backtracking(result, listOf(), sortedCandidates, target, it)
+            for (i in sortedCandidates.indices) {
+                backtracking(result, listOf(), sortedCandidates, target, i)
             }
             return result.toList()
         }
@@ -18,10 +18,10 @@ class CombinationSum {
             target: Int,
             index: Int,
         ) {
-            val currentSum = container.sum()
-            if (currentSum > target) return
-            if (currentSum == target) {
-                result.add(container)
+            val sum = container.sum()
+            if (sum > target) return
+            if (sum == target) {
+                result += container
                 return
             }
             for (i in index until sortedCandidates.size) {
