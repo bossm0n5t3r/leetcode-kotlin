@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.cloneGraph
+package me.bossm0n5t3r.leetcode.clonegraph
 
 import me.bossm0n5t3r.leetcode.utils.Node
 import me.bossm0n5t3r.leetcode.utils.NodeUtil

@@ -1,15 +1,14 @@
-package me.bossm0n5t3r.leetcode.cloneGraph
+package me.bossm0n5t3r.leetcode.clonegraph
 
 import me.bossm0n5t3r.leetcode.utils.Node
 
 class CloneGraph {
     class Solution {
         fun cloneGraph(node: Node?): Node? {
-            val cloneMap = mutableMapOf<Node, Node>()
-            return clone(node, cloneMap)
+            return clone(node)
         }
 
-        private fun clone(node: Node?, map: MutableMap<Node, Node>): Node? {
+        private fun clone(node: Node?, map: MutableMap<Node, Node> = mutableMapOf()): Node? {
             if (node == null) return null
             if (map.containsKey(node)) return map[node]
 
