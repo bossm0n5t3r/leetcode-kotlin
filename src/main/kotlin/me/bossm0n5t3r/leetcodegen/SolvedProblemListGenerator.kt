@@ -3,6 +3,8 @@ package me.bossm0n5t3r.leetcodegen
 import java.io.File
 
 object SolvedProblemListGenerator {
+    private const val EXTERNAL_SERVICES_PATH = "EXTERNAL_SERVICES.md"
+
     fun generate() {
         readAllREADMEFiles()
             .map { it.toSolvedProblem() }
@@ -45,12 +47,15 @@ object SolvedProblemListGenerator {
             }
         readme.append("# LeetCode\n\n")
         readme.append("- LeetCode solutions in `Kotlin`\n\n")
+        readme.append(readExternalServices()).append("\n\n")
         readme.append("## Solved Problems\n\n")
         readme.append(maxWidths.toTableHeader()).append("\n")
         readme.append(maxWidths.toTableSeparator()).append("\n")
         forEach { readme.append(it.toMarkdownRow(maxWidths)).append("\n") }
         return readme.toString()
     }
+
+    private fun readExternalServices(): String = File(EXTERNAL_SERVICES_PATH).readText().trimEnd()
 
     private fun List<Int>.toTableHeader(): String =
         "| ${"#".padEnd(this[0])} | ${"Title".padEnd(this[1])} | ${"Solution".padEnd(this[2])} |"
