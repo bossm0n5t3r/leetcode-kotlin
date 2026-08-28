@@ -1,0 +1,9 @@
+@problemId = variable value
+POST https://neetcode.io/api/getProblemMetadataFunctionHttp
+Content-Type: application/json
+
+{
+  "data": {
+    "problemId": "{{problemId}}"
+  }
+}
