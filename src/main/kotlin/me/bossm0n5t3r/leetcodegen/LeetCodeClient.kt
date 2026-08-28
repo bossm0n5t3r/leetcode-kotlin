@@ -22,15 +22,15 @@ object LeetCodeClient {
 
     @Suppress("ktlint:standard:max-line-length")
     private const val GET_DAILY_LEET_CODE_PROBLEM_QUERY =
-        "query GetDailyLeetCodeProblem { activeDailyCodingChallengeQuestion { link question { questionFrontendId title content difficulty exampleTestcases codeSnippets { lang langSlug code } sampleTestCase metaData } } }"
+        "query GetDailyLeetCodeProblem { activeDailyCodingChallengeQuestion { link question { questionFrontendId title exampleTestcases codeSnippets { lang code } } } }"
 
     @Suppress("ktlint:standard:max-line-length")
     private const val GET_LEET_CODE_PROBLEM_BY_TITLE_SLUG_QUERY =
-        "query GetLeetCodeProblemByTitleSlug(\$titleSlug: String!) { question(titleSlug: \$titleSlug) { questionFrontendId title content difficulty exampleTestcases codeSnippets { lang langSlug code } sampleTestCase metaData } }"
+        $$"query GetLeetCodeProblemByTitleSlug($titleSlug: String!) { question(titleSlug: $titleSlug) { questionFrontendId title exampleTestcases codeSnippets { lang code } } }"
 
     @Suppress("ktlint:standard:max-line-length")
     private const val GET_LEET_CODE_CONTEST_PROBLEMS_BY_CONTEST_SLUG_QUERY =
-        "query contestQuestionList(\$contestSlug: String!) { contestQuestionList(contestSlug: \$contestSlug) { isAc credit title titleSlug titleCn questionId }} "
+        $$"query contestQuestionList($contestSlug: String!) { contestQuestionList(contestSlug: $contestSlug) { titleSlug } }"
 
     @Serializable data class GraphQLResponse<T>(val data: T)
 
@@ -49,30 +49,17 @@ object LeetCodeClient {
             data class Question(
                 val questionFrontendId: String,
                 val title: String,
-                val content: String,
-                val difficulty: String,
                 val exampleTestcases: String,
                 val codeSnippets: List<CodeSnippet>,
-                val sampleTestCase: String,
-                val metaData: String,
             ) {
-                @Serializable
-                data class CodeSnippet(val lang: String, val langSlug: String, val code: String)
+                @Serializable data class CodeSnippet(val lang: String, val code: String)
             }
         }
     }
 
     @Serializable
     private data class ContestQuestionList(val contestQuestionList: List<ContestQuestion>) {
-        @Serializable
-        data class ContestQuestion(
-            val isAc: Boolean,
-            val credit: Int,
-            val title: String,
-            val titleSlug: String,
-            val titleCn: String? = null,
-            val questionId: String,
-        )
+        @Serializable data class ContestQuestion(val titleSlug: String)
     }
 
     private fun List<DailyLeetCodeProblem.ActiveDailyCodingChallengeQuestion.Question.CodeSnippet>
