@@ -1,49 +1,34 @@
 package me.bossm0n5t3r.leetcode.makelexicographicallysmallestarraybyswappingelements
 
-import java.util.PriorityQueue
-
 class MakeLexicographicallySmallestArrayBySwappingElements {
     class Solution {
         fun lexicographicallySmallestArray(nums: IntArray, limit: Int): IntArray {
-            return nums
-                .withIndex()
-                .groupByLimit(limit)
-                .map { it.orderByAscending() }
-                .sorted()
-                .toIntArray()
-        }
+            val sorted = nums.withIndex().sortedBy { it.value }
 
-        private fun Iterable<IndexedValue<Int>>.groupByLimit(
-            limit: Int
-        ): List<List<IndexedValue<Int>>> {
-            val result = mutableListOf<MutableList<IndexedValue<Int>>>()
-            val pq = PriorityQueue<IndexedValue<Int>>(compareBy { it.value })
-            pq.addAll(this)
-            while (pq.isNotEmpty()) {
-                val cur = pq.poll()
-                if (result.isEmpty()) {
-                    result += mutableListOf(cur)
-                    continue
+            val groupByIndex = IntArray(nums.size)
+            val valuesByGroup = mutableListOf<ArrayDeque<Int>>()
+
+            var group = 0
+            valuesByGroup += ArrayDeque<Int>()
+
+            for (i in sorted.indices) {
+                if (i > 0 && sorted[i].value - sorted[i - 1].value > limit) {
+                    group++
+                    valuesByGroup += ArrayDeque<Int>()
                 }
-                val tmp = result.lastOrNull()?.lastOrNull() ?: continue
-                if (cur.value - tmp.value <= limit) {
-                    result[result.lastIndex] =
-                        result.getOrElse(result.lastIndex) { mutableListOf() }.apply { add(cur) }
-                } else {
-                    result += mutableListOf(cur)
-                }
+
+                val (index, value) = sorted[i]
+
+                groupByIndex[index] = group
+                valuesByGroup[group].addLast(value)
+            }
+
+            val result = IntArray(nums.size)
+            for (i in nums.indices) {
+                val groupIndex = groupByIndex[i]
+                result[i] = valuesByGroup[groupIndex].removeFirst()
             }
             return result
-        }
-
-        private fun List<IndexedValue<Int>>.orderByAscending(): List<IndexedValue<Int>> {
-            val indices = this.map { it.index }.sorted()
-            val values = this.map { it.value }.sorted()
-            return indices.zip(values).map { IndexedValue(it.first, it.second) }
-        }
-
-        private fun List<List<IndexedValue<Int>>>.sorted(): List<Int> {
-            return this.flatten().sortedBy { it.index }.map { it.value }
         }
     }
 }
