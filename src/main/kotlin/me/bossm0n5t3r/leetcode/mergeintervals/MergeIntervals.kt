@@ -3,25 +3,14 @@ package me.bossm0n5t3r.leetcode.mergeintervals
 class MergeIntervals {
     class Solution {
         fun merge(intervals: Array<IntArray>): Array<IntArray> {
-            val n = intervals.size
-            val sorted =
-                intervals.sortedWith(compareBy<IntArray> { it.first() }.thenComparing { it.last() })
+            val sorted = intervals.sortedBy { it[0] }
             val result = mutableListOf<IntArray>()
-            var index = 0
-            while (index < n) {
-                val cur = sorted[index++]
-                if (result.isEmpty()) {
-                    result += cur
-                    continue
-                }
-                val (lastStart, lastEnd) = result[result.lastIndex]
-                val (curStart, curEnd) = cur
-                when {
-                    lastEnd < curStart -> result += cur
-                    else -> {
-                        result[result.lastIndex][0] = minOf(lastStart, curStart)
-                        result[result.lastIndex][1] = maxOf(lastEnd, curEnd)
-                    }
+            for (interval in sorted) {
+                if (result.isEmpty() || result.last()[1] < interval[0]) {
+                    result += interval
+                } else {
+                    val lastElement = result.last()
+                    lastElement[1] = maxOf(lastElement[1], interval[1])
                 }
             }
             return result.toTypedArray()
