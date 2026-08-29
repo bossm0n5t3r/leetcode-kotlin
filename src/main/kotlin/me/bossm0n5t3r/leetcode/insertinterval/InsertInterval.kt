@@ -3,25 +3,28 @@ package me.bossm0n5t3r.leetcode.insertinterval
 class InsertInterval {
     class Solution {
         fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
+            val n = intervals.size
             val result = mutableListOf<IntArray>()
+
+            var (newStart, newEnd) = newInterval
             var index = 0
-            while (index < intervals.size) {
-                val interval = intervals[index++]
-                val (start, end) = interval
-                when {
-                    end < newInterval[0] -> result += interval
-                    start <= newInterval[1] -> {
-                        newInterval[0] = minOf(newInterval[0], start)
-                        newInterval[1] = maxOf(newInterval[1], end)
-                    }
-                    else -> {
-                        result += newInterval
-                        result += interval
-                        while (index < intervals.size) result += intervals[index++]
-                    }
-                }
+
+            while (index < n && intervals[index][1] < newStart) {
+                result += intervals[index++]
             }
-            if (result.isEmpty() || result.last()[1] < newInterval[0]) result += newInterval
+
+            while (index < n && intervals[index][0] <= newEnd) {
+                newStart = minOf(newStart, intervals[index][0])
+                newEnd = maxOf(newEnd, intervals[index][1])
+                index++
+            }
+
+            result += intArrayOf(newStart, newEnd)
+
+            while (index < n) {
+                result += intervals[index++]
+            }
+
             return result.toTypedArray()
         }
     }
