@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.nonOverlappingIntervals
+package me.bossm0n5t3r.leetcode.nonoverlappingintervals
 
 import me.bossm0n5t3r.leetcode.utils.StringUtil.toArrayOfIntArray
 import org.junit.jupiter.api.Assertions.assertEquals
