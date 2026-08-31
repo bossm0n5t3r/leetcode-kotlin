@@ -13,10 +13,13 @@ class FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints {
             }
             val criticalPointsIndices = points.getCriticalPointsIndices()
             if (criticalPointsIndices.size < 2) return intArrayOf(-1, -1)
-            return intArrayOf(
-                criticalPointsIndices.windowed(2).minOf { it.last() - it.first() },
-                criticalPointsIndices.last() - criticalPointsIndices.first(),
-            )
+            var minDistance = Int.MAX_VALUE
+            for (i in 1 until criticalPointsIndices.size) {
+                minDistance =
+                    minOf(minDistance, criticalPointsIndices[i] - criticalPointsIndices[i - 1])
+            }
+            val maxDistance = criticalPointsIndices.last() - criticalPointsIndices.first()
+            return intArrayOf(minDistance, maxDistance)
         }
 
         private fun List<Int>.getCriticalPointsIndices(): List<Int> {
