@@ -5,13 +5,14 @@ class HouseRobber {
         fun rob(nums: IntArray): Int {
             val n = nums.size
             if (n == 1) return nums[0]
-            val dp = IntArray(n)
-            dp[0] = nums[0]
-            dp[1] = maxOf(dp[0], nums[1])
-            for (i in 2 until n) {
-                dp[i] = maxOf(dp[i - 2] + nums[i], dp[i - 1])
+            var prev2 = 0
+            var prev1 = 0
+            for (i in 0 until n) {
+                val current = maxOf(prev1, prev2 + nums[i])
+                prev2 = prev1
+                prev1 = current
             }
-            return maxOf(dp[nums.size - 1], dp[nums.size - 2])
+            return prev1
         }
     }
 }
