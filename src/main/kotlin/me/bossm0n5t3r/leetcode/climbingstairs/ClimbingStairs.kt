@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.climbingStairs
+package me.bossm0n5t3r.leetcode.climbingstairs
 
 class ClimbingStairs {
     class Solution {
