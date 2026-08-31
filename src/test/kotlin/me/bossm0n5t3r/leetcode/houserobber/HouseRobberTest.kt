@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.houseRobber
+package me.bossm0n5t3r.leetcode.houserobber
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
