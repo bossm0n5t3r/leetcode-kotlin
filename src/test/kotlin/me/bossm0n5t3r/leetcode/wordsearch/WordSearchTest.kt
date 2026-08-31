@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.wordSearch
+package me.bossm0n5t3r.leetcode.wordsearch
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
