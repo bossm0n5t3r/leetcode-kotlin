@@ -34,7 +34,7 @@ object StringUtil {
             .toTypedArray()
 
     fun String.toArrayOfString(): Array<String> =
-        this.drop(1).dropLast(1).replace("\"", "").split(",").toTypedArray()
+        this.drop(1).dropLast(1).replace("\"", "").split(",").map { it.trim() }.toTypedArray()
 
     fun String.toListOfStringList(): List<List<String>> =
         this.drop(2).dropLast(2).split("],[").map { it.replace("\"", "").split(",") }
