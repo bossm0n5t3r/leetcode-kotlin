@@ -3,16 +3,20 @@ package me.bossm0n5t3r.leetcode.maximumscoreofnonoverlappingintervals
 class MaximumScoreOfNonOverlappingIntervals {
     class Solution {
         fun maximumWeight(intervals: List<List<Int>>): IntArray {
-            val n = intervals.size
+            val sorted =
+                intervals
+                    .mapIndexed { index, interval ->
+                        Interval(
+                            start = interval[0],
+                            end = interval[1],
+                            weight = interval[2],
+                            originalIndex = index,
+                        )
+                    }
+                    .sortedBy { it.start }
 
-            val intervalList =
-                intervals.withIndex().map { (index, interval) ->
-                    val (start, end, weight) = interval
-                    Interval(start = start, end = end, weight = weight, originalIndex = index)
-                }
-
-            val sorted = intervalList.sortedBy { it.start }
-            val starts = sorted.map { it.start }
+            val n = sorted.size
+            val starts = IntArray(n) { sorted[it].start }
             val next = IntArray(n)
 
             for (i in 0 until n) {
@@ -89,24 +93,6 @@ class MaximumScoreOfNonOverlappingIntervals {
             val originalIndex: Int,
         )
 
-        private data class State(val score: Long = 0L, val indices: IntArray = intArrayOf()) {
-            override fun equals(other: Any?): Boolean {
-                if (this === other) return true
-                if (javaClass != other?.javaClass) return false
-
-                other as State
-
-                if (score != other.score) return false
-                if (!indices.contentEquals(other.indices)) return false
-
-                return true
-            }
-
-            override fun hashCode(): Int {
-                var result = score.hashCode()
-                result = 31 * result + indices.contentHashCode()
-                return result
-            }
-        }
+        private class State(val score: Long = 0L, val indices: IntArray = intArrayOf())
     }
 }
