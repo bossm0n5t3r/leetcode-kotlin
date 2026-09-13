@@ -13,11 +13,10 @@ class ImageOverlap {
                 }
             }
             val frequency = mutableMapOf<Pair<Int, Int>, Int>().withDefault { 0 }
-            for ((img1First, img1Second) in img1Ones) {
-                for ((img2First, img2Second) in img2Ones) {
-                    val dr = img2First - img1First
-                    val dc = img2Second - img1Second
-                    frequency[dr to dc] = frequency.getValue(dr to dc) + 1
+            for ((r1, c1) in img1Ones) {
+                for ((r2, c2) in img2Ones) {
+                    val shift = (r2 - r1) to (c2 - c1)
+                    frequency[shift] = frequency.getValue(shift) + 1
                 }
             }
             return frequency.values.maxOrNull() ?: 0
