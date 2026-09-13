@@ -15,7 +15,7 @@ internal fun generateTestFileContent(
     appendLine("class $testClassName {")
     appendLine("    private val sut = $problemClassName.Solution()")
     appendLine()
-    appendLine("    private data class TestData($methodParametersAndResultAsString)")
+    appendLine("    private class TestData($methodParametersAndResultAsString)")
     appendLine()
     appendLine("    @Test")
     appendLine("    fun test() {")
