@@ -39,5 +39,43 @@ class NumberOfSetsOfKNonOverlappingLineSegments {
 
             return dp[n][k]
         }
+
+        fun numberOfSetsByCombination(n: Int, k: Int): Int {
+            val modulo = 1_000_000_007L
+            val total = n + k - 1
+            val select = 2 * k
+
+            if (select > total) return 0
+
+            val factorial = LongArray(total + 1)
+            factorial[0] = 1L
+
+            for (i in 1..total) {
+                factorial[i] = factorial[i - 1] * i % modulo
+            }
+
+            val denominator = factorial[select] * factorial[total - select] % modulo
+
+            val denominatorInverse = modPow(denominator, modulo - 2, modulo)
+
+            return (factorial[total] * denominatorInverse % modulo).toInt()
+        }
+
+        private fun modPow(base: Long, exponent: Long, modulo: Long): Long {
+            var base = base
+            var exponent = exponent
+            var result = 1L
+
+            while (exponent > 0) {
+                if (exponent % 2 == 1L) {
+                    result = result * base % modulo
+                }
+
+                base = base * base % modulo
+                exponent /= 2
+            }
+
+            return result
+        }
     }
 }

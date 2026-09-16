@@ -14,6 +14,7 @@ class NumberOfSetsOfKNonOverlappingLineSegmentsTest {
 
         for (testData in testDataList) {
             assertEquals(testData.result, sut.numberOfSets(testData.n, testData.k))
+            assertEquals(testData.result, sut.numberOfSetsByCombination(testData.n, testData.k))
         }
     }
 }
