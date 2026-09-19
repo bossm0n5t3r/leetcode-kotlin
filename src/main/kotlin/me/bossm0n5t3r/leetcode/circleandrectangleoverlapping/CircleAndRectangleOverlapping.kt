@@ -11,21 +11,13 @@ class CircleAndRectangleOverlapping {
             x2: Int,
             y2: Int,
         ): Boolean {
-            return when {
-                xCenter + radius < x1 -> false
-                yCenter + radius < y1 -> false
-                x2 < xCenter - radius -> false
-                y2 < yCenter - radius -> false
-                else -> {
-                    val closestX = xCenter.coerceIn(x1, x2)
-                    val closestY = yCenter.coerceIn(y1, y2)
+            val closestX = xCenter.coerceIn(x1, x2)
+            val closestY = yCenter.coerceIn(y1, y2)
 
-                    val dx = (xCenter - closestX).toLong()
-                    val dy = (yCenter - closestY).toLong()
-                    val radius = radius.toLong()
-                    dx * dx + dy * dy <= radius * radius
-                }
-            }
+            val dx = (xCenter - closestX).toLong()
+            val dy = (yCenter - closestY).toLong()
+            val radius = radius.toLong()
+            return dx * dx + dy * dy <= radius * radius
         }
     }
 }
