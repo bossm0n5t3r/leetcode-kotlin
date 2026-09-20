@@ -24,4 +24,4 @@ jobs:
         uses: gradle/actions/wrapper-validation@v6
 
       - name: Test
-        run: ./gradlew clean ktlintCheck test
+        run: ./gradlew clean ktfmtCheck test
