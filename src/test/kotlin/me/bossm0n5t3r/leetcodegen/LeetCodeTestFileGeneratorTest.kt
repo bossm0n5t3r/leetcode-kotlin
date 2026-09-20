@@ -27,7 +27,7 @@ class LeetCodeTestFileGeneratorTest {
             class TwoSumTest {
                 private val sut = TwoSum.Solution()
 
-                private data class TestData(val nums: IntArray, val target: Int, val result: IntArray)
+                private class TestData(val nums: IntArray, val target: Int, val result: IntArray)
 
                 @Test
                 fun test() {
