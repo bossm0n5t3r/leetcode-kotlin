@@ -18,7 +18,10 @@ class FindXValueOfArrayITest {
             )
 
         for (testData in testDataList) {
-            assertEquals(testData.result, sut.resultArray(testData.nums, testData.k))
+            assertEquals(
+                testData.result.toList(),
+                sut.resultArray(testData.nums, testData.k).toList(),
+            )
         }
     }
 }
