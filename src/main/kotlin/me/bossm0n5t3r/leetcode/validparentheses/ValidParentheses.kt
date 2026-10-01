@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.validParentheses
+package me.bossm0n5t3r.leetcode.validparentheses
 
 class ValidParentheses {
     class Solution {

@@ -1,10 +1,10 @@
-package me.bossm0n5t3r.leetcode.validParentheses
+package me.bossm0n5t3r.leetcode.validparentheses
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class ValidParenthesesTest {
-    private val validParentheses = ValidParentheses.Solution()
+    private val sut = ValidParentheses.Solution()
 
     data class ValidParenthesesTestData(val s: String, val result: Boolean)
 
@@ -18,6 +18,6 @@ class ValidParenthesesTest {
                 ValidParenthesesTestData("([)]", false),
                 ValidParenthesesTestData("{[]}", true),
             )
-        tests.forEach { test -> assertEquals(test.result, validParentheses.isValid(test.s)) }
+        tests.forEach { test -> assertEquals(test.result, sut.isValid(test.s)) }
     }
 }
