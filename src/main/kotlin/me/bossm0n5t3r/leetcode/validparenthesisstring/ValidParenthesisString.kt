@@ -1,4 +1,4 @@
-package me.bossm0n5t3r.leetcode.validParenthesisString
+package me.bossm0n5t3r.leetcode.validparenthesisstring
 
 class ValidParenthesisString {
     class Solution {
@@ -10,12 +10,10 @@ class ValidParenthesisString {
                         leftMin++
                         leftMax++
                     }
-
                     ')' -> {
                         leftMin--
                         leftMax--
                     }
-
                     '*' -> {
                         leftMin--
                         leftMax++
