@@ -14,7 +14,7 @@ class ValidParenthesisStringTest {
             listOf(
                 TestData("()", true),
                 TestData("(*)", true),
-                TestData("(*))", false),
+                TestData("(*))", true),
                 TestData("(", false),
             )
 
