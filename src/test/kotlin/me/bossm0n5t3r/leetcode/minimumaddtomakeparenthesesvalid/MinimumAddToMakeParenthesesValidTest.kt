@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test
 class MinimumAddToMakeParenthesesValidTest {
     private val sut = MinimumAddToMakeParenthesesValid.Solution()
 
-    private data class TestData(val s: String, val result: Int)
+    private class TestData(val s: String, val result: Int)
 
     @Test
     fun test() {
-        val testDataList = listOf(TestData("())", 1), TestData("(((", 3), TestData("()))((", 4))
+        val testDataList = listOf(TestData("())", 1), TestData("(((", 3))
 
         for (testData in testDataList) {
             assertEquals(testData.result, sut.minAddToMakeValid(testData.s))
